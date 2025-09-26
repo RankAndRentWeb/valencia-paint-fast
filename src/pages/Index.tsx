@@ -1,3 +1,4 @@
+// src/pages/Index.tsx
 import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -14,6 +15,16 @@ import {
   Building,
 } from "lucide-react";
 import heroImage from "@/assets/hero-pintores-valencia.jpg";
+
+// ⭐ Estrellas accesibles sin ARIA prohibido
+const RatingStars = ({ value = 5 }: { value?: number }) => (
+  <div className="flex items-center space-x-1 mb-3">
+    <span className="sr-only">Valoración {value} de 5</span>
+    {Array.from({ length: value }).map((_, i) => (
+      <Star key={i} className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
+    ))}
+  </div>
+);
 
 const Index = () => {
   const localBusinessSchema = {
@@ -44,22 +55,69 @@ const Index = () => {
   };
 
   const services = [
-    { title: "Quitar gotelé", description: "Eliminamos el gotelé y alisamos paredes", link: "/quitar-gotele-alisar-paredes", icon: <Brush className="w-6 h-6" /> },
-    { title: "Pintura interior", description: "Renovamos el interior de tu hogar", link: "/pintura-interior-pisos-casas", icon: <Home className="w-6 h-6" /> },
-    { title: "Fachadas", description: "Pintamos exteriores con garantía", link: "/pintura-exterior-fachadas", icon: <Building className="w-6 h-6" /> },
-    { title: "Impermeabilización", description: "Protegemos terrazas y fachadas", link: "/impermeabilizacion-terrazas-y-fachadas", icon: <Shield className="w-6 h-6" /> },
-    { title: "Locales comerciales", description: "Pintamos tu negocio profesionalmente", link: "/pintura-locales-comerciales", icon: <Building className="w-6 h-6" /> },
-    { title: "Comunidades", description: "Servicios para comunidades de propietarios", link: "/pintura-comunidades", icon: <Building className="w-6 h-6" /> },
+    {
+      title: "Quitar gotelé",
+      description: "Eliminamos el gotelé y alisamos paredes",
+      link: "/quitar-gotele-alisar-paredes",
+      icon: <Brush className="w-6 h-6" />,
+    },
+    {
+      title: "Pintura interior",
+      description: "Renovamos el interior de tu hogar",
+      link: "/pintura-interior-pisos-casas",
+      icon: <Home className="w-6 h-6" />,
+    },
+    {
+      title: "Fachadas",
+      description: "Pintamos exteriores con garantía",
+      link: "/pintura-exterior-fachadas",
+      icon: <Building className="w-6 h-6" />,
+    },
+    {
+      title: "Impermeabilización",
+      description: "Protegemos terrazas y fachadas",
+      link: "/impermeabilizacion-terrazas-y-fachadas",
+      icon: <Shield className="w-6 h-6" />,
+    },
+    {
+      title: "Locales comerciales",
+      description: "Pintamos tu negocio profesionalmente",
+      link: "/pintura-locales-comerciales",
+      icon: <Building className="w-6 h-6" />,
+    },
+    {
+      title: "Comunidades",
+      description: "Servicios para comunidades de propietarios",
+      link: "/pintura-comunidades",
+      icon: <Building className="w-6 h-6" />,
+    },
   ];
 
   const testimonials = [
-    { name: "María García", location: "Russafa, Valencia", text: "Excelente trabajo. Terminaron en el plazo acordado y dejaron todo impecable.", rating: 5 },
-    { name: "José Martínez", location: "Benimaclet, Valencia", text: "Muy profesionales. El presupuesto fue ajustado y cumplieron con todo lo prometido.", rating: 5 },
-    { name: "Ana López", location: "Centro, Valencia", text: "Recomiendo totalmente. Trabajo de calidad y atención excelente.", rating: 5 },
+    {
+      name: "María García",
+      location: "Russafa, Valencia",
+      text: "Excelente trabajo. Terminaron en el plazo acordado y dejaron todo impecable.",
+      rating: 5,
+    },
+    {
+      name: "José Martínez",
+      location: "Benimaclet, Valencia",
+      text: "Muy profesionales. El presupuesto fue ajustado y cumplieron con todo lo prometido.",
+      rating: 5,
+    },
+    {
+      name: "Ana López",
+      location: "Centro, Valencia",
+      text: "Recomiendo totalmente. Trabajo de calidad y atención excelente.",
+      rating: 5,
+    },
   ];
 
-  const homeTitle = "Pintores en Valencia (capital y provincia) - Rápidos, limpios y con garantía";
-  const homeDesc  = "Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131";
+  const homeTitle =
+    "Pintores en Valencia (capital y provincia) - Rápidos, limpios y con garantía";
+  const homeDesc =
+    "Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131";
   const homeCanon = "https://pintores-valencia.com/";
 
   return (
@@ -73,9 +131,9 @@ const Index = () => {
         preloadImages={[heroImage]}
       />
 
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative bg-gradient-hero py-20 text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/50" /> {/* contraste reforzado */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -83,40 +141,39 @@ const Index = () => {
         />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Pintores en Valencia <br />
               <span className="text-accent">(capital y provincia)</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
+            <p className="text-xl md:text-2xl mb-8 text-white/90">
               Rápidos, limpios y con garantía
             </p>
-
-            {/* CTAs con alto contraste y etiquetas accesibles */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              {/* Botón teléfono con contraste alto */}
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                className="bg-accent hover:bg-accent/90 text-white shadow-cta"
               >
                 <a
                   href="tel:722208131"
                   aria-label="Llamar ahora al 722 208 131"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-5 h-5" aria-hidden="true" />
                   <span>Llamar ahora</span>
                 </a>
               </Button>
-
+              {/* Botón WhatsApp outline azul reforzado */}
               <Button
                 asChild
                 size="lg"
-                className="bg-green-600 hover:bg-green-700 text-white focus-visible:ring-2 focus-visible:ring-green-600 focus-visible:ring-offset-2"
+                className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
               >
                 <a
                   href="https://wa.me/34722208131"
                   aria-label="Abrir WhatsApp para escribir al 722 208 131"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-5 h-5" aria-hidden="true" />
                   <span>WhatsApp</span>
@@ -124,21 +181,21 @@ const Index = () => {
               </Button>
             </div>
 
-            {/* Beneficios */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="flex items-center gap-2">
+            {/* Benefits */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white">
+              <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm">Presupuesto 24h</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm">Limpieza incluida</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm">Seguro RC</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm">Garantía escrita</span>
               </div>
@@ -147,29 +204,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Servicios */}
+      {/* Services Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuestros servicios</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Nuestros servicios
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ofrecemos una amplia gama de servicios de pintura profesional en Valencia
+              Ofrecemos una amplia gama de servicios de pintura profesional en
+              Valencia
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {services.map((service, index) => (
-              <Card key={index} className="hover:shadow-card transition-shadow duration-300">
+              <Card
+                key={index}
+                className="hover:shadow-card transition-shadow duration-300"
+              >
                 <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">{service.icon}</div>
+                  <div className="flex items-center space-x-3 mb-3">
+                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                      {service.icon}
+                    </div>
                     <h3 className="text-lg font-semibold">{service.title}</h3>
                   </div>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button asChild size="sm" className="bg-blue-600 text-white hover:bg-blue-700">
-                    <Link to={service.link} aria-label={`Ver más sobre ${service.title}`}>
-                      Ver más
-                    </Link>
+                  <p className="text-muted-foreground mb-4">
+                    {service.description}
+                  </p>
+                  <Button
+                    asChild
+                    size="sm"
+                    className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+                  >
+                    <Link to={service.link}>Ver más</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -184,25 +253,26 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonios */}
+      {/* Testimonials */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Lo que dicen nuestros clientes
+            </h2>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <Card key={i}>
+            {testimonials.map((testimonial, index) => (
+              <Card key={index}>
                 <CardContent className="p-6">
-                  <div className="flex items-center space-x-1 mb-3" aria-label={`Valoración ${t.rating} de 5`}>
-                    {[...Array(t.rating)].map((_, k) => (
-                      <Star key={k} className="w-4 h-4 fill-accent text-accent" aria-hidden="true" />
-                    ))}
-                  </div>
-                  <p className="text-foreground mb-4">"{t.text}"</p>
+                  <RatingStars value={testimonial.rating} />
+                  <p className="text-foreground mb-4">"{testimonial.text}"</p>
                   <div>
-                    <p className="font-semibold">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.location}</p>
+                    <p className="font-semibold">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.location}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -211,21 +281,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* CTA final */}
+      {/* CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">¿Necesitas un presupuesto?</h2>
-          <p className="text-xl mb-8 text-primary-foreground/90">Te respondemos en menos de 24 horas</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            ¿Necesitas un presupuesto?
+          </h2>
+          <p className="text-xl mb-8 text-primary-foreground/90">
+            Te respondemos en menos de 24 horas
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta">
-              <Link to="/presupuesto">Pedir presupuesto gratis</Link>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent hover:bg-accent/90 text-white shadow-cta"
+            >
+              <Link to="/presupuesto" aria-label="Solicitar presupuesto">
+                Pedir presupuesto gratis
+              </Link>
             </Button>
-            <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-              <a href="tel:722208131" aria-label="Llamar al 722 208 131" className="flex items-center gap-2">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+            >
+              <a href="tel:722208131" aria-label="Llamar al 722 208 131" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" aria-hidden="true" />
                 <span>722 208 131</span>
               </a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Preguntas frecuentes
+            </h2>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">
+                  ¿En cuánto tiempo dan el presupuesto?
+                </h3>
+                <p className="text-muted-foreground">
+                  Nos comprometemos a enviar el presupuesto en menos de 24 horas
+                  tras recibir la solicitud.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">¿Qué incluye el servicio?</h3>
+                <p className="text-muted-foreground">
+                  Incluimos materiales, mano de obra, limpieza posterior y
+                  garantía escrita. Todo transparente en el presupuesto.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="font-semibold mb-2">
+                  ¿Trabajan en toda Valencia?
+                </h3>
+                <p className="text-muted-foreground">
+                  Sí, trabajamos en Valencia capital y en toda la provincia.
+                  Consultanos tu zona específica.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

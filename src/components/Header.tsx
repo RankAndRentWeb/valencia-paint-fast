@@ -8,24 +8,22 @@ const Header = () => {
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* El enlace a inicio lleva la etiqueta accesible; el SVG/IMG del logotipo va con alt="" para evitar redundancia */}
         <Link
-          to="/"
-          className="flex items-center gap-2"
-          aria-label="Inicio — Pintores en Valencia"
-        >
-          <img
-            src="/pintores-valencia-logo.png"
-            alt=""
-            width={28}
-            height={28}
-            decoding="async"
-            fetchpriority="high"
-            className="rounded-md"
-            aria-hidden="true"
-          />
-          <span className="font-semibold leading-none text-base md:text-lg">
-            Pintores en Valencia
-          </span>
-        </Link>
+  to="/"
+  aria-label="Pintores en Valencia — ir al inicio"
+  className="flex items-center gap-2"
+>
+  <img
+    src="/pintores-valencia-logo.png"
+    width={28}
+    height={28}
+    alt=""                 // 👈 decorativa
+    aria-hidden="true"     // 👈 que lectores la ignoren
+    className="rounded-md"
+    decoding="async"
+    fetchPriority="high"
+  />
+  <span className="font-semibold">Pintores en Valencia</span>
+</Link>
 
         {/* Navegación principal con landmark */}
         <nav aria-label="Navegación principal" className="hidden md:block">
