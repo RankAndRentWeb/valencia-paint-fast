@@ -1,3 +1,4 @@
+// src/pages/Zonas.tsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,69 +8,18 @@ import { MapPin, Phone } from "lucide-react";
 
 const Zonas = () => {
   const zonas = [
-    {
-      name: "Russafa",
-      link: "/pintores-russafa",
-      description: "Barrio artístico y moderno de Valencia capital",
-      destacado: true
-    },
-    {
-      name: "Benimaclet",
-      link: "/pintores-benimaclet", 
-      description: "Zona universitaria con gran actividad",
-      destacado: true
-    },
-    {
-      name: "Centro Histórico",
-      link: "/pintores-centro-valencia",
-      description: "Casco antiguo de Valencia"
-    },
-    {
-      name: "Paterna",
-      link: "/pintores-paterna",
-      description: "Municipio próximo a Valencia capital",
-      destacado: true
-    },
-    {
-      name: "Torrent",
-      link: "/pintores-torrent",
-      description: "Una de las ciudades más importantes de la provincia"
-    },
-    {
-      name: "Mislata",
-      link: "/pintores-mislata",
-      description: "Municipio muy cercano a Valencia capital"
-    },
-    {
-      name: "Burjassot",
-      link: "/pintores-burjassot",
-      description: "Zona norte del área metropolitana"
-    },
-    {
-      name: "Sagunto",
-      link: "/pintores-sagunto",
-      description: "Ciudad histórica al norte de Valencia"
-    },
-    {
-      name: "Xàtiva",
-      link: "/pintores-xativa",
-      description: "Ciudad del interior de la provincia"
-    },
-    {
-      name: "Cullera",
-      link: "/pintores-cullera",
-      description: "Ciudad costera al sur de Valencia"
-    },
-    {
-      name: "Alzira",
-      link: "/pintores-alzira",
-      description: "Capital de La Ribera"
-    },
-    {
-      name: "Gandia",
-      link: "/pintores-gandia",
-      description: "Importante ciudad costera de La Safor"
-    }
+    { name: "Russafa", link: "/pintores-russafa", description: "Barrio artístico y moderno de Valencia capital", destacado: true },
+    { name: "Benimaclet", link: "/pintores-benimaclet", description: "Zona universitaria con gran actividad", destacado: true },
+    { name: "Centro Histórico", link: "/pintores-centro-valencia", description: "Casco antiguo de Valencia" },
+    { name: "Paterna", link: "/pintores-paterna", description: "Municipio próximo a Valencia capital", destacado: true },
+    { name: "Torrent", link: "/pintores-torrent", description: "Una de las ciudades más importantes de la provincia" },
+    { name: "Mislata", link: "/pintores-mislata", description: "Municipio muy cercano a Valencia capital" },
+    { name: "Burjassot", link: "/pintores-burjassot", description: "Zona norte del área metropolitana" },
+    { name: "Sagunto", link: "/pintores-sagunto", description: "Ciudad histórica al norte de Valencia" },
+    { name: "Xàtiva", link: "/pintores-xativa", description: "Ciudad del interior de la provincia" },
+    { name: "Cullera", link: "/pintores-cullera", description: "Ciudad costera al sur de Valencia" },
+    { name: "Alzira", link: "/pintores-alzira", description: "Capital de La Ribera" },
+    { name: "Gandia", link: "/pintores-gandia", description: "Importante ciudad costera de La Safor" }
   ];
 
   return (
@@ -83,14 +33,14 @@ const Zonas = () => {
 
       <div className="container mx-auto px-4">
         <Breadcrumbs items={[{ label: "Zonas de trabajo" }]} />
-        
+
         <div className="py-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Trabajamos en Valencia capital y provincia
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ofrecemos nuestros servicios de pintura profesional en Valencia capital 
+              Ofrecemos nuestros servicios de pintura profesional en Valencia capital
               y en los principales municipios de la provincia. Consulta tu zona específica.
             </p>
           </div>
@@ -119,10 +69,11 @@ const Zonas = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {zonas.map((zona, index) => (
               <Card
-  key={index}
-  className={`hover:shadow-card transition-all duration-300 hover:-translate-y-1 ${zona.destacado ? 'ring-2 ring-accent ring-opacity-50' : ''}`}
-/>
-
+                key={index}
+                className={`hover:shadow-card transition-all duration-300 hover:-translate-y-1 ${
+                  zona.destacado ? "ring-2 ring-accent ring-opacity-50" : ""
+                }`}
+              >
                 <CardContent className="p-6">
                   {zona.destacado && (
                     <div className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full inline-block mb-3">
@@ -132,7 +83,11 @@ const Zonas = () => {
                   <h3 className="text-xl font-bold mb-2">Pintores en {zona.name}</h3>
                   <p className="text-muted-foreground mb-4">{zona.description}</p>
                   <div className="space-y-2">
-                    <Button asChild className="w-full" variant={zona.destacado ? "default" : "outline"}>
+                    <Button
+                      asChild
+                      className="w-full"
+                      variant={zona.destacado ? "default" : "outline"}
+                    >
                       <Link to={zona.link}>Ver información de zona</Link>
                     </Button>
                   </div>
@@ -154,7 +109,11 @@ const Zonas = () => {
                   <span>Consultar zona: 722 208 131</span>
                 </a>
               </Button>
-              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors"
+              >
                 <Link to="/contacto">Contactar</Link>
               </Button>
             </div>
@@ -188,4 +147,4 @@ const Zonas = () => {
   );
 };
 
-export default Zonas;
+export default Zonas;
