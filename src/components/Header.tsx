@@ -12,7 +12,7 @@ const Header = () => {
     { href: "/precios", label: "Precios" },
     { href: "/trabajos", label: "Trabajos" },
     { href: "/presupuesto", label: "Presupuesto" },
-    { href: "/contacto", label: "Contact" },
+    { href: "/contacto", label: "Contacto" },
   ];
 
   return (
