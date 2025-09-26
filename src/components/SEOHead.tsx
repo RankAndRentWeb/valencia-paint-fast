@@ -9,6 +9,8 @@ type Props = {
   noindex?: boolean;
   schema?: object | object[];
   ogImage?: string;
+  /** Preload de imágenes críticas (ej. hero) para mejorar LCP */
+  preloadImages?: string[];
 };
 
 export default function SEOHead({
@@ -19,6 +21,7 @@ export default function SEOHead({
   noindex,
   schema,
   ogImage,
+  preloadImages,
 }: Props) {
   const robots = noindex ? "noindex,nofollow" : "index,follow";
 
@@ -42,6 +45,11 @@ export default function SEOHead({
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+        {/* Preload de imágenes críticas (mejora LCP en móvil) */}
+        {preloadImages?.map((src, i) => (
+          <link key={i} rel="preload" as="image" href={src} />
+        ))}
       </Helmet>
 
       {schema && (
