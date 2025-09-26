@@ -128,7 +128,7 @@ const Index = () => {
               Rápidos, limpios y con garantía
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta">
                 <a href="tel:722208131" className="flex items-center justify-center space-x-2">
                   <Phone className="w-5 h-5" />
                   <span>Llamar ahora</span>
