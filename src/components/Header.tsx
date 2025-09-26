@@ -42,7 +42,7 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="#servicios"
+                to="/servicios"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
                 }
