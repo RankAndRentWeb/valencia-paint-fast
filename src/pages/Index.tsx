@@ -243,7 +243,7 @@ const Index = () => {
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link to="/presupuesto">Pedir presupuesto gratis</Link>
             </Button>
-            <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta">
               <a href="tel:722208131" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
                 <span>722 208 131</span>
