@@ -6,28 +6,40 @@ const Header = () => {
     // Header semántico con landmark
     <header className="border-b bg-background sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* El enlace a inicio lleva la etiqueta accesible; el SVG/IMG del logotipo va con alt="" para evitar redundancia */}
+        {/* Logo + marca (logo decorativo para evitar redundancia con el texto) */}
         <Link
-  to="/"
-  aria-label="Pintores en Valencia — ir al inicio"
-  className="flex items-center gap-2"
->
-  <img
-    src="/pintores-valencia-logo.png"
-    width={40}
-    height={40}
-    alt=""                 // 👈 decorativa
-    aria-hidden="true"     // 👈 que lectores la ignoren
-    className="rounded-md"
-    decoding="async"
-    fetchPriority="high"
-  />
-  <span className="font-semibold">Pintores en Valencia</span>
-</Link>
+          to="/"
+          aria-label="Pintores en Valencia — ir al inicio"
+          className="flex items-center gap-2"
+        >
+          <img
+            src="/pintores-valencia-logo.png"
+            width={40}
+            height={40}
+            alt=""
+            aria-hidden="true"
+            className="rounded-md"
+            decoding="async"
+            fetchPriority="high"
+          />
+          <span className="font-semibold">Pintores en Valencia</span>
+        </Link>
 
-        {/* Navegación principal con landmark */}
+        {/* Navegación principal */}
         <nav aria-label="Navegación principal" className="hidden md:block">
           <ul className="flex items-center gap-6">
+            <li>
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) =>
+                  `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
+                }
+                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              >
+                Inicio
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/servicios"
@@ -37,17 +49,6 @@ const Header = () => {
                 aria-current={({ isActive }) => (isActive ? "page" : undefined)}
               >
                 Servicios
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/precios"
-                className={({ isActive }) =>
-                  `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
-                }
-                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
-              >
-                Precios
               </NavLink>
             </li>
             <li>
@@ -63,16 +64,53 @@ const Header = () => {
             </li>
             <li>
               <NavLink
+                to="/precios"
+                className={({ isActive }) =>
+                  `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
+                }
+                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              >
+                Precios
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/trabajos"
+                className={({ isActive }) =>
+                  `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
+                }
+                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              >
+                Trabajos
+              </NavLink>
+            </li>
+
+            {/* CTA Presupuesto en el menú */}
+            <li>
+              <NavLink
                 to="/presupuesto"
                 className="inline-flex items-center rounded-md px-3 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-cta"
+                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
               >
                 Presupuesto
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                to="/contacto"
+                className={({ isActive }) =>
+                  `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
+                }
+                aria-current={({ isActive }) => (isActive ? "page" : undefined)}
+              >
+                Contacto
               </NavLink>
             </li>
           </ul>
         </nav>
 
-        {/* Llamada accesible con buen contraste */}
+        {/* Botón de llamada con contraste AA */}
         <a
           href="tel:722208131"
           className="inline-flex items-center gap-2 rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
