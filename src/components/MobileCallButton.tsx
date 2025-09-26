@@ -1,18 +1,21 @@
 import { Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const MobileCallButton = () => {
   return (
-    <div className="lg:hidden fixed bottom-20 left-6 z-50">
-      <Button
-        asChild
-        className="bg-gradient-cta shadow-cta rounded-full p-3"
-        size="sm"
+    <div className="fixed bottom-5 left-5 z-50 md:hidden">
+      <a
+        href="tel:722208131"
+        aria-label="Llamar al 722 208 131"
+        title="Llamar al 722 208 131"
+        className="inline-flex items-center justify-center rounded-full
+                   bg-[hsl(var(--accent))] text-white shadow-cta
+                   hover:bg-[hsl(var(--accent))/0.9] transition-colors
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+                   focus-visible:ring-blue-500 w-14 h-14"
       >
-        <a href="tel:722208131" aria-label="Llamar ahora">
-          <Phone className="w-5 h-5" />
-        </a>
-      </Button>
+        <Phone className="w-7 h-7" aria-hidden="true" />
+        <span className="sr-only">Llamar ahora</span>
+      </a>
     </div>
   );
 };
