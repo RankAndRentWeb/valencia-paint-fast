@@ -1,4 +1,3 @@
-// src/pages/Presupuesto.tsx
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,23 +22,17 @@ const Presupuesto = () => {
     descripcion: "",
     consentimiento: false
   });
+  const [errors, setErrors] = useState<{ consentimiento?: string }>({});
   const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.consentimiento) {
-      toast({
-        title: "Error",
-        description: "Debes aceptar el tratamiento de datos personales.",
-        variant: "destructive"
-      });
-      return;
-    }
+    const newErrors: typeof errors = {};
+    if (!formData.consentimiento) newErrors.consentimiento = "Debes aceptar el tratamiento de datos personales.";
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length) return;
 
-    toast({
-      title: "Solicitud enviada",
-      description: "Te contactaremos en menos de 24 horas con tu presupuesto.",
-    });
+    toast({ title: "Solicitud enviada", description: "Te contactaremos en menos de 24 horas con tu presupuesto." });
     setFormData({
       nombre: "",
       telefono: "",
@@ -53,46 +46,12 @@ const Presupuesto = () => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSelectChange = (name: string, value: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
-
-  // === JSON-LD (no cambia la UI) ===
-  const schema = [
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Presupuesto de pintura en Valencia",
-      "url": "https://pintores-valencia.com/presupuesto",
-      "breadcrumb": "Presupuesto",
-      "potentialAction": {
-        "@type": "ContactAction",
-        "target": [
-          "tel:+34722208131",
-          "https://wa.me/34722208131?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto%20de%20pintura"
-        ],
-        "name": "Solicitar presupuesto"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "HousePainter",
-      "name": "Pintores en Valencia",
-      "url": "https://pintores-valencia.com",
-      "telephone": "+34 722208131",
-      "areaServed": [{ "@type": "City", "name": "Valencia" }],
-      "address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressCountry": "ES" }
-    }
-  ];
 
   return (
     <>
@@ -101,34 +60,30 @@ const Presupuesto = () => {
         description="Solicita tu presupuesto gratuito de pintura en Valencia. Respuesta en 24h. Formulario con subida de fotos y sin compromiso."
         keywords="presupuesto pintura valencia, presupuesto gratis, precio pintar valencia"
         canonicalUrl="https://pintores-valencia.com/presupuesto"
-        schema={schema}
       />
 
       <div className="container mx-auto px-4">
         <Breadcrumbs items={[{ label: "Presupuesto" }]} />
-        
+
         <div className="py-12">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Presupuesto gratuito y sin compromiso
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Presupuesto gratuito y sin compromiso</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Recibe tu presupuesto personalizado en menos de 24 horas. 
-              Rellena el formulario con los detalles de tu proyecto.
+              Recibe tu presupuesto personalizado en menos de 24 horas. Rellena el formulario con los detalles de tu proyecto.
             </p>
-            
-            {/* Benefits */}
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-accent" />
+
+            {/* Beneficios (marcados como lista para lectores) */}
+            <div className="flex flex-wrap justify-center gap-6 mb-8" role="list">
+              <div className="flex items-center space-x-2" role="listitem">
+                <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm font-medium">100% gratuito</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Clock className="w-5 h-5 text-accent" />
+              <div className="flex items-center space-x-2" role="listitem">
+                <Clock className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm font-medium">Respuesta en 24h</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-accent" />
+              <div className="flex items-center space-x-2" role="listitem">
+                <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
                 <span className="text-sm font-medium">Sin compromiso</span>
               </div>
             </div>
@@ -143,8 +98,8 @@ const Presupuesto = () => {
                 </p>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Personal Info */}
+                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                  {/* Datos personales */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="nombre">Nombre completo *</Label>
@@ -154,11 +109,10 @@ const Presupuesto = () => {
                         value={formData.nombre}
                         onChange={handleChange}
                         required
-                        placeholder="Tu nombre y apellidos"
                         autoComplete="name"
+                        placeholder="Tu nombre y apellidos"
                       />
                     </div>
-
                     <div className="space-y-2">
                       <Label htmlFor="telefono">Teléfono *</Label>
                       <Input
@@ -168,9 +122,10 @@ const Presupuesto = () => {
                         value={formData.telefono}
                         onChange={handleChange}
                         required
-                        placeholder="Tu número de teléfono"
                         autoComplete="tel"
                         inputMode="tel"
+                        pattern="^[0-9+\\s()-]{6,}$"
+                        placeholder="Tu número de teléfono"
                       />
                     </div>
                   </div>
@@ -183,19 +138,16 @@ const Presupuesto = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder="tu@email.com (opcional)"
                       autoComplete="email"
+                      placeholder="tu@email.com (opcional)"
                     />
                   </div>
 
-                  {/* Project Details */}
+                  {/* Detalles del proyecto */}
                   <div className="space-y-2">
                     <Label htmlFor="servicio">Tipo de servicio *</Label>
-                    <Select
-                      value={formData.servicio}
-                      onValueChange={(value) => handleSelectChange("servicio", value)}
-                    >
-                      <SelectTrigger>
+                    <Select onValueChange={(value) => handleSelectChange("servicio", value)}>
+                      <SelectTrigger id="servicio" aria-describedby="servicio-help">
                         <SelectValue placeholder="Selecciona el servicio que necesitas" />
                       </SelectTrigger>
                       <SelectContent>
@@ -210,6 +162,7 @@ const Presupuesto = () => {
                         <SelectItem value="otro">Otro servicio</SelectItem>
                       </SelectContent>
                     </Select>
+                    <p id="servicio-help" className="sr-only">Selecciona el tipo de trabajo que necesitas</p>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -220,11 +173,11 @@ const Presupuesto = () => {
                         name="metros"
                         value={formData.metros}
                         onChange={handleChange}
-                        placeholder="Ej: 80 m²"
                         inputMode="numeric"
+                        pattern="^[0-9]+(\\.[0-9]+)?$"
+                        placeholder="Ej: 80"
                       />
                     </div>
-
                     <div className="space-y-2">
                       <Label htmlFor="zona">Zona de Valencia</Label>
                       <Input
@@ -232,8 +185,8 @@ const Presupuesto = () => {
                         name="zona"
                         value={formData.zona}
                         onChange={handleChange}
-                        placeholder="Ej: Russafa, Centro, Paterna..."
                         autoComplete="address-level2"
+                        placeholder="Ej: Russafa, Centro, Paterna..."
                       />
                     </div>
                   </div>
@@ -246,43 +199,52 @@ const Presupuesto = () => {
                       value={formData.descripcion}
                       onChange={handleChange}
                       required
-                      placeholder="Explica qué necesitas: habitaciones a pintar, estado actual, colores preferidos, urgencia, etc."
+                      placeholder="Habitaciones a pintar, estado actual, colores, urgencia, etc."
                       rows={5}
                     />
                   </div>
 
-                  {/* File Upload */}
+                  {/* Subida de fotos (decorativo, accesible) */}
                   <div className="space-y-2">
-                    <Label>Subir fotos (opcional)</Label>
-                    <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 text-center">
-                      <Upload className="w-8 h-8 mx-auto mb-2 text-muted-foreground" />
+                    <Label id="fotos-label">Subir fotos (opcional)</Label>
+                    <div
+                      className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 text-center"
+                      role="group"
+                      aria-labelledby="fotos-label"
+                    >
+                      <Upload className="w-8 h-8 mx-auto mb-2 text-muted-foreground" aria-hidden="true" />
                       <p className="text-sm text-muted-foreground mb-2">
                         Arrastra las fotos aquí o haz clic para seleccionar
                       </p>
-                      <p className="text-xs text-muted-foreground">
-                        Formatos: JPG, PNG (máx. 5MB por foto)
-                      </p>
-                      <Button type="button" size="sm" className="mt-2 bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
+                      <p className="text-xs text-muted-foreground">Formatos: JPG, PNG (máx. 5MB por foto)</p>
+                      <Button type="button" variant="outline" size="sm" className="mt-2">
                         Seleccionar fotos
                       </Button>
                     </div>
                   </div>
 
-                  {/* Consent */}
+                  {/* Consentimiento */}
                   <div className="flex items-start space-x-2">
                     <Checkbox
                       id="consentimiento"
                       checked={formData.consentimiento}
                       onCheckedChange={(checked) => setFormData(prev => ({ ...prev, consentimiento: !!checked }))}
+                      aria-invalid={!!errors.consentimiento}
+                      aria-describedby={errors.consentimiento ? "consentimiento-error" : undefined}
                     />
                     <Label htmlFor="consentimiento" className="text-sm leading-relaxed">
-                      Acepto el tratamiento de mis datos personales para recibir un presupuesto personalizado. 
-                      Puedes consultar nuestra{" "}
+                      Acepto el tratamiento de mis datos personales para recibir un presupuesto personalizado.
+                      Consulta la{" "}
                       <a href="/politica-privacidad" className="text-primary hover:underline">
                         política de privacidad
                       </a>.
                     </Label>
                   </div>
+                  {errors.consentimiento && (
+                    <p id="consentimiento-error" className="text-sm text-red-600">
+                      {errors.consentimiento}
+                    </p>
+                  )}
 
                   <Button type="submit" className="w-full bg-gradient-cta shadow-cta" size="lg">
                     Solicitar presupuesto gratuito
@@ -291,11 +253,11 @@ const Presupuesto = () => {
               </CardContent>
             </Card>
 
-            {/* WhatsApp Alternative */}
+            {/* Alternativa WhatsApp */}
             <Card className="mt-6 bg-green-50 border-green-200">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
-                  <div className="p-3 bg-green-500 rounded-lg">
+                  <div className="p-3 bg-green-500 rounded-lg" aria-hidden="true">
                     <MessageCircle className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">
@@ -303,10 +265,14 @@ const Presupuesto = () => {
                     <p className="text-sm text-muted-foreground mb-3">
                       Envíanos fotos y detalles directamente por WhatsApp para un presupuesto más rápido
                     </p>
-                    <Button asChild className="bg-green-500 hover:bg-green-600 text-white">
-                      <a href="https://wa.me/34722208131?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto%20de%20pintura" className="flex items-center space-x-2">
-                        <MessageCircle className="w-4 h-4" />
-                        <span>Enviar por WhatsApp</span>
+                    <Button
+                      asChild
+                      className="bg-green-500 hover:bg-green-600 text-white"
+                      aria-label="Abrir WhatsApp para solicitar presupuesto"
+                    >
+                      <a href="https://wa.me/34722208131?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto%20de%20pintura">
+                        <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                        <span className="ml-2">Enviar por WhatsApp</span>
                       </a>
                     </Button>
                   </div>
@@ -314,22 +280,22 @@ const Presupuesto = () => {
               </CardContent>
             </Card>
 
-            {/* Process Info */}
+            {/* Proceso */}
             <div className="mt-8 text-center">
               <h3 className="text-lg font-semibold mb-4">¿Qué pasa después?</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div className="p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl mb-2">1️⃣</div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm" role="list">
+                <div className="p-4 bg-muted/50 rounded-lg" role="listitem">
+                  <div className="text-2xl mb-2" aria-hidden="true">1️⃣</div>
                   <h4 className="font-medium mb-1">Revisamos tu solicitud</h4>
                   <p className="text-muted-foreground">Analizamos todos los detalles de tu proyecto</p>
                 </div>
-                <div className="p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl mb-2">2️⃣</div>
+                <div className="p-4 bg-muted/50 rounded-lg" role="listitem">
+                  <div className="text-2xl mb-2" aria-hidden="true">2️⃣</div>
                   <h4 className="font-medium mb-1">Te contactamos</h4>
                   <p className="text-muted-foreground">En menos de 24h para aclarar dudas si es necesario</p>
                 </div>
-                <div className="p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl mb-2">3️⃣</div>
+                <div className="p-4 bg-muted/50 rounded-lg" role="listitem">
+                  <div className="text-2xl mb-2" aria-hidden="true">3️⃣</div>
                   <h4 className="font-medium mb-1">Presupuesto detallado</h4>
                   <p className="text-muted-foreground">Recibes el presupuesto completo sin compromiso</p>
                 </div>
@@ -337,7 +303,7 @@ const Presupuesto = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     </>
   );
 };
