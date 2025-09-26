@@ -1,3 +1,4 @@
+// src/pages/Servicios.tsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -65,6 +66,50 @@ const Servicios = () => {
     }
   ];
 
+  // === JSON-LD (no cambia la UI) ===
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Servicios de pintura en Valencia",
+    "itemListElement": services.map((s, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://pintores-valencia.com${s.link}`,
+      "name": s.title
+    }))
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué incluyen los presupuestos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Todos los presupuestos incluyen materiales, mano de obra, limpieza posterior y garantía escrita. Sin costes ocultos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tardan los trabajos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Depende del tipo y tamaño del proyecto. En el presupuesto indicamos plazos exactos y los cumplimos."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Ofrecen garantía en todos los trabajos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. 3 años en interiores y hasta 10 años en impermeabilizaciones, con garantía escrita."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <SEOHead
@@ -72,6 +117,7 @@ const Servicios = () => {
         description="Descubre todos nuestros servicios de pintura: interior, exterior, quitar gotelé, fachadas, impermeabilización y más. Presupuesto gratis en Valencia."
         keywords="servicios pintura valencia, pintura interior, fachadas, gotele, impermeabilizacion, locales comerciales"
         canonicalUrl="https://pintores-valencia.com/servicios"
+        schema={[itemListSchema, faqSchema]}
       />
 
       <div className="container mx-auto px-4">
@@ -125,7 +171,7 @@ const Servicios = () => {
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link to="/presupuesto">Pedir presupuesto gratis</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <Link to="/contacto">Contactar</Link>
               </Button>
             </div>

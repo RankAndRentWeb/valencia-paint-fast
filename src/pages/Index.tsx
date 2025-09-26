@@ -1,16 +1,20 @@
+// src/pages/Index.tsx
+import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import SEOHead from "@/components/SEOHead";
+// (mantengo los imports aunque algunos no se usen, para no tocar tu estructura)
 import { Phone, MessageCircle, CheckCircle, Star, Shield, Clock, Brush, Home, Building } from "lucide-react";
 import heroImage from "@/assets/hero-pintores-valencia.jpg";
 
 const Index = () => {
+  // Schema unificado: HousePainter + tus campos (image, email, GeoCircle, etc.)
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HousePainter",
     "name": "Pintores en Valencia",
+    "url": "https://pintores-valencia.com",
     "image": "https://pintores-valencia.com/hero-pintores-valencia.jpg",
     "telephone": "+34722208131",
     "email": "edgarberriojimenez@gmail.com",
@@ -30,7 +34,7 @@ const Index = () => {
       "geoRadius": "50000"
     },
     "priceRange": "€€",
-    "areaServed": "Valencia"
+    "areaServed": [{ "@type": "City", "name": "Valencia" }]
   };
 
   const services = [
@@ -93,20 +97,24 @@ const Index = () => {
     }
   ];
 
+  const homeTitle = "Pintores en Valencia (capital y provincia) - Rápidos, limpios y con garantía";
+  const homeDesc  = "Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131";
+  const homeCanon = "https://pintores-valencia.com/";
+
   return (
     <>
       <SEOHead
-        title="Pintores en Valencia (capital y provincia) - Rápidos, limpios y con garantía"
-        description="Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131"
+        title={homeTitle}
+        description={homeDesc}
         keywords="pintores valencia, pintura interior, fachadas valencia, quitar gotele, pintores profesionales"
-        canonicalUrl="https://pintores-valencia.com"
+        canonicalUrl={homeCanon}
         schema={localBusinessSchema}
       />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-20 text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-black/40"></div>
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         ></div>
@@ -120,13 +128,13 @@ const Index = () => {
               Rápidos, limpios y con garantía
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta">
+              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <a href="tel:722208131" className="flex items-center justify-center space-x-2">
                   <Phone className="w-5 h-5" />
                   <span>Llamar ahora</span>
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <a href="https://wa.me/34722208131" className="flex items-center justify-center space-x-2">
                   <MessageCircle className="w-5 h-5" />
                   <span>WhatsApp</span>
@@ -166,7 +174,7 @@ const Index = () => {
               Ofrecemos una amplia gama de servicios de pintura profesional en Valencia
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {services.map((service, index) => (
               <Card key={index} className="hover:shadow-card transition-shadow duration-300">
@@ -178,7 +186,7 @@ const Index = () => {
                     <h3 className="text-lg font-semibold">{service.title}</h3>
                   </div>
                   <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <Button asChild variant="outline" size="sm">
+                  <Button asChild size="sm" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                     <Link to={service.link}>Ver más</Link>
                   </Button>
                 </CardContent>
@@ -200,7 +208,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <Card key={index}>
@@ -251,7 +259,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Preguntas frecuentes</h2>
           </div>
-          
+
           <div className="max-w-3xl mx-auto space-y-6">
             <Card>
               <CardContent className="p-6">
@@ -259,14 +267,14 @@ const Index = () => {
                 <p className="text-muted-foreground">Nos comprometemos a enviar el presupuesto en menos de 24 horas tras recibir la solicitud.</p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-2">¿Qué incluye el servicio?</h3>
                 <p className="text-muted-foreground">Incluimos materiales, mano de obra, limpieza posterior y garantía escrita. Todo transparente en el presupuesto.</p>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-2">¿Trabajan en toda Valencia?</h3>

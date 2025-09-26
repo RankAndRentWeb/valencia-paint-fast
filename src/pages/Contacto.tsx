@@ -75,7 +75,7 @@ const Contacto = () => {
                         <p className="text-primary-foreground/90 mb-2">
                           Llámanos directamente para consultas urgentes
                         </p>
-                        <Button asChild variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                        <Button asChild className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                           <a href="tel:722208131" className="flex items-center space-x-2">
                             <Phone className="w-4 h-4" />
                             <span>722 208 131</span>
@@ -239,4 +239,4 @@ const Contacto = () => {
   );
 };
 
-export default Contacto;
+export default Contacto;

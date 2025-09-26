@@ -1,3 +1,4 @@
+// src/pages/PinturaInterior.tsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,27 +9,44 @@ import { CheckCircle, Phone, Home, Palette, Shield } from "lucide-react";
 import interiorImage from "@/assets/pintura-interior-valencia.jpg";
 
 const PinturaInterior = () => {
+  // === JSON-LD ===
   const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "Service", 
+    "@type": "Service",
     "name": "Pintura interior en Valencia",
     "description": "Servicio profesional de pintura interior de pisos y casas en Valencia",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Pintores en Valencia"
-    },
-    "areaServed": "Valencia, España",
+    "provider": { "@type": "LocalBusiness", "name": "Pintores en Valencia" },
+    "areaServed": [{ "@type": "City", "name": "Valencia" }],
     "offers": {
       "@type": "Offer",
-      "price": "desde 8€",
+      "url": "https://pintores-valencia.com/pintura-interior-pisos-casas",
       "priceCurrency": "EUR",
       "priceSpecification": {
-        "@type": "UnitPriceSpecification", 
-        "price": "8",
+        "@type": "UnitPriceSpecification",
+        "price": 8,
         "priceCurrency": "EUR",
-        "unitCode": "MTK"
+        "unitCode": "MTK" // m²
       }
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Servicios",
+        "item": "https://pintores-valencia.com/servicios"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pintura interior",
+        "item": "https://pintores-valencia.com/pintura-interior-pisos-casas"
+      }
+    ]
   };
 
   return (
@@ -38,7 +56,7 @@ const PinturaInterior = () => {
         description="Pintura interior profesional en Valencia. Renovamos pisos y casas con pinturas premium, limpieza incluida. Desde 8€/m². Presupuesto gratis."
         keywords="pintura interior valencia, pintar piso valencia, pintura casa interior, pintores interior"
         canonicalUrl="https://pintores-valencia.com/pintura-interior-pisos-casas"
-        schema={serviceSchema}
+        schema={[serviceSchema, breadcrumbSchema]}
       />
 
       <div className="container mx-auto px-4">

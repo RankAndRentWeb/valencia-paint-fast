@@ -1,3 +1,4 @@
+// src/pages/QuitarGotele.tsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,61 +9,70 @@ import { CheckCircle, Phone, Clock, Shield, Star } from "lucide-react";
 import interiorImage from "@/assets/pintura-interior-valencia.jpg";
 
 const QuitarGotele = () => {
+  // === JSON-LD ===
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Quitar gotelé en Valencia",
     "description": "Servicio profesional de eliminación de gotelé y alisado de paredes en Valencia",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Pintores en Valencia"
-    },
-    "areaServed": "Valencia, España",
+    "provider": { "@type": "LocalBusiness", "name": "Pintores en Valencia" },
+    "areaServed": [{ "@type": "City", "name": "Valencia" }],
     "offers": {
       "@type": "Offer",
-      "price": "desde 18€",
+      "url": "https://pintores-valencia.com/quitar-gotele-alisar-paredes",
       "priceCurrency": "EUR",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "18",
+        "price": 18,
         "priceCurrency": "EUR",
-        "unitCode": "MTK"
+        "unitCode": "MTK" // m²
       }
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Servicios", "item": "https://pintores-valencia.com/servicios" },
+      { "@type": "ListItem", "position": 2, "name": "Quitar gotelé", "item": "https://pintores-valencia.com/quitar-gotele-alisar-paredes" }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cuánto tiempo tarda en eliminar el gotelé?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Depende de la superficie; normalmente hasta 40 m² en un día de trabajo completo." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Realmente no hacen polvo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Usamos técnica húmeda para ablandar el gotelé antes de retirarlo, evitando el polvo." }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Queda listo para pintar directamente?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Tras el alisado y la imprimación, las paredes quedan listas para pintar." }
+      }
+    ]
+  };
+
   const proceso = [
-    {
-      numero: "1",
-      titulo: "Preparación",
-      descripcion: "Protegemos mobiliario y suelos. Preparamos las herramientas especializadas."
-    },
-    {
-      numero: "2", 
-      titulo: "Humedecido",
-      descripcion: "Aplicamos agua con productos específicos para ablandar el gotelé."
-    },
-    {
-      numero: "3",
-      titulo: "Rascado",
-      descripcion: "Eliminamos el gotelé con herramientas profesionales sin dañar la pared."
-    },
-    {
-      numero: "4",
-      titulo: "Alisado",
-      descripcion: "Aplicamos pasta alisadora para conseguir una superficie perfectamente lisa."
-    },
-    {
-      numero: "5",
-      titulo: "Lijado y acabado",
-      descripcion: "Lijamos finamente y aplicamos imprimación. Listo para pintar."
-    }
+    { numero: "1", titulo: "Preparación", descripcion: "Protegemos mobiliario y suelos. Preparamos las herramientas especializadas." },
+    { numero: "2", titulo: "Humedecido", descripcion: "Aplicamos agua con productos específicos para ablandar el gotelé." },
+    { numero: "3", titulo: "Rascado", descripcion: "Eliminamos el gotelé con herramientas profesionales sin dañar la pared." },
+    { numero: "4", titulo: "Alisado", descripcion: "Aplicamos pasta alisadora para conseguir una superficie perfectamente lisa." },
+    { numero: "5", titulo: "Lijado y acabado", descripcion: "Lijamos finamente y aplicamos imprimación. Listo para pintar." }
   ];
 
   const materiales = [
     "Pasta alisadora premium",
     "Herramientas especializadas",
-    "Productos químicos específicos", 
+    "Productos químicos específicos",
     "Imprimación de calidad",
     "Lijas de grano fino",
     "Material de protección"
@@ -75,7 +85,7 @@ const QuitarGotele = () => {
         description="Eliminamos el gotelé de forma profesional en Valencia. Sin polvo, acabado perfecto, técnica especializada. Desde 18€/m². Presupuesto gratis."
         keywords="quitar gotele valencia, alisar paredes, eliminar gotele, alisado paredes valencia"
         canonicalUrl="https://pintores-valencia.com/quitar-gotele-alisar-paredes"
-        schema={serviceSchema}
+        schema={[serviceSchema, breadcrumbSchema, faqSchema]}
       />
 
       <div className="container mx-auto px-4">

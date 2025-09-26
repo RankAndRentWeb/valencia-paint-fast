@@ -1,3 +1,4 @@
+// src/pages/PinturaExterior.tsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,27 +9,44 @@ import { CheckCircle, Phone, Building, Shield, Sun } from "lucide-react";
 import fachadaImage from "@/assets/fachada-exterior-valencia.jpg";
 
 const PinturaExterior = () => {
+  // === JSON-LD ===
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Pintura de fachadas en Valencia",
     "description": "Servicio profesional de pintura exterior y fachadas en Valencia",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Pintores en Valencia"
-    },
-    "areaServed": "Valencia, España",
+    "provider": { "@type": "LocalBusiness", "name": "Pintores en Valencia" },
+    "areaServed": [{ "@type": "City", "name": "Valencia" }],
     "offers": {
       "@type": "Offer",
-      "price": "desde 15€",
+      "url": "https://pintores-valencia.com/pintura-exterior-fachadas",
       "priceCurrency": "EUR",
       "priceSpecification": {
         "@type": "UnitPriceSpecification",
-        "price": "15",
+        "price": 15,
         "priceCurrency": "EUR",
-        "unitCode": "MTK"
+        "unitCode": "MTK" // m²
       }
     }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Servicios",
+        "item": "https://pintores-valencia.com/servicios"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pintura exterior",
+        "item": "https://pintores-valencia.com/pintura-exterior-fachadas"
+      }
+    ]
   };
 
   return (
@@ -38,15 +56,17 @@ const PinturaExterior = () => {
         description="Pintura profesional de fachadas en Valencia. Protegemos y embellecemos exteriores con pinturas resistentes. Desde 15€/m². Andamiaje incluido."
         keywords="pintura fachadas valencia, pintura exterior, fachadas valencia, pintar edificio"
         canonicalUrl="https://pintores-valencia.com/pintura-exterior-fachadas"
-        schema={serviceSchema}
+        schema={[serviceSchema, breadcrumbSchema]}
       />
 
       <div className="container mx-auto px-4">
-        <Breadcrumbs items={[
-          { label: "Servicios", href: "/servicios" },
-          { label: "Pintura exterior" }
-        ]} />
-        
+        <Breadcrumbs
+          items={[
+            { label: "Servicios", href: "/servicios" },
+            { label: "Pintura exterior" }
+          ]}
+        />
+
         <div className="py-12">
           {/* Hero Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -62,7 +82,7 @@ const PinturaExterior = () => {
                 Protegemos y embellecemos fachadas con pinturas resistentes a la intemperie. 
                 Técnicas especializadas con andamiaje profesional y seguro RC.
               </p>
-              
+
               <div className="flex items-center space-x-4 mb-6">
                 <div className="text-3xl font-bold text-primary">desde 15€/m²</div>
                 <div className="text-sm text-muted-foreground">Andamiaje incluido</div>
@@ -95,10 +115,10 @@ const PinturaExterior = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="relative">
-              <img 
-                src={fachadaImage} 
+              <img
+                src={fachadaImage}
                 alt="Pintura de fachadas profesional en Valencia"
                 className="rounded-2xl shadow-card w-full h-[400px] object-cover"
               />

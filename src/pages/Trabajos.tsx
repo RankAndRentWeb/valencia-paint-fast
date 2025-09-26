@@ -154,7 +154,7 @@ const Trabajos = () => {
                   <p className="text-muted-foreground mb-3">{trabajo.descripcion}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium text-primary">{trabajo.zona}</span>
-                    <Button variant="outline" size="sm">Ver detalles</Button>
+                    <Button size="sm" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">Ver detalles</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -249,7 +249,7 @@ const Trabajos = () => {
               <Button asChild size="lg" className="bg-gradient-cta shadow-cta">
                 <a href="/presupuesto">Solicitar presupuesto</a>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <a href="/contacto">Ver más trabajos</a>
               </Button>
             </div>
@@ -260,4 +260,4 @@ const Trabajos = () => {
   );
 };
 
-export default Trabajos;
+export default Trabajos;

@@ -1,42 +1,55 @@
+// src/components/SEOHead.tsx
 import { Helmet } from "react-helmet-async";
 
-interface SEOHeadProps {
+type Props = {
   title: string;
   description: string;
+  canonicalUrl: string;
   keywords?: string;
-  canonicalUrl?: string;
-  schema?: object;
-}
-
-const SEOHead = ({ title, description, keywords, canonicalUrl, schema }: SEOHeadProps) => {
-  const fullTitle = title.includes("Pintores en Valencia") ? title : `${title} | Pintores en Valencia`;
-  
-  return (
-    <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-      
-      {/* Open Graph */}
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:type" content="website" />
-      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
-      
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      
-      {/* Schema.org JSON-LD */}
-      {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
-      )}
-    </Helmet>
-  );
+  noindex?: boolean;
+  schema?: object | object[];
+  ogImage?: string;
 };
 
-export default SEOHead;
+export default function SEOHead({
+  title,
+  description,
+  canonicalUrl,
+  keywords,
+  noindex,
+  schema,
+  ogImage,
+}: Props) {
+  const robots = noindex ? "noindex,nofollow" : "index,follow";
+
+  return (
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        {keywords && <meta name="keywords" content={keywords} />}
+        <meta name="robots" content={robots} />
+        <meta name="language" content="es" />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Open Graph / Twitter */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        {ogImage && <meta property="og:image" content={ogImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        {ogImage && <meta name="twitter:image" content={ogImage} />}
+      </Helmet>
+
+      {schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      )}
+    </>
+  );
+}

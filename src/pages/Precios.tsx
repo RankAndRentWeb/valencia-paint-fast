@@ -1,3 +1,4 @@
+// src/pages/Precios.tsx
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -58,6 +59,164 @@ const Precios = () => {
     { servicio: "Pequeñas reparaciones", precio: "desde 20€/h" }
   ];
 
+  // === JSON-LD estructurado (no afecta al diseño) ===
+  // Catalogamos interior, fachada y extras con precios "desde".
+  const offerCatalog = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Tarifas de pintura en Valencia",
+    "url": "https://pintores-valencia.com/precios",
+    "itemListElement": [
+      // Interior
+      {
+        "@type": "Offer",
+        "name": "Pintura plástica (2 manos) - interior",
+        "category": "interior",
+        "itemOffered": { "@type": "Service", "name": "Pintura interior" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "8",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK" // m²
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Pintura + alisado ligero - interior",
+        "category": "interior",
+        "itemOffered": { "@type": "Service", "name": "Pintura interior con alisado" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "12",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Quitar gotelé + alisar + pintar",
+        "category": "interior",
+        "itemOffered": { "@type": "Service", "name": "Eliminación de gotelé y alisado" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "18",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      // Fachadas / exteriores
+      {
+        "@type": "Offer",
+        "name": "Fachada pintura plástica",
+        "category": "exterior",
+        "itemOffered": { "@type": "Service", "name": "Pintura de fachadas" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "15",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Fachada pintura elastomérica",
+        "category": "exterior",
+        "itemOffered": { "@type": "Service", "name": "Pintura elastomérica de fachadas" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "22",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Impermeabilización transparente",
+        "category": "exterior",
+        "itemOffered": { "@type": "Service", "name": "Impermeabilización" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "25",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      // Extras (unidades y hora)
+      {
+        "@type": "Offer",
+        "name": "Lacado de puertas",
+        "category": "extra",
+        "itemOffered": { "@type": "Service", "name": "Lacado de puertas" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "120",
+          "priceCurrency": "EUR",
+          "unitCode": "EACH"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Instalación papel pintado",
+        "category": "extra",
+        "itemOffered": { "@type": "Service", "name": "Instalación de papel pintado" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "8",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Retirada papel pintado",
+        "category": "extra",
+        "itemOffered": { "@type": "Service", "name": "Retirada de papel pintado" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "6",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Plastecido decorativo",
+        "category": "extra",
+        "itemOffered": { "@type": "Service", "name": "Plastecido decorativo" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "25",
+          "priceCurrency": "EUR",
+          "unitCode": "MTK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Pintar radiadores",
+        "category": "extra",
+        "itemOffered": { "@type": "Service", "name": "Pintado de radiadores" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "35",
+          "priceCurrency": "EUR",
+          "unitCode": "EACH"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Pequeñas reparaciones",
+        "category": "extra",
+        "itemOffered": { "@type": "Service", "name": "Reparaciones menores" },
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "20",
+          "priceCurrency": "EUR",
+          "unitCode": "HUR" // por hora
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <SEOHead
@@ -65,6 +224,7 @@ const Precios = () => {
         description="Consulta nuestros precios de pintura en Valencia: interior desde 8€/m², fachadas desde 15€/m², quitar gotelé desde 18€/m². Presupuesto gratis."
         keywords="precios pintura valencia, tarifas pintores, precio pintar casa, coste quitar gotele"
         canonicalUrl="https://pintores-valencia.com/precios"
+        schema={offerCatalog}
       />
 
       <div className="container mx-auto px-4">
@@ -251,7 +411,7 @@ const Precios = () => {
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link to="/presupuesto">Solicitar presupuesto gratis</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <a href="tel:722208131" className="flex items-center space-x-2">
                   <Phone className="w-5 h-5" />
                   <span>Llamar para consultar</span>

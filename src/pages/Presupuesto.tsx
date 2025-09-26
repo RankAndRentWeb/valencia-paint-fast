@@ -1,3 +1,4 @@
+// src/pages/Presupuesto.tsx
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,7 +35,7 @@ const Presupuesto = () => {
       });
       return;
     }
-    
+
     toast({
       title: "Solicitud enviada",
       description: "Te contactaremos en menos de 24 horas con tu presupuesto.",
@@ -65,6 +66,34 @@ const Presupuesto = () => {
     }));
   };
 
+  // === JSON-LD (no cambia la UI) ===
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Presupuesto de pintura en Valencia",
+      "url": "https://pintores-valencia.com/presupuesto",
+      "breadcrumb": "Presupuesto",
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": [
+          "tel:+34722208131",
+          "https://wa.me/34722208131?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto%20de%20pintura"
+        ],
+        "name": "Solicitar presupuesto"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "HousePainter",
+      "name": "Pintores en Valencia",
+      "url": "https://pintores-valencia.com",
+      "telephone": "+34 722208131",
+      "areaServed": [{ "@type": "City", "name": "Valencia" }],
+      "address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressCountry": "ES" }
+    }
+  ];
+
   return (
     <>
       <SEOHead
@@ -72,6 +101,7 @@ const Presupuesto = () => {
         description="Solicita tu presupuesto gratuito de pintura en Valencia. Respuesta en 24h. Formulario con subida de fotos y sin compromiso."
         keywords="presupuesto pintura valencia, presupuesto gratis, precio pintar valencia"
         canonicalUrl="https://pintores-valencia.com/presupuesto"
+        schema={schema}
       />
 
       <div className="container mx-auto px-4">
@@ -125,6 +155,7 @@ const Presupuesto = () => {
                         onChange={handleChange}
                         required
                         placeholder="Tu nombre y apellidos"
+                        autoComplete="name"
                       />
                     </div>
 
@@ -138,6 +169,8 @@ const Presupuesto = () => {
                         onChange={handleChange}
                         required
                         placeholder="Tu número de teléfono"
+                        autoComplete="tel"
+                        inputMode="tel"
                       />
                     </div>
                   </div>
@@ -151,13 +184,17 @@ const Presupuesto = () => {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="tu@email.com (opcional)"
+                      autoComplete="email"
                     />
                   </div>
 
                   {/* Project Details */}
                   <div className="space-y-2">
                     <Label htmlFor="servicio">Tipo de servicio *</Label>
-                    <Select onValueChange={(value) => handleSelectChange("servicio", value)}>
+                    <Select
+                      value={formData.servicio}
+                      onValueChange={(value) => handleSelectChange("servicio", value)}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecciona el servicio que necesitas" />
                       </SelectTrigger>
@@ -184,6 +221,7 @@ const Presupuesto = () => {
                         value={formData.metros}
                         onChange={handleChange}
                         placeholder="Ej: 80 m²"
+                        inputMode="numeric"
                       />
                     </div>
 
@@ -195,6 +233,7 @@ const Presupuesto = () => {
                         value={formData.zona}
                         onChange={handleChange}
                         placeholder="Ej: Russafa, Centro, Paterna..."
+                        autoComplete="address-level2"
                       />
                     </div>
                   </div>
@@ -223,7 +262,7 @@ const Presupuesto = () => {
                       <p className="text-xs text-muted-foreground">
                         Formatos: JPG, PNG (máx. 5MB por foto)
                       </p>
-                      <Button type="button" variant="outline" size="sm" className="mt-2">
+                      <Button type="button" size="sm" className="mt-2 bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                         Seleccionar fotos
                       </Button>
                     </div>

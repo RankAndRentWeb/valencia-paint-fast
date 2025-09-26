@@ -118,7 +118,7 @@ const Zonas = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {zonas.map((zona, index) => (
-              <Card key={index} className={`hover:shadow-card transition-all duration-300 hover:-translate-y-1 ${zona.destacado ? 'ring-2 ring-accent ring-opacity-50' : ''}`}>
+              <Card key={index} className={hover:shadow-card transition-all duration-300 hover:-translate-y-1 ${zona.destacado ? 'ring-2 ring-accent ring-opacity-50' : ''}}>
                 <CardContent className="p-6">
                   {zona.destacado && (
                     <div className="bg-accent text-accent-foreground text-xs px-2 py-1 rounded-full inline-block mb-3">
@@ -150,7 +150,7 @@ const Zonas = () => {
                   <span>Consultar zona: 722 208 131</span>
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <Link to="/contacto">Contactar</Link>
               </Button>
             </div>
@@ -184,4 +184,4 @@ const Zonas = () => {
   );
 };
 
-export default Zonas;
+export default Zonas;
