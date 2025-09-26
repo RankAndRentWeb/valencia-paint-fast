@@ -240,10 +240,10 @@ const Index = () => {
             Te respondemos en menos de 24 horas
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta">
               <Link to="/presupuesto">Pedir presupuesto gratis</Link>
             </Button>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-cta">
+            <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
               <a href="tel:722208131" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
                 <span>722 208 131</span>
