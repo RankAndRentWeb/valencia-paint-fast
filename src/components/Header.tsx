@@ -14,8 +14,8 @@ const Header = () => {
 >
   <img
     src="/pintores-valencia-logo.png"
-    width={28}
-    height={28}
+    width={40}
+    height={40}
     alt=""                 // 👈 decorativa
     aria-hidden="true"     // 👈 que lectores la ignoren
     className="rounded-md"
