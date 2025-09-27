@@ -20,7 +20,7 @@
 		"/blog",
 		"/blog/pintar-interior-tiempos-secado-trucos",
 		"/blog/colores-piso-pequeno-ganar-amplitud"]
-  }
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
