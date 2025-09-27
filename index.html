@@ -68,8 +68,30 @@
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute left-4 top-2 bg-white px-3 py-2 rounded shadow">
       Saltar al contenido principal
     </a>
+	
+	<div id="ssr-fallback">
+  <header class="container">
+    <h1>Pintores en Valencia – Profesionales, rápidos y con garantía</h1>
+    <p>Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. Tel. 722 208 131.</p>
+    <nav>
+      <a href="/pintura-interior-pisos-casas">Pintura interior</a> ·
+      <a href="/pintura-exterior-fachadas">Fachadas</a> ·
+      <a href="/quitar-gotele-valencia">Quitar gotelé</a> ·
+      <a href="/impermeabilizacion-terrazas">Impermeabilización</a> ·
+      <a href="/blog">Blog</a>
+    </nav>
+  </header>
+</div>
 
     <div id="root"></div>
+	<script>
+  // Elimina el fallback cuando la app arranque
+  window.addEventListener('DOMContentLoaded', () => {
+    const f = document.getElementById('ssr-fallback');
+    if (f) f.remove();
+  });
+</script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
