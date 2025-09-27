@@ -1,4 +1,5 @@
 // src/App.tsx
+import { SpeedInsights } from "@vercel/speed-insights/react"; //Speed Insights en Vercel.
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -75,6 +76,10 @@ const App = () => (
             <MobileCallButton />
           </div>
         </BrowserRouter>
+		
+		 {/* 👇 Añade esto; no rompe nada y no pinta UI visible */}
+        {import.meta.env.PROD && <SpeedInsights />}
+		
       </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>
