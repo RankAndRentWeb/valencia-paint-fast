@@ -2,19 +2,9 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-
   "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
   ],
-
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
-
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -22,5 +12,8 @@
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/((?!assets/|robots\\.txt|sitemap\\.xml).*)", "destination": "/" }
   ]
 }
