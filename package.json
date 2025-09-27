@@ -10,6 +10,17 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "reactSnap": {
+  "source": "dist",
+  "destination": "dist",
+  "crawl": false,
+  "puppeteerArgs": ["--no-sandbox"],
+  "include": [
+		"/", 
+		"/blog",
+		"/blog/pintar-interior-tiempos-secado-trucos",
+		"/blog/colores-piso-pequeno-ganar-amplitud",]
+  }
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
     "@radix-ui/react-accordion": "^1.2.11",
@@ -77,6 +88,7 @@
     "globals": "^15.15.0",
     "lovable-tagger": "^1.1.9",
     "postcss": "^8.5.6",
+    "react-snap": "^1.23.0",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
