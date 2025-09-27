@@ -14,7 +14,8 @@ import SkipLink from "@/components/SkipLink";
 
 import Index from "./pages/Index";
 import Servicios from "./pages/Servicios";
-import Zonas from "./pages/Zonas";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Precios from "./pages/Precios";
 import Trabajos from "./pages/Trabajos";
 import Presupuesto from "./pages/Presupuesto";
@@ -22,6 +23,11 @@ import Contacto from "./pages/Contacto";
 import QuitarGotele from "./pages/servicios/QuitarGotele";
 import PinturaInterior from "./pages/servicios/PinturaInterior";
 import PinturaExterior from "./pages/servicios/PinturaExterior";
+import Impermeabilizacion from "./pages/servicios/Impermeabilizacion";
+import LocalesComerciales from "./pages/servicios/LocalesComerciales";
+import PinturaComunidades from "./pages/servicios/PinturaComunidades";
+import LacadoPuertas from "./pages/servicios/LacadoPuertas";
+import PapelPintado from "./pages/servicios/PapelPintado";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,7 +50,8 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/servicios" element={<Servicios />} />
-                <Route path="/zonas" element={<Zonas />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/precios" element={<Precios />} />
                 <Route path="/trabajos" element={<Trabajos />} />
                 <Route path="/presupuesto" element={<Presupuesto />} />
@@ -52,6 +59,11 @@ const App = () => (
                 <Route path="/quitar-gotele-alisar-paredes" element={<QuitarGotele />} />
                 <Route path="/pintura-interior-pisos-casas" element={<PinturaInterior />} />
                 <Route path="/pintura-exterior-fachadas" element={<PinturaExterior />} />
+                <Route path="/impermeabilizacion-terrazas-y-fachadas" element={<Impermeabilizacion />} />
+                <Route path="/pintura-locales-comerciales" element={<LocalesComerciales />} />
+                <Route path="/pintura-comunidades" element={<PinturaComunidades />} />
+                <Route path="/lacado-puertas-carpinteria" element={<LacadoPuertas />} />
+                <Route path="/papel-pintado-vinilos" element={<PapelPintado />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

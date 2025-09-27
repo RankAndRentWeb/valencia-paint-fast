@@ -127,3 +127,91 @@ All colors MUST be HSL.
   white-space: nowrap;
   border: 0;
 }
+
+/* Blog utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Prose styling for blog content */
+.prose {
+  color: theme('colors.foreground');
+  max-width: 65ch;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose h2 {
+  color: theme('colors.foreground');
+  font-weight: 600;
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+.prose h3 {
+  color: theme('colors.foreground');
+  font-weight: 600;
+  font-size: 1.25em;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  line-height: 1.4;
+}
+
+.prose ul, .prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose strong {
+  color: theme('colors.foreground');
+  font-weight: 600;
+}
+
+.prose em {
+  color: theme('colors.foreground');
+  font-style: italic;
+}
+
+.prose-lg {
+  font-size: 1.125em;
+  line-height: 1.7;
+}
+
+.prose-lg p {
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+}
+
+.prose-lg h2 {
+  font-size: 1.7em;
+  margin-top: 1.6em;
+  margin-bottom: 0.9em;
+}
+
+.prose-lg h3 {
+  font-size: 1.4em;
+  margin-top: 1.5em;
+  margin-bottom: 0.7em;
+}

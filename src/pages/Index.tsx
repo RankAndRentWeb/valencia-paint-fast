@@ -14,7 +14,7 @@ import {
   Home,
   Building,
 } from "lucide-react";
-import heroImage from "@/assets/hero-pintores-valencia.jpg";
+import heroImage from "../assets/hero-pintores-valencia.jpg";
 
 // ⭐ Estrellas accesibles sin ARIA prohibido
 const RatingStars = ({ value = 5 }: { value?: number }) => (

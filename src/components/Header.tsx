@@ -63,12 +63,12 @@ const Header = () => {
             </li>
             <li>
               <NavLink
-                to="/zonas"
+                to="/blog"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
                 }
               >
-                Zonas
+                Blog
               </NavLink>
             </li>
             <li>
@@ -180,7 +180,7 @@ const Header = () => {
               </NavLink>
               
               <NavLink
-                to="/zonas"
+                to="/blog"
                 onClick={closeMenu}
                 className={({ isActive }) =>
                   `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
@@ -190,7 +190,7 @@ const Header = () => {
                   }`
                 }
               >
-                Zonas
+                Blog
               </NavLink>
               
               <NavLink

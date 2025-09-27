@@ -53,14 +53,14 @@ const Servicios = () => {
     {
       title: "Lacado de puertas y carpintería",
       description: "Renovamos puertas, ventanas y elementos de madera con lacados de alta calidad y acabados duraderos.",
-      link: "/lacar-puertas-y-carpinteria",
+      link: "/lacado-puertas-carpinteria",
       icon: <Wrench className="w-8 h-8" />,
       features: ["Sin quitar puertas", "Lacas premium", "Acabado perfecto"]
     },
     {
       title: "Papel pintado y vinilos",
       description: "Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio.",
-      link: "/papel-pintado-y-vinilos",
+      link: "/papel-pintado-vinilos",
       icon: <Palette className="w-8 h-8" />,
       features: ["Diseños únicos", "Instalación perfecta", "Asesoramiento"]
     }
