@@ -32,7 +32,7 @@ const Header = () => {
             aria-hidden="true"
             className="rounded-md"
             decoding="async"
-            fetchPriority="high"
+            loading="eager"
           />
           <span className="font-semibold">Pintores en Valencia</span>
         </Link>

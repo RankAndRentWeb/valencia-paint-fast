@@ -138,7 +138,16 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
           aria-hidden="true"
-        />
+        >
+          <img 
+            src={heroImage} 
+            alt="" 
+            className="w-full h-full object-cover opacity-0" 
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
