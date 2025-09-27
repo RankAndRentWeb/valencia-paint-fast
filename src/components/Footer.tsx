@@ -1,56 +1,41 @@
 import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="border-t bg-background" role="contentinfo">
-      <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
-        <section aria-labelledby="ft-about">
-          <h2 id="ft-about" className="text-base font-semibold mb-3">
-            Pintores en Valencia
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            Empresa de pintores profesionales en Valencia capital y provincia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita.
-          </p>
-        </section>
+    <footer className="bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+                <span className="text-accent-foreground font-bold">P</span>
+              </div>
+              <h3 className="text-lg font-bold">Pintores en Valencia</h3>
+            </div>
+            <p className="text-sm text-primary-foreground/80">
+              Empresa profesional de pintores en Valencia capital y provincia. 
+              Trabajos de calidad con garantía escrita.
+            </p>
+          </div>
 
-        <nav aria-labelledby="ft-links">
-          <h2 id="ft-links" className="text-base font-semibold mb-3">
-            Enlaces
-          </h2>
-          <ul className="space-y-2">
-            <li><Link to="/servicios" className="hover:underline">Servicios</Link></li>
-            <li><Link to="/precios" className="hover:underline">Precios</Link></li>
-            <li><Link to="/zonas" className="hover:underline">Zonas</Link></li>
-            <li><Link to="/presupuesto" className="hover:underline">Presupuesto</Link></li>
-          </ul>
-        </nav>
-
-        <nav aria-labelledby="ft-legal">
-          <h2 id="ft-legal" className="text-base font-semibold mb-3">
-            Legal
-          </h2>
-          <ul className="space-y-2">
-            <li><Link to="/aviso-legal" className="hover:underline">Aviso legal</Link></li>
-            <li><Link to="/politica-privacidad" className="hover:underline">Política de privacidad</Link></li>
-            <li><Link to="/cookies" className="hover:underline">Política de cookies</Link></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div className="border-t">
-        <div className="container mx-auto px-4 py-4 text-sm text-muted-foreground flex flex-col md:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} Pintores en Valencia. Todos los derechos reservados.</p>
-          <a
-            href="tel:722208131"
-            className="rounded-md px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
-            aria-label="Llamar al 722 208 131"
-          >
-            Llamar: 722 208 131
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h4 className="font-semibold">Contacto</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4" />
+                <a href="tel:722208131" className="hover:text-accent transition-colors">
+                  722 208 131
+                </a>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="w-4 h-4" />
+                <a href="mailto:edgarberriojimenez@gmail.com" className="hover:text-accent transition-colors">
+                  edgarberriojimenez@gmail.com
+                </a>
+              </div>
+              <div className="flex items-start space-x-2">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>Valencia, España</span>
