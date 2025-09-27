@@ -115,7 +115,7 @@ const Index = () => {
   ];
 
   const homeTitle =
-    "Pintores en Valencia (capital y provincia) - Rápidos, limpios y con garantía";
+    "Pintores en Valencia Presupuesto gratis en 24h - Rápidos, limpios y con garantía";
   const homeDesc =
     "Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131";
   const homeCanon = "https://pintores-valencia.com/";
@@ -154,7 +154,7 @@ const Index = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               Pintores en Valencia <br />
-              <span className="text-accent">(capital y provincia)</span>
+              <span className="text-accent">Presupuesto gratis en 24h</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
               Rápidos, limpios y con garantía
