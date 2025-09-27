@@ -1,10 +1,11 @@
 // src/App.tsx
-import { SpeedInsights } from "@vercel/speed-insights/react"; //Speed Insights en Vercel.
+import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 import Header from "@/components/Header";
@@ -33,6 +34,16 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Enfoca el <main id="main"> al cambiar de ruta (a11y)
+function RouteChangeFocus() {
+  const location = useLocation();
+  useEffect(() => {
+    const el = document.getElementById("main");
+    if (el) el.focus();
+  }, [location.pathname]);
+  return null;
+}
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
@@ -40,14 +51,15 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <RouteChangeFocus />
           <div className="min-h-screen flex flex-col">
-            {/* Enlace de salto para accesibilidad (aparece al usar TAB) */}
+            {/* Enlace de salto (usa href="#main") */}
             <SkipLink />
 
             <Header />
 
             {/* Contenido principal accesible */}
-            <main id="main-content" tabIndex={-1} className="flex-1">
+            <main id="main" tabIndex={-1} className="flex-1">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/servicios" element={<Servicios />} />
@@ -75,11 +87,10 @@ const App = () => (
             <WhatsAppFloat />
             <MobileCallButton />
           </div>
+
+          {/* métricas (no pinta UI visible) */}
+          {import.meta.env.PROD && <SpeedInsights />}
         </BrowserRouter>
-		
-		 {/* 👇 Añade esto; no rompe nada y no pinta UI visible */}
-        {import.meta.env.PROD && <SpeedInsights />}
-		
       </TooltipProvider>
     </HelmetProvider>
   </QueryClientProvider>

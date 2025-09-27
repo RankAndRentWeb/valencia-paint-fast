@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
     <title>Pintores en Valencia - Profesionales, Rápidos y con Garantía</title>
-    <meta
-      name="description"
-      content="Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎ 722 208 131"
-    />
+    <meta name="description" content="Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎ 722 208 131" />
     <meta name="author" content="Pintores en Valencia" />
-    <meta
-      name="keywords"
-      content="pintores valencia, pintura interior, fachadas, gotelé, impermeabilización"
-    />
+    <meta name="keywords" content="pintores valencia, pintura interior, fachadas, gotelé, impermeabilización" />
+    <link rel="canonical" href="https://pintores-valencia.com/" />
 
     <!-- Colores del navegador y esquema para accesibilidad -->
     <meta name="theme-color" content="#ffffff" />
@@ -23,75 +18,87 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Critical CSS inline para mejorar FCP -->
     <style>
       /* CSS crítico para above-the-fold */
       .container{max-width:1280px;margin:0 auto;padding:0 1rem}
-      .sticky{position:sticky}
-      .top-0{top:0}
-      .z-50{z-index:50}
+      .sticky{position:sticky}.top-0{top:0}.z-50{z-index:50}
       .bg-background{background-color:hsl(var(--background))}
-      .border-b{border-bottom-width:1px}
-      .h-16{height:4rem}
-      .flex{display:flex}
-      .items-center{align-items:center}
-      .justify-between{justify-content:space-between}
-      .font-semibold{font-weight:600}
-      .relative{position:relative}
-      .absolute{position:absolute}
-      .inset-0{inset:0}
-      .bg-cover{background-size:cover}
-      .bg-center{background-position:center}
+      .border-b{border-bottom-width:1px}.h-16{height:4rem}
+      .flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}
+      .font-semibold{font-weight:600}.relative{position:relative}.absolute{position:absolute}
+      .inset-0{inset:0}.bg-cover{background-size:cover}.bg-center{background-position:center}
       .py-20{padding-top:5rem;padding-bottom:5rem}
+      .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+      .focus\:not-sr-only:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto;white-space:normal}
     </style>
 
-    <!-- Favicon (fix nombre) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/pintores-valencia-logo.png" />
     <link rel="apple-touch-icon" href="/pintores-valencia-logo.png" />
 
     <!-- Open Graph / Twitter -->
     <meta property="og:title" content="Pintores en Valencia - Profesionales, Rápidos y con Garantía" />
-    <meta
-      property="og:description"
-      content="Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita."
-    />
+    <meta property="og:description" content="Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://pintores-valencia.com" />
+    <meta property="og:url" content="https://pintores-valencia.com/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pintores en Valencia - Profesionales" />
     <meta name="twitter:description" content="Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida." />
+
+    <!-- Schema LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"LocalBusiness",
+      "name":"Pintores en Valencia",
+      "url":"https://pintores-valencia.com/",
+      "telephone":"+34 722 208 131",
+      "areaServed":"Valencia",
+      "image":"https://pintores-valencia.com/pintores-valencia-logo.png",
+      "description":"Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía."
+    }
+    </script>
   </head>
 
   <body>
-    <!-- Fallback de accesibilidad por si falla JS -->
+    <!-- Enlace de accesibilidad -->
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute left-4 top-2 bg-white px-3 py-2 rounded shadow">
       Saltar al contenido principal
     </a>
-	
-	<div id="ssr-fallback">
-  <header class="container">
-    <h1>Pintores en Valencia – Profesionales, rápidos y con garantía</h1>
-    <p>Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. Tel. 722 208 131.</p>
-    <nav>
-      <a href="/pintura-interior-pisos-casas">Pintura interior</a> ·
-      <a href="/pintura-exterior-fachadas">Fachadas</a> ·
-      <a href="/quitar-gotele-valencia">Quitar gotelé</a> ·
-      <a href="/impermeabilizacion-terrazas">Impermeabilización</a> ·
-      <a href="/blog">Blog</a>
-    </nav>
-  </header>
-</div>
+
+    <!-- Fallback HTML para crawlers antes de hidratar -->
+    <div id="ssr-fallback">
+      <header class="container">
+        <h1>Pintores en Valencia – Profesionales, rápidos y con garantía</h1>
+        <p>Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. Tel. 722 208 131.</p>
+        <nav>
+          <a href="/pintura-interior-pisos-casas">Pintura interior</a> ·
+          <a href="/pintura-exterior-fachadas">Fachadas</a> ·
+          <a href="/quitar-gotele-valencia">Quitar gotelé</a> ·
+          <a href="/impermeabilizacion-terrazas">Impermeabilización</a> ·
+          <a href="/blog">Blog</a>
+        </nav>
+      </header>
+    </div>
 
     <div id="root"></div>
-	<script>
-  // Elimina el fallback cuando la app arranque
-  window.addEventListener('DOMContentLoaded', () => {
-    const f = document.getElementById('ssr-fallback');
-    if (f) f.remove();
-  });
-</script>
 
+    <!-- Quita el fallback cuando React haya montado algo dentro de #root -->
+    <script>
+      (function () {
+        var f = document.getElementById('ssr-fallback');
+        var root = document.getElementById('root');
+        if (!f || !root) return;
+        var obs = new MutationObserver(function () {
+          if (root.childElementCount) { f.remove(); obs.disconnect(); }
+        });
+        obs.observe(root, { childList: true });
+      })();
+    </script>
+
+    <!-- Tu app (Vite) -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
