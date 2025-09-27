@@ -140,7 +140,9 @@ const Index = () => {
           aria-hidden="true"
         >
           <img 
-            src={heroImage} 
+            src={heroImage}
+            srcSet={`${heroImage} 1920w`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
             alt="" 
             className="w-full h-full object-cover opacity-0" 
             fetchPriority="high"
