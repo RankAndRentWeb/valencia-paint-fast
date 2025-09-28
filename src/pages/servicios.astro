@@ -1,0 +1,40 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Servicios from './Servicios.tsx';
+
+const url = "https://pintores-valencia.com/servicios";
+const title = "Servicios de pintura en Valencia | Pintores profesionales";
+const description = "Servicios completos de pintura en Valencia: interior, exterior, quitar gotelé, impermeabilización y más. Presupuesto gratuito. ☎️ 722 208 131";
+const ogImage = "https://pintores-valencia.com/servicios-pintura-valencia.jpg";
+
+const serviciosSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Servicios de pintura en Valencia",
+    "description": "Página de servicios de pintura profesional en Valencia",
+    "url": "https://pintores-valencia.com/servicios",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Pintores en Valencia",
+      "telephone": "+34722208131",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Valencia",
+        "addressCountry": "ES"
+      }
+    }
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={serviciosSchema}
+>
+  <!-- Tu componente React Servicios se renderiza aquí -->
+  <Servicios client:load />
+</SEO> 

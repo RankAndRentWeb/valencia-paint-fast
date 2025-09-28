@@ -1,0 +1,40 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Trabajos from './Trabajos.tsx';
+
+const url = "https://pintores-valencia.com/trabajos";
+const title = "Trabajos realizados | Pintores en Valencia | Galería de proyectos";
+const description = "Ve nuestros trabajos de pintura en Valencia. Galería con antes y después. Proyectos reales de clientes satisfechos. ☎️ 722 208 131";
+const ogImage = "https://pintores-valencia.com/trabajos-pintura-valencia.jpg";
+
+const trabajosSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Trabajos realizados - Pintores en Valencia",
+    "description": "Galería de trabajos y proyectos de pintura realizados en Valencia",
+    "url": "https://pintores-valencia.com/trabajos",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Pintores en Valencia",
+      "telephone": "+34722208131",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Valencia",
+        "addressCountry": "ES"
+      }
+    }
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={trabajosSchema}
+>
+  <!-- Tu componente React Trabajos se renderiza aquí -->
+  <Trabajos client:load />
+</SEO> 

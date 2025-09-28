@@ -1,0 +1,37 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Precios from './Precios.tsx';
+
+const url = "https://pintores-valencia.com/precios";
+const title = "Precios pintura Valencia 2024 | Tarifas transparentes | Pintores";
+const description = "Precios de pintura en Valencia 2024. Tarifas desde 8€/m². Interior, exterior, gotelé. Presupuesto gratuito. ☎️ 722 208 131";
+const ogImage = "https://pintores-valencia.com/precios-pintura-valencia.jpg";
+
+const preciosSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Precios de pintura en Valencia",
+    "description": "Tarifas y precios de servicios de pintura profesional en Valencia",
+    "url": "https://pintores-valencia.com/precios",
+    "mainEntity": {
+      "@type": "PriceSpecification",
+      "name": "Precios de pintura",
+      "priceCurrency": "EUR",
+      "price": "8",
+      "unitCode": "MTK"
+    }
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={preciosSchema}
+>
+  <!-- Tu componente React Precios se renderiza aquí -->
+  <Precios client:load />
+</SEO> 

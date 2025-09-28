@@ -15,7 +15,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@': '/src'
+        '@': '/src',
+        'react-helmet-async': '/src/components/HelmetWrapper.tsx'
       }
     }
   }

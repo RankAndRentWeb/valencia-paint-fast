@@ -1,0 +1,39 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Zonas from './Zonas.tsx';
+
+const url = "https://pintores-valencia.com/zonas";
+const title = "Zonas de trabajo | Pintores en Valencia y provincia | Cobertura";
+const description = "Trabajamos en Valencia y toda la provincia. Consulta si llegamos a tu zona. Servicio profesional de pintura. ☎️ 722 208 131";
+const ogImage = "https://pintores-valencia.com/zonas-valencia.jpg";
+
+const zonasSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Zonas de trabajo - Pintores en Valencia",
+    "description": "Áreas de cobertura y zonas de trabajo en Valencia y provincia",
+    "url": "https://pintores-valencia.com/zonas",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Pintores en Valencia",
+      "telephone": "+34722208131",
+      "areaServed": [
+        { "@type": "City", "name": "Valencia" },
+        { "@type": "AdministrativeArea", "name": "Provincia de Valencia" }
+      ]
+    }
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={zonasSchema}
+>
+  <!-- Tu componente React Zonas se renderiza aquí -->
+  <Zonas client:load />
+</SEO> 

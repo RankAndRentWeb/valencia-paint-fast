@@ -1,0 +1,43 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Presupuesto from './Presupuesto.tsx';
+
+const url = "https://pintores-valencia.com/presupuesto";
+const title = "Presupuesto gratuito | Pintores en Valencia | Sin compromiso";
+const description = "Solicita tu presupuesto gratuito de pintura en Valencia. Respuesta en 24h. Visita sin compromiso. ☎️ 722 208 131";
+const ogImage = "https://pintores-valencia.com/presupuesto-pintura-valencia.jpg";
+
+const presupuestoSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Presupuesto gratuito - Pintores en Valencia",
+    "description": "Formulario para solicitar presupuesto gratuito de servicios de pintura",
+    "url": "https://pintores-valencia.com/presupuesto",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Pintores en Valencia",
+      "telephone": "+34722208131",
+      "email": "edgarberriojimenez@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Valencia",
+        "addressCountry": "ES"
+      },
+      "priceRange": "€€",
+      "openingHours": ["Mo-Sa 08:00-20:00"]
+    }
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={presupuestoSchema}
+>
+  <!-- Tu componente React Presupuesto se renderiza aquí -->
+  <Presupuesto client:load />
+</SEO> 
