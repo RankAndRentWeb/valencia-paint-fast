@@ -53,26 +53,9 @@
     }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/servicios", "destination": "/index.html" },
-    { "source": "/blog", "destination": "/index.html" },
-    { "source": "/blog/(.*)", "destination": "/index.html" },
-    { "source": "/precios", "destination": "/index.html" },
-    { "source": "/trabajos", "destination": "/index.html" },
-    { "source": "/presupuesto", "destination": "/index.html" },
-    { "source": "/contacto", "destination": "/index.html" },
-    { "source": "/quienes-somos", "destination": "/index.html" },
-    { "source": "/quitar-gotele-alisar-paredes", "destination": "/index.html" },
-    { "source": "/pintura-interior-pisos-casas", "destination": "/index.html" },
-    { "source": "/pintura-exterior-fachadas", "destination": "/index.html" },
-    { "source": "/impermeabilizacion-terrazas-y-fachadas", "destination": "/index.html" },
-    { "source": "/pintura-locales-comerciales", "destination": "/index.html" },
-    { "source": "/pintura-comunidades", "destination": "/index.html" },
-    { "source": "/lacado-puertas-carpinteria", "destination": "/index.html" },
-    { "source": "/papel-pintado-vinilos", "destination": "/index.html" },
-    { 
-      "source": "/((?!assets/|robots\\.txt|sitemap\\.xml|favicon\\.ico|.*\\.[a-zA-Z0-9]+$).*)", 
-      "destination": "/index.html" 
+    {
+      "source": "/((?!api/|_next/|_static/|_vercel|[\\w-]+\\.\\w+).*)",
+      "destination": "/index.html"
     }
   ]
 }
