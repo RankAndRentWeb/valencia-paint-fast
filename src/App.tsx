@@ -22,6 +22,7 @@ import Precios from "./pages/Precios";
 import Trabajos from "./pages/Trabajos";
 import Presupuesto from "./pages/Presupuesto";
 import Contacto from "./pages/Contacto";
+import QuienesSomos from "./pages/QuienesSomos";
 import QuitarGotele from "./pages/servicios/QuitarGotele";
 import PinturaInterior from "./pages/servicios/PinturaInterior";
 import PinturaExterior from "./pages/servicios/PinturaExterior";
@@ -69,6 +70,7 @@ const App = () => (
                 <Route path="/trabajos" element={<Trabajos />} />
                 <Route path="/presupuesto" element={<Presupuesto />} />
                 <Route path="/contacto" element={<Contacto />} />
+                <Route path="/quienes-somos" element={<QuienesSomos />} />
                 <Route path="/quitar-gotele-alisar-paredes" element={<QuitarGotele />} />
                 <Route path="/pintura-interior-pisos-casas" element={<PinturaInterior />} />
                 <Route path="/pintura-exterior-fachadas" element={<PinturaExterior />} />

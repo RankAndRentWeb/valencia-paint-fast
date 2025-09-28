@@ -121,6 +121,8 @@ const PinturaExterior = () => {
                 src={fachadaImage}
                 alt="Pintura de fachadas profesional en Valencia"
                 className="rounded-2xl shadow-card w-full h-[400px] object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute bottom-4 left-4 bg-background/90 rounded-lg p-3">
                 <p className="text-sm font-medium">Fachada renovada</p>

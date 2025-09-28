@@ -116,6 +116,8 @@ const BlogPost = () => {
                 src={post.cover}
                 alt={post.coverAlt}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </header>
