@@ -1,0 +1,37 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Blog from '../pages/Blog.tsx';
+
+const url = "https://pintores-valencia.com/blog";
+const title = "Blog de pintura en Valencia | Consejos y trucos profesionales";
+const description = "Descubre consejos profesionales de pintura, tendencias de color y técnicas de pintores expertos en Valencia. Guías prácticas para tu hogar.";
+const ogImage = "https://pintores-valencia.com/blog-pintura-valencia.jpg";
+
+const localBusinessSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog de Pintores en Valencia",
+    "description": "Blog con consejos y trucos de pintura profesional",
+    "url": "https://pintores-valencia.com/blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Pintores en Valencia",
+      "url": "https://pintores-valencia.com",
+      "logo": "https://pintores-valencia.com/pintores-valencia-logo.png"
+    },
+    "inLanguage": "es-ES"
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={localBusinessSchema}
+>
+  <!-- Tu componente React Blog se renderiza aquí con client:load -->
+  <Blog client:load />
+</SEO> 

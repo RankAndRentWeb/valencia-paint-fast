@@ -1,0 +1,71 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: object[];
+  keywords?: string;
+  preloadImages?: string[];
+}
+
+const { 
+  title, 
+  description, 
+  canonical, 
+  ogImage, 
+  noindex = false, 
+  schema = [],
+  keywords,
+  preloadImages = []
+} = Astro.props;
+
+const robots = noindex ? "noindex,follow" : "index,follow";
+const fullOgImage = ogImage ? (ogImage.startsWith('http') ? ogImage : `https://pintores-valencia.com${ogImage}`) : 'https://pintores-valencia.com/pintores-valencia-logo.png';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords} />}
+    <meta name="robots" content={robots} />
+    <meta name="language" content="es" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={fullOgImage} />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImage} />
+
+    <!-- Preload critical images -->
+    {preloadImages.map((src) => (
+      <link rel="preload" as="image" href={src} />
+    ))}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/pintores-valencia-logo.png" />
+
+    <!-- Security headers -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- JSON-LD Schema -->
+    {schema.length > 0 && (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    )}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html> 

@@ -1,0 +1,77 @@
+---
+import SEO from '../layouts/SEO.astro';
+
+const url = "https://pintores-valencia.com/404";
+const title = "Página no encontrada | Pintores en Valencia";
+const description = "La página que buscas no existe. Encuentra nuestros servicios de pintura en Valencia: interior, exterior, gotelé e impermeabilización.";
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  noindex={true}
+>
+  <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 text-center">
+      <div>
+        <h1 class="text-9xl font-bold text-gray-300">404</h1>
+        <h2 class="mt-6 text-3xl font-bold text-gray-900">
+          Página no encontrada
+        </h2>
+        <p class="mt-2 text-sm text-gray-600">
+          Lo sentimos, la página que buscas no existe o ha sido movida.
+        </p>
+      </div>
+      
+      <div class="mt-8 space-y-6">
+        <div>
+          <h3 class="text-lg font-medium text-gray-900 mb-4">
+            ¿Buscabas alguno de nuestros servicios?
+          </h3>
+          <div class="space-y-2">
+            <a href="/pintura-interior-pisos-casas" class="block text-blue-600 hover:text-blue-700">
+              → Pintura interior de pisos y casas
+            </a>
+            <a href="/pintura-exterior-fachadas" class="block text-blue-600 hover:text-blue-700">
+              → Pintura exterior y fachadas
+            </a>
+            <a href="/quitar-gotele-alisar-paredes" class="block text-blue-600 hover:text-blue-700">
+              → Quitar gotelé y alisar paredes
+            </a>
+            <a href="/impermeabilizacion-terrazas-y-fachadas" class="block text-blue-600 hover:text-blue-700">
+              → Impermeabilización de terrazas
+            </a>
+          </div>
+        </div>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/" 
+            class="inline-flex items-center justify-center rounded-lg px-6 py-3 bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors"
+          >
+            ← Volver al inicio
+          </a>
+          <a 
+            href="/presupuesto" 
+            class="inline-flex items-center justify-center rounded-lg px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium hover:bg-blue-600 hover:text-white transition-colors"
+          >
+            Solicitar presupuesto
+          </a>
+        </div>
+        
+        <div class="pt-6 border-t border-gray-200">
+          <p class="text-sm text-gray-500 mb-4">
+            ¿Necesitas ayuda? Contacta directamente:
+          </p>
+          <a 
+            href="tel:722208131" 
+            class="inline-flex items-center justify-center rounded-lg px-6 py-3 bg-green-600 text-white font-medium hover:bg-green-700 transition-colors"
+          >
+            📞 722 208 131
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</SEO> 

@@ -1,0 +1,42 @@
+---
+import SEO from '../layouts/SEO.astro';
+import Contacto from '../pages/Contacto.tsx';
+
+const url = "https://pintores-valencia.com/contacto";
+const title = "Contacto | Pintores en Valencia | Presupuesto gratuito";
+const description = "Contacta con pintores profesionales en Valencia. Presupuesto gratuito y sin compromiso. ☎️ 722 208 131 | Respuesta rápida garantizada.";
+const ogImage = "https://pintores-valencia.com/contacto-pintores-valencia.jpg";
+
+const contactSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto - Pintores en Valencia",
+    "description": "Página de contacto para solicitar presupuestos de pintura",
+    "url": "https://pintores-valencia.com/contacto",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Pintores en Valencia",
+      "telephone": "+34722208131",
+      "email": "edgarberriojimenez@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Valencia",
+        "addressCountry": "ES"
+      },
+      "openingHours": ["Mo-Sa 08:00-20:00"]
+    }
+  }
+];
+---
+
+<SEO 
+  title={title}
+  description={description}
+  canonical={url}
+  ogImage={ogImage}
+  schema={contactSchema}
+>
+  <!-- Tu componente React Contacto se renderiza aquí -->
+  <Contacto client:load />
+</SEO> 
