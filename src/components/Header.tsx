@@ -93,6 +93,16 @@ const Header = () => {
             </li>
             <li>
               <NavLink
+                to="/quienes-somos"
+                className={({ isActive }) =>
+                  `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
+                }
+              >
+                Quiénes somos
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/presupuesto"
                 className="inline-flex items-center rounded-md px-3 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-cta"
               >
@@ -219,6 +229,20 @@ const Header = () => {
                 }
               >
                 Trabajos
+              </NavLink>
+              
+              <NavLink
+                to="/quienes-somos"
+                onClick={closeMenu}
+                className={({ isActive }) =>
+                  `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                    isActive
+                      ? "bg-primary text-primary-foreground"
+                      : "text-foreground hover:bg-muted hover:text-primary"
+                  }`
+                }
+              >
+                Quiénes somos
               </NavLink>
               
               <NavLink

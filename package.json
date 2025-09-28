@@ -11,15 +11,18 @@
     "preview": "vite preview"
   },
   "reactSnap": {
-  "source": "dist",
-  "destination": "dist",
-  "crawl": false,
-  "puppeteerArgs": ["--no-sandbox"],
-  "include": [
-		"/", 
-		"/blog",
-		"/blog/pintar-interior-tiempos-secado-trucos",
-		"/blog/colores-piso-pequeno-ganar-amplitud"]
+    "source": "dist",
+    "destination": "dist",
+    "crawl": false,
+    "puppeteerArgs": [
+      "--no-sandbox"
+    ],
+    "include": [
+      "/",
+      "/blog",
+      "/blog/pintar-interior-tiempos-secado-trucos",
+      "/blog/colores-piso-pequeno-ganar-amplitud"
+    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
