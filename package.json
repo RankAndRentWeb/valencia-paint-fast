@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:ssg": "vite build && vite preview --port 4173 & sleep 3 && node scripts/prerender.mjs && pkill -f 'vite preview'",
+    "build:ssg": "vite build && vite preview --port 4173 & PREVIEW_PID=$!; sleep 3; node scripts/prerender.mjs; kill $PREVIEW_PID || true",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+	"postinstall": "npx puppeteer browsers install chrome"
   },
   "reactSnap": {
     "source": "dist",
