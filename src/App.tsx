@@ -31,6 +31,8 @@ import LocalesComerciales from "./pages/servicios/LocalesComerciales";
 import PinturaComunidades from "./pages/servicios/PinturaComunidades";
 import LacadoPuertas from "./pages/servicios/LacadoPuertas";
 import PapelPintado from "./pages/servicios/PapelPintado";
+import AvisoLegal from "./pages/AvisoLegal";
+import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -79,6 +81,8 @@ const App = () => (
                 <Route path="/pintura-comunidades" element={<PinturaComunidades />} />
                 <Route path="/lacado-puertas-carpinteria" element={<LacadoPuertas />} />
                 <Route path="/papel-pintado-vinilos" element={<PapelPintado />} />
+                <Route path="/aviso-legal" element={<AvisoLegal />} />
+                <Route path="/politica-privacidad" element={<PoliticaPrivacidad />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

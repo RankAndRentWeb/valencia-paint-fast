@@ -15,6 +15,8 @@ import {
   Building,
 } from "lucide-react";
 import heroImage from "../assets/hero-pintores-valencia.jpg";
+import heroImageWebP from "../assets/hero-pintores-valencia.webp";
+import trabajadoresImage from "../assets/madre-hijo-salon-pequeno.jpg";
 
 // ⭐ Estrellas accesibles sin ARIA prohibido
 const RatingStars = ({ value = 5 }: { value?: number }) => (
@@ -30,14 +32,17 @@ const Index = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "HousePainter",
+    "@id": "https://pintores-valencia.com/#business",
     name: "Pintores en Valencia",
     url: "https://pintores-valencia.com",
-    image: "https://pintores-valencia.com/hero-pintores-valencia.jpg",
+    image: "https://pintores-valencia.com/og-home.jpg",
     telephone: "+34722208131",
     email: "edgarberriojimenez@gmail.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Valencia",
+      addressRegion: "Comunitat Valenciana",
+      postalCode: "46000",
       addressCountry: "ES",
     },
     openingHours: ["Mo-Sa 08:00-20:00"],
@@ -48,10 +53,47 @@ const Index = () => {
         latitude: 39.4699,
         longitude: -0.3763,
       },
-      geoRadius: "50000",
+      geoRadius: { "@type": "Distance", value: 50, unitText: "km" },
     },
     priceRange: "€€",
     areaServed: [{ "@type": "City", name: "Valencia" }],
+    contactPoint: [{
+      "@type": "ContactPoint",
+      "telephone": "+34722208131",
+      "contactType": "customer service",
+      "areaServed": "Valencia"
+    }]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿En cuánto tiempo dan el presupuesto?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Nos comprometemos a enviar el presupuesto en menos de 24 horas tras recibir la solicitud."
+        }
+      },
+      {
+        "@type": "Question", 
+        name: "¿Qué incluye el servicio?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Incluimos materiales, mano de obra, limpieza posterior y garantía escrita. Todo transparente en el presupuesto."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "¿Trabajan en toda Valencia?", 
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sí, trabajamos en Valencia capital y en toda la provincia. Consultanos tu zona específica."
+        }
+      }
+    ]
   };
 
   const services = [
@@ -114,41 +156,39 @@ const Index = () => {
     },
   ];
 
-  const homeTitle =
-    "Pintores en Valencia Presupuesto gratis en 24h - Rápidos, limpios y con garantía";
+  const homeTitle = "Pintores en Valencia · Presupuesto 24h | Garantía";
   const homeDesc =
     "Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131";
-  const homeCanon = "https://pintores-valencia.com/";
+  const homeCanon = "https://pintores-valencia.com";
 
   return (
     <>
       <SEOHead
         title={homeTitle}
         description={homeDesc}
-        keywords="pintores valencia, pintura interior, fachadas valencia, quitar gotele, pintores profesionales"
         canonicalUrl={homeCanon}
-        schema={localBusinessSchema}
-        preloadImages={[heroImage]}
+        schema={[localBusinessSchema, faqSchema]}
+        preloadImages={[heroImageWebP, heroImage]}
+        ogImage="https://pintores-valencia.com/og-home.jpg"
       />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-hero py-20 text-primary-foreground overflow-hidden">
         <div className="absolute inset-0 bg-black/50" /> {/* contraste reforzado */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-          aria-hidden="true"
-        >
-          <img 
-            src={heroImage}
-            srcSet={`${heroImage} 1920w`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
-            alt="" 
-            className="w-full h-full object-cover opacity-0" 
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-          />
+        <div className="absolute inset-0">
+          <picture>
+            <source srcSet={heroImageWebP} type="image/webp" />
+            <img 
+              src={heroImage}
+              width="1920"
+              height="1080"
+              alt="" 
+              className="w-full h-full object-cover" 
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
@@ -167,8 +207,8 @@ const Index = () => {
                 className="bg-accent hover:bg-accent/90 text-white shadow-cta"
               >
                 <a
-                  href="tel:722208131"
-                  aria-label="Llamar ahora al 722 208 131"
+                  href="tel:+34722208131"
+                  aria-label="Llamar ahora al +34 722 208 131"
                   className="flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-5 h-5" aria-hidden="true" />
@@ -183,7 +223,7 @@ const Index = () => {
               >
                 <a
                   href="https://wa.me/34722208131"
-                  aria-label="Abrir WhatsApp para escribir al 722 208 131"
+                  aria-label="Abrir WhatsApp para escribir al +34 722 208 131"
                   className="flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-5 h-5" aria-hidden="true" />
@@ -249,7 +289,7 @@ const Index = () => {
                     size="sm"
                     className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
                   >
-                    <Link to={service.link}>Ver más</Link>
+                    <Link to={service.link}>{service.title}</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -260,6 +300,110 @@ const Index = () => {
             <Button asChild size="lg" className="bg-gradient-cta shadow-cta">
               <Link to="/servicios">Ver todos los servicios</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section - Pintores en Valencia */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Pintores en Valencia: Calidad y Garantía
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Empresa profesional con más de 10 años de experiencia en toda la provincia
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+              <div>
+                <p className="text-lg text-foreground mb-6">
+                  Somos una empresa de <strong>pintores profesionales en Valencia</strong> con más de 10 años de experiencia 
+                  transformando hogares y negocios en toda la provincia. Nuestro compromiso es ofrecer servicios de pintura 
+                  de máxima calidad con garantía escrita y precios transparentes.
+                </p>
+                
+                <p className="text-lg text-foreground mb-6">
+                  Trabajamos en <strong>Valencia capital y provincia</strong>, incluyendo barrios como Russafa, Benimaclet, 
+                  El Carmen, Campanar, y localidades como Sagunto, Xàtiva, Cullera, y Gandía. Nos desplazamos sin coste 
+                  adicional para realizar presupuestos gratuitos en menos de 24 horas.
+                </p>
+              </div>
+              
+              <div className="relative">
+                <img
+                  src={trabajadoresImage}
+                  alt="Pintores profesionales en Valencia trabajando en interior de hogar"
+                  width="400"
+                  height="300"
+                  className="rounded-2xl shadow-card w-full h-[300px] object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute bottom-4 left-4 bg-background/90 rounded-lg p-3">
+                  <p className="text-sm font-medium">+10 años</p>
+                  <p className="text-xs text-muted-foreground">de experiencia</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Servicios completos</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Quitar gotelé, pintura interior y exterior, fachadas, impermeabilización y locales comerciales.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Shield className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Garantía total</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Limpieza incluida, pinturas de primeras marcas y seguro de responsabilidad civil.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold mb-2">Presupuesto rápido</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Llámanos al 722 208 131 y obtén tu presupuesto gratuito sin compromiso.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center bg-muted/50 rounded-2xl p-8">
+              <p className="text-lg text-foreground mb-4">
+                Confía en pintores profesionales con garantía. 
+                <strong> ¡Tu satisfacción es nuestra prioridad!</strong>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                  <a href="tel:+34722208131" className="flex items-center space-x-2">
+                    <Phone className="w-4 h-4" />
+                    <span>722 208 131</span>
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link to="/presupuesto">Pedir presupuesto</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -316,9 +460,9 @@ const Index = () => {
               size="lg"
               className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
             >
-              <a href="tel:722208131" aria-label="Llamar al 722 208 131" className="flex items-center space-x-2">
+              <a href="tel:+34722208131" aria-label="Llamar al +34 722 208 131" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" aria-hidden="true" />
-                <span>722 208 131</span>
+                <span>+34 722 208 131</span>
               </a>
             </Button>
           </div>

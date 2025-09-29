@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://pintores-valencia.com/sitemap-index.xml
+Sitemap: https://pintores-valencia.com/sitemap.xml
 
 # Directorios permitidos explícitamente
 Allow: /servicios/

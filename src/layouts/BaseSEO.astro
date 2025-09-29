@@ -1,0 +1,105 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  keywords?: string;
+  schema?: any[];
+  pageType?: 'website' | 'article' | 'service';
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = "https://pintores-valencia.com/hero-pintores-valencia.jpg",
+  keywords,
+  schema = [],
+  pageType = 'website'
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
+
+// Schema básico LocalBusiness siempre presente
+const baseSchema = {
+  "@context": "https://schema.org",
+  "@type": "HousePainter",
+  "name": "Pintores en Valencia",
+  "url": "https://pintores-valencia.com",
+  "image": "https://pintores-valencia.com/hero-pintores-valencia.jpg",
+  "telephone": "+34722208131",
+  "email": "edgarberriojimenez@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressCountry": "ES"
+  },
+  "openingHours": ["Mo-Sa 08:00-20:00"],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.4699,
+      "longitude": -0.3763
+    },
+    "geoRadius": "50000"
+  },
+  "priceRange": "€€",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Valencia"
+    }
+  ]
+};
+
+// Combinar schema base con schemas específicos de página
+const allSchemas = [baseSchema, ...schema];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <!-- SEO Básico -->
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="robots" content="index,follow">
+  <meta name="language" content="es">
+  <link rel="canonical" href={canonicalURL}>
+  
+  <!-- Keywords opcionales -->
+  {keywords && <meta name="keywords" content={keywords}>}
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content={pageType}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonicalURL}>
+  <meta property="og:image" content={ogImage}>
+  <meta property="og:locale" content="es_ES">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={ogImage}>
+  
+  <!-- Preload critical images -->
+  <link rel="preload" as="image" href="/hero-pintores-valencia.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/pintores-valencia-logo.png">
+  
+  <!-- Security headers -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(allSchemas)}></script>
+</head>
+<body>
+  <slot />
+</body>
+</html>

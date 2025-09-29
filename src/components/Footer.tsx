@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold">P</span>
-              </div>
+              <img 
+                src="/pintores-valencia-logo-fondo-blanco.png" 
+                alt="Logo Pintores en Valencia" 
+                className="w-8 h-8 rounded-lg"
+              />
               <h3 className="text-lg font-bold">Pintores en Valencia</h3>
             </div>
             <p className="text-sm text-primary-foreground/80">
@@ -26,8 +28,8 @@ const Footer = () => {
             <div className="space-y-2 text-sm">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <a href="tel:722208131" className="hover:text-accent transition-colors">
-                  722 208 131
+                <a href="tel:+34722208131" className="hover:text-accent transition-colors">
+                  +34 722 208 131
                 </a>
               </div>
               <div className="flex items-center space-x-2">
@@ -42,7 +44,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-2">
                 <Clock className="w-4 h-4 mt-0.5" />
-                <span>L–S 8:00–20:00</span>
+                <span>Lun–Sáb 08:00–20:00</span>
               </div>
             </div>
           </div>

@@ -1,0 +1,69 @@
+---
+import BaseSEO from '../layouts/BaseSEO.astro';
+
+const title = "Trabajos Realizados | Pintores en Valencia | Portfolio";
+const description = "Galería de trabajos realizados por nuestros pintores profesionales en Valencia. Más de 500 proyectos completados con garantía.";
+const canonical = "https://pintores-valencia.com/trabajos";
+const ogImage = "https://pintores-valencia.com/trabajos-pintores-valencia.jpg";
+const keywords = "trabajos pintores valencia, portfolio pintura, antes y después";
+
+const trabajosSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Portfolio Pintores Valencia",
+    "description": "Galería de trabajos realizados",
+    "creator": {
+      "@type": "LocalBusiness",
+      "name": "Pintores en Valencia"
+    }
+  }
+];
+---
+
+<BaseSEO 
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  keywords={keywords}
+  schema={trabajosSchema}
+  pageType="website"
+>
+  <!-- Trabajos page placeholder -->
+  <div class="min-h-screen bg-gray-50">
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-4xl mx-auto">
+          <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Nuestros Trabajos
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Más de 500 proyectos completados en Valencia y alrededores. 
+            Calidad profesional en cada trabajo.
+          </p>
+          <a 
+            href="tel:722208131"
+            class="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            📞 Ver más trabajos: 722 208 131
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+          Galería en construcción
+        </h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Estamos actualizando nuestra galería de trabajos. 
+          Llámanos para ver ejemplos de nuestros proyectos.
+        </p>
+      </div>
+    </section>
+  </div>
+</BaseSEO>
