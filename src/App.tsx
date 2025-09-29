@@ -37,11 +37,11 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Enfoca el <main id="main"> al cambiar de ruta (a11y)
+// Enfoca el <main id="main-content"> al cambiar de ruta (a11y)
 function RouteChangeFocus() {
   const location = useLocation();
   useEffect(() => {
-    const el = document.getElementById("main");
+    const el = document.getElementById("main-content");
     if (el) el.focus();
   }, [location.pathname]);
   return null;
@@ -62,7 +62,7 @@ const App = () => (
             <Header />
 
             {/* Contenido principal accesible */}
-            <main id="main" tabIndex={-1} className="flex-1">
+            <main id="main-content" tabIndex={-1} className="flex-1">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/servicios" element={<Servicios />} />

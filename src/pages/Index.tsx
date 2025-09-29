@@ -206,7 +206,7 @@ const Index = () => {
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-white shadow-cta"
+                className="bg-accent hover:bg-accent/90 text-white shadow-cta font-semibold"
               >
                 <a
                   href="tel:+34722208131"
@@ -217,11 +217,11 @@ const Index = () => {
                   <span>Llamar ahora</span>
                 </a>
               </Button>
-              {/* Botón WhatsApp outline azul reforzado */}
+              {/* Botón WhatsApp con mejor contraste */}
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+                className="bg-white text-primary border-2 border-white hover:bg-primary hover:text-white transition-colors font-semibold"
               >
                 <a
                   href="https://wa.me/34722208131"
@@ -415,19 +415,19 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             ¿Necesitas un presupuesto?
           </h2>
-          <p className="text-xl mb-8 text-primary-foreground/90">
+          <p className="text-xl mb-8 text-white">
             Te respondemos en menos de 24 horas
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-white shadow-cta"
+              className="bg-accent hover:bg-accent/90 text-white shadow-cta font-semibold"
             >
               <Link to="/presupuesto" aria-label="Solicitar presupuesto">
                 Pedir presupuesto gratis
@@ -436,7 +436,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+              className="bg-white text-primary border-2 border-white hover:bg-primary hover:text-white transition-colors font-semibold"
             >
               <a href="tel:+34722208131" aria-label="Llamar al +34 722 208 131" className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" aria-hidden="true" />
