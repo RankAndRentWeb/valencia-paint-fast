@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build:ssg": "vite build && vite preview --port 4173 & PREVIEW_PID=$!; sleep 3; node scripts/prerender.mjs || true; kill $PREVIEW_PID || true",
-    "build:dev": "vite build --mode development",
+    "build": "vite build",
+	"preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview",
 	"postinstall": "echo skip"
   },
   "reactSnap": {
