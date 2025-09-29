@@ -18,6 +18,7 @@ import {
 import heroImage from "../assets/hero-pintores-valencia.jpg";
 import heroImageWebP from "../assets/hero-pintores-valencia.webp";
 import trabajadoresImage from "../assets/madre-hijo-salon-pequeno.jpg";
+import pintorProfesionalImage from "../assets/pintor-profesional-valencia.jpg";
 
 // ⭐ Estrellas accesibles sin ARIA prohibido
 const RatingStars = ({ value = 5 }: { value?: number }) => (
@@ -305,61 +306,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Content Section - Pintores en Valencia */}
-      <section className="py-16 bg-muted/50">
+      {/* Company Excellence Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Pintores en Valencia: Calidad y Garantía
+              Los mejores pintores de Valencia
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Empresa profesional con más de 10 años de experiencia en toda la provincia
+              Transformamos tu hogar con la máxima calidad profesional. Garantía escrita, 
+              materiales premium y resultados que superan expectativas.
             </p>
           </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-              <div className="space-y-6">
-                <div className="bg-white rounded-2xl p-8 shadow-card">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
-                    Nuestra experiencia
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Somos una empresa de <strong>pintores profesionales en Valencia</strong> con más de 10 años de experiencia 
-                    transformando hogares y negocios en toda la provincia. Nuestro compromiso es ofrecer servicios de pintura 
-                    de máxima calidad con garantía escrita y precios transparentes.
-                  </p>
-                </div>
-                
-                <div className="bg-white rounded-2xl p-8 shadow-card">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                    <Building className="w-6 h-6 text-green-600 mr-3" />
-                    Cobertura completa
-                  </h3>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    Trabajamos en <strong>Valencia capital y provincia</strong>, incluyendo barrios como Russafa, Benimaclet, 
-                    El Carmen, Campanar, y localidades como Sagunto, Xàtiva, Cullera, y Gandía. Nos desplazamos sin coste 
-                    adicional para realizar presupuestos gratuitos en menos de 24 horas.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div className="bg-white rounded-2xl p-4 shadow-card">
-                  <img
-                    src={trabajadoresImage}
-                    alt="Pintores profesionales en Valencia trabajando en interior de hogar"
-                    width="400"
-                    height="300"
-                    className="rounded-xl w-full h-[350px] object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute bottom-8 left-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl p-4 shadow-lg">
-                    <p className="text-lg font-bold">+10 años</p>
-                    <p className="text-sm opacity-90">de experiencia</p>
+
+          {/* Content layout - Image left, Text right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-center">
+            
+            {/* Left side - Image */}
+            <div className="order-2 lg:order-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                {/* Badge encima de la imagen */}
+                <div className="absolute top-4 left-4 z-10">
+                  <div className="bg-white/95 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg border border-gray-100 flex items-center space-x-2">
+                    <Shield className="w-4 h-4 text-blue-600" />
+                    <span>+15 años de experiencia</span>
                   </div>
+                </div>
+                <img
+                  src={pintorProfesionalImage}
+                  alt="Pintor profesional trabajando en Valencia - Servicios de pintura de calidad"
+                  width="600"
+                  height="400"
+                  className="w-full h-[300px] sm:h-[400px] md:h-[450px] object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                />
+              </div>
+            </div>
+
+            {/* Right side - Text content */}
+            <div className="order-1 lg:order-2">
+              <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 h-[300px] sm:h-[400px] md:h-[450px] flex flex-col justify-center">
+                <div className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4 md:space-y-6">
+                  <p>
+                    Si buscas <strong>pintores de confianza en Valencia capital y provincia</strong>, somos tu mejor opción. Realizamos trabajos de <strong>pintura en viviendas, fachadas, locales comerciales y comunidades</strong>, además de ofrecer impermeabilización de terrazas y superficies exteriores para protegerlas del desgaste.
+                  </p>
+                  
+                  <p>
+                    Usamos <strong>materiales de alta calidad</strong> y ofrecemos <strong>garantía escrita</strong> en cada proyecto. <strong>Pide tu presupuesto gratuito en menos de 24 horas</strong> y descubre un servicio profesional, cercano y con la mejor relación calidad-precio.
+                  </p>
                 </div>
               </div>
             </div>
@@ -393,8 +389,8 @@ const Index = () => {
 
               <Card className="hover:shadow-card transition-shadow duration-300">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Shield className="w-8 h-8 text-green-600" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Shield className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Garantía total</h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -405,8 +401,8 @@ const Index = () => {
 
               <Card className="hover:shadow-card transition-shadow duration-300">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <Phone className="w-8 h-8 text-orange-600" />
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Phone className="w-8 h-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">Presupuesto rápido</h3>
                   <p className="text-gray-600 leading-relaxed">
