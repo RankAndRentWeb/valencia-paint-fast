@@ -9,9 +9,7 @@
 
   "headers": [
     { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/(.*\\.(jpg|jpeg|png|webp|avif|gif|svg|ico))$", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
-    { "source": "/sitemap.xml", "headers": [{ "key": "Content-Type", "value": "application/xml" }, { "key": "Cache-Control", "value": "public, max-age=86400" }] },
-    { "source": "/robots.txt", "headers": [{ "key": "Content-Type", "value": "text/plain" }, { "key": "Cache-Control", "value": "public, max-age=86400" }] }
+    { "source": "/(.*\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|css|js|woff2?))$", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
   ],
 
   "redirects": [
@@ -19,10 +17,6 @@
   ],
 
   "rewrites": [
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/(.*\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico))$", "destination": "/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
