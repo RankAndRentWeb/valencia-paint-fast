@@ -13,6 +13,7 @@ import {
   Brush,
   Home,
   Building,
+  Clock,
 } from "lucide-react";
 import heroImage from "../assets/hero-pintores-valencia.jpg";
 import heroImageWebP from "../assets/hero-pintores-valencia.webp";
@@ -305,7 +306,7 @@ const Index = () => {
       </section>
 
       {/* Content Section - Pintores en Valencia */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -316,123 +317,104 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
-              <div>
-                <p className="text-lg text-foreground mb-6">
-                  Somos una empresa de <strong>pintores profesionales en Valencia</strong> con más de 10 años de experiencia 
-                  transformando hogares y negocios en toda la provincia. Nuestro compromiso es ofrecer servicios de pintura 
-                  de máxima calidad con garantía escrita y precios transparentes.
-                </p>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-8 shadow-card">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <CheckCircle className="w-6 h-6 text-blue-600 mr-3" />
+                    Nuestra experiencia
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Somos una empresa de <strong>pintores profesionales en Valencia</strong> con más de 10 años de experiencia 
+                    transformando hogares y negocios en toda la provincia. Nuestro compromiso es ofrecer servicios de pintura 
+                    de máxima calidad con garantía escrita y precios transparentes.
+                  </p>
+                </div>
                 
-                <p className="text-lg text-foreground mb-6">
-                  Trabajamos en <strong>Valencia capital y provincia</strong>, incluyendo barrios como Russafa, Benimaclet, 
-                  El Carmen, Campanar, y localidades como Sagunto, Xàtiva, Cullera, y Gandía. Nos desplazamos sin coste 
-                  adicional para realizar presupuestos gratuitos en menos de 24 horas.
-                </p>
+                <div className="bg-white rounded-2xl p-8 shadow-card">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <Building className="w-6 h-6 text-green-600 mr-3" />
+                    Cobertura completa
+                  </h3>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Trabajamos en <strong>Valencia capital y provincia</strong>, incluyendo barrios como Russafa, Benimaclet, 
+                    El Carmen, Campanar, y localidades como Sagunto, Xàtiva, Cullera, y Gandía. Nos desplazamos sin coste 
+                    adicional para realizar presupuestos gratuitos en menos de 24 horas.
+                  </p>
+                </div>
               </div>
               
               <div className="relative">
-                <img
-                  src={trabajadoresImage}
-                  alt="Pintores profesionales en Valencia trabajando en interior de hogar"
-                  width="400"
-                  height="300"
-                  className="rounded-2xl shadow-card w-full h-[300px] object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div className="absolute bottom-4 left-4 bg-background/90 rounded-lg p-3">
-                  <p className="text-sm font-medium">+10 años</p>
-                  <p className="text-xs text-muted-foreground">de experiencia</p>
+                <div className="bg-white rounded-2xl p-4 shadow-card">
+                  <img
+                    src={trabajadoresImage}
+                    alt="Pintores profesionales en Valencia trabajando en interior de hogar"
+                    width="400"
+                    height="300"
+                    className="rounded-xl w-full h-[350px] object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute bottom-8 left-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl p-4 shadow-lg">
+                    <p className="text-lg font-bold">+10 años</p>
+                    <p className="text-sm opacity-90">de experiencia</p>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Servicios completos</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Quitar gotelé, pintura interior y exterior, fachadas, impermeabilización y locales comerciales.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Garantía total</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Limpieza incluida, pinturas de primeras marcas y seguro de responsabilidad civil.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">Presupuesto rápido</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Llámanos al 722 208 131 y obtén tu presupuesto gratuito sin compromiso.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="text-center bg-muted/50 rounded-2xl p-8">
-              <p className="text-lg text-foreground mb-4">
-                Confía en pintores profesionales con garantía. 
-                <strong> ¡Tu satisfacción es nuestra prioridad!</strong>
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                  <a href="tel:+34722208131" className="flex items-center space-x-2">
-                    <Phone className="w-4 h-4" />
-                    <span>722 208 131</span>
-                  </a>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link to="/presupuesto">Pedir presupuesto</Link>
-                </Button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-muted/50">
+      {/* Services Highlight Section */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Lo que dicen nuestros clientes
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index}>
-                <CardContent className="p-6">
-                  <RatingStars value={testimonial.rating} />
-                  <p className="text-foreground mb-4">"{testimonial.text}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.location}
-                    </p>
+            {/* Título de la sección */}
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                ¿Por qué elegirnos?
+              </h2>
+            </div>
+            
+            {/* Servicios con diseño de tarjetas separadas */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="hover:shadow-card transition-shadow duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-8 h-8 text-blue-600" />
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Servicios completos</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Quitar gotelé, pintura interior y exterior, fachadas, impermeabilización y locales comerciales.
+                  </p>
                 </CardContent>
               </Card>
-            ))}
-          </div>
+
+              <Card className="hover:shadow-card transition-shadow duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Shield className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Garantía total</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Limpieza incluida, pinturas de primeras marcas y seguro de responsabilidad civil.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-card transition-shadow duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Phone className="w-8 h-8 text-orange-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">Presupuesto rápido</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Llámanos al 722 208 131 y obtén tu presupuesto gratuito sin compromiso.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
         </div>
       </section>
 
