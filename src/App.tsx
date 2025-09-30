@@ -1,4 +1,3 @@
-// src/App.tsx
 import { useEffect } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Toaster } from "@/components/ui/toaster";
@@ -31,6 +30,14 @@ import LocalesComerciales from "./pages/servicios/LocalesComerciales";
 import PinturaComunidades from "./pages/servicios/PinturaComunidades";
 import LacadoPuertas from "./pages/servicios/LacadoPuertas";
 import PapelPintado from "./pages/servicios/PapelPintado";
+
+// Categorías del blog
+import GoteleCategory from "./pages/blog/GoteleCategory";
+import ImpermeabilizacionCategory from "./pages/blog/ImpermeabilizacionCategory";
+import ColoresInteriorCategory from "./pages/blog/ColoresInteriorCategory";
+import FachadasExteriorCategory from "./pages/blog/FachadasExteriorCategory";
+import BarnicesMaderaCategory from "./pages/blog/BarnicesMaderaCategory";
+
 import AvisoLegal from "./pages/AvisoLegal";
 import PoliticaPrivacidad from "./pages/PoliticaPrivacidad";
 import NotFound from "./pages/NotFound";
@@ -61,13 +68,20 @@ const App = () => (
 
             <Header />
 
-            {/* Contenido principal accesible */}
             <main id="main-content" tabIndex={-1} className="flex-1">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/servicios" element={<Servicios />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
+                
+                {/* Categorías del blog */}
+                <Route path="/blog/gotele" element={<GoteleCategory />} />
+                <Route path="/blog/impermeabilizacion" element={<ImpermeabilizacionCategory />} />
+                <Route path="/blog/colores-interior" element={<ColoresInteriorCategory />} />
+                <Route path="/blog/fachadas-exterior" element={<FachadasExteriorCategory />} />
+                <Route path="/blog/barnices-madera" element={<BarnicesMaderaCategory />} />
+                
                 <Route path="/precios" element={<Precios />} />
                 <Route path="/trabajos" element={<Trabajos />} />
                 <Route path="/presupuesto" element={<Presupuesto />} />

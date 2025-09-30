@@ -63,9 +63,8 @@ const BlogPost = () => {
   };
 
   const breadcrumbItems = [
-    { label: "Inicio", path: "/" },
-    { label: "Blog", path: "/blog" },
-    { label: post.title, path: `/blog/${post.slug}` },
+    { label: "Blog", href: "/blog" },
+    { label: post.title }
   ];
 
   return (
