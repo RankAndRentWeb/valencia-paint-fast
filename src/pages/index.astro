@@ -1,50 +1,655 @@
 ---
-import SEO from '../layouts/SEO.astro';
-import Index from './Index.tsx';
+import Layout from '../layouts/Layout.astro';
 
-const url = "https://pintores-valencia.com/";
-const title = "Pintores en Valencia | Profesionales con garantía | Presupuesto gratis";
-const description = "Pintores profesionales en Valencia. Pintura interior, exterior, quitar gotelé e impermeabilización. Presupuesto gratuito. ☎️ 722 208 131";
-const ogImage = "https://pintores-valencia.com/hero-pintores-valencia.jpg";
+const title = "Pintores Valencia - Pintura Interior, Exterior y Quitar Gotelé";
+const description = "Pintores profesionales en Valencia. Especialistas en pintura interior, exterior, quitar gotelé e impermeabilización. Presupuesto gratis en 24h.";
+const canonicalUrl = "https://pintores-valencia.com";
 
-const localBusinessSchema = [
+// Datos de testimonios
+const testimonios = [
   {
-    "@context": "https://schema.org",
-    "@type": "HousePainter",
-    "name": "Pintores en Valencia",
-    "url": "https://pintores-valencia.com",
-    "image": "https://pintores-valencia.com/hero-pintores-valencia.jpg",
-    "telephone": "+34722208131",
-    "email": "edgarberriojimenez@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Valencia",
-      "addressCountry": "ES",
-    },
-    "openingHours": ["Mo-Sa 08:00-20:00"],
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": {
-        "@type": "GeoCoordinates",
-        "latitude": 39.4699,
-        "longitude": -0.3763,
-      },
-      "geoRadius": "50000",
-    },
-    "priceRange": "€€",
-    "areaServed": [{ "@type": "City", "name": "Valencia" }],
+    nombre: "María García",
+    ubicacion: "Ruzafa, Valencia",
+    texto: "Excelente trabajo en mi piso. Pintaron todo el interior en 3 días y quedó perfecto. Muy profesionales y limpios.",
+    puntuacion: 5
+  },
+  {
+    nombre: "Carlos Ruiz",
+    ubicacion: "El Carmen, Valencia",
+    texto: "Me quitaron el gotelé de toda la casa y el resultado es increíble. Recomiendo 100%.",
+    puntuacion: 5
+  },
+  {
+    nombre: "Ana Martínez",
+    ubicacion: "Benimaclet, Valencia",
+    texto: "Pintaron la fachada de mi edificio. Trabajo impecable y precio muy competitivo.",
+    puntuacion: 5
   }
 ];
+
+// Datos de preguntas frecuentes
+const faqs = [
+  {
+    pregunta: "¿Cuánto cuesta pintar una casa?",
+    respuesta: "El precio depende del tamaño y tipo de trabajo. Ofrecemos presupuestos gratuitos en 24h. Para una casa de 80m² el precio suele estar entre 2.500€ y 4.500€."
+  },
+  {
+    pregunta: "¿Cuánto tiempo tardan en pintar?",
+    respuesta: "Una vivienda de 80m² la pintamos en 3-5 días laborables. El tiempo exacto depende del estado de las paredes y el tipo de trabajo requerido."
+  },
+  {
+    pregunta: "¿Qué incluye el servicio?",
+    respuesta: "Incluimos preparación de superficies, materiales de calidad, mano de obra especializada y limpieza final. También cubrimos muebles y suelos."
+  },
+  {
+    pregunta: "¿Ofrecen garantía?",
+    respuesta: "Sí, ofrecemos 2 años de garantía en todos nuestros trabajos de pintura interior y exterior."
+  },
+  {
+    pregunta: "¿Trabajan fines de semana?",
+    respuesta: "Sí, trabajamos de lunes a sábado. Los domingos solo para emergencias o trabajos urgentes con suplemento."
+  }
+];
+
+// Schema JSON-LD completo
+const jsonLdSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://pintores-valencia.com/#business",
+      "name": "Pintores Valencia",
+      "description": "Servicio profesional de pintura en Valencia especializado en pintura interior, exterior, quitar gotelé e impermeabilización",
+      "url": "https://pintores-valencia.com",
+      "telephone": "+34722208131",
+      "email": "info@pintores-valencia.com",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Ejemplo 123",
+        "addressLocality": "Valencia",
+        "postalCode": "46000",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "39.4699",
+        "longitude": "-0.3763"
+      },
+      "openingHours": "Mo-Sa 08:00-20:00",
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.4699",
+          "longitude": "-0.3763"
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Pintura",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Pintura Interior",
+            "description": "Servicios profesionales de pintura interior para viviendas y oficinas"
+          },
+          {
+            "@type": "OfferCatalog", 
+            "name": "Pintura Exterior",
+            "description": "Pintura de fachadas e impermeabilización exterior"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Quitar Gotelé",
+            "description": "Eliminación profesional de gotelé y alisado de paredes"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pintores-valencia.com/#website",
+      "url": "https://pintores-valencia.com",
+      "name": "Pintores Valencia",
+      "description": "Pintores profesionales en Valencia",
+      "publisher": {
+        "@id": "https://pintores-valencia.com/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pintores-valencia.com/#webpage",
+      "url": "https://pintores-valencia.com",
+      "name": "Pintores Valencia - Pintura Interior, Exterior y Quitar Gotelé",
+      "isPartOf": {
+        "@id": "https://pintores-valencia.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://pintores-valencia.com/hero-pintores-valencia.jpg"
+      },
+      "description": "Pintores profesionales en Valencia. Especialistas en pintura interior, exterior, quitar gotelé e impermeabilización. Presupuesto gratis en 24h."
+    }
+  ]
+};
 ---
 
-<SEO 
-  title={title}
-  description={description}
-  canonical={url}
-  ogImage={ogImage}
-  schema={localBusinessSchema}
-  preloadImages={["/hero-pintores-valencia.jpg"]}
->
-  <!-- Tu componente React Index se renderiza aquí -->
-  <Index client:load />
-</SEO> 
+<Layout {title} {description} {canonicalUrl}>
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLdSchema)} />
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <h1 class="text-xl font-bold text-blue-600">Pintores Valencia</h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="/" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+          <a href="/servicios" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Servicios</a>
+          <a href="/precios" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Precios</a>
+          <a href="/trabajos" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Trabajos</a>
+          <a href="/zonas" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Zonas</a>
+          <a href="/contacto" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contacto</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="tel:+34722208131" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800"></div>
+    
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-black/20"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="space-y-8">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+          Pintores
+          <span class="block text-yellow-400">Valencia</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          Transformamos tu hogar con <strong>pintura profesional</strong>. 
+          Especialistas en interior, exterior y quitar gotelé.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+          <a href="/presupuesto" 
+             class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-xl">
+            Presupuesto GRATIS
+          </a>
+          <a href="tel:+34722208131" 
+             class="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 backdrop-blur-sm">
+            722 208 131
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-12">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-yellow-400">+500</div>
+            <div class="text-sm text-blue-100">Trabajos realizados</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-yellow-400">15+</div>
+            <div class="text-sm text-blue-100">Años experiencia</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-yellow-400">24h</div>
+            <div class="text-sm text-blue-100">Respuesta rápida</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+            <div class="text-2xl font-bold text-yellow-400">2 años</div>
+            <div class="text-sm text-blue-100">Garantía total</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Servicios Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Nuestros Servicios de Pintura
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ofrecemos servicios completos de pintura con materiales de primera calidad y 
+          profesionales experimentados para garantizar los mejores resultados.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Pintura Interior -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Pintura Interior</h3>
+            <p class="text-gray-600 mb-4">
+              Transformamos el interior de tu hogar con pinturas de alta calidad. 
+              Preparación completa, aplicación profesional y acabados perfectos.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-6">
+              <li>• Preparación de superficies</li>
+              <li>• Pinturas ecológicas disponibles</li>
+              <li>• Acabados lisos y texturizados</li>
+              <li>• Protección de muebles incluida</li>
+            </ul>
+            <div class="text-center">
+              <a href="/servicios/pintura-interior" 
+                 class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pintura Exterior -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Pintura Exterior</h3>
+            <p class="text-gray-600 mb-4">
+              Protegemos y embellecemos fachadas con sistemas de pintura resistentes 
+              a la intemperie y tratamientos de impermeabilización.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-6">
+              <li>• Tratamiento anti-humedad</li>
+              <li>• Pinturas resistentes UV</li>
+              <li>• Reparación de grietas</li>
+              <li>• Impermeabilización incluida</li>
+            </ul>
+            <div class="text-center">
+              <a href="/servicios/pintura-exterior" 
+                 class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quitar Gotelé -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 011 1v1z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Quitar Gotelé</h3>
+            <p class="text-gray-600 mb-4">
+              Eliminamos el gotelé de techos y paredes, dejando superficies completamente 
+              lisas y modernas listas para pintar.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-6">
+              <li>• Técnica profesional sin polvo</li>
+              <li>• Alisado perfecto garantizado</li>
+              <li>• Limpieza completa incluida</li>
+              <li>• Preparado para pintar</li>
+            </ul>
+            <div class="text-center">
+              <a href="/servicios/quitar-gotele" 
+                 class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barnizado -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Barnizado y Lacado</h3>
+            <p class="text-gray-600 mb-4">
+              Restauramos y protegemos maderas con barnices y lacas de alta calidad. 
+              Perfecto para puertas, ventanas y muebles.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-6">
+              <li>• Lijado y preparación</li>
+              <li>• Barnices ecológicos</li>
+              <li>• Acabados mate, satinado o brillo</li>
+              <li>• Protección duradera</li>
+            </ul>
+            <div class="text-center">
+              <a href="/servicios" 
+                 class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Papel Pintado -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Papel Pintado</h3>
+            <p class="text-gray-600 mb-4">
+              Instalamos papel pintado con técnicas profesionales. Gran variedad de 
+              diseños y texturas para personalizar tus espacios.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-6">
+              <li>• Instalación sin burbujas</li>
+              <li>• Amplio catálogo de diseños</li>
+              <li>• Papel lavable y resistente</li>
+              <li>• Combinable con pintura</li>
+            </ul>
+            <div class="text-center">
+              <a href="/servicios" 
+                 class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tratamientos Especiales -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+          <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
+            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Tratamientos Especiales</h3>
+            <p class="text-gray-600 mb-4">
+              Aplicamos tratamientos especializados como anti-moho, impermeabilizantes 
+              y pinturas ignífugas según tus necesidades.
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-6">
+              <li>• Tratamiento anti-humedad</li>
+              <li>• Pinturas anti-moho</li>
+              <li>• Impermeabilización</li>
+              <li>• Soluciones personalizadas</li>
+            </ul>
+            <div class="text-center">
+              <a href="/servicios" 
+                 class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver Detalles
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por Qué Elegirnos -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          ¿Por Qué Elegir Pintores Valencia?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Más de 15 años de experiencia nos avalan como la mejor opción para tus proyectos de pintura
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Experiencia Garantizada</h3>
+          <p class="text-gray-600">Más de 15 años pintando en Valencia con cientos de clientes satisfechos</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Precios Competitivos</h3>
+          <p class="text-gray-600">La mejor relación calidad-precio del mercado sin comprometer la calidad</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Trabajo Rápido</h3>
+          <p class="text-gray-600">Cumplimos plazos estrictos sin sacrificar la calidad del acabado</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Garantía Total</h3>
+          <p class="text-gray-600">2 años de garantía en todos nuestros trabajos para tu tranquilidad</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Lo Que Dicen Nuestros Clientes
+        </h2>
+        <p class="text-xl text-gray-600">
+          Testimonios reales de clientes satisfechos con nuestro trabajo
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonios.map((testimonio) => (
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="flex items-center mb-4">
+              {Array.from({ length: testimonio.puntuacion }).map((_, i) => (
+                <svg key={i} class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-600 mb-4 italic">"{testimonio.texto}"</p>
+            <div class="border-t pt-4">
+              <p class="font-semibold text-gray-900">{testimonio.nombre}</p>
+              <p class="text-sm text-gray-500">{testimonio.ubicacion}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/trabajos" 
+           class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+          Ver Más Testimonios
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Preguntas Frecuentes
+        </h2>
+        <p class="text-xl text-gray-600">
+          Resolvemos tus dudas sobre nuestros servicios de pintura
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        {faqs.map((faq, index) => (
+          <details class="bg-gray-50 rounded-lg p-6 group" key={index}>
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="text-lg font-semibold text-gray-900 pr-4">{faq.pregunta}</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="mt-4 pt-4 border-t border-gray-200">
+              <p class="text-gray-600 leading-relaxed">{faq.respuesta}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-4">¿Tienes más preguntas?</p>
+        <a href="/contacto" 
+           class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+          Contacta con Nosotros
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+        ¿Listo para Transformar tu Hogar?
+      </h2>
+      <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+        Obtén tu presupuesto personalizado sin compromiso. 
+        Respondemos en menos de 24 horas.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/presupuesto" 
+           class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105">
+          Solicitar Presupuesto
+        </a>
+        <a href="tel:+34722208131" 
+           class="bg-white/10 hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 backdrop-blur-sm">
+          Llamar: 722 208 131
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Pintores Valencia</h3>
+          <p class="text-gray-400 mb-4">
+            Profesionales en pintura interior, exterior y quitar gotelé en Valencia.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Servicios</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="/servicios/pintura-interior" class="hover:text-white transition-colors">Pintura Interior</a></li>
+            <li><a href="/servicios/pintura-exterior" class="hover:text-white transition-colors">Pintura Exterior</a></li>
+            <li><a href="/servicios/quitar-gotele" class="hover:text-white transition-colors">Quitar Gotelé</a></li>
+            <li><a href="/servicios" class="hover:text-white transition-colors">Barnizado</a></li>
+            <li><a href="/servicios" class="hover:text-white transition-colors">Papel Pintado</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Empresa</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="/trabajos" class="hover:text-white transition-colors">Trabajos Realizados</a></li>
+            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
+            <li><a href="/zonas" class="hover:text-white transition-colors">Zonas de Trabajo</a></li>
+            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+          <div class="space-y-2 text-gray-400">
+            <p>📱 722 208 131</p>
+            <p>✉️ info@pintores-valencia.com</p>
+            <p>📍 Valencia, España</p>
+            <p>🕒 Lun-Sáb: 8:00-20:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 Pintores Valencia. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/34722208131?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto%20para%20pintar" 
+     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+     aria-label="Contactar por WhatsApp">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.485 3.287"/>
+    </svg>
+  </a>
+
+  <!-- Mobile Call Button -->
+  <a href="tel:+34722208131" 
+     class="md:hidden fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+     aria-label="Llamar ahora">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+    </svg>
+  </a>
+</Layout>

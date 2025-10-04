@@ -1,40 +1,420 @@
 ---
-import SEO from '../layouts/SEO.astro';
-import Trabajos from './Trabajos.tsx';
+import Layout from '../layouts/Layout.astro';
 
 const url = "https://pintores-valencia.com/trabajos";
 const title = "Trabajos realizados | Pintores en Valencia | Galería de proyectos";
 const description = "Ve nuestros trabajos de pintura en Valencia. Galería con antes y después. Proyectos reales de clientes satisfechos. ☎️ 722 208 131";
 const ogImage = "https://pintores-valencia.com/trabajos-pintura-valencia.jpg";
 
-const trabajosSchema = [
+// Datos de trabajos realizados
+const trabajos = [
   {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Trabajos realizados - Pintores en Valencia",
-    "description": "Galería de trabajos y proyectos de pintura realizados en Valencia",
-    "url": "https://pintores-valencia.com/trabajos",
-    "mainEntity": {
-      "@type": "LocalBusiness",
-      "name": "Pintores en Valencia",
-      "telephone": "+34722208131",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Valencia",
-        "addressCountry": "ES"
-      }
-    }
+    id: 1,
+    titulo: "Renovación completa piso en Russafa",
+    tipo: "interior",
+    zona: "Russafa, Valencia",
+    descripcion: "Alisado de paredes, eliminación de gotelé y pintura completa de 90m²",
+    imagen: "/src/assets/pintura-interior-valencia.jpg",
+    año: "2024"
+  },
+  {
+    id: 2,
+    titulo: "Fachada edificio residencial",
+    tipo: "fachada",
+    zona: "Benimaclet, Valencia", 
+    descripcion: "Pintura elastomérica en fachada de 8 plantas con andamiaje completo",
+    imagen: "/src/assets/fachada-exterior-valencia.jpg",
+    año: "2024"
+  },
+  {
+    id: 3,
+    titulo: "Local comercial en Centro",
+    tipo: "comercial",
+    zona: "Centro, Valencia",
+    descripcion: "Pintura interior y exterior de local comercial 200m²",
+    imagen: "/src/assets/pintura-interior-valencia.jpg",
+    año: "2024"
+  },
+  {
+    id: 4,
+    titulo: "Comunidad de propietarios Paterna",
+    tipo: "comunidad",
+    zona: "Paterna, Valencia",
+    descripcion: "Pintura completa de zonas comunes y fachada",
+    imagen: "/src/assets/fachada-exterior-valencia.jpg",
+    año: "2023"
+  },
+  {
+    id: 5,
+    titulo: "Casa unifamiliar Torrent",
+    tipo: "interior",
+    zona: "Torrent, Valencia",
+    descripcion: "Pintura interior completa y lacado de puertas",
+    imagen: "/src/assets/pintura-interior-valencia.jpg",
+    año: "2023"
+  },
+  {
+    id: 6,
+    titulo: "Oficinas Mislata",
+    tipo: "comercial",
+    zona: "Mislata, Valencia",
+    descripcion: "Renovación completa de oficinas 150m²",
+    imagen: "/src/assets/pintura-interior-valencia.jpg",
+    año: "2023"
   }
 ];
+
+// Filtros disponibles
+const filtros = [
+  { id: "todos", label: "Todos los trabajos", count: trabajos.length },
+  { id: "interior", label: "Pintura interior", count: trabajos.filter(t => t.tipo === "interior").length },
+  { id: "fachada", label: "Fachadas", count: trabajos.filter(t => t.tipo === "fachada").length },
+  { id: "comercial", label: "Locales comerciales", count: trabajos.filter(t => t.tipo === "comercial").length },
+  { id: "comunidad", label: "Comunidades", count: trabajos.filter(t => t.tipo === "comunidad").length }
+];
+
+// Testimonios específicos de trabajos
+const testimoniosTrabajos = [
+  {
+    nombre: "Carmen M.",
+    ubicacion: "Russafa, Valencia",
+    titulo: "Trabajo excepcional en Russafa",
+    texto: "Eliminaron el gotelé de toda la casa y la dejaron impecable. Muy profesionales, limpios y puntuales. El resultado superó nuestras expectativas.",
+    puntuacion: 5
+  },
+  {
+    nombre: "José L.",
+    ubicacion: "Benimaclet, Valencia", 
+    titulo: "Fachada perfecta en Benimaclet",
+    texto: "Pintaron la fachada de nuestro edificio con pintura elastomérica. Trabajo impecable, cumplieron plazos y precio ajustado. Muy recomendables.",
+    puntuacion: 5
+  }
+];
+
+// Schema JSON-LD para trabajos
+const trabajosSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Trabajos realizados - Pintores en Valencia",
+  "description": "Galería de trabajos y proyectos de pintura realizados en Valencia",
+  "url": "https://pintores-valencia.com/trabajos",
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Pintores en Valencia",
+    "telephone": "+34722208131",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Valencia",
+      "addressCountry": "ES"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Trabajos de Pintura Realizados",
+      "itemListElement": trabajos.map(trabajo => ({
+        "@type": "Offer",
+        "name": trabajo.titulo,
+        "description": trabajo.descripcion,
+        "category": trabajo.tipo,
+        "areaServed": trabajo.zona
+      }))
+    }
+  }
+};
 ---
 
-<SEO 
+<Layout 
   title={title}
   description={description}
-  canonical={url}
+  canonicalUrl={url}
   ogImage={ogImage}
-  schema={trabajosSchema}
 >
-  <!-- Tu componente React Trabajos se renderiza aquí -->
-  <Trabajos client:load />
-</SEO> 
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(trabajosSchema)} />
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <a href="/" class="text-xl font-bold text-blue-600">Pintores Valencia</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Inicio</a>
+          <a href="/servicios" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Servicios</a>
+          <a href="/precios" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Precios</a>
+          <a href="/trabajos" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Trabajos</a>
+          <a href="/zonas" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Zonas</a>
+          <a href="/contacto" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contacto</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="tel:+34722208131" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="bg-gray-50 border-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-2 py-3 text-sm">
+        <a href="/" class="text-blue-600 hover:text-blue-800">Inicio</a>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+        <span class="text-gray-600">Trabajos realizados</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Nuestros trabajos realizados
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Descubre algunos de los proyectos de pintura que hemos realizado en Valencia. 
+        Cada trabajo refleja nuestro compromiso con la calidad y la satisfacción del cliente.
+      </p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="mb-8">
+      <div class="flex items-center space-x-2 mb-4">
+        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.207A1 1 0 013 6.5V4z"></path>
+        </svg>
+        <span class="font-medium text-gray-900">Filtrar por tipo:</span>
+      </div>
+      <div class="flex flex-wrap gap-2" id="filtros-trabajos">
+        {filtros.map((filtro) => (
+          <button
+            data-filter={filtro.id}
+            class="filter-btn px-4 py-2 text-sm font-medium rounded-lg border border-gray-300 bg-white text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-colors active:bg-blue-600 active:text-white active:border-blue-600"
+          >
+            {filtro.label} ({filtro.count})
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- Grid de trabajos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="trabajos-grid">
+      {trabajos.map((trabajo) => (
+        <div class="trabajo-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1" data-tipo={trabajo.tipo}>
+          <div class="aspect-video relative overflow-hidden">
+            <img 
+              src={trabajo.imagen} 
+              alt={trabajo.titulo}
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+                {trabajo.año}
+              </span>
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                {trabajo.tipo === "interior" && "Interior"}
+                {trabajo.tipo === "fachada" && "Fachada"}
+                {trabajo.tipo === "comercial" && "Comercial"}
+                {trabajo.tipo === "comunidad" && "Comunidad"}
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{trabajo.titulo}</h3>
+            <p class="text-gray-600 mb-3">{trabajo.descripcion}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium text-blue-600">{trabajo.zona}</span>
+              <button class="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver detalles
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl p-8 mb-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Nuestros números</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-4xl font-bold text-yellow-400 mb-2">500+</div>
+          <p class="text-blue-100">Trabajos realizados</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-yellow-400 mb-2">15+</div>
+          <p class="text-blue-100">Años de experiencia</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-yellow-400 mb-2">98%</div>
+          <p class="text-blue-100">Clientes satisfechos</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-yellow-400 mb-2">50+</div>
+          <p class="text-blue-100">Zonas de Valencia</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonios de trabajos -->
+    <div class="mb-12">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Lo que dicen nuestros clientes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {testimoniosTrabajos.map((testimonio) => (
+          <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="mb-4">
+              <div class="flex items-center space-x-1 mb-2">
+                {Array.from({ length: testimonio.puntuacion }).map((_, i) => (
+                  <svg key={i} class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                  </svg>
+                ))}
+              </div>
+              <h4 class="font-semibold text-gray-900">{testimonio.titulo}</h4>
+            </div>
+            <p class="text-gray-600 mb-4 italic">
+              "{testimonio.texto}"
+            </p>
+            <div class="text-sm border-t pt-4">
+              <p class="font-medium text-gray-900">{testimonio.nombre}</p>
+              <p class="text-gray-500">{testimonio.ubicacion}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center bg-gray-50 rounded-2xl p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Tu proyecto será el siguiente?</h2>
+      <p class="text-xl text-gray-600 mb-6">
+        Solicita tu presupuesto gratuito y únete a nuestros clientes satisfechos
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/presupuesto" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+          Solicitar presupuesto
+        </a>
+        <a href="/contacto" class="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 px-8 py-3 rounded-lg text-lg font-medium transition-colors">
+          Ver más trabajos
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Pintores Valencia</h3>
+          <p class="text-gray-400 mb-4">
+            Profesionales en pintura interior, exterior y quitar gotelé en Valencia.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Servicios</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="/servicios/pintura-interior" class="hover:text-white transition-colors">Pintura Interior</a></li>
+            <li><a href="/servicios/pintura-exterior" class="hover:text-white transition-colors">Pintura Exterior</a></li>
+            <li><a href="/servicios/quitar-gotele" class="hover:text-white transition-colors">Quitar Gotelé</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Empresa</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="/trabajos" class="hover:text-white transition-colors">Trabajos Realizados</a></li>
+            <li><a href="/precios" class="hover:text-white transition-colors">Precios</a></li>
+            <li><a href="/contacto" class="hover:text-white transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+          <div class="space-y-2 text-gray-400">
+            <p>📱 722 208 131</p>
+            <p>✉️ info@pintores-valencia.com</p>
+            <p>📍 Valencia, España</p>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+        <p>&copy; 2024 Pintores Valencia. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript para filtros interactivos -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const trabajoCards = document.querySelectorAll('.trabajo-card');
+      
+      // Activar el primer filtro (todos) por defecto
+      filterBtns[0].classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+      filterBtns[0].classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+      
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filter = this.dataset.filter;
+          
+          // Actualizar estado visual de botones
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-blue-600', 'text-white', 'border-blue-600');
+            b.classList.add('bg-white', 'text-gray-700', 'border-gray-300');
+          });
+          
+          this.classList.add('bg-blue-600', 'text-white', 'border-blue-600');
+          this.classList.remove('bg-white', 'text-gray-700', 'border-gray-300');
+          
+          // Filtrar tarjetas
+          trabajoCards.forEach(card => {
+            if (filter === 'todos' || card.dataset.tipo === filter) {
+              card.style.display = 'block';
+              card.style.animation = 'fadeIn 0.3s ease-in';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <!-- CSS para animaciones -->
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .filter-btn.active {
+      background-color: #2563eb !important;
+      color: white !important;
+      border-color: #2563eb !important;
+    }
+  </style>
+
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/34722208131?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto%20para%20pintar" 
+     class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+     aria-label="Contactar por WhatsApp">
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.485 3.287"/>
+    </svg>
+  </a>
+
+  <!-- Mobile Call Button -->
+  <a href="tel:+34722208131" 
+     class="md:hidden fixed bottom-6 left-6 bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+     aria-label="Llamar ahora">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+    </svg>
+  </a>
+</Layout> 
