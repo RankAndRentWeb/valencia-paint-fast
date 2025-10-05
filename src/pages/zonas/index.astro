@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Zonas from "../components/_Zonas.tsx";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Zonas from "../../components/_Zonas.tsx";
 
 const title = "Zonas de Valencia donde trabajamos";
 const description = "Cobertura en toda Valencia: Ruzafa, El Carmen, Benimaclet y más.";
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<Layout {title} {description} {canonical}>
+<BaseLayout {title} {description} {canonical}>
   <Zonas client:load />
-</Layout>
+</BaseLayout>

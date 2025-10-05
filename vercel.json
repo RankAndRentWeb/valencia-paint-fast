@@ -1,26 +1,14 @@
 {
-  "version": 2,
   "cleanUrls": true,
-  "trailingSlash": true,
-
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-
   "headers": [
     { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/(.*\\.(?:jpg|jpeg|png|webp|avif|gif|svg|ico|css|js|woff2?))", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] }
   ],
-
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
-
   "redirects": [
     { "source": "/quitar-gotele-alisar-paredes", "destination": "/servicios/quitar-gotele/", "permanent": true },
     { "source": "/impermeabilizacion-terrazas-y-fachadas", "destination": "/servicios/impermeabilizacion/", "permanent": true },
     { "source": "/blog", "destination": "/blogs/", "permanent": true },
     { "source": "/blog/:category", "destination": "/blogs/:category/", "permanent": true },
-    { "source": "/blog/:category/:slug", "destination": "/blogs/:category/:slug/", "permanent": true },
-    { "source": "/:path+/", "destination": "/:path+", "permanent": true }
+    { "source": "/blog/:category/:slug", "destination": "/blogs/:category/:slug/", "permanent": true }
   ]
 }

@@ -1,8 +1,8 @@
 ﻿---
-import Layout from '@/layouts/SiteLayout.astro';
-import Index from '@/components/_Index.tsx';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Index from '../components/_Index.tsx';
 ---
 
-<Layout title="Pintores Valencia - Pintores profesionales en Valencia" description="Pintores en Valencia. Servicios de pintura interior, exterior, lacado, papel pintado. Presupuesto gratis. 722 208 131">
+<BaseLayout title="Pintores Valencia - Pintores profesionales en Valencia">
   <Index client:load />
-</Layout>
+</BaseLayout>
