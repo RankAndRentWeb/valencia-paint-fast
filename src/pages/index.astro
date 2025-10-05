@@ -1,12 +1,12 @@
 ﻿---
-import Layout from '../layouts/Layout.astro';
-import Index from '../components/_Index.tsx';
+import Layout from "../layouts/Layout.astro";
+import Index from "../components/_Index.tsx";
 
 const title = "Pintores en Valencia | Presupuesto 24h";
 const description = "Rápidos, limpios y con garantía.";
-const canonicalUrl = "https://pintores-valencia.com";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<Layout {title} {description} {canonicalUrl}>
+<Layout {title} {description} {canonical}>
   <Index client:load />
 </Layout>

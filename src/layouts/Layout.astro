@@ -1,45 +1,29 @@
 ---
 import "../styles/global.css";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
 
-export interface Props {
-  title: string;
-  description?: string;
-  canonicalUrl?: string;
-  ogImage?: string;
+export interface Props { 
+  title?: string; 
+  description?: string; 
+  canonical?: string;
 }
 
-const { title, description, canonicalUrl, ogImage } = Astro.props;
-const site = 'https://pintores-valencia.com';
+const { title = "Pintores en Valencia", description = "", canonical } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description" content={description || "Pintores profesionales en Valencia"} />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="generator" content={Astro.generator} />
-  
-  <title>{title}</title>
-  
-  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-  
-  <!-- Open Graph -->
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description || "Pintores profesionales en Valencia"} />
-  <meta property="og:url" content={canonicalUrl || site} />
-  <meta property="og:site_name" content="Pintores Valencia" />
-  <meta property="og:type" content="website" />
-  {ogImage && <meta property="og:image" content={ogImage} />}
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description || "Pintores profesionales en Valencia"} />
-  {ogImage && <meta name="twitter:image" content={ogImage} />}
-</head>
-<body class="min-h-dvh antialiased">
-  <slot />
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    {canonical && <link rel="canonical" href={canonical} />}
+  </head>
+  <body class="min-h-dvh antialiased">
+    <Header />
+    <main><slot /></main>
+    <Footer />
+  </body>
 </html>

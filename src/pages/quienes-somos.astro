@@ -1,12 +1,12 @@
 ﻿---
-import Layout from '../layouts/Layout.astro';
-import QuienesSomos from '../components/_QuienesSomos.tsx';
+import Layout from "../layouts/Layout.astro";
+import QuienesSomos from "../components/_QuienesSomos.tsx";
 
-const title = "Quiénes somos | Pintores profesionales en Valencia | Experiencia";
-const description = "Conoce a nuestro equipo de pintores profesionales en Valencia. Más de 10 años de experiencia. Calidad y confianza garantizada.";
-const canonicalUrl = "https://pintores-valencia.com/quienes-somos";
+const title = "Quiénes somos | Pintores profesionales en Valencia";
+const description = "Conoce a nuestro equipo de pintores profesionales en Valencia. Más de 10 años de experiencia.";
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<Layout {title} {description} {canonicalUrl}>
+<Layout {title} {description} {canonical}>
   <QuienesSomos client:load />
 </Layout>
