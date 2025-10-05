@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Zonas from '../components/_Zonas.tsx';
+
+const title = "Zonas de Valencia donde Trabajamos | Pintores Valencia";
+const description = "Trabajamos en toda Valencia: Ruzafa, El Carmen, Benimaclet, Campanar y más. Consulta si llegamos a tu zona.";
+const canonicalUrl = "https://pintores-valencia.com/zonas";
+---
+
+<Layout {title} {description} {canonicalUrl}>
+  <Zonas client:load />
+</Layout>
