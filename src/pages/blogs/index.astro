@@ -2,56 +2,32 @@
 import Layout from '@/layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
 
-const blogEntries = await getCollection('blogs');
-
-// Agrupar posts por categoria
-const postsByCategory = blogEntries.reduce((acc, entry) => {
-  const category = entry.data.category;
-  if (!acc[category]) {
-    acc[category] = [];
-  }
-  acc[category].push(entry);
+const posts = await getCollection('blogs');
+const grouped = posts.reduce((acc, p) => {
+  const filename = p.id.replace('.md', '');
+  const parts = filename.split('/');
+  const cat = parts.length === 2 ? parts[0] : 'general';
+  const slug = parts.length === 2 ? parts[1] : filename;
+  
+  (acc[cat] ??= []).push({...p, category: cat, slug: slug});
   return acc;
 }, {});
 ---
 
-<Layout title="Blog - Pintores Valencia" description="Consejos y guías sobre pintura, decoración e interiorismo en Valencia">
-  <div class="container mx-auto py-8">
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
-      <p class="text-xl text-gray-600">Consejos y guías sobre pintura, decoración e interiorismo</p>
-    </header>
-
-    <div class="grid gap-8">
-      {Object.entries(postsByCategory).map(([category, posts]) => (
-        <section key={category} class="mb-8">
-          <h2 class="text-2xl font-semibold text-gray-900 mb-4 capitalize">
-            <a href={`/blogs/${category}`} class="text-orange-600 hover:underline">
-              {category.replace('-', ' ')}
-            </a>
-          </h2>
-          
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {posts.map((post) => (
-              <article key={post.slug} class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div class="p-6">
-                  <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                    <a href={`/blogs/${post.data.category}/${post.data.slug || post.slug}`} 
-                       class="hover:text-orange-600 transition-colors">
-                      {post.data.title}
-                    </a>
-                  </h3>
-                  <p class="text-gray-600 mb-4">{post.data.description}</p>
-                  <a href={`/blogs/${post.data.category}/${post.data.slug || post.slug}`} 
-                     class="text-orange-600 hover:underline font-medium">
-                    Leer más →
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+<Layout title="Blogs" description="Artículos sobre pintura, gotelé e impermeabilización">
+  <section class="container mx-auto py-8">
+    <h1 class="text-3xl font-semibold mb-6">Blogs</h1>
+    <div class="grid md:grid-cols-2 gap-8">
+      {Object.entries(grouped).map(([cat, items]) => (
+        <div>
+          <h2 class="text-xl font-semibold capitalize mb-2">{cat}</h2>
+          <ul class="list-disc pl-5">
+            {items.map(p => 
+              <li><a href={`/blogs/${p.category}/${p.slug}/`}>{p.data.title}</a></li>
+            )}
+          </ul>
+        </div>
       ))}
     </div>
-  </div>
+  </section>
 </Layout>

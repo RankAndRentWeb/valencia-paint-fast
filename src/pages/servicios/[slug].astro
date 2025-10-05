@@ -4,10 +4,7 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const entries = await getCollection('services');
-  return entries.map((entry) => ({ 
-    params: { slug: entry.data.slug || entry.slug }, 
-    props: { entry } 
-  }));
+  return entries.map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
@@ -15,7 +12,8 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title} description={entry.data.description}>
-  <article class="container mx-auto py-8 prose max-w-4xl">
+  <article class="container mx-auto py-8 prose">
+    <h1>{entry.data.title}</h1>
     <Content />
   </article>
 </Layout>

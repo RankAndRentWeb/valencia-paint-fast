@@ -19,7 +19,7 @@ const pathname = Astro.url.pathname;
           { href: '/blogs/', label: 'Blogs' },
           { href: '/contacto/', label: 'Contacto' },
         ].map(item => (
-          <a href={item.href} class={`hover:text-accent ${pathname.startsWith(item.href) ? 'font-semibold' : ''}`}>{item.label}</a>
+          <a href={item.href} class={`hover:text-accent ${pathname.startsWith(item.href) && item.href !== '/' ? 'font-semibold' : pathname === item.href ? 'font-semibold' : ''}`}>{item.label}</a>
         ))}
       </nav>
     </header>

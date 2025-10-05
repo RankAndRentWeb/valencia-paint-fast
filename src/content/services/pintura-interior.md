@@ -1,7 +1,7 @@
 ---
-title: "Pintura Interior"
-description: "Servicios profesionales de pintura interior para pisos y casas en Valencia"
+title: "Pintura interior"
 slug: "pintura-interior"
+description: "Servicio de pintura interior profesional en Valencia."
 ---
 
 # Pintura Interior

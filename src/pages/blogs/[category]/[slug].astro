@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/SiteLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blogs');
+  return posts.map((entry) => {
+    // Use filename as fallback
+    const filename = entry.id.replace('.md', '');
+    const parts = filename.split('/');
+    
+    if (parts.length === 2) {
+      // format: category/post
+      const [category, slug] = parts;
+      return { params: { category, slug }, props: { entry } };
+    } else {
+      // format: post (use "general" as category)  
+      return { params: { category: 'general', slug: filename }, props: { entry } };
+    }
+  });
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <article class="container mx-auto py-8 prose">
+    <h1>{entry.data.title}</h1>
+    <Content />
+  </article>
+</Layout>
