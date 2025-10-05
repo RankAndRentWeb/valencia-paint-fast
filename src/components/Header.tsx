@@ -18,7 +18,7 @@ const Header = () => {
     <header className="border-b bg-background sticky top-0 z-50" role="banner">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo + marca */}
-        <Link
+        <a
           to="/"
           aria-label="Pintores en Valencia — ir al inicio"
           className="flex items-center gap-2"
@@ -41,7 +41,7 @@ const Header = () => {
         <nav aria-label="Navegación principal" className="hidden lg:block">
           <ul className="flex items-center gap-6">
             <li>
-              <NavLink
+              <a
                 to="/"
                 end
                 className={({ isActive }) =>
@@ -52,7 +52,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/servicios"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
@@ -62,7 +62,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/blog"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
@@ -72,7 +72,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/precios"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
@@ -82,7 +82,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/trabajos"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
@@ -92,7 +92,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/quienes-somos"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
@@ -102,7 +102,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/presupuesto"
                 className="inline-flex items-center rounded-md px-3 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-cta"
               >
@@ -110,7 +110,7 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <NavLink
+              <a
                 to="/contacto"
                 className={({ isActive }) =>
                   `hover:text-primary transition-colors ${isActive ? "text-primary" : ""}`
@@ -161,7 +161,7 @@ const Header = () => {
         <div className="lg:hidden border-t bg-background">
           <nav className="py-4">
             <div className="space-y-2">
-              <NavLink
+              <a
                 to="/"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -175,7 +175,7 @@ const Header = () => {
                 Inicio
               </a>
               
-              <NavLink
+              <a
                 to="/servicios"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -189,7 +189,7 @@ const Header = () => {
                 Servicios
               </a>
               
-              <NavLink
+              <a
                 to="/blog"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -203,7 +203,7 @@ const Header = () => {
                 Blog
               </a>
               
-              <NavLink
+              <a
                 to="/precios"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -217,7 +217,7 @@ const Header = () => {
                 Precios
               </a>
               
-              <NavLink
+              <a
                 to="/trabajos"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -231,7 +231,7 @@ const Header = () => {
                 Trabajos
               </a>
               
-              <NavLink
+              <a
                 to="/quienes-somos"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -245,7 +245,7 @@ const Header = () => {
                 Quiénes somos
               </a>
               
-              <NavLink
+              <a
                 to="/presupuesto"
                 onClick={closeMenu}
                 className={({ isActive }) =>
@@ -259,7 +259,7 @@ const Header = () => {
                 Presupuesto
               </a>
               
-              <NavLink
+              <a
                 to="/contacto"
                 onClick={closeMenu}
                 className={({ isActive }) =>

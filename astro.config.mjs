@@ -7,9 +7,7 @@ export default defineConfig({
   site: 'https://pintores-valencia.com',
   integrations: [
     react(),
-    tailwind({
-      applyBaseStyles: false, // Mantener tus estilos existentes
-    }),
+    tailwind(),
     sitemap()
   ],
   vite: {

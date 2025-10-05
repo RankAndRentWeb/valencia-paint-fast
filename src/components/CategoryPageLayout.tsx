@@ -131,7 +131,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                                 </div>
                                 
                                 <div className="flex items-center gap-2">
-                                  <Link
+                                  <a
                                     to={`/blog/${post.slug}`}
                                     className="text-primary hover:text-primary/80 font-medium flex items-center gap-1"
                                   >
@@ -159,7 +159,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                     <p className="text-lg text-muted-foreground mb-4">
                       Próximamente habrá artículos sobre {category.name.toLowerCase()}.
                     </p>
-                    <Link
+                    <a
                       to="/blog"
                       className="text-primary hover:text-primary/80 font-medium"
                     >
@@ -178,7 +178,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                   Más de 15 años de experiencia en Valencia. Presupuesto sin compromiso en 24h.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
+                  <a
                     to="/presupuesto"
                     className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                   >

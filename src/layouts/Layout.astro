@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 export interface Props {
   title: string;
   description?: string;
@@ -37,8 +39,7 @@ const site = 'https://pintores-valencia.com';
   <meta name="twitter:description" content={description || "Pintores profesionales en Valencia"} />
   {ogImage && <meta name="twitter:image" content={ogImage} />}
 </head>
-<body>
+<body class="min-h-dvh antialiased">
   <slot />
 </body>
-</html>
 </html>

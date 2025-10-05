@@ -132,7 +132,7 @@ const BlogPost = ({ slug }: BlogPostProps) => {
           <nav className="border-t pt-8">
             <div className="flex justify-between items-center">
               {prevPost ? (
-                <Link
+                <a
                   to={`/blog/${prevPost.slug}`}
                   className="flex items-center space-x-2 text-accent hover:text-accent/80 transition-colors"
                 >
@@ -147,7 +147,7 @@ const BlogPost = ({ slug }: BlogPostProps) => {
               )}
 
               {nextPost ? (
-                <Link
+                <a
                   to={`/blog/${nextPost.slug}`}
                   className="flex items-center space-x-2 text-accent hover:text-accent/80 transition-colors text-right"
                 >
