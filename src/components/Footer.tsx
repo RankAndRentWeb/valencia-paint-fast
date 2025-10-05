@@ -49,21 +49,52 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Servicios */}
           <div className="space-y-4">
             <h4 className="font-semibold text-white">Servicios</h4>
             <nav className="space-y-2 text-sm">
               <a href="/quitar-gotele-alisar-paredes" className="block text-white hover:text-accent transition-colors">
-                Quitar gotelé
+                Quitar gotelé y alisar paredes
               </a>
               <a href="/pintura-interior-pisos-casas" className="block text-white hover:text-accent transition-colors">
                 Pintura interior
               </a>
               <a href="/pintura-exterior-fachadas" className="block text-white hover:text-accent transition-colors">
-                Fachadas exteriores
+                Pintura exterior y fachadas
+              </a>
+              <a href="/lacado-puertas-armarios-muebles" className="block text-white hover:text-accent transition-colors">
+                Lacado de puertas
+              </a>
+              <a href="/impermeabilizacion-terrazas-balcones" className="block text-white hover:text-accent transition-colors">
+                Impermeabilización
+              </a>
+              <a href="/pintura-comunidades-edificios" className="block text-white hover:text-accent transition-colors">
+                Pintura de comunidades
+              </a>
+            </nav>
+          </div>
+
+          {/* Enlaces importantes */}
+          <div className="space-y-4">
+            <h4 className="font-semibold text-white">Enlaces</h4>
+            <nav className="space-y-2 text-sm">
+              <a href="/precios" className="block text-white hover:text-accent transition-colors">
+                Precios
+              </a>
+              <a href="/quienes-somos" className="block text-white hover:text-accent transition-colors">
+                Quiénes somos
+              </a>
+              <a href="/trabajos" className="block text-white hover:text-accent transition-colors">
+                Trabajos realizados
+              </a>
+              <a href="/zonas" className="block text-white hover:text-accent transition-colors">
+                Zonas de trabajo
+              </a>
+              <a href="/blog" className="block text-white hover:text-accent transition-colors">
+                Blog
               </a>
               <a href="/presupuesto" className="block text-white hover:text-accent transition-colors">
-                Pedir presupuesto
+                Presupuesto gratis
               </a>
             </nav>
           </div>

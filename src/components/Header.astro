@@ -31,10 +31,57 @@ const nav = [
     </ul>
 
     <div class="hidden md:flex items-center gap-3">
-      <a href="/presupuesto/" class="h-10 px-4 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow-sm inline-flex items-center justify-center">Presupuesto</a>
+      <a href="/presupuesto/" class="h-10 px-4 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow-cta inline-flex items-center justify-center">Presupuesto</a>
       <a href="tel:+34722208131" aria-label="Llamar 722 208 131" class="h-10 px-4 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center">722 208 131</a>
     </div>
 
-    <!-- Menú móvil mínimo (opcional) -->
+    <!-- Menú móvil -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="p-2 rounded-md text-gray-700 hover:text-accent" aria-label="Abrir menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Panel móvil -->
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white border-b shadow-lg">
+      <div class="container mx-auto py-4 px-4">
+        <!-- CTAs arriba en móvil -->
+        <div class="flex flex-col gap-2 mb-4">
+          <a href="/presupuesto/" class="h-10 px-4 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow-cta flex items-center justify-center">Presupuesto</a>
+          <a href="tel:+34722208131" aria-label="Llamar 722 208 131" class="h-10 px-4 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center">722 208 131</a>
+        </div>
+        
+        <!-- Enlaces de navegación -->
+        <ul class="space-y-2">
+          {nav.map(i => (
+            <li>
+              <a href={i.href} class={`block py-2 px-3 rounded-md transition-colors ${pathname.startsWith(i.href) && i.href !== '/' ? 'text-gray-900 font-semibold bg-gray-50' : pathname === i.href ? 'text-gray-900 font-semibold bg-gray-50' : 'text-gray-700 hover:text-accent hover:bg-gray-50'}`}>{i.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    
+    if (button && menu) {
+      button.addEventListener('click', function() {
+        menu.classList.toggle('hidden');
+      });
+      
+      // Cerrar al hacer click fuera
+      document.addEventListener('click', function(e) {
+        if (!button.contains(e.target) && !menu.contains(e.target)) {
+          menu.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,346 @@
+---
+import SEOHead from '../components/SEOHead.tsx';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.tsx';
+import MobileCallButton from '../components/MobileCallButton.tsx';
+import WhatsAppFloat from '../components/WhatsAppFloat.tsx';
+import { CheckCircle2, Star, Palette, Clock, ShieldCheck } from 'lucide-react';
+
+const breadcrumbs = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Precios', href: '/precios' }
+];
+---
+<html lang="es">
+<head>
+  <SEOHead 
+    title="Precios de Pintores en Valencia 2024 - Tarifas y Presupuestos"
+    description="Consulta nuestros precios de pintura en Valencia. Tarifas competitivas para pintura interior, exterior, lacado y más. Presupuesto gratis sin compromiso."
+    canonical="https://pintoresvalencia.es/precios"
+    ogImage="/og-home.webp"
+    schema={{
+      "@context": "https://schema.org",
+      "@type": "OfferCatalog",
+      "name": "Precios de Pintores en Valencia",
+      "description": "Tarifas y precios de servicios de pintura profesional en Valencia",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Pintores en Valencia",
+        "telephone": "+34722208131",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Valencia",
+          "addressRegion": "Valencia",
+          "addressCountry": "ES"
+        }
+      },
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Pintura Interior",
+          "price": "12-18",
+          "priceCurrency": "EUR",
+          "description": "Precio por m² para pintura interior completa"
+        },
+        {
+          "@type": "Offer", 
+          "name": "Pintura Exterior",
+          "price": "15-25",
+          "priceCurrency": "EUR",
+          "description": "Precio por m² para fachadas exteriores"
+        },
+        {
+          "@type": "Offer",
+          "name": "Quitar Gotelé",
+          "price": "8-12",
+          "priceCurrency": "EUR", 
+          "description": "Precio por m² para eliminar gotelé y alisar"
+        }
+      ]
+    }}
+  />
+</head>
+<body class="min-h-screen flex flex-col">
+  <Header />
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary to-primary/90 text-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl lg:text-5xl font-bold mb-6">
+            Precios de Pintores en Valencia
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Tarifas competitivas y transparentes. Presupuesto detallado sin sorpresas ni letra pequeña.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/presupuesto" 
+               class="bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-md shadow-cta transition-all inline-flex items-center justify-center">
+              <Palette className="w-5 h-5 mr-2" />
+              Presupuesto Gratis
+            </a>
+            <a href="tel:+34722208131" 
+               class="bg-white hover:bg-gray-50 text-primary font-semibold py-3 px-6 rounded-md transition-all inline-flex items-center justify-center">
+              📞 722 208 131
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-4 py-4">
+      <Breadcrumbs client:load items={breadcrumbs} />
+    </div>
+
+    <!-- Información importante -->
+    <section class="py-8 bg-yellow-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-yellow-200">
+            <div class="flex items-start gap-3">
+              <div class="bg-yellow-100 p-2 rounded-lg">
+                <Star className="w-6 h-6 text-yellow-600" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-gray-900 mb-2">Precios orientativos</h3>
+                <p class="text-gray-700 text-sm leading-relaxed">
+                  Los precios mostrados son orientativos y pueden variar según el estado de las superficies, altura del trabajo, 
+                  accesibilidad y materiales elegidos. Todos nuestros presupuestos son <strong>gratuitos y sin compromiso</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabla de Precios -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+            Tarifas de Servicios de Pintura
+          </h2>
+
+          <!-- Pintura Interior -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            <div class="bg-primary text-white px-6 py-4">
+              <h3 class="text-xl font-semibold">🏠 Pintura Interior</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-2xl font-bold text-primary mb-2">12-15€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Calidad Estándar</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Una mano de imprimación</li>
+                    <li>• Dos manos de pintura</li>
+                    <li>• Pintura plástica calidad</li>
+                    <li>• Protección de mobiliario</li>
+                  </ul>
+                </div>
+                <div class="text-center p-4 bg-accent/10 rounded-lg border-2 border-accent">
+                  <div class="text-2xl font-bold text-accent mb-2">15-18€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Calidad Premium</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Preparación de superficies</li>
+                    <li>• Imprimación de calidad</li>
+                    <li>• Dos manos pintura premium</li>
+                    <li>• Acabado perfecto</li>
+                  </ul>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-2xl font-bold text-primary mb-2">8-12€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Solo Mano de Obra</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Cliente aporta material</li>
+                    <li>• Mano de obra profesional</li>
+                    <li>• Protección incluida</li>
+                    <li>• Limpieza final</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quitar Gotelé -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            <div class="bg-accent text-white px-6 py-4">
+              <h3 class="text-xl font-semibold">🔧 Quitar Gotelé y Alisar</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-2xl font-bold text-accent mb-2">8-12€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Eliminación Gotelé</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Retirada de gotelé</li>
+                    <li>• Lijado y alisado</li>
+                    <li>• Preparación base</li>
+                    <li>• Protección total</li>
+                  </ul>
+                </div>
+                <div class="text-center p-4 bg-accent/10 rounded-lg">
+                  <div class="text-2xl font-bold text-accent mb-2">18-25€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Gotelé + Pintura</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Quitar gotelé completo</li>
+                    <li>• Alisado profesional</li>
+                    <li>• Imprimación y pintura</li>
+                    <li>• Acabado listo habitar</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pintura Exterior -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+            <div class="bg-blue-600 text-white px-6 py-4">
+              <h3 class="text-xl font-semibold">🏢 Pintura Exterior y Fachadas</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600 mb-2">15-20€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Fachada Estándar</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Limpieza superficie</li>
+                    <li>• Imprimación</li>
+                    <li>• Pintura de fachadas</li>
+                    <li>• Hasta 3 plantas</li>
+                  </ul>
+                </div>
+                <div class="text-center p-4 bg-blue-50 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600 mb-2">20-25€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Fachada Premium</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Tratamiento completo</li>
+                    <li>• Reparación fisuras</li>
+                    <li>• Pintura alta calidad</li>
+                    <li>• Garantía extendida</li>
+                  </ul>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-2xl font-bold text-blue-600 mb-2">25-35€</div>
+                  <div class="text-sm text-gray-600 mb-3">por m²</div>
+                  <h4 class="font-semibold mb-2">Trabajos Altura</h4>
+                  <ul class="text-sm text-gray-700 space-y-1">
+                    <li>• Más de 3 plantas</li>
+                    <li>• Andamios especiales</li>
+                    <li>• Seguridad máxima</li>
+                    <li>• Accesos difíciles</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Otros Servicios -->
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-gray-600 text-white px-6 py-4">
+              <h3 class="text-xl font-semibold">🎨 Otros Servicios</h3>
+            </div>
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-lg font-bold text-gray-800 mb-1">180-250€</div>
+                  <div class="text-sm text-gray-600 mb-2">por puerta</div>
+                  <div class="font-medium">Lacado Puertas</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-lg font-bold text-gray-800 mb-1">12-18€</div>
+                  <div class="text-sm text-gray-600 mb-2">por m²</div>
+                  <div class="font-medium">Impermeabilización</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-lg font-bold text-gray-800 mb-1">20-30€</div>
+                  <div class="text-sm text-gray-600 mb-2">por m²</div>
+                  <div class="font-medium">Papel Pintado</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                  <div class="text-lg font-bold text-gray-800 mb-1">15-25€</div>
+                  <div class="text-sm text-gray-600 mb-2">por m²</div>
+                  <div class="font-medium">Comunidades</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué incluye nuestro servicio -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+            Qué Incluye Nuestro Servicio
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <ShieldCheck className="w-8 h-8 text-primary" />
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">Garantía Escrita</h3>
+              <p class="text-gray-700 text-sm">Todos nuestros trabajos incluyen garantía por escrito de hasta 2 años.</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-accent/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-accent" />
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">Rapidez</h3>
+              <p class="text-gray-700 text-sm">Trabajos terminados en los plazos acordados sin retrasos.</p>
+            </div>
+            <div class="text-center">
+              <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <CheckCircle2 className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">Sin Sorpresas</h3>
+              <p class="text-gray-700 text-sm">El precio final es el acordado, sin costes ocultos ni extras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-primary text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-6">
+            ¿Necesitas un Presupuesto Personalizado?
+          </h2>
+          <p class="text-xl text-white/90 mb-8">
+            Contáctanos para un presupuesto detallado y sin compromiso adaptado a tu proyecto.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/presupuesto" 
+               class="bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-md shadow-cta transition-all inline-flex items-center justify-center">
+              Solicitar Presupuesto
+            </a>
+            <a href="tel:+34722208131" 
+               class="bg-white hover:bg-gray-50 text-primary font-semibold py-3 px-6 rounded-md transition-all inline-flex items-center justify-center">
+              Llamar Ahora: 722 208 131
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer client:load />
+  <MobileCallButton client:load />
+  <WhatsAppFloat client:load />
+</body>
+</html>
