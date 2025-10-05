@@ -1,5 +1,4 @@
 // src/pages/BlogPost.tsx
-import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -7,17 +6,20 @@ import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { blogPosts, BLOG_BASE_URL } from "@/lib/blogPosts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-const BlogPost = () => {
-  const { slug } = useParams<{ slug: string }>();
+interface BlogPostProps {
+  slug?: string;
+}
+
+const BlogPost = ({ slug }: BlogPostProps) => {
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
       <div className="container mx-auto px-4 py-8 text-center">
         <h1 className="text-2xl font-bold mb-4">Artículo no encontrado</h1>
-        <Link to="/blog" className="text-accent hover:underline">
+        <a href="/blog" className="text-accent hover:underline">
           Volver al blog
-        </Link>
+        </a>
       </div>
     );
   }
@@ -139,7 +141,7 @@ const BlogPost = () => {
                     <div className="text-sm text-muted-foreground">Anterior</div>
                     <div className="font-medium">{prevPost.title}</div>
                   </div>
-                </Link>
+                </a>
               ) : (
                 <div />
               )}
@@ -154,7 +156,7 @@ const BlogPost = () => {
                     <div className="font-medium">{nextPost.title}</div>
                   </div>
                   <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               ) : (
                 <div />
               )}
@@ -164,10 +166,10 @@ const BlogPost = () => {
           {/* Back to blog */}
           <div className="text-center mt-8">
             <Button asChild variant="outline">
-              <Link to="/blog">
+              <a href="/blog">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Volver al blog
-              </Link>
+              </a>
             </Button>
           </div>
         </article>

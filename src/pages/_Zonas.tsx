@@ -1,5 +1,5 @@
 // src/pages/Zonas.tsx
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
@@ -88,7 +88,7 @@ const Zonas = () => {
                       className="w-full"
                       variant={zona.destacado ? "default" : "outline"}
                     >
-                      <Link to={zona.link}>Ver información de zona</Link>
+                      <a href={zona.link}>Ver información de zona</a>
                     </Button>
                   </div>
                 </CardContent>
@@ -114,7 +114,7 @@ const Zonas = () => {
                 size="lg"
                 className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors"
               >
-                <Link to="/contacto">Contactar</Link>
+                <a href="/contacto">Contactar</a>
               </Button>
             </div>
           </div>

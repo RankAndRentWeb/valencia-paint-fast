@@ -1,7 +1,6 @@
 // src/pages/Blog.tsx
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -112,7 +111,7 @@ const Blog = () => {
                         size="sm"
                         className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
                       >
-                        <Link to={`/blog/${category.slug}`}>Ver artículos</Link>
+                        <a href={`/blog/${category.slug}`}>Ver artículos</a>
                       </Button>
                     </CardContent>
                   </Card>
@@ -155,9 +154,9 @@ const Blog = () => {
                       </div>
                       
                       <h3 className="text-xl font-bold mb-3">
-                        <Link to={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
+                        <a href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">
                           {post.title}
-                        </Link>
+                        </a>
                       </h3>
                       
                       <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
@@ -176,12 +175,12 @@ const Blog = () => {
                           </span>
                         </div>
                         
-                        <Link
-                          to={`/blog/${post.slug}`}
+                        <a
+                          href={`/blog/${post.slug}`}
                           className="text-primary hover:text-primary/80 font-medium text-sm flex items-center gap-1"
                         >
                           Leer más <ArrowRight className="h-3 w-3" />
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -218,12 +217,12 @@ const Blog = () => {
                     </div>
 
                     <h3 className="text-lg font-semibold mb-3 line-clamp-2">
-                      <Link
-                        to={`/blog/${post.slug}`}
+                      <a
+                        href={`/blog/${post.slug}`}
                         className="hover:text-accent transition-colors"
                       >
                         {post.title}
-                      </Link>
+                      </a>
                     </h3>
 
                     <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">
@@ -243,13 +242,13 @@ const Blog = () => {
                       </div>
                     </div>
 
-                    <Link
-                      to={`/blog/${post.slug}`}
+                    <a
+                      href={`/blog/${post.slug}`}
                       className="inline-flex items-center space-x-2 text-accent hover:text-accent/80 font-medium transition-colors text-sm"
                     >
                       <span>Leer más</span>
                       <ArrowRight className="w-3 h-3" />
-                    </Link>
+                    </a>
                   </CardContent>
                 </Card>
               ))}
@@ -269,12 +268,12 @@ const Blog = () => {
                 Presupuesto detallado en 24h y garantía de calidad.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to="/presupuesto"
+                <a
+                  href="/presupuesto"
                   className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-md font-semibold transition-colors"
                 >
                   Presupuesto 24h Gratis
-                </Link>
+                </a>
                 <a
                   href="tel:722208131"
                   className="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-md font-semibold transition-colors"

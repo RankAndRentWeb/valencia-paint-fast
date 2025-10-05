@@ -1,5 +1,5 @@
 // src/pages/Precios.tsx
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -409,7 +409,7 @@ const Precios = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link to="/presupuesto">Solicitar presupuesto gratis</Link>
+                <a href="/presupuesto">Solicitar presupuesto gratis</a>
               </Button>
               <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
                 <a href="tel:722208131" className="flex items-center space-x-2">

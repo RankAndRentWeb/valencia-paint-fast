@@ -1,5 +1,5 @@
 // src/pages/Servicios.tsx
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import SEOHead from "@/components/SEOHead";
@@ -154,7 +154,7 @@ const Servicios = () => {
                   </ul>
                   
                   <Button asChild className="w-full bg-gradient-cta shadow-cta">
-                    <Link to={service.link}>Ver detalles y precios</Link>
+                    <a href={service.link}>Ver detalles y precios</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -169,10 +169,10 @@ const Servicios = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link to="/presupuesto">Pedir presupuesto gratis</Link>
+                <a href="/presupuesto">Pedir presupuesto gratis</a>
               </Button>
               <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
-                <Link to="/contacto">Contactar</Link>
+                <a href="/contacto">Contactar</a>
               </Button>
             </div>
           </div>

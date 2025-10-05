@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
 
@@ -16,7 +16,7 @@ const NotFound = () => {
           La página que buscas no existe o ha sido movida.
         </p>
         <Button asChild>
-          <Link to="/">Volver al inicio</Link>
+          <a href="/">Volver al inicio</a>
         </Button>
       </div>
     </>

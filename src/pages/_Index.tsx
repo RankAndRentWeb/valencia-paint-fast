@@ -1,6 +1,6 @@
 // src/pages/Index.tsx
 import SEOHead from "@/components/SEOHead";
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -291,7 +291,7 @@ const Index = () => {
                     size="sm"
                     className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
                   >
-                    <Link to={service.link}>{service.title}</Link>
+                    <a href={service.link}>{service.title}</a>
                   </Button>
                 </CardContent>
               </Card>
@@ -300,7 +300,7 @@ const Index = () => {
 
           <div className="text-center">
             <Button asChild size="lg" className="bg-gradient-cta shadow-cta">
-              <Link to="/servicios">Ver todos los servicios</Link>
+              <a href="/servicios">Ver todos los servicios</a>
             </Button>
           </div>
         </div>
@@ -429,9 +429,9 @@ const Index = () => {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-white shadow-cta font-semibold"
             >
-              <Link to="/presupuesto" aria-label="Solicitar presupuesto">
+              <a href="/presupuesto" aria-label="Solicitar presupuesto">
                 Pedir presupuesto gratis
-              </Link>
+              </a>
             </Button>
             <Button
               asChild
