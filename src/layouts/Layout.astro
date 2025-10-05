@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonicalUrl, ogImage } = Astro.props;
+const site = 'https://pintores-valencia.com';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={description || "Pintores profesionales en Valencia"} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <title>{title}</title>
+  
+  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description || "Pintores profesionales en Valencia"} />
+  <meta property="og:url" content={canonicalUrl || site} />
+  <meta property="og:site_name" content="Pintores Valencia" />
+  <meta property="og:type" content="website" />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description || "Pintores profesionales en Valencia"} />
+  {ogImage && <meta name="twitter:image" content={ogImage} />}
+</head>
+<body>
+  <slot />
+</body>
+</html>
+</html>
