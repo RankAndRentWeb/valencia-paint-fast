@@ -1,0 +1,47 @@
+---
+const { title = 'Pintores Valencia', description = 'Pintores profesionales en Valencia' } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={`https://pintores-valencia.com${pathname}`} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b bg-white">
+      <nav class="container mx-auto flex items-center gap-6 py-4">
+        {[
+          { href: '/', label: 'Inicio' },
+          { href: '/servicios/', label: 'Servicios' },
+          { href: '/blogs/', label: 'Blogs' },
+          { href: '/contacto/', label: 'Contacto' },
+        ].map(item => (
+          <a href={item.href} class={`hover:text-accent ${pathname.startsWith(item.href) ? 'font-semibold' : ''}`}>{item.label}</a>
+        ))}
+      </nav>
+    </header>
+    <main class="flex-1">
+      <slot />
+    </main>
+    <footer class="border-t bg-gray-50">
+      <div class="container mx-auto py-8 text-sm flex flex-col gap-2">
+        <div>© {new Date().getFullYear()} Pintores Valencia</div>
+        <div class="flex gap-4">
+          <a href="/sitemap-index.xml">Sitemap</a>
+          <a href="/politica-privacidad/">Privacidad</a>
+          <a href="/aviso-legal/">Aviso legal</a>
+        </div>
+      </div>
+    </footer>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'Pintores Valencia',
+      url: 'https://pintores-valencia.com',
+      areaServed: 'Valencia'
+    })}></script>
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página principal -->
+  <url>
+    <loc>https://pintores-valencia.com</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Páginas principales -->
+  <url>
+    <loc>https://pintores-valencia.com/servicios</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/blog</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/precios</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/trabajos</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/presupuesto</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/contacto</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/quienes-somos</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Servicios específicos -->
+  <url>
+    <loc>https://pintores-valencia.com/quitar-gotele-alisar-paredes</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/pintura-interior-pisos-casas</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/pintura-exterior-fachadas</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/impermeabilizacion-terrazas-y-fachadas</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/pintura-locales-comerciales</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/pintura-comunidades</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/lacado-puertas-carpinteria</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/papel-pintado-vinilos</loc>
+    <lastmod>2025-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Posts del blog -->
+  <url>
+    <loc>https://pintores-valencia.com/blog/pintar-interior-tiempos-secado-trucos</loc>
+    <lastmod>2025-09-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/blog/colores-piso-pequeno-ganar-amplitud</loc>
+    <lastmod>2025-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/blog/pintura-casas-alquilar-rapido</loc>
+    <lastmod>2025-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/blog/pintar-bajo-comercial-que-debes-saber</loc>
+    <lastmod>2025-09-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/blog/errores-antes-de-pintar-casa</loc>
+    <lastmod>2025-09-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://pintores-valencia.com/blog/elegir-colores-ideales-hogar</loc>
+    <lastmod>2025-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

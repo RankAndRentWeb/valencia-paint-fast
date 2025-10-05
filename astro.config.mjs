@@ -1,21 +1,20 @@
 import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   site: 'https://pintores-valencia.com',
-  integrations: [
-    react(),
-    tailwind(),
-    sitemap()
-  ],
+  trailingSlash: 'always',
+  output: 'static',
+  adapter: vercel(),
+  integrations: [tailwind(), sitemap(), react()],
   vite: {
     resolve: {
       alias: {
-        '@': '/src',
-        'react-helmet-async': '/src/components/HelmetWrapper.tsx'
+        '@': '/src'
       }
     }
   }
-}); 
+});

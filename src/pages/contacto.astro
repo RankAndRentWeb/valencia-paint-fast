@@ -1,12 +1,8 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Contacto from "../components/_Contacto.tsx";
-
-const title = "Contacto - Pintores Valencia";
-const description = "Contacta con nosotros para tu proyecto de pintura. Teléfono, WhatsApp y formulario.";
-const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+import Layout from '@/layouts/SiteLayout.astro';
+import Contacto from '@/components/_Contacto.tsx';
 ---
 
-<Layout {title} {description} {canonical}>
+<Layout title="Contacto - Pintores en Valencia" description="Contacta con Pintores en Valencia. Teléfono 722 208 131, email, WhatsApp. Horario L-S 8:00-20:00. Presupuesto gratis en Valencia.">
   <Contacto client:load />
 </Layout>

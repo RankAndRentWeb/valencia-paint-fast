@@ -1,12 +1,8 @@
 ﻿---
-import Layout from "../layouts/Layout.astro";
-import Index from "../components/_Index.tsx";
-
-const title = "Pintores en Valencia | Presupuesto 24h";
-const description = "Rápidos, limpios y con garantía.";
-const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+import Layout from '@/layouts/SiteLayout.astro';
+import Index from '@/components/_Index.tsx';
 ---
 
-<Layout {title} {description} {canonical}>
+<Layout title="Pintores Valencia - Pintores profesionales en Valencia" description="Pintores en Valencia. Servicios de pintura interior, exterior, lacado, papel pintado. Presupuesto gratis. 722 208 131">
   <Index client:load />
 </Layout>
