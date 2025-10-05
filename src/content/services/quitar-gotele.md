@@ -1,14 +1,18 @@
 ---
 title: "Quitar gotelé en Valencia"
 subtitle: "Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar."
-badges: ["Servicio especializado","Sin polvo"]
+badges: 
+  - "Servicio especializado"
+  - "Sin polvo"
 priceFrom: "18"
 priceUnit: "€/m²"
-heroImage: "/assets/gotele-hero.jpg"
+heroImage: "/assets/errores-pintar-paredes-mujer.jpg"
+heroWidth: 900
+heroHeight: 600
 bullets: 
-  - {label: "Sin polvo"}
-  - {label: "Rápido"}
-  - {label: "Garantía 3 años"}
+  - label: "Sin polvo"
+  - label: "Rápido"
+  - label: "Garantía 3 años"
 problem: 
   title: "El problema del gotelé"
   items: 
@@ -26,15 +30,16 @@ process:
   - "Eliminación del gotelé"
   - "Alisado de superficies"
   - "Limpieza final"
-faq:
+faq: 
   - q: "¿Hay polvo?"
-    a: "Usamos sistemas de aspiración para evitar polvo."
-  - q: "¿Cuánto tarda?"
-    a: "Según m²; solemos cerrar en 2–4 días por vivienda."
+    a: "No, usamos técnicas especiales que no generan polvo."
+  - q: "¿Cuánto tiempo tarda?"
+    a: "Una habitación estándar se completa en 1-2 días."
+dropFirstH1: true
 slug: "quitar-gotele"
 ---
 
-# Quitar Gotelé sin Polvo en Valencia
+## Quitar Gotelé sin Polvo en Valencia
 
 El gotelé es una técnica decorativa que fue muy popular en los años 80 y 90, pero que hoy en día se considera anticuada. Si tienes gotelé en las paredes de tu casa y quieres modernizarla, eliminar el gotelé es la solución perfecta.
 

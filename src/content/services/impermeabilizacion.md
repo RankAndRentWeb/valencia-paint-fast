@@ -1,14 +1,18 @@
 ---
 title: "Impermeabilización de terrazas"
-subtitle: "Protegemos tu terraza contra filtraciones con sistemas de impermeabilización duraderos."
-badges: ["Garantía 10 años","Sistema profesional"]
+subtitle: "Protegemos tu terraza contra filtraciones con sistemas profesionales."
+badges: 
+  - "Garantía 10 años"
+  - "Sistema profesional"
 priceFrom: "25"
 priceUnit: "€/m²"
-heroImage: "/assets/impermeabilizacion-hero.jpg"
+heroImage: "/assets/fachada-exterior-valencia.jpg"
+heroWidth: 900
+heroHeight: 600
 bullets: 
-  - {label: "Garantía 10 años"}
-  - {label: "Sin obras"}
-  - {label: "Sistema profesional"}
+  - label: "Garantía 10 años"
+  - label: "Sin obras"
+  - label: "Sistema profesional"
 problem: 
   title: "Problemas de humedad"
   items: 
@@ -26,15 +30,16 @@ process:
   - "Preparación de la superficie"
   - "Aplicación del sistema"
   - "Control de calidad"
-faq:
+faq: 
   - q: "¿Cuánto dura la impermeabilización?"
-    a: "Nuestros sistemas tienen garantía de 10 años y duración superior."
-  - q: "¿Se puede caminar sobre la terraza?"
-    a: "Sí, aplicamos sistemas transitables que resisten el uso normal."
+    a: "Con nuestro sistema profesional, garantizamos 10 años."
+  - q: "¿Se puede hacer sin obras?"
+    a: "Sí, aplicamos sistemas líquidos que no requieren obras."
+dropFirstH1: true
 slug: "impermeabilizacion"
 ---
 
-# Impermeabilización de Terrazas en Valencia
+## Impermeabilización de Terrazas en Valencia
 
 Las filtraciones en terrazas son uno de los problemas más comunes en las viviendas. La humedad puede causar daños importantes en la estructura y reducir el confort del hogar.
 

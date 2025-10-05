@@ -9,8 +9,9 @@ const services = defineCollection({
     priceFrom: z.string().optional(),
     priceUnit: z.string().optional(),
     heroImage: z.string().optional(),
+    heroWidth: z.number().optional(),
+    heroHeight: z.number().optional(),
     bullets: z.array(z.object({
-      icon: z.string().optional(),
       label: z.string()
     })).optional(),
     problem: z.object({
@@ -26,6 +27,7 @@ const services = defineCollection({
       q: z.string(),
       a: z.string()
     })).optional(),
+    dropFirstH1: z.boolean().optional().default(true),
     slug: z.string().optional().default(slug)
   })
 });
