@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/SiteLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cats = await getCollection('blogCategories');
+  return cats.map(c => ({ 
+    params: { category: c.data.slug }, 
+    props: { cat: c.data } 
+  }));
+}
+
+const { cat } = Astro.props;
+const posts = (await getCollection('blogs')).filter(p => p.slug.startsWith(cat.slug + "/"));
+---
+
+<Layout title={`${cat.name} - Blog`} description={cat.description}>
+  <section class="container mx-auto px-4 py-10">
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">{cat.name}</h1>
+    <div class="grid md:grid-cols-2 gap-6">
+      {posts.map(p => {
+        const [, slug] = p.slug.split("/");
+        return (
+          <a href={`/blogs/${cat.slug}/${slug}/`} class="rounded-xl border p-6 hover:shadow transition block">
+            <h2 class="text-lg font-semibold mb-2">{p.data.title}</h2>
+            <p class="text-gray-600">{p.data.excerpt}</p>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+</Layout>
