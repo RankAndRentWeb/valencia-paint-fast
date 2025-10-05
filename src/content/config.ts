@@ -46,13 +46,15 @@ const blogs = defineCollection({
   schema: ({ slug }) => z.object({
     title: z.string(),
     excerpt: z.string().optional(),
-    categorySlug: z.string(),
-    cover: z.string().optional(),
+    categorySlug: z.string(), // "gotele" | "impermeabilizacion" | "colores" | "fachadas" | "barnices"
     postSlug: z.string().optional(),
+    cover: z.string().optional(), // URL/asset hero
+    date: z.coerce.date().optional(), // fecha publicación
+    tags: z.array(z.string()).optional(),
     description: z.string().optional()
   }).transform((data) => ({
     ...data,
-    slug: `${data.categorySlug}/${(data.postSlug ?? slug.split('/').pop()!).toLowerCase()}`
+    slug: `${data.categorySlug.toLowerCase()}/${(data.postSlug ?? slug.split('/').pop()!).toLowerCase()}`
   }))
 });
 

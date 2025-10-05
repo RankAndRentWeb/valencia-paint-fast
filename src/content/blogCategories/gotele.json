@@ -1,7 +1,6 @@
 {
-  "name": "Quitar Gotelé",
+  "name": "Gotelé",
   "slug": "gotele",
-  "description": "Todo sobre el gotelé: qué es, cómo quitarlo, precios y técnicas.",
-  "icon": "PaintRoller",
+  "description": "Qué es el gotelé, cómo quitarlo, precios y técnicas.",
   "order": 1
 }

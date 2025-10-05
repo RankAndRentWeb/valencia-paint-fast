@@ -10,6 +10,11 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [tailwind(), sitemap(), react()],
+  markdown: {
+    remarkPlugins: [
+      (await import('./src/plugins/remark-callouts.ts')).default
+    ]
+  },
   vite: {
     resolve: {
       alias: {

@@ -1,27 +1,24 @@
 ---
 import Layout from '@/layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
+import BlogPost from '@/components/BlogPost.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blogs');
   return posts.map(entry => {
     const [category, slug] = entry.slug.split('/');
-    return { 
-      params: { category, slug }, 
-      props: { entry } 
-    };
+    return { params: { category, slug }, props: { entry } };
   });
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
-const { data } = entry;
+const catSlug = entry.slug.split('/')[0];
+const cat = (await getCollection('blogCategories')).find(c => c.data.slug === catSlug);
+const categoryName = cat?.data?.name ?? catSlug;
+
+const data = entry.data;
 ---
 
-<Layout title={`${data.title} - Blog`} description={data.description ?? data.excerpt}>
-  <article class="container mx-auto px-4 py-10 prose lg:prose-lg max-w-3xl">
-    <h1 class="!mb-4">{data.title}</h1>
-    {data.cover && <img src={data.cover} alt={data.title} class="rounded-xl shadow mb-6" />}
-    <Content />
-  </article>
+<Layout title={`${data?.title || 'Blog'} - Blog`} description={data?.description ?? data?.excerpt}>
+  <BlogPost {entry} {categoryName} />
 </Layout>

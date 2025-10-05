@@ -4,6 +4,8 @@ excerpt: "Método profesional para eliminar gotelé sin generar polvo ni sucieda
 categorySlug: "gotele"
 postSlug: "como-quitar-gotele-paredes"
 cover: "/assets/blog/como-quitar-gotele.jpg"
+date: "2025-09-30"
+tags: ["quitar gotelé", "técnica sin polvo", "herramientas"]
 description: "Proceso completo para quitar gotelé de forma limpia y profesional."
 ---
 

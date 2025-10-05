@@ -4,6 +4,8 @@ excerpt: "Descubre qué colores usar para que tu casa parezca más grande y lumi
 categorySlug: "colores"
 postSlug: "colores-espacios-pequenos"
 cover: "/assets/blog/colores-espacios-pequenos.jpg"
+date: "2025-10-01"
+tags: ["colores claros", "espacios pequeños", "trucos decoración"]
 description: "Guía de colores para ampliar visualmente espacios pequeños."
 ---
 
