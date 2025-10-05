@@ -174,83 +174,65 @@ const Index = () => {
         ogImage="https://pintores-valencia.com/og-home.jpg"
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-hero py-20 text-primary-foreground overflow-hidden">
-        <div className="absolute inset-0 bg-black/50" /> {/* contraste reforzado */}
-        <div className="absolute inset-0">
-          <picture>
-            <source srcSet={heroImageWebP} type="image/webp" />
-            <img 
-              src={heroImage}
-              width="1920"
-              height="1080"
-              alt="" 
-              className="w-full h-full object-cover" 
-              fetchPriority="high"
-              loading="eager"
-              decoding="async"
-            />
-          </picture>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-              Pintores en Valencia <br />
-              <span className="text-accent">Presupuesto gratis en 24h</span>
+      {/* Hero Section - Gradiente naranja simple como el original */}
+      <section className="bg-gradient-to-r from-orange-400 to-orange-600 py-20 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Pintores en Valencia
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-white/90">
+            <p className="text-2xl md:text-3xl mb-8 font-medium">
+              Presupuesto gratis en 24h
+            </p>
+            <p className="text-xl mb-12 text-white/90">
               Rápidos, limpios y con garantía
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              {/* Botón teléfono con contraste alto */}
+              {/* Botón Presupuesto Gratis naranja */}
               <Button
                 asChild
                 size="lg"
-                className="bg-accent hover:bg-accent/90 text-white shadow-cta font-semibold"
+                className="bg-orange-500 hover:bg-orange-600 text-white shadow-lg font-bold text-lg py-4 px-8"
+              >
+                <a href="/presupuesto/" className="flex items-center justify-center">
+                  Presupuesto Gratis
+                </a>
+              </Button>
+              
+              {/* Botón Llamar azul */}
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white shadow-lg font-bold text-lg py-4 px-8"
               >
                 <a
                   href="tel:+34722208131"
-                  aria-label="Llamar ahora al +34 722 208 131"
                   className="flex items-center justify-center space-x-2"
                 >
-                  <Phone className="w-5 h-5" aria-hidden="true" />
-                  <span>Llamar ahora</span>
-                </a>
-              </Button>
-              {/* Botón WhatsApp con mejor contraste */}
-              <Button
-                asChild
-                size="lg"
-                className="bg-white text-primary border-2 border-white hover:bg-primary hover:text-white transition-colors font-semibold"
-              >
-                <a
-                  href="https://wa.me/34722208131"
-                  aria-label="Abrir WhatsApp para escribir al +34 722 208 131"
-                  className="flex items-center justify-center space-x-2"
-                >
-                  <MessageCircle className="w-5 h-5" aria-hidden="true" />
-                  <span>WhatsApp</span>
+                  <Phone className="w-5 h-5" />
+                  <span>722 208 131</span>
                 </a>
               </Button>
             </div>
 
-            {/* Benefits */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white">
+            {/* Benefits Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
-                <span className="text-sm">Presupuesto 24h</span>
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="font-medium">Presupuesto 24h</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
-                <span className="text-sm">Limpieza incluida</span>
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="font-medium">Limpieza incluida</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
-                <span className="text-sm">Seguro RC</span>
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="font-medium">Seguro RC</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-accent" aria-hidden="true" />
-                <span className="text-sm">Garantía escrita</span>
+                <CheckCircle className="w-5 h-5 text-white" />
+                <span className="font-medium">Garantía escrita</span>
               </div>
             </div>
           </div>
