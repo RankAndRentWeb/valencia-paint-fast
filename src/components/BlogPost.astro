@@ -1,88 +1,101 @@
 ---
 import readingTime from "reading-time";
+import AdRail from "@/components/AdRail.astro";
+import AdInArticle from "@/components/AdInArticle.astro";
 
 const { entry, categoryName } = Astro.props;
 const { Content } = await entry.render();
 const data = entry.data; // Don't destructure data from render(), use entry.data
 
 // Reading time calculation
-const rt = entry.body ? readingTime(entry.body) : { text: "" };
+const rt = readingTime(entry.body ?? "");
 
 // Manejo seguro de la fecha
-let date: Date | undefined;
-try {
-  if (data?.date) {
-    date = data.date instanceof Date ? data.date : new Date(data.date);
-    if (isNaN(date.getTime())) {
-      date = undefined;
-    }
-  }
-} catch (error) {
-  date = undefined;
-}
+const date = data.date ? new Date(data.date) : undefined;
 ---
 
-<!-- Migas, tags, título, meta, cover -->
-<section class="container mx-auto px-4 pt-6 pb-4">
-  <nav class="text-sm text-gray-500 mb-3">
+<!-- Breadcrumbs -->
+<section class="container mx-auto px-4 pt-6">
+  <nav class="text-sm text-gray-500 mb-4">
     <a href="/blogs/" class="hover:underline">Blog</a>
     <span class="mx-1">›</span>
     <a href={`/blogs/${entry.slug.split('/')[0]}/`} class="hover:underline">{categoryName}</a>
-    <span class="mx-1">›</span>
-    <span class="text-gray-700">{data.title}</span>
   </nav>
-
-    {data?.tags && data.tags.length > 0 && (
-    <div class="flex flex-wrap gap-2 mb-2">
-      {data?.tags?.map((t: string) => (
-        <span class="px-3 py-1 rounded-full border text-gray-700 bg-gray-50 text-sm">{t}</span>
-      ))}
-    </div>
-  )}
-
-  <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">{data?.title || 'Sin título'}</h1>
-
-  {(date || rt?.text) && (
-    <div class="flex items-center gap-4 text-gray-500 mb-6">
-      {date && (
-        <span class="inline-flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M8 2v4M16 2v4M3 10h18M21 20H3V6h18z"/>
-          </svg>
-          {date.toLocaleDateString('es-ES', {day:'2-digit', month:'long', year:'numeric'})}
-        </span>
-      )}
-      {rt?.text && (
-        <span class="inline-flex items-center gap-2">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 6v6l4 2"/>
-          </svg>
-          {rt.text.replace('min read', 'min de lectura')}
-        </span>
-      )}
-    </div>
-  )}
-
-  {data?.cover && (
-    <img 
-      src={data.cover} 
-      alt={data?.title || 'Imagen del artículo'} 
-      class="w-full rounded-2xl shadow mb-8" 
-      loading="lazy" 
-      decoding="async" 
-    />
-  )}
 </section>
 
-<!-- Contenido con estilo tipo "prose" y callouts -->
-<article class="container mx-auto px-4 pb-12">
-  <div class="prose lg:prose-lg max-w-3xl">
-    <Content />
-  </div>
-</article>
+<!-- GRID: rail izq | columna central | rail dcha -->
+<section class="container mx-auto px-4 pb-12 grid gap-6 xl:grid-cols-[300px_minmax(720px,760px)_300px] justify-center">
+  <AdRail slotId="1111111111" label="Publicidad" />
+
+  <article class="mx-auto">
+    {data?.tags?.length && (
+      <div class="flex flex-wrap gap-2 mb-3">
+        {data.tags.map((t: string) => <span class="px-3 py-1 rounded-full border text-gray-700 bg-gray-50">{t}</span>)}
+      </div>
+    )}
+    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-3">{data.title}</h1>
+    <div class="flex items-center gap-4 text-gray-500 mb-6">
+      {date && <span class="inline-flex items-center gap-2">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M21 20H3V6h18z"/></svg>
+        {date.toLocaleDateString('es-ES',{day:'2-digit',month:'long',year:'numeric'})}
+      </span>}
+      <span class="inline-flex items-center gap-2">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        {rt.text.replace('min read','min de lectura')}
+      </span>
+    </div>
+
+    {data.cover && <img src={data.cover} alt={data.title} class="w-full rounded-2xl shadow mb-8" loading="lazy" decoding="async" />}
+
+    <!-- Contenido tipografiado -->
+    <div class="prose prose-slate lg:prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <!-- Ad in-article (aparece tras el contenido principal) -->
+    <AdInArticle slotId="2222222222" label="Publicidad" />
+
+    <!-- CTA final como en el diseño antiguo -->
+    <div class="mt-10 p-6 rounded-2xl bg-blue-50 border border-blue-200">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h2 class="text-lg font-semibold text-blue-900 mb-1">¿Quieres renovar tus paredes con gotelé?</h2>
+          <p class="text-blue-800 text-sm">Te ayudamos a decidir: alisar, cubrir o mantener. Presupuesto detallado sin compromiso.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="/presupuesto/" class="h-10 px-4 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold flex items-center">Presupuesto gratuito</a>
+          <a href="tel:+34722208131" class="h-10 px-4 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center">722 208 131</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <AdRail slotId="3333333333" label="Publicidad" />
+</section>
+
+<!-- D) SEO Y DATOS ESTRUCTURADOS DEL ARTÍCULO -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": data.title,
+  "image": data.cover ? [data.cover] : undefined,
+  "datePublished": date?.toISOString(),
+  "author": {"@type":"Organization","name":"Pintores en Valencia"},
+  "mainEntityOfPage": `https://pintores-valencia.com/blogs/${entry.slug}/`
+})} />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Blog","item":"https://pintores-valencia.com/blogs/"},
+    {"@type":"ListItem","position":2,"name":categoryName,"item":`https://pintores-valencia.com/blogs/${entry.slug.split('/')[0]}/`},
+    {"@type":"ListItem","position":3,"name":data.title}
+  ]
+})} />
 
 <style>
+  /* Callouts (ya usados con remark/rehype si lo teníamos) */
   .callout { 
     border-radius: 12px; 
     padding: 16px 18px; 

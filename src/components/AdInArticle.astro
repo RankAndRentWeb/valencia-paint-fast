@@ -1,0 +1,17 @@
+---
+const { slotId = 'YYYYYYYYY', label = 'Publicidad' } = Astro.props;
+---
+
+<div class="my-8">
+  <div class="text-xs text-gray-500 mb-1">{label}</div>
+  <div class="mx-auto w-[336px] h-[280px] border rounded-lg bg-gray-50 overflow-hidden">
+    <ins class="adsbygoogle"
+      style="display:inline-block;width:336px;height:280px"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+      data-ad-slot={slotId}></ins>
+  </div>
+</div>
+
+<script is:inline>
+  (window.adsbygoogle = window.adsbygoogle || []).push({});
+</script>
