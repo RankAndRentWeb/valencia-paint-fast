@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -35,7 +35,7 @@ const Header = () => {
             loading="eager"
           />
           <span className="font-semibold">Pintores en Valencia</span>
-        </Link>
+        </a>
 
         {/* Navegación Desktop */}
         <nav aria-label="Navegación principal" className="hidden lg:block">
@@ -49,7 +49,7 @@ const Header = () => {
                 }
               >
                 Inicio
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -59,7 +59,7 @@ const Header = () => {
                 }
               >
                 Servicios
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -69,7 +69,7 @@ const Header = () => {
                 }
               >
                 Blog
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -79,7 +79,7 @@ const Header = () => {
                 }
               >
                 Precios
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -89,7 +89,7 @@ const Header = () => {
                 }
               >
                 Trabajos
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -99,7 +99,7 @@ const Header = () => {
                 }
               >
                 Quiénes somos
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -107,7 +107,7 @@ const Header = () => {
                 className="inline-flex items-center rounded-md px-3 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-cta"
               >
                 Presupuesto
-              </NavLink>
+              </a>
             </li>
             <li>
               <NavLink
@@ -117,7 +117,7 @@ const Header = () => {
                 }
               >
                 Contacto
-              </NavLink>
+              </a>
             </li>
           </ul>
         </nav>
@@ -173,7 +173,7 @@ const Header = () => {
                 }
               >
                 Inicio
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/servicios"
@@ -187,7 +187,7 @@ const Header = () => {
                 }
               >
                 Servicios
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/blog"
@@ -201,7 +201,7 @@ const Header = () => {
                 }
               >
                 Blog
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/precios"
@@ -215,7 +215,7 @@ const Header = () => {
                 }
               >
                 Precios
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/trabajos"
@@ -229,7 +229,7 @@ const Header = () => {
                 }
               >
                 Trabajos
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/quienes-somos"
@@ -243,7 +243,7 @@ const Header = () => {
                 }
               >
                 Quiénes somos
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/presupuesto"
@@ -257,7 +257,7 @@ const Header = () => {
                 }
               >
                 Presupuesto
-              </NavLink>
+              </a>
               
               <NavLink
                 to="/contacto"
@@ -271,7 +271,7 @@ const Header = () => {
                 }
               >
                 Contacto
-              </NavLink>
+              </a>
             </div>
           </nav>
         </div>

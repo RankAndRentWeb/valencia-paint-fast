@@ -1,5 +1,5 @@
 // src/pages/servicios/Impermeabilizacion.tsx
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -90,9 +90,9 @@ const Impermeabilizacion = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
-                  <Link to="/presupuesto">
+                  <a href="/presupuesto">
                     Presupuesto gratuito
-                  </Link>
+                  </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
                   <a href="tel:722208131" className="flex items-center gap-2">
@@ -299,7 +299,7 @@ const Impermeabilizacion = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Link to="/presupuesto">Solicitar presupuesto</Link>
+              <a href="/presupuesto">Solicitar presupuesto</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
               <a href="tel:722208131" className="flex items-center gap-2">

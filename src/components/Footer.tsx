@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
@@ -53,18 +53,18 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">Servicios</h4>
             <nav className="space-y-2 text-sm">
-              <Link to="/quitar-gotele-alisar-paredes" className="block text-white hover:text-accent transition-colors">
+              <a href="/quitar-gotele-alisar-paredes" className="block text-white hover:text-accent transition-colors">
                 Quitar gotelé
-              </Link>
-              <Link to="/pintura-interior-pisos-casas" className="block text-white hover:text-accent transition-colors">
+              </a>
+              <a href="/pintura-interior-pisos-casas" className="block text-white hover:text-accent transition-colors">
                 Pintura interior
-              </Link>
-              <Link to="/pintura-exterior-fachadas" className="block text-white hover:text-accent transition-colors">
+              </a>
+              <a href="/pintura-exterior-fachadas" className="block text-white hover:text-accent transition-colors">
                 Fachadas exteriores
-              </Link>
-              <Link to="/presupuesto" className="block text-white hover:text-accent transition-colors">
+              </a>
+              <a href="/presupuesto" className="block text-white hover:text-accent transition-colors">
                 Pedir presupuesto
-              </Link>
+              </a>
             </nav>
           </div>
 
@@ -72,15 +72,15 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-white">Legal</h4>
             <nav className="space-y-2 text-sm">
-              <Link to="/aviso-legal" className="block text-white hover:text-accent transition-colors">
+              <a href="/aviso-legal" className="block text-white hover:text-accent transition-colors">
                 Aviso legal
-              </Link>
-              <Link to="/politica-privacidad" className="block text-white hover:text-accent transition-colors">
+              </a>
+              <a href="/politica-privacidad" className="block text-white hover:text-accent transition-colors">
                 Política de privacidad
-              </Link>
-              <Link to="/politica-cookies" className="block text-white hover:text-accent transition-colors">
+              </a>
+              <a href="/politica-cookies" className="block text-white hover:text-accent transition-colors">
                 Política de cookies
-              </Link>
+              </a>
             </nav>
           </div>
         </div>

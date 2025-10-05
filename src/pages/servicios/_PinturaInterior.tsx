@@ -1,5 +1,5 @@
 // src/pages/PinturaInterior.tsx
-import { Link } from "react-router-dom";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -88,7 +88,7 @@ const PinturaInterior = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button asChild size="lg" className="bg-gradient-cta shadow-cta">
-                  <Link to="/presupuesto">Pedir presupuesto gratis</Link>
+                  <a href="/presupuesto">Pedir presupuesto gratis</a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
                   <a href="tel:722208131" className="flex items-center space-x-2">
@@ -320,7 +320,7 @@ const PinturaInterior = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link to="/presupuesto">Solicitar presupuesto</Link>
+                <a href="/presupuesto">Solicitar presupuesto</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 <a href="tel:722208131" className="flex items-center space-x-2">

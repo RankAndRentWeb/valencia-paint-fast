@@ -1,5 +1,5 @@
 // src/components/CategoryPageLayout.tsx
-import { Link } from "react-router-dom";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock, Calendar, ArrowRight } from "lucide-react";
@@ -106,9 +106,9 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                               </div>
                               
                               <CardTitle className="text-xl hover:text-primary transition-colors">
-                                <Link to={`/blog/${post.slug}`}>
+                                <a href={`/blog/${post.slug}`}>
                                   {post.title}
-                                </Link>
+                                </a>
                               </CardTitle>
                             </CardHeader>
                             
@@ -136,7 +136,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                                     className="text-primary hover:text-primary/80 font-medium flex items-center gap-1"
                                   >
                                     Leer más <ArrowRight className="h-4 w-4" />
-                                  </Link>
+                                  </a>
                                 </div>
                               </div>
                               
@@ -164,7 +164,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                       className="text-primary hover:text-primary/80 font-medium"
                     >
                       Ver todos los artículos del blog
-                    </Link>
+                    </a>
                   </div>
                 )}
               </div>
@@ -183,7 +183,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                     className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                   >
                     Solicitar Presupuesto Gratis
-                  </Link>
+                  </a>
                   <a
                     href="tel:722208131"
                     className="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
