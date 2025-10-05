@@ -1,13 +1,6 @@
 User-agent: *
 Allow: /
-
-# Sitemap
 Sitemap: https://pintores-valencia.com/sitemap.xml
-
-# Directorios permitidos explícitamente
-Allow: /servicios/
-Allow: /blog/
-Allow: /precios/
 Allow: /trabajos/
 Allow: /presupuesto/
 Allow: /contacto/
