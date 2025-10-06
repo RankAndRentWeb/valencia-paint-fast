@@ -32,3 +32,5 @@ scripts/fix-syntax-errors.mjs
 
 # Solo si NO quieres versionar tu contenido:
 # src/content/
+".vercel/" 
+".vercel/" 
