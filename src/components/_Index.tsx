@@ -104,37 +104,37 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
     {
       title: "Quitar gotelé",
       description: "Eliminamos el gotelé y alisamos paredes",
-      link: "/quitar-gotele-alisar-paredes",
+      link: "/servicios/quitar-gotele/",
       icon: <Brush className="w-6 h-6" />,
     },
     {
       title: "Pintura interior",
       description: "Renovamos el interior de tu hogar",
-      link: "/pintura-interior-pisos-casas",
+      link: "/servicios/pintura-interior/",
       icon: <Home className="w-6 h-6" />,
     },
     {
       title: "Fachadas",
       description: "Pintamos exteriores con garantía",
-      link: "/pintura-exterior-fachadas",
+      link: "/servicios/pintura-exterior/",
       icon: <Building className="w-6 h-6" />,
     },
     {
       title: "Impermeabilización",
       description: "Protegemos terrazas y fachadas",
-      link: "/impermeabilizacion-terrazas-y-fachadas",
+      link: "/servicios/impermeabilizacion/",
       icon: <Shield className="w-6 h-6" />,
     },
     {
       title: "Locales comerciales",
       description: "Pintamos tu negocio profesionalmente",
-      link: "/pintura-locales-comerciales",
+      link: "/servicios/pintura-locales-comerciales/",
       icon: <Building className="w-6 h-6" />,
     },
     {
       title: "Comunidades",
       description: "Servicios para comunidades de propietarios",
-      link: "/pintura-comunidades",
+      link: "/servicios/pintura-comunidades/",
       icon: <Building className="w-6 h-6" />,
     },
   ];
@@ -298,7 +298,7 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
 
           <div className="text-center">
             <Button asChild size="lg" className="bg-gradient-cta shadow-cta">
-              <a href="/servicios">Ver todos los servicios</a>
+              <a href="/servicios/">Ver todos los servicios</a>
             </Button>
           </div>
         </div>
