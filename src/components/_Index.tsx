@@ -15,10 +15,12 @@ import {
   Building,
   Clock,
 } from "lucide-react";
-import heroImage from "../assets/hero-pintores-valencia.jpg";
-import heroImageWebP from "../assets/hero-pintores-valencia.webp";
 import trabajadoresImage from "../assets/madre-hijo-salon-pequeno.jpg";
-import pintorProfesionalImage from "../assets/pintor-profesional-valencia.jpg";
+
+interface IndexProps {
+  heroImage?: any;
+  featureImage?: any;
+}
 
 // ⭐ Estrellas accesibles sin ARIA prohibido
 const RatingStars = ({ value = 5 }: { value?: number }) => (
@@ -30,7 +32,7 @@ const RatingStars = ({ value = 5 }: { value?: number }) => (
   </div>
 );
 
-const Index = () => {
+const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "HousePainter",
@@ -170,13 +172,27 @@ const Index = () => {
         description={homeDesc}
         canonicalUrl={homeCanon}
         schema={[localBusinessSchema, faqSchema]}
-        preloadImages={[heroImageWebP, heroImage]}
+        preloadImages={heroImage ? [heroImage.src] : []}
         ogImage="https://pintores-valencia.com/og-home.jpg"
       />
 
-      {/* Hero Section - Gradiente naranja simple como el original */}
-      <section className="bg-gradient-to-r from-orange-400 to-orange-600 py-20 text-white">
-        <div className="container mx-auto px-4">
+      {/* Hero Section - Background image with overlay */}
+      <section className="relative min-h-[56vh] overflow-clip">
+        {heroImage && (
+          <>
+            <img 
+              src={heroImage.src} 
+              alt="Pintor profesional trabajando en Valencia" 
+              fetchPriority="high"
+              loading="eager"
+              width={heroImage.width}
+              height={heroImage.height}
+              className="absolute inset-0 -z-10 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/35 via-black/15 to-transparent"></div>
+          </>
+        )}
+        <div className="relative z-10 container mx-auto px-4 py-20 text-white">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Pintores en Valencia
@@ -306,25 +322,32 @@ const Index = () => {
             
             {/* Left side - Image */}
             <div className="order-2 lg:order-1">
-              <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                {/* Badge encima de la imagen */}
-                <div className="absolute top-4 left-4 z-10">
-                  <div className="bg-white/95 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg border border-gray-100 flex items-center space-x-2">
-                    <Shield className="w-4 h-4 text-blue-600" />
-                    <span>+15 años de experiencia</span>
+              {featureImage ? (
+                <figure className="relative rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src={featureImage.src}
+                    alt="Pintor aplicando pintura de interior"
+                    loading="lazy"
+                    width={featureImage.width}
+                    height={featureImage.height}
+                    className="w-full h-auto object-cover"
+                  />
+                  <figcaption className="absolute top-3 left-3 bg-white/90 rounded-full px-3 py-1 text-sm shadow">
+                    +15 años de experiencia
+                  </figcaption>
+                </figure>
+              ) : (
+                <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                  {/* Badge encima de la imagen */}
+                  <div className="absolute top-4 left-4 z-10">
+                    <div className="bg-white/95 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg border border-gray-100 flex items-center space-x-2">
+                      <Shield className="w-4 h-4 text-blue-600" />
+                      <span>+15 años de experiencia</span>
+                    </div>
                   </div>
+                  <div className="w-full h-[300px] sm:h-[400px] md:h-[450px] bg-gradient-to-r from-orange-400 to-orange-600"></div>
                 </div>
-                <img
-                  src={pintorProfesionalImage}
-                  alt="Pintor profesional trabajando en Valencia - Servicios de pintura de calidad"
-                  width="600"
-                  height="400"
-                  className="w-full h-[300px] sm:h-[400px] md:h-[450px] object-cover"
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                />
-              </div>
+              )}
             </div>
 
             {/* Right side - Text content */}

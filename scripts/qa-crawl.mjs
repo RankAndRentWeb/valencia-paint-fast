@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 import { JSDOM } from 'jsdom';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BASE_URL = 'http://localhost:4322';
+const BASE_URL = 'http://localhost:4321';
 
 // Colors for console output
 const colors = {
