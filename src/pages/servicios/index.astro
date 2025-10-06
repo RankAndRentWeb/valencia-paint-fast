@@ -1,24 +1,132 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import { getCollection } from 'astro:content';
 
-const services = await getCollection('services');
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://pintores-valencia.com/#business",
+  "name": "Pintores en Valencia",
+  "url": "https://pintores-valencia.com",
+  "image": "https://pintores-valencia.com/og-home.webp",
+  "telephone": "+34722208131",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressRegion": "Comunitat Valenciana",
+    "postalCode": "46000",
+    "addressCountry": "ES"
+  },
+  "openingHours": ["Mo-Sa 08:00-20:00"],
+  "priceRange": "€€",
+  "areaServed": [{ "@type": "City", "name": "Valencia" }]
+};
+
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "name": "Servicios de Pintura en Valencia",
+  "itemListElement": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Quitar gotelé",
+        "description": "Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar."
+      }
+    },
+    {
+      "@type": "Offer", 
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Pintura interior",
+        "description": "Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service", 
+        "name": "Pintura exterior",
+        "description": "Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Impermeabilización de terrazas", 
+        "description": "Protegemos tu terraza contra filtraciones con sistemas profesionales."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Pintura locales comerciales",
+        "description": "Pintura profesional para negocios, mínima interrupción y acabado impecable."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Pintura comunidades",
+        "description": "Pintura en escaleras y zonas comunes con planificación y seguridad."
+      }
+    }
+  ]
+};
 ---
 
 <SiteLayout 
   title="Servicios de Pintura en Valencia - Profesionales"
   description="Servicios profesionales de pintura en Valencia: interior, exterior, quitar gotelé, lacado de puertas, impermeabilización. Calidad garantizada."
-  keywords="servicios pintura valencia, pintura interior exterior, quitar gotele valencia"
+  canonical="https://pintores-valencia.com/servicios/"
+  ogImage="https://pintores-valencia.com/og-home.webp"
+  schema={[localBusinessSchema, offerCatalogSchema]}
 >
-  <section class="container mx-auto px-4 py-10">
-    <h1 class="text-3xl md:text-4xl font-bold mb-6">Servicios</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {services.map(s => (
-        <a href={`/servicios/${s.slug}/`} class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block">
-          <h2 class="text-lg font-semibold mb-2">{s.data.title.replace(" en Valencia","")}</h2>
-          <p class="text-gray-600">{s.data.subtitle || s.data.description || "Servicio profesional de pintura"}</p>
+  <main class="flex-1">
+    <section class="container mx-auto px-4 py-10">
+      <h1 class="text-3xl md:text-4xl font-bold mb-6">Servicios</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Quitar gotelé y alisar paredes -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/quitar-gotele/">
+          <h2 class="text-xl font-semibold mb-3">Quitar gotelé y alisar paredes</h2>
+          <p class="text-gray-600">Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.</p>
         </a>
-      ))}
-    </div>
-  </section>
+
+        <!-- Pintura interior de pisos y casas -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-interior/">
+          <h2 class="text-xl font-semibold mb-3">Pintura interior de pisos y casas</h2>
+          <p class="text-gray-600">Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales.</p>
+        </a>
+
+        <!-- Pintura exterior y fachadas -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-exterior/">
+          <h2 class="text-xl font-semibold mb-3">Pintura exterior y fachadas</h2>
+          <p class="text-gray-600">Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas.</p>
+        </a>
+
+        <!-- Impermeabilización de terrazas -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/impermeabilizacion/">
+          <h2 class="text-xl font-semibold mb-3">Impermeabilización de terrazas</h2>
+          <p class="text-gray-600">Protegemos tu terraza contra filtraciones con sistemas profesionales.</p>
+        </a>
+
+        <!-- Pintura locales comerciales -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-locales-comerciales/">
+          <h2 class="text-xl font-semibold mb-3">Pintura locales comerciales</h2>
+          <p class="text-gray-600">Pintura profesional para negocios, mínima interrupción y acabado impecable.</p>
+        </a>
+
+        <!-- Pintura comunidades -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-comunidades/">
+          <h2 class="text-xl font-semibold mb-3">Pintura comunidades</h2>
+          <p class="text-gray-600">Pintura en escaleras y zonas comunes con planificación y seguridad.</p>
+        </a>
+
+      </div>
+    </section>
+  </main>
 </SiteLayout>
