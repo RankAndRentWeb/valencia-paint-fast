@@ -30,32 +30,32 @@ const offerCatalogSchema = {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Quitar gotelé",
-        "description": "Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar."
+        "name": "Quitar gotelé y alisar paredes",
+        "description": "Eliminamos el gotelé de forma profesional y dejamos las paredes completamente lisas y preparadas para pintar."
       }
     },
     {
       "@type": "Offer", 
       "itemOffered": {
         "@type": "Service",
-        "name": "Pintura interior",
-        "description": "Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales."
+        "name": "Pintura interior de pisos y casas",
+        "description": "Renovamos completamente el interior de tu hogar con pinturas de primera calidad y acabados profesionales."
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service", 
-        "name": "Pintura exterior",
-        "description": "Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas."
+        "name": "Pintura exterior y fachadas",
+        "description": "Protegemos y embellecemos fachadas con pinturas resistentes a la intemperie y técnicas especializadas."
       }
     },
     {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Impermeabilización de terrazas", 
-        "description": "Protegemos tu terraza contra filtraciones con sistemas profesionales."
+        "name": "Impermeabilización",
+        "description": "Soluciones de impermeabilización para terrazas, balcones y cubiertas contra filtraciones."
       }
     },
     {
@@ -63,7 +63,7 @@ const offerCatalogSchema = {
       "itemOffered": {
         "@type": "Service",
         "name": "Pintura locales comerciales",
-        "description": "Pintura profesional para negocios, mínima interrupción y acabado impecable."
+        "description": "Imagen profesional en tu negocio con mínima interrupción de actividad y acabados impecables."
       }
     },
     {
@@ -71,7 +71,23 @@ const offerCatalogSchema = {
       "itemOffered": {
         "@type": "Service",
         "name": "Pintura comunidades",
-        "description": "Pintura en escaleras y zonas comunes con planificación y seguridad."
+        "description": "Pintura de escaleras y zonas comunes con seguridad y planificación."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Lacado de puertas y carpintería",
+        "description": "Lacado en blanco u otros colores con acabado liso y duradero."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Papel pintado y vinilos",
+        "description": "Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio."
       }
     }
   ]
@@ -90,43 +106,223 @@ const offerCatalogSchema = {
       <h1 class="text-3xl md:text-4xl font-bold mb-6">Servicios</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
-        <!-- Quitar gotelé y alisar paredes -->
+        <!-- 1. Quitar gotelé y alisar paredes -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/quitar-gotele/">
-          <h2 class="text-xl font-semibold mb-3">Quitar gotelé y alisar paredes</h2>
-          <p class="text-gray-600">Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.</p>
+          <h2 class="text-lg font-semibold mb-2">Quitar gotelé y alisar paredes</h2>
+          <p class="text-gray-600">Eliminamos el gotelé de forma profesional y dejamos las paredes completamente lisas y preparadas para pintar.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Sin polvo</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Acabado perfecto</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Rápido y limpio</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
         </a>
 
-        <!-- Pintura interior de pisos y casas -->
+        <!-- 2. Pintura interior de pisos y casas -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-interior/">
-          <h2 class="text-xl font-semibold mb-3">Pintura interior de pisos y casas</h2>
-          <p class="text-gray-600">Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales.</p>
+          <h2 class="text-lg font-semibold mb-2">Pintura interior de pisos y casas</h2>
+          <p class="text-gray-600">Renovamos completamente el interior de tu hogar con pinturas de primera calidad y acabados profesionales.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Pinturas premium</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Limpieza incluida</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Garantía 3 años</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
         </a>
 
-        <!-- Pintura exterior y fachadas -->
+        <!-- 3. Pintura exterior y fachadas -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-exterior/">
-          <h2 class="text-xl font-semibold mb-3">Pintura exterior y fachadas</h2>
-          <p class="text-gray-600">Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas.</p>
+          <h2 class="text-lg font-semibold mb-2">Pintura exterior y fachadas</h2>
+          <p class="text-gray-600">Protegemos y embellecemos fachadas con pinturas resistentes a la intemperie y técnicas especializadas.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Resistente al clima</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Andamiaje incluido</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Seguro RC</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
         </a>
 
-        <!-- Impermeabilización de terrazas -->
+        <!-- 4. Impermeabilización -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/impermeabilizacion/">
-          <h2 class="text-xl font-semibold mb-3">Impermeabilización de terrazas</h2>
-          <p class="text-gray-600">Protegemos tu terraza contra filtraciones con sistemas profesionales.</p>
+          <h2 class="text-lg font-semibold mb-2">Impermeabilización</h2>
+          <p class="text-gray-600">Soluciones de impermeabilización para terrazas, balcones y cubiertas contra filtraciones.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Sistemas profesionales</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Sellado de juntas</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Mantenimiento opcional</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
         </a>
 
-        <!-- Pintura locales comerciales -->
+        <!-- 5. Pintura locales comerciales -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-locales-comerciales/">
-          <h2 class="text-xl font-semibold mb-3">Pintura locales comerciales</h2>
-          <p class="text-gray-600">Pintura profesional para negocios, mínima interrupción y acabado impecable.</p>
+          <h2 class="text-lg font-semibold mb-2">Pintura locales comerciales</h2>
+          <p class="text-gray-600">Imagen profesional en tu negocio con mínima interrupción de actividad y acabados impecables.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Planificación por horarios</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Acabado uniforme</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Limpieza incluida</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
         </a>
 
-        <!-- Pintura comunidades -->
+        <!-- 6. Pintura comunidades -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-comunidades/">
-          <h2 class="text-xl font-semibold mb-3">Pintura comunidades</h2>
-          <p class="text-gray-600">Pintura en escaleras y zonas comunes con planificación y seguridad.</p>
+          <h2 class="text-lg font-semibold mb-2">Pintura comunidades</h2>
+          <p class="text-gray-600">Pintura de escaleras y zonas comunes con seguridad y planificación.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Coordinación de vecinos</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Materiales resistentes</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Señalización</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
+        </a>
+
+        <!-- 7. Lacado de puertas y carpintería -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/lacado-puertas-carpinteria/">
+          <h2 class="text-lg font-semibold mb-2">Lacado de puertas y carpintería</h2>
+          <p class="text-gray-600">Lacado en blanco u otros colores con acabado liso y duradero.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Acabado satinado/brillante</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Sin goteos</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Secado controlado</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
+        </a>
+
+        <!-- 8. Papel pintado y vinilos -->
+        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/papel-pintado-vinilos/">
+          <h2 class="text-lg font-semibold mb-2">Papel pintado y vinilos</h2>
+          <p class="text-gray-600">Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio.</p>
+          <ul class="mt-3 space-y-1 text-gray-700">
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Alineado perfecto</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Cortes limpios</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
+              <span>Colas adecuadas</span>
+            </li>
+          </ul>
+          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Ver detalles y precios
+          </span>
         </a>
 
       </div>
+
+      <!-- Callout azul centrado -->
+      <div class="mt-10 rounded-xl bg-blue-50 border border-blue-100 p-6 text-center">
+        <h3 class="text-xl font-semibold mb-4">¿No encuentras lo que buscas?</h3>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/presupuesto/" class="h-10 px-4 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+            Pide presupuesto gratis
+          </a>
+          <a href="/contacto/" class="h-10 px-4 rounded-md border font-semibold inline-flex items-center justify-center hover:bg-gray-50">
+            Contactar
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-10 grid gap-4">
+        <div class="rounded-lg border bg-white shadow-sm p-5">
+          <h4 class="font-semibold mb-2">¿Qué incluyen los presupuestos?</h4>
+          <p class="text-gray-600">Mano de obra, materiales, mano de obra fina, limpieza posterior y garantía escrita.</p>
+        </div>
+        
+        <div class="rounded-lg border bg-white shadow-sm p-5">
+          <h4 class="font-semibold mb-2">¿Cómo se protege la zona de trabajo?</h4>
+          <p class="text-gray-600">Protección de suelos/muebles y limpieza final.</p>
+        </div>
+        
+        <div class="rounded-lg border bg-white shadow-sm p-5">
+          <h4 class="font-semibold mb-2">¿Ofrecen garantía?</h4>
+          <p class="text-gray-600">Sí, garantía escrita por escrito (según servicio).</p>
+        </div>
+      </div>
+
     </section>
   </main>
 </SiteLayout>
