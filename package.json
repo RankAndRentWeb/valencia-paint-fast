@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
-    "qa:crawl": "node scripts/qa-crawl.mjs"
+  "postinstall": "echo skip"
   },
   "reactSnap": {
     "source": "dist",

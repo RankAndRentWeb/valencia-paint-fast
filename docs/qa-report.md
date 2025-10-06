@@ -1,49 +1,88 @@
 # QA Report - SEO & Design Consistency
 
-**Generated:** 2025-10-06T20:32:16.773Z
-**Base URL:** http://localhost:4322
-**Total Routes Analyzed:** 20
+**Generated:** 2025-10-06T21:15:57.358Z
+**Base URL:** http://localhost:4321
+**Total Routes Analyzed:** 11
 
 ## Summary
 
-- ✅ **Perfect:** 20 routes
+- ✅ **Perfect:** 0 routes
 - ⚠️ **Issues:** 0 routes
-- ❌ **Errors:** 0 routes
+- ❌ **Errors:** 11 routes
 
 ## Route Analysis
 
 | Route | Status | Title | H1 Count | Issues |
 |-------|--------|-------|----------|--------|
-| 404/ | ✅ 200 | Página no encontrada | Pintores en Valen... | ✅ 1 | ✅ None |
-| blogs/ | ✅ 200 | Blog - Pintores en Valencia | ✅ 1 | ✅ None |
-| contacto/ | ✅ 200 | Contacto - Pintores en Valencia | ✅ 1 | ✅ None |
-| / | ✅ 200 | Pintores en Valencia - Pintores profesio... | ✅ 1 | ✅ None |
-| pintura-locales-comerciales/ | ✅ 200 | Pintura Locales Comerciales Valencia - H... | ✅ 1 | ✅ None |
-| precios/ | ✅ 200 | Precios de Pintura en Valencia - Tarifas... | ✅ 1 | ✅ None |
-| presupuesto/ | ✅ 200 | Presupuesto Gratis de Pintura en Valenci... | ✅ 1 | ✅ None |
-| quienes-somos/ | ✅ 200 | Quiénes Somos - Pintores Profesionales e... | ✅ 1 | ✅ None |
-| servicios/ | ✅ 200 | Servicios de Pintura en Valencia - Profe... | ✅ 1 | ✅ None |
-| trabajos/ | ✅ 200 | Trabajos - Pintores en Valencia | ✅ 1 | ✅ None |
-| zonas/ | ✅ 200 | Zonas de Valencia donde trabajamos - Pin... | ✅ 1 | ✅ None |
-| /servicios/ | ✅ 200 | Servicios de Pintura en Valencia - Profe... | ✅ 1 | ✅ None |
-| /blogs/ | ✅ 200 | Blog - Pintores en Valencia | ✅ 1 | ✅ None |
-| /precios/ | ✅ 200 | Precios de Pintura en Valencia - Tarifas... | ✅ 1 | ✅ None |
-| /trabajos/ | ✅ 200 | Trabajos - Pintores en Valencia | ✅ 1 | ✅ None |
-| /quienes-somos/ | ✅ 200 | Quiénes Somos - Pintores Profesionales e... | ✅ 1 | ✅ None |
-| /contacto/ | ✅ 200 | Contacto - Pintores en Valencia | ✅ 1 | ✅ None |
-| /presupuesto/ | ✅ 200 | Presupuesto Gratis de Pintura en Valenci... | ✅ 1 | ✅ None |
-| /servicios/quitar-gotele/ | ✅ 200 | Quitar gotelé en Valencia - Pintores en ... | ✅ 1 | ✅ None |
-| /servicios/pintura-interior/ | ✅ 200 | Pintura interior - Pintores en Valencia | ✅ 1 | ✅ None |
+| 404/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| blogs/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| contacto/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| / | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| pintura-locales-comerciales/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| precios/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| presupuesto/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| quienes-somos/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| servicios/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| trabajos/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+| zonas/ | ❌ null | ❌ Missing | ❌ 0 | ⚠️ 1 issues |
+
+## Detailed Issues
+
+### 404/
+
+- ❌ Analysis error: fetch failed
+
+### blogs/
+
+- ❌ Analysis error: fetch failed
+
+### contacto/
+
+- ❌ Analysis error: fetch failed
+
+### /
+
+- ❌ Analysis error: fetch failed
+
+### pintura-locales-comerciales/
+
+- ❌ Analysis error: fetch failed
+
+### precios/
+
+- ❌ Analysis error: fetch failed
+
+### presupuesto/
+
+- ❌ Analysis error: fetch failed
+
+### quienes-somos/
+
+- ❌ Analysis error: fetch failed
+
+### servicios/
+
+- ❌ Analysis error: fetch failed
+
+### trabajos/
+
+- ❌ Analysis error: fetch failed
+
+### zonas/
+
+- ❌ Analysis error: fetch failed
+
 ## Special Files
 
 | File | Status | Issue |
 |------|--------|-------|
-| /robots.txt | ✅ 200 | ✅ OK |
-| /sitemap.xml | ✅ 200 | ✅ OK |
-| /sitemap-index.xml | ❌ 200 (local preview) | ❌ Redirect configured in vercel.json (works in production) |
+| /robots.txt | ❌ ERROR | ❌ fetch failed |
+| /sitemap.xml | ❌ ERROR | ❌ fetch failed |
+| /sitemap-index.xml | ❌ ERROR | ❌ fetch failed |
 
 ## Recommendations
 
+1. **Fix broken routes:** 11 routes returning non-200 status
 1. **Verify all images have descriptive alt text**
 1. **Ensure consistent semantic HTML structure**
 1. **Test responsive design on mobile devices**
