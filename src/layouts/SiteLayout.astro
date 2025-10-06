@@ -1,38 +1,130 @@
 ---
-import Header from '@/components/Header.astro';
-const { title = 'Pintores Valencia - Pintores profesionales en Valencia', description = 'Pintores en Valencia. Servicios de pintura interior, exterior, lacado, papel pintado. Presupuesto gratis. 722 208 131' } = Astro.props;
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.tsx';
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  schema?: object[];
+  keywords?: string;
+  preloadImages?: string[];
+}
+
+const { 
+  title = 'Pintores en Valencia - Pintores profesionales en Valencia', 
+  description = 'Pintores en Valencia. Servicios de pintura interior, exterior, lacado, papel pintado. Presupuesto gratis. 722 208 131',
+  canonical,
+  ogImage = 'https://pintores-valencia.com/og-home.webp',
+  noindex = false,
+  schema = [],
+  keywords = 'pintores valencia, pintura interior, pintura exterior, quitar gotele, presupuesto pintura',
+  preloadImages = []
+} = Astro.props;
+
 const pathname = Astro.url.pathname;
+const canonicalURL = canonical || `https://pintores-valencia.com${pathname}`;
+
+// Default JSON-LD for LocalBusiness
+const defaultSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://pintores-valencia.com/#business',
+  name: 'Pintores en Valencia',
+  url: 'https://pintores-valencia.com',
+  telephone: '+34722208131',
+  email: 'info@pintores-valencia.com',
+  description: 'Empresa profesional de pintores en Valencia capital y provincia. Trabajos de calidad con garantía escrita.',
+  areaServed: {
+    '@type': 'City',
+    name: 'Valencia',
+    addressCountry: 'ES'
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios de pintura',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Pintura interior'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Pintura exterior'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Quitar gotelé'
+        }
+      }
+    ]
+  },
+  openingHours: 'Mo-Sa 08:00-20:00'
+};
+
+const combinedSchema = [defaultSchema, ...schema];
 ---
+
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={`https://pintores-valencia.com${pathname}`} />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  </head>
-  <body class="min-h-screen flex flex-col">
-    <Header />
-    <main class="flex-1">
-      <slot />
-    </main>
-    <footer class="border-t bg-gray-50">
-      <div class="container mx-auto py-8 text-sm flex flex-col gap-2">
-        <div>© {new Date().getFullYear()} Pintores Valencia</div>
-        <div class="flex gap-4">
-          <a href="/sitemap-index.xml">Sitemap</a>
-          <a href="/politica-privacidad/">Privacidad</a>
-          <a href="/aviso-legal/">Aviso legal</a>
-        </div>
-      </div>
-    </footer>
-    <script type="application/ld+json" set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
-      name: 'Pintores Valencia',
-      url: 'https://pintores-valencia.com',
-      areaServed: 'Valencia'
-    })}></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/pintores-valencia-logo.png" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content="Pintores en Valencia" />
+  <meta property="og:locale" content="es_ES" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={ogImage} />
+  
+  <!-- Preload critical images -->
+  {preloadImages.map(img => (
+    <link rel="preload" as="image" href={img} />
+  ))}
+  
+  <!-- Robots -->
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  
+  <!-- JSON-LD Structured Data -->
+  {combinedSchema.length > 0 && (
+    <script type="application/ld+json" set:html={JSON.stringify(combinedSchema.length === 1 ? combinedSchema[0] : combinedSchema)} />
+  )}
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+  <Header />
+  <main class="flex-1">
+    <slot />
+  </main>
+  <Footer client:load />
+</body>
 </html>

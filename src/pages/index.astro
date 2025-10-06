@@ -1,8 +1,12 @@
 ﻿---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
 import Index from '../components/_Index.tsx';
 ---
 
-<BaseLayout title="Pintores Valencia - Pintores profesionales en Valencia">
+<SiteLayout 
+  title="Pintores en Valencia - Pintores profesionales en Valencia"
+  description="Empresa de pintores en Valencia con más de 15 años de experiencia. Pintura interior, exterior, quitar gotelé. Presupuesto gratis. ☎️ 722 208 131"
+  preloadImages={['/assets/hero-pintores-valencia.webp']}
+>
   <Index client:load />
-</BaseLayout>
+</SiteLayout>

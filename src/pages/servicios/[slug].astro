@@ -1,5 +1,5 @@
 ---
-import Layout from '@/layouts/SiteLayout.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
 import ServicePage from '@/components/ServicePage.astro';
 
@@ -12,6 +12,6 @@ const { entry } = Astro.props;
 const { data } = entry;
 ---
 
-<Layout title={`${data.title} - Pintores en Valencia`} description={data.subtitle ?? "Pintores en Valencia. Presupuesto gratis en 24h."}>
+<SiteLayout title={`${data.title} - Pintores en Valencia`} description={data.subtitle ?? "Pintores en Valencia. Presupuesto gratis en 24h."}>
   <ServicePage {entry} />
-</Layout>
+</SiteLayout>

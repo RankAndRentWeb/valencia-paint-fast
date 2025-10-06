@@ -1,5 +1,5 @@
 ---
-import Layout from '@/layouts/SiteLayout.astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -14,7 +14,7 @@ const { cat } = Astro.props;
 const posts = (await getCollection('blogs')).filter(p => p.slug.startsWith(cat.slug + "/"));
 ---
 
-<Layout title={`${cat.name} - Blog`} description={cat.description}>
+<SiteLayout title={`${cat.name} - Blog de Pintura Valencia`} description={cat.description}>
   <section class="container mx-auto px-4 py-10">
     <h1 class="text-3xl md:text-4xl font-bold mb-6">{cat.name}</h1>
     <div class="grid md:grid-cols-2 gap-6">
@@ -29,4 +29,4 @@ const posts = (await getCollection('blogs')).filter(p => p.slug.startsWith(cat.s
       })}
     </div>
   </section>
-</Layout>
+</SiteLayout>

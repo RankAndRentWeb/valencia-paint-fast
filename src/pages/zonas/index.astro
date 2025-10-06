@@ -1,12 +1,17 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteLayout from "../../layouts/SiteLayout.astro";
 import Zonas from "../../components/_Zonas.tsx";
 
-const title = "Zonas de Valencia donde trabajamos";
-const description = "Cobertura en toda Valencia: Ruzafa, El Carmen, Benimaclet y más.";
+const title = "Zonas de Valencia donde trabajamos - Pintores";
+const description = "Cobertura en toda Valencia: Ruzafa, El Carmen, Benimaclet y más. Pintores profesionales en toda Valencia y provincia.";
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
-<BaseLayout {title} {description} {canonical}>
+<SiteLayout 
+  title={title}
+  description={description} 
+  canonical={canonical}
+  keywords="pintores valencia zonas, ruzafa el carmen benimaclet, cobertura valencia"
+>
   <Zonas client:load />
-</BaseLayout>
+</SiteLayout>

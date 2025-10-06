@@ -1,5 +1,5 @@
 ---
-import Layout from '@/layouts/SiteLayout.astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
 import BlogPost from '@/components/BlogPost.astro';
 
@@ -19,6 +19,6 @@ const categoryName = cat?.data?.name ?? catSlug;
 const data = entry.data;
 ---
 
-<Layout title={`${data?.title || 'Blog'} - Blog`} description={data?.description ?? data?.excerpt}>
+<SiteLayout title={`${data?.title || 'Blog'} - Pintores Valencia`} description={data?.description ?? data?.excerpt}>
   <BlogPost {entry} {categoryName} />
-</Layout>
+</SiteLayout>

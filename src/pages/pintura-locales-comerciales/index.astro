@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
 
 const url = "https://pintores-valencia.com/pintura-locales-comerciales";
 const title = "Pintura Locales Comerciales Valencia - Horarios Flexibles";
@@ -34,7 +34,7 @@ const serviceSchema = {
 };
 ---
 
-<BaseLayout 
+<SiteLayout 
   title={title}
   description={description}
   canonical={url}
@@ -206,4 +206,4 @@ const serviceSchema = {
       </div>
     </section>
   </div>
-</BaseLayout>
+</SiteLayout>

@@ -1,8 +1,12 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
 import Contacto from '../../components/_Contacto.tsx';
 ---
 
-<BaseLayout title="Contacto - Pintores en Valencia">
+<SiteLayout 
+  title="Contacto - Pintores en Valencia"
+  description="Contacta con nuestro equipo de pintores en Valencia. Solicita presupuesto gratis. Tel: 722 208 131. Atendemos toda Valencia y provincia."
+  keywords="contacto pintores valencia, telefono pintor valencia, presupuesto pintura"
+>
   <Contacto client:load />
-</BaseLayout>
+</SiteLayout>

@@ -10,10 +10,10 @@ export default function SiteFooter() {
         <div>
           <h5 className="font-medium">Servicios</h5>
           <ul className="space-y-1">
-            <li><a href="/quitar-gotele-valencia">Quitar gotelé</a></li>
-            <li><a href="/pintura-interior-pisos-casas">Pintura Interior</a></li>
-            <li><a href="/pintura-exterior-fachadas">Pintura Exterior</a></li>
-            <li><a href="/presupuesto">Pedir presupuesto</a></li>
+            <li><a href="/servicios/quitar-gotele/">Quitar gotelé</a></li>
+            <li><a href="/servicios/pintura-interior/">Pintura Interior</a></li>
+            <li><a href="/servicios/">Ver todos los servicios</a></li>
+            <li><a href="/presupuesto/">Pedir presupuesto</a></li>
           </ul>
         </div>
         <div>
