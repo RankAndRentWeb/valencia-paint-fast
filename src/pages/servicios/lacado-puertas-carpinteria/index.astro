@@ -1,26 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
----
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/pareja-paleta-colores.jpg';
 
-<SiteLayout 
-  title="Lacado de puertas y carpintería - Pintores en Valencia"
-  description="Lacado en blanco u otros colores con acabado liso y duradero. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/lacado-puertas-carpinteria/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Lacado de puertas y carpintería</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Lacado en blanco u otros colores con acabado liso y duradero.
+const meta = {
+  title: "Lacado de puertas y carpintería - Pintores en Valencia",
+  description: "Lacado en blanco u otros colores con acabado liso y duradero. Presupuesto gratis en Valencia.",
+  canonical: "https://pintores-valencia.com/servicios/lacado-puertas-carpinteria/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Lacado de puertas y carpintería",
+  subtitle: "Lacado en blanco u otros colores con acabado liso y duradero.",
+  priceHtml: 'desde 45€/puerta <span class="text-sm text-gray-500 font-normal">Lijado incluido</span>',
+  badges: ["Acabado satinado/brillante", "Sin goteos"],
+  features: ["Acabado satinado/brillante", "Sin goteos", "Secado controlado"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "Problemas del lacado",
+    items: ["Goteos y marcas", "Acabado irregular", "Secado deficiente"]
+  },
+  solution: {
+    title: "Nuestra solución",
+    items: ["Técnica profesional", "Ambiente controlado", "Acabado perfecto"]
+  },
+  process: [
+    "Desmontaje y lijado",
+    "Preparación y masillado",
+    "Aplicación de laca",
+    "Secado y montaje"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">Lacado profesional</h2>
+        <p class="mb-4">
+          El lacado requiere técnica especializada y condiciones controladas 
+          para conseguir acabados perfectos sin goteos ni marcas.
         </p>
-        <p>
-          Nuestro servicio de lacado profesional transforma puertas y carpintería 
-          con acabados perfectos, sin goteos y con secado controlado para 
-          garantizar la máxima calidad y durabilidad.
+        <p class="mb-6">
+          Trabajamos en taller con ambiente controlado para garantizar 
+          el mejor acabado posible en todas las piezas.
         </p>
       </div>
-    </section>
-  </main>
-</SiteLayout>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Lacan en el domicilio?",
+      a: "Para mejor calidad, trabajamos en taller y después instalamos."
+    },
+    {
+      q: "¿Qué colores están disponibles?",
+      a: "Cualquier color de la carta RAL y acabados satinado o brillante."
+    }
+  ]
+};
+---
+
+<ServiceTemplate {meta} {hero} {blocks} />

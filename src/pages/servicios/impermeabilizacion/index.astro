@@ -1,26 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
----
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/madre-hijo-salon-pequeno.jpg';
 
-<SiteLayout 
-  title="Impermeabilización de terrazas - Pintores en Valencia"
-  description="Protegemos tu terraza contra filtraciones con sistemas profesionales. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/impermeabilizacion/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Impermeabilización de terrazas</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Protegemos tu terraza contra filtraciones con sistemas profesionales.
+const meta = {
+  title: "Impermeabilización de terrazas - Pintores en Valencia",
+  description: "Protegemos tu terraza contra filtraciones con sistemas profesionales. Presupuesto gratis en Valencia.",
+  canonical: "https://pintores-valencia.com/servicios/impermeabilizacion/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Impermeabilización",
+  subtitle: "Soluciones de impermeabilización para terrazas, balcones y cubiertas contra filtraciones.",
+  priceHtml: 'desde 25€/m² <span class="text-sm text-gray-500 font-normal">Sistema completo</span>',
+  badges: ["Sistemas profesionales", "Sellado de juntas"],
+  features: ["Sistemas profesionales", "Sellado de juntas", "Mantenimiento opcional"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "Problemas de filtraciones",
+    items: ["Goteras en el techo", "Humedades en paredes", "Deterioro estructural"]
+  },
+  solution: {
+    title: "Nuestra solución",
+    items: ["Sistemas impermeabilizantes", "Sellado profesional", "Garantía de estanqueidad"]
+  },
+  process: [
+    "Diagnóstico de filtraciones",
+    "Preparación de superficie",
+    "Aplicación del sistema",
+    "Pruebas de estanqueidad"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">Protección contra filtraciones</h2>
+        <p class="mb-4">
+          La impermeabilización es fundamental para proteger tu vivienda de las filtraciones 
+          de agua que pueden causar graves daños estructurales y problemas de humedad.
         </p>
-        <p>
-          Aplicamos sistemas de impermeabilización de última generación para prevenir 
-          filtraciones y humedades. Trabajamos con materiales certificados y técnicas 
-          especializadas para garantizar la máxima protección.
+        <p class="mb-6">
+          Utilizamos sistemas de impermeabilización de última generación que ofrecen 
+          máxima protección y durabilidad.
         </p>
       </div>
-    </section>
-  </main>
-</SiteLayout>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Cuánto dura la impermeabilización?",
+      a: "Con mantenimiento adecuado, nuestros sistemas duran entre 10-15 años."
+    },
+    {
+      q: "¿Hacen pruebas de estanqueidad?",
+      a: "Sí, realizamos pruebas exhaustivas para garantizar la efectividad."
+    }
+  ]
+};
+---
+
+<ServiceTemplate {meta} {hero} {blocks} />

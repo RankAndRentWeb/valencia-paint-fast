@@ -1,26 +1,75 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/errores-pintar-paredes-mujer.jpg';
+
+const meta = {
+  title: "Quitar gotelé en Valencia - Pintores en Valencia",
+  description: "Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.",
+  canonical: "https://pintores-valencia.com/servicios/quitar-gotele/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Quitar gotelé en Valencia",
+  subtitle: "Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.",
+  priceHtml: 'desde 18€/m² <span class="text-sm text-gray-500 font-normal">Material incluido</span>',
+  badges: ["Servicio especializado", "Sin polvo"],
+  features: ["Sin polvo", "Rápido", "Garantía 3 años"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "El problema del gotelé",
+    items: ["Aspecto anticuado", "Acumula polvo", "Dificulta la limpieza"]
+  },
+  solution: {
+    title: "Nuestra solución",
+    items: ["Eliminación completa sin polvo", "Alisado perfecto", "Acabado listo para pintar"]
+  },
+  process: [
+    "Protección de mobiliario",
+    "Eliminación del gotelé",
+    "Alisado de superficies", 
+    "Limpieza final"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">¿Por qué eliminar el gotelé?</h2>
+        <p class="mb-4">
+          El gotelé fue muy popular en décadas pasadas, pero hoy en día se considera anticuado 
+          y presenta varios inconvenientes para el mantenimiento del hogar.
+        </p>
+        <p class="mb-6">
+          Nuestro servicio especializado de eliminación de gotelé utiliza técnicas avanzadas 
+          que no generan polvo, manteniendo su hogar limpio durante todo el proceso.
+        </p>
+        <h3 class="text-xl font-semibold mb-4">Ventajas de eliminar el gotelé</h3>
+        <ul class="list-disc pl-6 mb-6">
+          <li>Aspecto moderno y actualizado</li>
+          <li>Facilita la limpieza y mantenimiento</li>
+          <li>Permite aplicar cualquier tipo de pintura</li>
+          <li>Aumenta el valor de la propiedad</li>
+        </ul>
+      </div>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Hay polvo?",
+      a: "No, usamos técnicas especiales que no generan polvo."
+    },
+    {
+      q: "¿Cuánto tiempo tarda?",
+      a: "Una habitación estándar se completa en 1–2 días."
+    },
+    {
+      q: "¿Incluye la pintura posterior?",
+      a: "El servicio incluye el alisado. La pintura se puede contratar por separado."
+    }
+  ]
+};
 ---
 
-<SiteLayout 
-  title="Quitar gotelé en Valencia - Pintores en Valencia"
-  description="Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/quitar-gotele/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Quitar gotelé y alisar paredes</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.
-        </p>
-        <p>
-          Nuestro servicio profesional de eliminación de gotelé incluye preparación completa, 
-          alisado de superficies y limpieza posterior. Utilizamos técnicas especializadas 
-          para garantizar un acabado perfecto.
-        </p>
-      </div>
-    </section>
-  </main>
-</SiteLayout>
+<ServiceTemplate {meta} {hero} {blocks} />

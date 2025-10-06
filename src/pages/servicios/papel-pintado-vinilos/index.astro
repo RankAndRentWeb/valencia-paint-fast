@@ -1,26 +1,65 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
----
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/madre-hijo-salon-pequeno.jpg';
 
-<SiteLayout 
-  title="Papel pintado y vinilos - Pintores en Valencia"
-  description="Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/papel-pintado-vinilos/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Papel pintado y vinilos</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio.
-        </p>
-        <p>
+const meta = {
+  title: "Papel pintado y vinilos - Pintores en Valencia",
+  description: "Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio. Presupuesto gratis en Valencia.",
+  canonical: "https://pintores-valencia.com/servicios/papel-pintado-vinilos/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Papel pintado y vinilos",
+  subtitle: "Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio.",
+  priceHtml: 'desde 18€/m² <span class="text-sm text-gray-500 font-normal">Material incluido</span>',
+  badges: ["Fotomurales", "Vinilos decorativos"],
+  features: ["Alineado perfecto", "Cortes limpios", "Colas adecuadas"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "Problemas habituales",
+    items: ["Burbujas y arrugas", "Despegues", "Instalación deficiente"]
+  },
+  solution: {
+    title: "Instalación experta",
+    items: ["Técnica profesional", "Sin burbujas", "Acabado perfecto"]
+  },
+  process: [
+    "Preparación de paredes",
+    "Medición y corte",
+    "Aplicación de adhesivo",
+    "Instalación y alisado"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">Instalación profesional</h2>
+        <p class="mb-4">
           Especializados en la colocación de papel pintado y vinilos decorativos 
           con alineado perfecto, cortes limpios y utilizando las colas adecuadas 
           para cada tipo de superficie y material.
         </p>
+        <p class="mb-6">
+          Trabajamos con los mejores materiales y técnicas profesionales 
+          para conseguir acabados perfectos y duraderos en cualquier espacio.
+        </p>
       </div>
-    </section>
-  </main>
-</SiteLayout>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Trabajan con cualquier tipo de papel?",
+      a: "Sí, papel pintado, vinilo, fotomurales y cualquier revestimiento mural."
+    },
+    {
+      q: "¿Incluye el material en el precio?",
+      a: "Podemos incluir el material o trabajar con el que nos facilite."
+    }
+  ]
+};
+---
+
+<ServiceTemplate {meta} {hero} {blocks} />

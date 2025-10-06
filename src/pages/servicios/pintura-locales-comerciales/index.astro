@@ -1,26 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
----
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/propietario-cafeteria-local-pintado.jpg';
 
-<SiteLayout 
-  title="Pintura locales comerciales - Pintores en Valencia"
-  description="Pintura profesional para negocios, mínima interrupción y acabado impecable. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-locales-comerciales/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Pintura locales comerciales</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Pintura profesional para negocios, mínima interrupción y acabado impecable.
+const meta = {
+  title: "Pintura locales comerciales - Pintores en Valencia",
+  description: "Pintura profesional para negocios, mínima interrupción y acabado impecable. Presupuesto gratis en Valencia.",
+  canonical: "https://pintores-valencia.com/servicios/pintura-locales-comerciales/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Pintura locales comerciales",
+  subtitle: "Imagen profesional en tu negocio con mínima interrupción de actividad y acabados impecables.",
+  priceHtml: 'desde 10€/m² <span class="text-sm text-gray-500 font-normal">Horarios flexibles</span>',
+  badges: ["Planificación por horarios", "Acabado uniforme"],
+  features: ["Planificación por horarios", "Acabado uniforme", "Limpieza incluida"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "Desafíos comerciales",
+    items: ["Interrupción del negocio", "Imagen desactualizada", "Pérdida de clientes"]
+  },
+  solution: {
+    title: "Nuestra solución",
+    items: ["Horarios adaptados", "Trabajo rápido y eficiente", "Imagen renovada"]
+  },
+  process: [
+    "Planificación de horarios",
+    "Preparación rápida",
+    "Pintura por zonas",
+    "Limpieza y apertura"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">Imagen profesional para tu negocio</h2>
+        <p class="mb-4">
+          La imagen de tu local comercial es fundamental para atraer clientes. 
+          Renovamos tu espacio con mínima interrupción de la actividad comercial.
         </p>
-        <p>
-          Especializados en pintura de locales comerciales con horarios flexibles 
-          para minimizar la interrupción de tu negocio. Garantizamos acabados 
-          profesionales y plazos de entrega cumplidos.
+        <p class="mb-6">
+          Adaptamos nuestros horarios de trabajo a las necesidades de tu negocio, 
+          trabajando en horarios nocturnos o fines de semana si es necesario.
         </p>
       </div>
-    </section>
-  </main>
-</SiteLayout>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Pueden trabajar fuera de horario comercial?",
+      a: "Sí, adaptamos nuestros horarios a las necesidades de tu negocio."
+    },
+    {
+      q: "¿Cuánto tiempo estará cerrado el local?",
+      a: "Planificamos el trabajo para minimizar o evitar el cierre completamente."
+    }
+  ]
+};
+---
+
+<ServiceTemplate {meta} {hero} {blocks} />

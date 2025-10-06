@@ -1,26 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
----
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/fachada-exterior-valencia.jpg';
 
-<SiteLayout 
-  title="Pintura exterior y fachadas - Pintores en Valencia"
-  description="Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-exterior/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Pintura exterior y fachadas</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas.
+const meta = {
+  title: "Pintura exterior y fachadas - Pintores en Valencia",
+  description: "Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas. Presupuesto gratis en Valencia.",
+  canonical: "https://pintores-valencia.com/servicios/pintura-exterior/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Pintura exterior y fachadas",
+  subtitle: "Protegemos y embellecemos fachadas con pinturas resistentes a la intemperie y técnicas especializadas.",
+  priceHtml: 'desde 15€/m² <span class="text-sm text-gray-500 font-normal">Andamiaje incluido</span>',
+  badges: ["Resistente al clima", "Andamiaje incluido"],
+  features: ["Resistente al clima", "Andamiaje incluido", "Seguro RC"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "Problemas de las fachadas",
+    items: ["Deterioro por climatología", "Pérdida de color", "Filtraciones de humedad"]
+  },
+  solution: {
+    title: "Nuestra solución",
+    items: ["Pinturas anti-intemperie", "Preparación completa", "Sellado de fisuras"]
+  },
+  process: [
+    "Inspección y preparación",
+    "Montaje de andamios",
+    "Limpieza y sellado",
+    "Aplicación de pintura exterior"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">Protección y embellecimiento de fachadas</h2>
+        <p class="mb-4">
+          Las fachadas están expuestas constantemente a las inclemencias del tiempo, 
+          por lo que requieren pinturas y tratamientos especializados.
         </p>
-        <p>
-          Especializados en pintura exterior y rehabilitación de fachadas. Utilizamos pinturas 
-          de alta resistencia a la intemperie y técnicas profesionales para asegurar 
-          la máxima durabilidad y protección de tu edificio.
+        <p class="mb-6">
+          Utilizamos pinturas de máxima calidad específicamente diseñadas para exteriores, 
+          que resisten los rayos UV, la lluvia y los cambios de temperatura.
         </p>
       </div>
-    </section>
-  </main>
-</SiteLayout>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Incluyen el andamiaje?",
+      a: "Sí, incluimos montaje y desmontaje del andamiaje necesario."
+    },
+    {
+      q: "¿Qué garantía ofrecen?",
+      a: "Garantizamos nuestro trabajo por 5 años contra defectos de aplicación."
+    }
+  ]
+};
+---
+
+<ServiceTemplate {meta} {hero} {blocks} />

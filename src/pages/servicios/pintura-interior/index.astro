@@ -1,26 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
----
+import ServiceTemplate from '../../../components/ServiceTemplate.astro';
+import heroImg from '../../../assets/pintura-interior-valencia.jpg';
 
-<SiteLayout 
-  title="Pintura interior - Pintores en Valencia"
-  description="Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-interior/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Pintura interior de pisos y casas</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales.
+const meta = {
+  title: "Pintura interior - Pintores en Valencia",
+  description: "Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales. Presupuesto gratis en Valencia.",
+  canonical: "https://pintores-valencia.com/servicios/pintura-interior/",
+  ogImage: "/og-home.webp"
+};
+
+const hero = {
+  title: "Pintura interior de pisos y casas",
+  subtitle: "Renovamos completamente el interior de tu hogar con pinturas de primera calidad y acabados profesionales.",
+  priceHtml: 'desde 12€/m² <span class="text-sm text-gray-500 font-normal">Material incluido</span>',
+  badges: ["Pinturas premium", "Limpieza incluida"],
+  features: ["Pinturas premium", "Limpieza incluida", "Garantía 3 años"],
+  img: heroImg
+};
+
+const blocks = {
+  problem: {
+    title: "Problemas comunes",
+    items: ["Paredes deterioradas", "Colores desactualizados", "Falta de personalidad"]
+  },
+  solution: {
+    title: "Nuestra solución",
+    items: ["Pinturas de primera calidad", "Preparación profesional", "Acabados perfectos"]
+  },
+  process: [
+    "Preparación de superficies",
+    "Aplicación de imprimación",
+    "Pintura con rodillo y pincel",
+    "Acabados y detalles finales"
+  ],
+  prose: `
+    <div class="py-12">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-6">Renovación completa del interior</h2>
+        <p class="mb-4">
+          Transformamos el interior de tu hogar con pinturas de las mejores marcas y 
+          técnicas profesionales que garantizan un acabado duradero y de calidad.
         </p>
-        <p>
-          Ofrecemos servicios completos de pintura interior incluyendo preparación de superficies, 
-          aplicación de pinturas premium y acabados especializados. Trabajamos con las mejores 
-          marcas del mercado para garantizar durabilidad y belleza.
+        <p class="mb-6">
+          Utilizamos únicamente pinturas premium que ofrecen excelente cobertura, 
+          durabilidad y resistencia al lavado.
         </p>
       </div>
-    </section>
-  </main>
-</SiteLayout>
+    </div>
+  `,
+  faq: [
+    {
+      q: "¿Qué marcas de pintura utilizan?",
+      a: "Trabajamos con marcas premium como Bruguer, Titán y Montó para garantizar calidad."
+    },
+    {
+      q: "¿Incluye la limpieza posterior?",
+      a: "Sí, incluimos limpieza completa y recogida de material al finalizar."
+    }
+  ]
+};
+---
+
+<ServiceTemplate {meta} {hero} {blocks} />
