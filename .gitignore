@@ -32,5 +32,9 @@ scripts/fix-syntax-errors.mjs
 
 # Solo si NO quieres versionar tu contenido:
 # src/content/
-".vercel/" 
-".vercel/" 
+
+# Build artifacts
+.vercel/
+.vercel/output/
+dist/
+node_modules/

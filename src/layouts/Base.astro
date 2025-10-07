@@ -1,0 +1,65 @@
+---
+const {
+  title = "Pintores Valencia | Presupuesto rápido y profesional",
+  description = "Pintores en Valencia: alisado, quitar gotelé y pintura interior/exterior. Presupuesto en 24h.",
+  canonical = "",
+  image = "/og-default.jpg"
+} = Astro.props;
+
+const canonicalUrl = canonical || Astro.url?.href || "https://pintores-valencia.com/";
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:image" content={image} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={image} />
+
+  <link rel="icon" href="/favicon.ico" />
+</head>
+<body>
+  <header>
+    <!-- TODO: global header/nav -->
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer>
+    <!-- TODO: global footer -->
+  </footer>
+
+  <!-- JSON-LD LocalBusiness (Painter) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HousePainter", 
+    "name": "Pintores Valencia",
+    "url": "https://pintores-valencia.com/",
+    "areaServed": "Valencia",
+    "telephone": "+34 600 000 000",
+    "image": "https://pintores-valencia.com/og-default.jpg",
+    "priceRange": "€€",
+    "sameAs": [
+      "https://www.facebook.com/tu-pagina",
+      "https://www.instagram.com/tu-pagina"
+    ]
+  })}></script>
+</body>
+</html>
