@@ -3,11 +3,16 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import Index from '../components/_Index.tsx';
 import heroImg from '../assets/hero-pintores-valencia.webp';
 import featureImg from '../assets/pintor-profesional-valencia.jpg';
+
+const title = "Pintores en Valencia - Pintores profesionales en Valencia";
+const description = "Empresa de pintores en Valencia con más de 15 años de experiencia. Pintura interior, exterior, quitar gotelé. Presupuesto gratis. ☎️ 722 208 131";
+const canonical = "https://pintores-valencia.com/";
 ---
 
 <SiteLayout 
-  title="Pintores en Valencia - Pintores profesionales en Valencia"
-  description="Empresa de pintores en Valencia con más de 15 años de experiencia. Pintura interior, exterior, quitar gotelé. Presupuesto gratis. ☎️ 722 208 131"
+  title={title}
+  description={description}
+  canonical={canonical}
   preloadImages={[heroImg.src]}
 >
   <Index client:load heroImage={heroImg} featureImage={featureImg} />
