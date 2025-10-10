@@ -30,7 +30,7 @@ const QuienesSomos = () => {
       "addressCountry": "ES"
     },
     "telephone": "+34722208131",
-    "email": "edgarberriojimenez@gmail.com",
+    "email": "info@pintores-valencia.com",
     "openingHours": [
       "Mo-Sa 08:00-20:00"
     ],
@@ -95,7 +95,7 @@ const QuienesSomos = () => {
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <a href="tel:722208131" className="flex items-center gap-2">
+                  <a href="tel:+34722208131" className="flex items-center gap-2">
                     <Phone className="w-4 h-4" />
                     722 208 131
                   </a>
@@ -185,7 +185,7 @@ const QuienesSomos = () => {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-muted-foreground">
-                  <a href="tel:722208131" className="hover:text-accent">
+                  <a href="tel:+34722208131" className="hover:text-accent">
                     722 208 131
                   </a>
                 </p>
@@ -280,7 +280,7 @@ const QuienesSomos = () => {
               <a href="/presupuesto">Solicitar presupuesto</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <a href="tel:722208131" className="flex items-center gap-2">
+              <a href="tel:+34722208131" className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 Llamar ahora
               </a>

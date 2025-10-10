@@ -76,7 +76,7 @@ const Contacto = () => {
                           Llámanos directamente para consultas urgentes
                         </p>
                         <Button asChild className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
-                          <a href="tel:722208131" className="flex items-center space-x-2">
+                          <a href="tel:+34722208131" className="flex items-center space-x-2">
                             <Phone className="w-4 h-4" />
                             <span>722 208 131</span>
                           </a>
@@ -112,10 +112,10 @@ const Contacto = () => {
                           Para consultas detalladas y presupuestos
                         </p>
                         <a 
-                          href="mailto:edgarberriojimenez@gmail.com"
+                          href="mailto:info@pintores-valencia.com"
                           className="text-accent hover:underline break-all"
                         >
-                          edgarberriojimenez@gmail.com
+                          info@pintores-valencia.com
                         </a>
                       </div>
                     </div>

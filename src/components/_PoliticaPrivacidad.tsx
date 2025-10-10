@@ -27,7 +27,7 @@ const PoliticaPrivacidad = () => {
                 <ul className="space-y-1">
                   <li><strong>Responsable:</strong> Pintores en Valencia</li>
                   <li><strong>Teléfono:</strong> +34 722 208 131</li>
-                  <li><strong>Email:</strong> edgarberriojimenez@gmail.com</li>
+                  <li><strong>Email:</strong> info@pintores-valencia.com</li>
                   <li><strong>Domicilio:</strong> Valencia, España</li>
                 </ul>
               </div>
@@ -91,7 +91,7 @@ const PoliticaPrivacidad = () => {
                 <li><strong>Oposición:</strong> Oponerse al tratamiento por motivos de su situación particular</li>
               </ul>
               <p className="mb-4">
-                Para ejercer estos derechos, puede contactarnos en: <strong>edgarberriojimenez@gmail.com</strong> 
+                Para ejercer estos derechos, puede contactarnos en: <strong>info@pintores-valencia.com</strong> 
                 o <strong>+34 722 208 131</strong>
               </p>
             </section>

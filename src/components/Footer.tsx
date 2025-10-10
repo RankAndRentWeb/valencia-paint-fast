@@ -18,8 +18,8 @@ export default function SiteFooter() {
         </div>
         <div>
           <h5 className="font-medium">Contacto</h5>
-          <p>Tel: 722 208 131</p>
-          <p>Email: info@pintores-valencia.com</p>
+          <p><a href="tel:+34722208131" className="hover:text-accent">Tel: 722 208 131</a></p>
+          <p><a href="mailto:info@pintores-valencia.com" className="hover:text-accent">Email: info@pintores-valencia.com</a></p>
           <p>Valencia, España</p>
           <p>Lun–Sáb 08:00–20:00</p>
         </div>
