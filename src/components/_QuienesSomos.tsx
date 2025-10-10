@@ -142,7 +142,7 @@ const QuienesSomos = () => {
                 </div>
                 <h3 className="font-semibold mb-2">Garantía escrita</h3>
                 <p className="text-sm text-muted-foreground">
-                  Todos nuestros trabajos incluyen garantía por escrito de hasta 5 años según el servicio.
+                  Todos nuestros trabajos incluyen garantía por escrito: 3 años en pintura y hasta 10 años en impermeabilizaciones.
                 </p>
               </CardContent>
             </Card>

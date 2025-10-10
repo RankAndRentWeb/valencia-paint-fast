@@ -7,5 +7,10 @@
   "region": "Comunitat Valenciana", 
   "country": "ES",
   "url": "https://pintores-valencia.com",
-  "description": "Empresa de pintores profesionales en Valencia especializada en pintura interior, exterior, quitar gotelé e impermeabilización"
+  "description": "Empresa de pintores profesionales en Valencia especializada en pintura interior, exterior, quitar gotelé e impermeabilización",
+  "warranty": {
+    "interior": "3 años",
+    "exterior": "3 años", 
+    "impermeabilization": "10 años"
+  }
 }
