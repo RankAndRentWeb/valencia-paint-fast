@@ -1,19 +1,9 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://pintores-valencia.com/sitemap-index.xml
-Allow: /trabajos/
-Allow: /presupuesto/
-Allow: /contacto/
 
-# Archivos estáticos permitidos
-Allow: /assets/
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.webp$
-Allow: /*.svg$
-
-# Crawl-delay para ser respetuosos
-Crawl-delay: 1
+# Disallow admin and development files
+Disallow: /admin/
+Disallow: /_astro/
+Disallow: /.well-known/
