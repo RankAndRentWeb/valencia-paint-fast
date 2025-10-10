@@ -1,64 +1,9 @@
----
-import ServicePage from '../../../components/ServicePage.astro';
+﻿---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
 ---
 
-<ServicePage
-  title="Papel pintado y vinilos decorativos"
-  subtitle="Colocación profesional de papel pintado y vinilos con acabados perfectos sin burbujas"
-  price="Desde 15€/m²"
-  priceNote="Incluye material, adhesivos y colocación profesional"
-  badges={["Sin burbujas", "Acabado perfecto", "Múltiples diseños", "Colocación experta"]}
-  features={["Técnica profesional", "Amplio catálogo", "Sin imperfecciones", "Asesoramiento diseño"]}
-  heroImg="/src/assets/papel-pintado-valencia.jpg"
-  heroAlt="Colocación de papel pintado en Valencia"
-  problem={[
-    "Colocación casera con burbujas",
-    "Papel que se despega rápidamente", 
-    "Juntas visibles e imperfectas",
-    "Diseños limitados y anticuados"
-  ]}
-  solution={[
-    "Técnica profesional sin burbujas",
-    "Adhesivos de máxima calidad",
-    "Juntas perfectas e invisibles", 
-    "Catálogo amplio de diseños actuales"
-  ]}
-  process={[
-    { title: "Asesoramiento", desc: "Elegimos diseño y calculamos material" },
-    { title: "Preparación", desc: "Acondicionamos paredes perfectamente" },
-    { title: "Colocación", desc: "Técnica experta sin burbujas" },
-    { title: "Acabado", desc: "Remates y limpieza final" }
-  ]}
-  proseTitle="Colocación profesional de papel pintado y vinilos en Valencia"
-  proseP1="Especializados en colocación de papel pintado y vinilos decorativos con técnicas profesionales que garantizan acabados perfectos. Trabajamos con los mejores fabricantes y últimas tendencias en decoración."
-  proseP2="Nuestro servicio incluye asesoramiento en diseño, cálculo exacto de material, preparación de paredes y colocación experta. Garantizamos acabados sin burbujas ni imperfecciones."
-  proseList={[
-    "Amplio catálogo de diseños actuales",
-    "Papel pintado y vinilos premium", 
-    "Técnica sin burbujas garantizada",
-    "Asesoramiento en diseño incluido",
-    "Preparación perfecta de paredes"
-  ]}
-  faqs={[
-    {
-      question: "¿Qué tipos de papel tenéis?",
-      answer: "Trabajamos con papel pintado tradicional, vinílico, textil y vinilos decorativos. Amplio catálogo desde diseños clásicos hasta las últimas tendencias."
-    },
-    {
-      question: "¿Se garantiza que no salgan burbujas?",
-      answer: "Sí, nuestra técnica profesional y adhesivos de calidad garantizan colocación sin burbujas. Si aparecieran, las reparamos sin coste."
-    },
-    {
-      question: "¿Ayudáis a elegir el diseño?",
-      answer: "Sí, asesoramos en la elección según el espacio, luz, mobiliario y tus gustos. Llevamos muestras para que veas cómo quedaría."
-    },
-    {
-      question: "¿Se puede quitar fácilmente después?",
-      answer: "Depende del tipo. Los vinilos se retiran fácilmente, el papel pintado vinílico también. El papel tradicional requiere proceso de retirada húmeda."
-    }
-  ]}
-  seoTitle="Papel pintado y vinilos - Pintores en Valencia"
-  seoDescription="Colocación de papel pintado y vinilos decorativos. Acabados perfectos sin burbujas. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/papel-pintado-vinilos/"
-  keywords="papel pintado valencia, vinilos decorativos valencia, colocar papel pintado valencia"
-/>
+<SiteLayout title="Papel pintado Valencia">
+  <h1>Papel pintado Valencia</h1>
+  <p>Instalación profesional de papel pintado y vinilos.</p>
+  <a href="/presupuesto/">Presupuesto Gratis</a>
+</SiteLayout>

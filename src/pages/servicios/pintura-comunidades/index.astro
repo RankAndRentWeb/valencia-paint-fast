@@ -1,64 +1,9 @@
----
-import ServicePage from '../../../components/ServicePage.astro';
+﻿---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
 ---
 
-<ServicePage
-  title="Pintura de comunidades de propietarios"
-  subtitle="Pintura de escaleras, fachadas y zonas comunes con precios especiales para comunidades"
-  price="Consultar presupuesto"
-  priceNote="Precios especiales para comunidades, financiación disponible"
-  badges={["Precios especiales", "Financiación", "Experiencia comunidades", "Garantía extendida"]}
-  features={["Gestión administrativa", "Precios competitivos", "Planificación flexible", "Servicio completo"]}
-  heroImg="/src/assets/pintura-comunidad-valencia.jpg"
-  heroAlt="Pintura de comunidad de propietarios en Valencia"
-  problem={[
-    "Escaleras y zonas comunes deterioradas",
-    "Presupuestos elevados y poco claros", 
-    "Gestión administrativa complicada",
-    "Trabajos que se eternizan"
-  ]}
-  solution={[
-    "Rehabilitación completa de zonas comunes",
-    "Presupuestos transparentes y competitivos",
-    "Gestión administrativa incluida", 
-    "Planificación eficiente y cumplida"
-  ]}
-  process={[
-    { title: "Reunión", desc: "Visitamos y presentamos propuesta" },
-    { title: "Presupuesto", desc: "Detallado y transparente" },
-    { title: "Planificación", desc: "Coordinamos fechas y trabajos" },
-    { title: "Ejecución", desc: "Trabajo profesional y puntual" }
-  ]}
-  proseTitle="Pintura especializada para comunidades de propietarios en Valencia"
-  proseP1="Especializados en pintura para comunidades con más de 15 años de experiencia gestionando proyectos para administradores y juntas de propietarios. Conocemos las necesidades específicas de cada comunidad."
-  proseP2="Ofrecemos servicio integral incluyendo gestión administrativa, presupuestos detallados, financiación flexible y coordinación de trabajos para minimizar molestias a los vecinos."
-  proseList={[
-    "Precios especiales para comunidades",
-    "Financiación y pago aplazado disponible", 
-    "Gestión administrativa completa",
-    "Coordinación con administradores",
-    "Garantía extendida en trabajos"
-  ]}
-  faqs={[
-    {
-      question: "¿Ofrecéis precios especiales para comunidades?",
-      answer: "Sí, tenemos tarifas específicas para comunidades de propietarios con importantes descuentos sobre precios particulares, especialmente en proyectos grandes."
-    },
-    {
-      question: "¿Ayudáis con la gestión administrativa?",
-      answer: "Sí, preparamos toda la documentación necesaria, presupuestos detallados y coordinamos con administradores para facilitar los trámites."
-    },
-    {
-      question: "¿Se puede pagar a plazos?",
-      answer: "Sí, ofrecemos financiación flexible adaptada a las necesidades de cada comunidad. Pagos fraccionados según avance de obra."
-    },
-    {
-      question: "¿Cómo coordinamos para no molestar?",
-      answer: "Planificamos horarios con la comunidad, trabajamos por fases si es necesario y coordinamos accesos para minimizar molestias a los vecinos."
-    }
-  ]}
-  seoTitle="Pintura de comunidades de propietarios - Pintores en Valencia"
-  seoDescription="Pintura de escaleras, fachadas y zonas comunes con garantía y precios especiales. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-comunidades/"
-  keywords="pintura comunidades valencia, pintar escalera comunidad valencia, pintura fachada comunidad"
-/>
+<SiteLayout title="Pintura comunidades Valencia">
+  <h1>Pintura comunidades Valencia</h1>
+  <p>Pintura para comunidades de propietarios.</p>
+  <a href="/presupuesto/">Presupuesto Gratis</a>
+</SiteLayout>

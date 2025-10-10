@@ -1,64 +1,9 @@
----
-import ServicePage from '../../../components/ServicePage.astro';
+﻿---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
 ---
 
-<ServicePage
-  title="Pintura de locales comerciales"
-  subtitle="Pintura para tiendas, oficinas, restaurantes y naves con horarios flexibles"
-  price="Desde 10€/m²"
-  priceNote="Precios especiales para proyectos comerciales, horarios nocturnos disponibles"
-  badges={["Horarios flexibles", "Proyectos comerciales", "Acabados profesionales", "Precios competitivos"]}
-  features={["Trabajo nocturno", "Planificación flexible", "Acabados comerciales", "Presupuestos ajustados"]}
-  heroImg="/src/assets/local-comercial-valencia.jpg"
-  heroAlt="Pintura de local comercial en Valencia"
-  problem={[
-    "Horarios que interfieren con negocio",
-    "Acabados no profesionales", 
-    "Presupuestos elevados para comercios",
-    "Trabajos que se alargan"
-  ]}
-  solution={[
-    "Horarios adaptados a tu negocio",
-    "Acabados comerciales de calidad",
-    "Precios competitivos para empresas", 
-    "Planificación y cumplimiento estricto"
-  ]}
-  process={[
-    { title: "Evaluación", desc: "Analizamos necesidades y horarios" },
-    { title: "Planificación", desc: "Organizamos trabajo sin interferir" },
-    { title: "Ejecución", desc: "Trabajo rápido y profesional" },
-    { title: "Entrega", desc: "Local listo para abrir" }
-  ]}
-  proseTitle="Pintura especializada para locales comerciales en Valencia"
-  proseP1="Especializados en pintura para comercios, oficinas, restaurantes y naves industriales. Entendemos que cada negocio tiene necesidades específicas de horarios, acabados y presupuesto."
-  proseP2="Ofrecemos horarios flexibles incluyendo trabajo nocturno y fines de semana para no interferir con la actividad comercial. Acabados profesionales que aportan valor a tu negocio."
-  proseList={[
-    "Trabajo nocturno y fines de semana",
-    "Precios especiales para comercios", 
-    "Acabados comerciales profesionales",
-    "Planificación sin interferir negocio",
-    "Experiencia en todo tipo de locales"
-  ]}
-  faqs={[
-    {
-      question: "¿Trabajáis fuera del horario comercial?",
-      answer: "Sí, ofrecemos trabajo nocturno, madrugadas y fines de semana para no interferir con la actividad del negocio. Coordinamos horarios según necesidades."
-    },
-    {
-      question: "¿Tenéis precios especiales para empresas?",
-      answer: "Sí, ofrecemos tarifas comerciales competitivas especialmente en proyectos de cierto volumen. Presupuestos adaptados a necesidades empresariales."
-    },
-    {
-      question: "¿Qué tipos de locales pintáis?",
-      answer: "Tiendas, oficinas, restaurantes, bares, naves industriales, centros médicos, peluquerías... Cualquier tipo de local comercial."
-    },
-    {
-      question: "¿Podemos seguir abiertos durante el trabajo?",
-      answer: "Según el caso. En muchas ocasiones trabajamos por fases para permitir seguir operando. Evaluamos cada situación individualmente."
-    }
-  ]}
-  seoTitle="Pintura locales comerciales - Pintores en Valencia"
-  seoDescription="Pintura para tiendas, oficinas, restaurantes y naves industriales. Trabajos nocturnos disponibles. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-locales-comerciales/"
-  keywords="pintura locales comerciales valencia, pintar tienda valencia, pintura oficina valencia"
-/>
+<SiteLayout title="Pintura locales comerciales Valencia">
+  <h1>Pintura locales comerciales Valencia</h1>
+  <p>Pintura para locales comerciales y oficinas.</p>
+  <a href="/presupuesto/">Presupuesto Gratis</a>
+</SiteLayout>

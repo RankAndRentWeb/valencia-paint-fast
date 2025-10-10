@@ -1,64 +1,9 @@
----
-import ServicePage from '../../../components/ServicePage.astro';
+﻿---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
 ---
 
-<ServicePage
-  title="Pintura interior de pisos y casas"
-  subtitle="Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales"
-  price="Desde 12€/m²"
-  priceNote="Incluye material, mano de obra y limpieza posterior"
-  badges={["Pinturas premium", "Garantía 3 años", "Limpieza incluida", "Material incluido"]}
-  features={["Preparación completa", "Pinturas de calidad", "Acabado perfecto", "Limpieza incluida"]}
-  heroImg="/src/assets/pintura-interior-valencia.jpg"
-  heroAlt="Pintura interior profesional en Valencia"
-  problem={[
-    "Paredes desconchadas o manchadas",
-    "Colores anticuados que no gustan", 
-    "Trabajos mal hechos con goteos",
-    "Materiales baratos que no duran"
-  ]}
-  solution={[
-    "Preparación profesional de superficies",
-    "Asesoramiento en colores modernos",
-    "Aplicación técnica sin goteos ni marcas", 
-    "Pinturas premium con garantía"
-  ]}
-  process={[
-    { title: "Protección", desc: "Cubrimos muebles y suelos" },
-    { title: "Preparación", desc: "Lijamos y preparamos paredes" },
-    { title: "Pintura", desc: "Aplicamos con técnica profesional" },
-    { title: "Limpieza", desc: "Dejamos todo perfecto" }
-  ]}
-  proseTitle="Servicio completo de pintura interior en Valencia"
-  proseP1="Nuestro equipo de pintores profesionales transforma tu hogar con las mejores pinturas del mercado. Trabajamos con marcas como Bruguer, Montó y Titan para garantizar acabados duraderos y de calidad."
-  proseP2="El servicio incluye preparación completa de paredes, asesoramiento en colores, aplicación profesional y limpieza posterior. Todos nuestros trabajos incluyen garantía de 3 años por escrito."
-  proseList={[
-    "Pinturas premium de primeras marcas",
-    "Asesoramiento profesional en colores", 
-    "Preparación completa de superficies",
-    "Garantía escrita de 3 años",
-    "Limpieza completa incluida"
-  ]}
-  faqs={[
-    {
-      question: "¿Qué tipos de pintura utilizáis?",
-      answer: "Utilizamos pinturas premium de marcas como Bruguer, Montó y Titan. Según el espacio, aplicamos pintura plástica, esmalte acrílico o pintura especial para cocinas y baños."
-    },
-    {
-      question: "¿Cuántos días se tarda en pintar un piso?",
-      answer: "Un piso de 80m² se suele completar en 3-4 días laborables, dependiendo del estado de las paredes y si hay que quitar gotelé previamente."
-    },
-    {
-      question: "¿Qué garantía ofrecéis?",
-      answer: "Ofrecemos 3 años de garantía en el trabajo de pintura. Si aparecen defectos por mala aplicación, lo reparamos sin coste."
-    },
-    {
-      question: "¿Ayudáis a elegir los colores?",
-      answer: "Sí, nuestros profesionales te asesoran sobre las mejores combinaciones de colores según tu estilo, luz natural y uso de cada espacio."
-    }
-  ]}
-  seoTitle="Pintura interior - Pintores en Valencia"
-  seoDescription="Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-interior/"
-  keywords="pintura interior valencia, pintar piso valencia, pintores interior valencia"
-/>
+<SiteLayout title="Pintura interior Valencia">
+  <h1>Pintura interior Valencia</h1>
+  <p>Pintura interior profesional para viviendas.</p>
+  <a href="/presupuesto/">Presupuesto Gratis</a>
+</SiteLayout>
