@@ -24,7 +24,18 @@ export default function SiteFooter() {
           <p>Lun–Sáb 08:00–20:00</p>
         </div>
       </div>
-      <div className="text-center py-4 text-sm">© 2025 Pintores en Valencia. Todos los derechos reservados.</div>
+      <div className="border-t pt-4">
+        <div className="text-center space-y-2">
+          <div className="flex justify-center gap-4 text-sm">
+            <a href="/aviso-legal/" className="hover:text-accent">Aviso Legal</a>
+            <span>|</span>
+            <a href="/politica-privacidad/" className="hover:text-accent">Política de Privacidad</a>
+            <span>|</span>
+            <a href="/politica-cookies/" className="hover:text-accent">Política de Cookies</a>
+          </div>
+          <div className="text-sm">© 2025 Pintores en Valencia. Todos los derechos reservados.</div>
+        </div>
+      </div>
     </footer>
   );
 }
