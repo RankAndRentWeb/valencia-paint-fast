@@ -60,13 +60,46 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
       geoRadius: { "@type": "Distance", value: 50, unitText: "km" },
     },
     priceRange: "€€",
-    areaServed: [{ "@type": "City", name: "Valencia" }],
+    areaServed: [
+      { "@type": "City", name: "Valencia" },
+      { "@type": "AdministrativeArea", name: "Comunitat Valenciana" }
+    ],
     contactPoint: [{
       "@type": "ContactPoint",
       "telephone": "+34722208131",
       "contactType": "customer service",
       "areaServed": "Valencia"
-    }]
+    }],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Servicios de Pintura en Valencia",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Pintura Interior",
+          description: "Pintura completa de interiores con materiales premium y garantía",
+          url: "https://pintores-valencia.com/servicios/pintura-interior/"
+        },
+        {
+          "@type": "Offer", 
+          name: "Quitar Gotelé",
+          description: "Eliminación de gotelé y alisado de paredes sin polvo",
+          url: "https://pintores-valencia.com/servicios/quitar-gotele/"
+        },
+        {
+          "@type": "Offer",
+          name: "Pintura Exterior y Fachadas",
+          description: "Pintura exterior resistente al clima con andamiaje incluido",
+          url: "https://pintores-valencia.com/servicios/pintura-exterior/"
+        },
+        {
+          "@type": "Offer",
+          name: "Impermeabilización",
+          description: "Impermeabilización de terrazas y fachadas",
+          url: "https://pintores-valencia.com/servicios/impermeabilizacion/"
+        }
+      ]
+    }
   };
 
   const faqSchema = {

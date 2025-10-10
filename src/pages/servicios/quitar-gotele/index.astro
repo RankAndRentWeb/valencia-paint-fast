@@ -21,6 +21,74 @@ import SiteLayout from '../../../layouts/SiteLayout.astro';
           para garantizar un acabado perfecto.
         </p>
       </div>
+
+      <!-- FAQ Section -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-bold mb-8">Preguntas frecuentes</h2>
+        <div class="space-y-6 max-w-4xl">
+          <details class="bg-gray-50 rounded-lg p-6">
+            <summary class="font-semibold cursor-pointer">¿El proceso genera mucho polvo?</summary>
+            <p class="mt-3 text-gray-700">No, utilizamos técnicas especializadas que minimizan el polvo. Protegemos todo el mobiliario y mantenemos el espacio limpio durante todo el trabajo.</p>
+          </details>
+          
+          <details class="bg-gray-50 rounded-lg p-6">
+            <summary class="font-semibold cursor-pointer">¿Cuánto tiempo se tarda?</summary>
+            <p class="mt-3 text-gray-700">Depende del tamaño, pero una habitación estándar de 15m² se completa en 1-2 días. Un piso completo puede tardar 4-6 días laborables.</p>
+          </details>
+          
+          <details class="bg-gray-50 rounded-lg p-6">
+            <summary class="font-semibold cursor-pointer">¿Qué garantía ofrecéis?</summary>
+            <p class="mt-3 text-gray-700">Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional.</p>
+          </details>
+          
+          <details class="bg-gray-50 rounded-lg p-6">
+            <summary class="font-semibold cursor-pointer">¿Qué materiales utilizáis?</summary>
+            <p class="mt-3 text-gray-700">Utilizamos masilla de alta calidad y pinturas de preparación premium. Todos nuestros materiales están incluidos en el precio del servicio.</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 </SiteLayout>
+
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage", 
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El proceso de quitar gotelé genera mucho polvo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, utilizamos técnicas especializadas que minimizan el polvo. Protegemos todo el mobiliario y mantenemos el espacio limpio durante todo el trabajo."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "¿Cuánto tiempo se tarda en quitar el gotelé?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del tamaño, pero una habitación estándar de 15m² se completa en 1-2 días. Un piso completo puede tardar 4-6 días laborables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué garantía ofrecéis en el alisado?", 
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué materiales utilizáis para el alisado?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Utilizamos masilla de alta calidad y pinturas de preparación premium. Todos nuestros materiales están incluidos en el precio del servicio."
+      }
+    }
+  ]
+}
+</script>
