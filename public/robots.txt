@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://pintores-valencia.com/sitemap.xml
+
+Sitemap: https://pintores-valencia.com/sitemap-index.xml
 Allow: /trabajos/
 Allow: /presupuesto/
 Allow: /contacto/
