@@ -1,13 +1,181 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+
+// TODO: Reemplazar con datos reales de trabajos
+const trabajos = [
+  {
+    id: 1,
+    titulo: "Quitar Gotelé Piso Completo",
+    barrio: "Ruzafa",
+    m2: 85,
+    dias: 4,
+    precio: "2.100€",
+    descripcion: "Eliminación completa de gotelé y aplicación de pintura lisa en salón, habitaciones y pasillos.",
+    imagenAntes: "/assets/trabajos/placeholder-antes-1.jpg", // TODO: reemplazar con foto real
+    imagenDespues: "/assets/trabajos/placeholder-despues-1.jpg" // TODO: reemplazar con foto real
+  },
+  {
+    id: 2,
+    titulo: "Pintura Interior Apartamento", 
+    barrio: "El Carmen",
+    m2: 65,
+    dias: 3,
+    precio: "1.350€",
+    descripcion: "Pintura completa interior con colores neutros y acabado mate. Incluye techos y marcos.",
+    imagenAntes: "/assets/trabajos/placeholder-antes-2.jpg", // TODO: reemplazar con foto real
+    imagenDespues: "/assets/trabajos/placeholder-despues-2.jpg" // TODO: reemplazar con foto real
+  },
+  {
+    id: 3,
+    titulo: "Fachada Edificio 4 Plantas",
+    barrio: "Benimaclet",
+    m2: 320,
+    dias: 8,
+    precio: "4.800€",
+    descripcion: "Restauración completa de fachada con impermeabilización y pintura exterior anti-humedad.",
+    imagenAntes: "/assets/trabajos/placeholder-antes-3.jpg", // TODO: reemplazar con foto real
+    imagenDespues: "/assets/trabajos/placeholder-despues-3.jpg" // TODO: reemplazar con foto real
+  },
+  {
+    id: 4,
+    titulo: "Local Comercial",
+    barrio: "Centro",
+    m2: 120,
+    dias: 5,
+    precio: "2.800€",
+    descripcion: "Acondicionamiento completo de local: alisar paredes, pintura y señalización.",
+    imagenAntes: "/assets/trabajos/placeholder-antes-4.jpg", // TODO: reemplazar con foto real
+    imagenDespues: "/assets/trabajos/placeholder-despues-4.jpg" // TODO: reemplazar con foto real
+  },
+  {
+    id: 5,
+    titulo: "Comunidad de Propietarios",
+    barrio: "Campanar",
+    m2: 450,
+    dias: 12,
+    precio: "6.200€", 
+    descripcion: "Pintura escaleras, portal y zonas comunes. Reparación de humedades previas.",
+    imagenAntes: "/assets/trabajos/placeholder-antes-5.jpg", // TODO: reemplazar con foto real
+    imagenDespues: "/assets/trabajos/placeholder-despues-5.jpg" // TODO: reemplazar con foto real
+  },
+  {
+    id: 6,
+    titulo: "Chalet Unifamiliar",
+    barrio: "La Eliana",
+    m2: 180,
+    dias: 7,
+    precio: "3.950€",
+    descripcion: "Pintura interior y exterior completa. Lacado de puertas y ventanas incluido.",
+    imagenAntes: "/assets/trabajos/placeholder-antes-6.jpg", // TODO: reemplazar con foto real
+    imagenDespues: "/assets/trabajos/placeholder-despues-6.jpg" // TODO: reemplazar con foto real
+  }
+];
 ---
+
 <SiteLayout 
-  title="Trabajos - Pintores en Valencia" 
-  description="Galería de trabajos realizados por nuestro equipo de pintores en Valencia. Ejemplos de pintura interior, exterior y quitar gotelé."
-  keywords="trabajos pintores valencia, galeria pintura, ejemplos pintura valencia"
+  title="Trabajos Realizados - Pintores en Valencia" 
+  description="Galería de trabajos de pintura realizados en Valencia: quitar gotelé, pintura interior, exterior, fachadas y locales comerciales."
+  keywords="trabajos pintores valencia, galeria pintura, ejemplos pintura valencia, antes despues"
 >
-  <section class="container mx-auto px-4 py-12">
-    <h1 class="text-3xl font-bold mb-6">Trabajos</h1>
-    <p>Próximamente galería de nuestros mejores trabajos de pintura en Valencia. Solicita tu <a class="text-accent underline" href="/presupuesto/">presupuesto gratuito</a>.</p>
-  </section>
+  <div class="container mx-auto px-4 py-12">
+    <!-- Breadcrumbs -->
+    <nav aria-label="Breadcrumb" class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-gray-600">
+        <li><a href="/" class="hover:text-primary">Inicio</a></li>
+        <li class="mx-2">›</li>
+        <li class="text-gray-900 font-medium">Trabajos</li>
+      </ol>
+    </nav>
+
+    <main>
+      <div class="text-center mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Nuestros Trabajos</h1>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Estos son algunos de los trabajos de pintura que hemos realizado en Valencia y provincia. 
+          Cada proyecto se ejecuta con materiales de calidad y acabados profesionales.
+        </p>
+      </div>
+
+      <!-- Grid de Trabajos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        {trabajos.map((trabajo) => (
+          <div class="bg-white rounded-lg shadow-md overflow-hidden border">
+            <!-- Imágenes Antes/Después -->
+            <div class="grid grid-cols-2 h-48">
+              <div class="relative">
+                <img 
+                  src={trabajo.imagenAntes} 
+                  alt={`Antes - ${trabajo.titulo}`}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                  ANTES
+                </div>
+              </div>
+              <div class="relative">
+                <img 
+                  src={trabajo.imagenDespues} 
+                  alt={`Después - ${trabajo.titulo}`}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div class="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                  DESPUÉS
+                </div>
+              </div>
+            </div>
+            
+            <!-- Contenido -->
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-gray-900">{trabajo.titulo}</h3>
+              <p class="text-gray-600 mb-4 text-sm leading-relaxed">{trabajo.descripcion}</p>
+              
+              <!-- Detalles del trabajo -->
+              <div class="grid grid-cols-2 gap-4 text-sm">
+                <div>
+                  <span class="font-semibold text-gray-900">📍 Barrio:</span>
+                  <p class="text-gray-600">{trabajo.barrio}</p>
+                </div>
+                <div>
+                  <span class="font-semibold text-gray-900">📐 Superficie:</span>
+                  <p class="text-gray-600">{trabajo.m2} m²</p>
+                </div>
+                <div>
+                  <span class="font-semibold text-gray-900">⏱️ Duración:</span>
+                  <p class="text-gray-600">{trabajo.dias} días</p>
+                </div>
+                <div>
+                  <span class="font-semibold text-gray-900">💰 Precio:</span>
+                  <p class="text-green-600 font-bold">{trabajo.precio}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA Section -->
+      <div class="bg-blue-50 rounded-lg p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4 text-gray-900">¿Quieres un trabajo así en tu hogar?</h2>
+        <p class="text-gray-600 mb-6">
+          Solicita tu presupuesto gratuito sin compromiso. Te visitamos y te damos precio en 24h.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/presupuesto/" 
+            class="h-12 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center"
+          >
+            Pedir Presupuesto Gratis
+          </a>
+          <a 
+            href="tel:+34722208131" 
+            class="h-12 px-6 rounded-md border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold inline-flex items-center justify-center"
+          >
+            📞 722 208 131
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
 </SiteLayout>
