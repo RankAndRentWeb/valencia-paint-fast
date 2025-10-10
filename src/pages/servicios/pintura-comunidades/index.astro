@@ -1,9 +1,329 @@
 ﻿---
-import SiteLayout from "../../../layouts/SiteLayout.astro";
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Valencia Paint Fast - Pintura de Comunidades",
+  "description": "Servicio profesional de pintura de comunidades en Valencia. Presupuestos personalizados, calidad garantizada y precios competitivos.",
+  "url": "https://valenciapaintfast.com/servicios/pintura-comunidades/",
+  "telephone": "+34628849851",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressRegion": "Valencia", 
+    "addressCountry": "ES"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.4699,
+      "longitude": -0.3763
+    },
+    "geoRadius": 30000
+  },
+  "priceRange": "€€",
+  "openingHours": "Mo-Su 08:00-20:00"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye el servicio de pintura de comunidades?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Incluye rehabilitación de fachadas, pintura de escaleras, portales, sótanos, garajes y todas las zonas comunes. También realizamos trabajos de preparación de superficies, lijado, masillado y aplicación de imprimaciones."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "¿Necesito licencia de obra para pintar la fachada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para trabajos de mantenimiento y pintura de fachadas normalmente no se necesita licencia de obra mayor. Sin embargo, te asesoramos sobre la documentación necesaria según el tipo de trabajo y las normativas del ayuntamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se organiza el trabajo en una comunidad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Coordinamos con el administrador de fincas y la junta de propietarios. Planificamos los trabajos para minimizar molestias, establecemos horarios adecuados y mantenemos información constante sobre el progreso de la obra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué garantía ofrecen en trabajos de comunidades?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Ofrecemos 3 años de garantía en fachadas y 2 años en zonas interiores. La garantía cubre defectos de aplicación y problemas relacionados con la calidad de los materiales utilizados."
+      }
+    }
+  ]
+};
 ---
 
-<SiteLayout title="Pintura comunidades Valencia">
-  <h1>Pintura comunidades Valencia</h1>
-  <p>Pintura para comunidades de propietarios.</p>
-  <a href="/presupuesto/">Presupuesto Gratis</a>
+<SiteLayout 
+  title="Pintura de Comunidades Valencia - Presupuesto Gratis | Valencia Paint Fast"
+  description="Especialistas en pintura de comunidades en Valencia. Rehabilitación de fachadas, escaleras y zonas comunes. Presupuesto gratis. ☎️ 628 84 98 51"
+  canonical="https://valenciapaintfast.com/servicios/pintura-comunidades/"
+  localBusinessSchema={localBusinessSchema}
+  faqSchema={faqSchema}
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-20"></div>
+    <div class="relative container mx-auto px-4 py-16 lg:py-24">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Badges -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
+            ✅ Administradores de fincas
+          </span>
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
+            🏢 Sin licencia de obras
+          </span>
+          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
+            🛡️ 3 años garantía
+          </span>
+        </div>
+
+        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+          Pintura de <span class="text-yellow-300">Comunidades</span><br>
+          en Valencia
+        </h1>
+        
+        <p class="text-xl lg:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto leading-relaxed">
+          Especialistas en rehabilitación de fachadas, escaleras y zonas comunes. 
+          Trabajamos con administradores de fincas y juntas de propietarios.
+        </p>
+
+        <!-- Precio -->
+        <div class="mb-8">
+          <div class="inline-flex items-center bg-yellow-400 text-black px-6 py-3 rounded-full font-bold text-xl">
+            <span class="mr-2">💰</span>
+            Desde 8€/m² fachadas
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/presupuesto" 
+             class="bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            📋 Presupuesto Gratis
+          </a>
+          <a href="tel:628849851" 
+             class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg">
+            📞 628 84 98 51
+          </a>
+        </div>
+
+        <!-- Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div class="text-yellow-300 text-2xl mb-3">🏗️</div>
+            <h3 class="font-bold text-lg mb-2">Sin obras complejas</h3>
+            <p class="text-blue-100 text-sm">Trabajos de mantenimiento que no requieren licencia de obra mayor</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div class="text-yellow-300 text-2xl mb-3">🤝</div>
+            <h3 class="font-bold text-lg mb-2">Coordinación total</h3>
+            <p class="text-blue-100 text-sm">Trabajamos directamente con administradores y juntas de propietarios</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div class="text-yellow-300 text-2xl mb-3">⚡</div>
+            <h3 class="font-bold text-lg mb-2">Horarios flexibles</h3>
+            <p class="text-blue-100 text-sm">Adaptamos los trabajos para minimizar molestias a los vecinos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema vs Solución -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">¿Por qué elegir Valencia Paint Fast?</h2>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- Problemas -->
+          <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-xl">
+            <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
+              ❌ Problemas habituales
+            </h3>
+            <ul class="space-y-3 text-red-700">
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2 mt-1">•</span>
+                Empresas que no coordinan con administradores
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2 mt-1">•</span>
+                Trabajos que requieren licencias complicadas
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2 mt-1">•</span>
+                Horarios rígidos que molestan a vecinos
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2 mt-1">•</span>
+                Falta de garantías en trabajos de fachadas
+              </li>
+              <li class="flex items-start">
+                <span class="text-red-500 mr-2 mt-1">•</span>
+                Presupuestos poco detallados y sorpresas
+              </li>
+            </ul>
+          </div>
+
+          <!-- Soluciones -->
+          <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-xl">
+            <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
+              ✅ Nuestra solución
+            </h3>
+            <ul class="space-y-3 text-green-700">
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2 mt-1">•</span>
+                Trabajamos directamente con administradores de fincas
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2 mt-1">•</span>
+                Trabajos de mantenimiento sin licencias complejas
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2 mt-1">•</span>
+                Horarios adaptados a las necesidades de la comunidad
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2 mt-1">•</span>
+                3 años de garantía en fachadas y 2 años en interiores
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2 mt-1">•</span>
+                Presupuestos detallados y transparentes sin sorpresas
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/presupuesto" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold transition-colors">
+            Solicitar Presupuesto Detallado
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Detallados -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Servicios para Comunidades</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-blue-600 text-3xl mb-4">🏢</div>
+            <h3 class="text-xl font-bold mb-3">Fachadas Exteriores</h3>
+            <p class="text-gray-600 mb-4">Rehabilitación completa de fachadas con sistemas de andamiaje seguros y materiales de alta calidad resistentes a la intemperie.</p>
+            <div class="text-sm text-blue-600 font-medium">Desde 8€/m²</div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-blue-600 text-3xl mb-4">🏠</div>
+            <h3 class="text-xl font-bold mb-3">Escaleras y Portales</h3>
+            <p class="text-gray-600 mb-4">Pintura de escaleras, portales y distribuidores con pinturas lavables especiales para zonas de alto tránsito.</p>
+            <div class="text-sm text-blue-600 font-medium">Desde 12€/m²</div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-blue-600 text-3xl mb-4">🚗</div>
+            <h3 class="text-xl font-bold mb-3">Garajes y Sótanos</h3>
+            <p class="text-gray-600 mb-4">Acondicionamiento de garajes, trasteros y sótanos con pinturas específicas para ambientes húmedos.</p>
+            <div class="text-sm text-blue-600 font-medium">Desde 6€/m²</div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-blue-600 text-3xl mb-4">🛠️</div>
+            <h3 class="text-xl font-bold mb-3">Reparaciones Menores</h3>
+            <p class="text-gray-600 mb-4">Reparación de grietas, humedades puntuales y pequeños desperfectos antes del pintado.</p>
+            <div class="text-sm text-blue-600 font-medium">Según trabajo</div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-blue-600 text-3xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-3">Asesoramiento Colores</h3>
+            <p class="text-gray-600 mb-4">Ayudamos a la junta de propietarios a elegir los colores más adecuados y duraderos para cada zona.</p>
+            <div class="text-sm text-blue-600 font-medium">Incluido</div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <div class="text-blue-600 text-3xl mb-4">📋</div>
+            <h3 class="text-xl font-bold mb-3">Gestión Completa</h3>
+            <p class="text-gray-600 mb-4">Coordinación total con administradores, tramitación de permisos y comunicación con vecinos.</p>
+            <div class="text-sm text-blue-600 font-medium">Sin coste adicional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
+        
+        <div class="space-y-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Qué incluye el servicio de pintura de comunidades?</h3>
+            <p class="text-gray-600">Incluye rehabilitación de fachadas, pintura de escaleras, portales, sótanos, garajes y todas las zonas comunes. También realizamos trabajos de preparación de superficies, lijado, masillado y aplicación de imprimaciones.</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Necesito licencia de obra para pintar la fachada?</h3>
+            <p class="text-gray-600">Para trabajos de mantenimiento y pintura de fachadas normalmente no se necesita licencia de obra mayor. Sin embargo, te asesoramos sobre la documentación necesaria según el tipo de trabajo y las normativas del ayuntamiento.</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Cómo se organiza el trabajo en una comunidad?</h3>
+            <p class="text-gray-600">Coordinamos con el administrador de fincas y la junta de propietarios. Planificamos los trabajos para minimizar molestias, establecemos horarios adecuados y mantenemos información constante sobre el progreso de la obra.</p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Qué garantía ofrecen en trabajos de comunidades?</h3>
+            <p class="text-gray-600">Ofrecemos 3 años de garantía en fachadas y 2 años en zonas interiores. La garantía cubre defectos de aplicación y problemas relacionados con la calidad de los materiales utilizados.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="/contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold transition-colors">
+            Más Información
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-blue-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-6">¿Administras una comunidad de vecinos?</h2>
+      <p class="text-xl mb-8 max-w-3xl mx-auto">
+        Te ayudamos con todos los trabajos de pintura y mantenimiento. Coordinamos con la junta de propietarios y ofrecemos garantías sólidas.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/presupuesto" class="bg-white text-blue-600 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+          Solicitar Presupuesto
+        </a>
+        <a href="tel:628849851" class="border-2 border-white text-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-colors">
+          Llamar Ahora
+        </a>
+      </div>
+    </div>
+  </section>
 </SiteLayout>

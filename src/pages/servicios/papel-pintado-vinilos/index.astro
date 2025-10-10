@@ -1,9 +1,188 @@
 ﻿---
-import SiteLayout from "../../../layouts/SiteLayout.astro";
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://pintores-valencia.com/#business",
+  "name": "Pintores en Valencia",
+  "url": "https://pintores-valencia.com",
+  "image": "https://pintores-valencia.com/og-home.webp",
+  "telephone": "+34722208131",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressRegion": "Comunitat Valenciana",
+    "postalCode": "46000",
+    "addressCountry": "ES"
+  },
+  "openingHours": ["Mo-Sa 08:00-20:00"],
+  "priceRange": "€€",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Valencia"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué tipos de papel pintado instaláis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instalamos papel pintado, vinilo, fibra de vidrio y papel de bambú. Trabajamos con todas las marcas y diseños."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Preparáis la pared antes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, preparamos completamente la superficie: lijado, imprimación y nivelado para un acabado perfecto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Traéis vuestro propio material?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Podemos suministrar el papel pintado o instalar el tuyo. Te asesoramos en la elección del mejor tipo para cada espacio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Quitáis el papel pintado viejo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, retiramos el papel antiguo y preparamos la pared desde cero para la nueva instalación."
+      }
+    }
+  ]
+};
 ---
 
-<SiteLayout title="Papel pintado Valencia">
-  <h1>Papel pintado Valencia</h1>
-  <p>Instalación profesional de papel pintado y vinilos.</p>
-  <a href="/presupuesto/">Presupuesto Gratis</a>
+<SiteLayout 
+  title="Papel pintado Valencia - Pintores en Valencia"
+  description="Instalación profesional de papel pintado y vinilos decorativos. Preparación incluida. Presupuesto gratis en Valencia."
+  keywords="papel pintado valencia, vinilos decorativos valencia, empapelar valencia"
+  canonical="https://pintores-valencia.com/servicios/papel-pintado-vinilos/"
+  schema={[localBusinessSchema, faqSchema]}
+  ogImage="/og-home.webp"
+>
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section class="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <!-- Left side - Content -->
+          <div>
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
+                Instalación perfecta
+              </span>
+              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
+                Preparación incluida
+              </span>
+            </div>
+            
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Papel pintado y vinilos decorativos</h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl text-gray-700 mb-6">Transformamos tus espacios con papel pintado y vinilos de diseño</p>
+            
+            <!-- Price -->
+            <div class="mb-6">
+              <span class="text-2xl font-bold text-accent">desde 25€/m² <span class="text-sm text-gray-500 font-normal">Instalación incluida</span></span>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center">
+                Presupuesto Gratis
+              </a>
+              <a href="tel:+34722208131" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                722 208 131
+              </a>
+            </div>
+            
+            <!-- Features -->
+            <div class="space-y-2">
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Todas las marcas</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Asesoramiento gratis</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side - Image -->
+          <div class="order-first lg:order-last">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl">
+              <img src="/src/assets/madre-hijo-salon-pequeno.jpg" alt="Papel pintado Valencia" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
+          <div class="bg-white border rounded-lg overflow-hidden">
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Qué tipos de papel pintado instaláis?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Instalamos papel pintado, vinilo, fibra de vidrio y papel de bambú. Trabajamos con todas las marcas y diseños.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Preparáis la pared antes?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Sí, preparamos completamente la superficie: lijado, imprimación y nivelado para un acabado perfecto.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Traéis vuestro propio material?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Podemos suministrar el papel pintado o instalar el tuyo. Te asesoramos en la elección del mejor tipo para cada espacio.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Quitáis el papel pintado viejo?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Sí, retiramos el papel antiguo y preparamos la pared desde cero para la nueva instalación.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </SiteLayout>
