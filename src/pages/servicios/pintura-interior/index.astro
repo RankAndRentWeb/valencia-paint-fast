@@ -1,101 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ServicePage from '../../../components/ServicePage.astro';
 ---
 
-<SiteLayout 
-  title="Pintura interior - Pintores en Valencia"
-  description="Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/pintura-interior/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Pintura interior de pisos y casas</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales.
-        </p>
-        <p>
-          Ofrecemos servicios completos de pintura interior incluyendo preparación de superficies, 
-          aplicación de pinturas premium y acabados especializados. Si necesitas 
-          <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline">quitar el gotelé</a> 
-          antes de pintar, también realizamos este servicio. Trabajamos con las mejores 
-          marcas del mercado para garantizar durabilidad y belleza.
-        </p>
-        <p class="mt-4">
-          ¿Quieres ver ejemplos? Consulta nuestros 
-          <a href="/trabajos/" class="text-blue-600 hover:underline">trabajos realizados</a> 
-          en viviendas de Valencia.
-        </p>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="mt-16">
-        <h2 class="text-2xl font-bold mb-8">Preguntas frecuentes</h2>
-        <div class="space-y-6 max-w-4xl">
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Qué tipos de pintura utilizáis?</summary>
-            <p class="mt-3 text-gray-700">Utilizamos pinturas plásticas lavables de alta calidad, anti-moho para baños y cocinas, y pinturas especiales para techos. Todas de marcas reconocidas como Bruguer, Titán y Montó.</p>
-          </details>
-          
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Cuánto se tarda en pintar un piso?</summary>
-            <p class="mt-3 text-gray-700">Un piso estándar de 80m² tarda entre 4-6 días laborables. Incluye preparación de paredes, imprimación y dos capas de acabado.</p>
-          </details>
-          
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Movéis los muebles?</summary>
-            <p class="mt-3 text-gray-700">Sí, nosotros movemos y protegemos todos los muebles. Solo pedimos que retiréis objetos frágiles y personales de valor.</p>
-          </details>
-          
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Qué garantía tiene el trabajo?</summary>
-            <p class="mt-3 text-gray-700">Ofrecemos 3 años de garantía en el trabajo de pintura. Si aparecen defectos por mala aplicación, lo reparamos sin coste.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-</SiteLayout>
-
-<!-- JSON-LD FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+<ServicePage
+  title="Pintura interior de pisos y casas"
+  subtitle="Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales"
+  price="Desde 12€/m²"
+  priceNote="Incluye material, mano de obra y limpieza posterior"
+  badges={["Pinturas premium", "Garantía 3 años", "Limpieza incluida", "Material incluido"]}
+  features={["Preparación completa", "Pinturas de calidad", "Acabado perfecto", "Limpieza incluida"]}
+  heroImg="/src/assets/pintura-interior-valencia.jpg"
+  heroAlt="Pintura interior profesional en Valencia"
+  problem={[
+    "Paredes desconchadas o manchadas",
+    "Colores anticuados que no gustan", 
+    "Trabajos mal hechos con goteos",
+    "Materiales baratos que no duran"
+  ]}
+  solution={[
+    "Preparación profesional de superficies",
+    "Asesoramiento en colores modernos",
+    "Aplicación técnica sin goteos ni marcas", 
+    "Pinturas premium con garantía"
+  ]}
+  process={[
+    { title: "Protección", desc: "Cubrimos muebles y suelos" },
+    { title: "Preparación", desc: "Lijamos y preparamos paredes" },
+    { title: "Pintura", desc: "Aplicamos con técnica profesional" },
+    { title: "Limpieza", desc: "Dejamos todo perfecto" }
+  ]}
+  proseTitle="Servicio completo de pintura interior en Valencia"
+  proseP1="Nuestro equipo de pintores profesionales transforma tu hogar con las mejores pinturas del mercado. Trabajamos con marcas como Bruguer, Montó y Titan para garantizar acabados duraderos y de calidad."
+  proseP2="El servicio incluye preparación completa de paredes, asesoramiento en colores, aplicación profesional y limpieza posterior. Todos nuestros trabajos incluyen garantía de 3 años por escrito."
+  proseList={[
+    "Pinturas premium de primeras marcas",
+    "Asesoramiento profesional en colores", 
+    "Preparación completa de superficies",
+    "Garantía escrita de 3 años",
+    "Limpieza completa incluida"
+  ]}
+  faqs={[
     {
-      "@type": "Question",
-      "name": "¿Qué tipos de pintura utilizáis para interiores?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Utilizamos pinturas plásticas lavables de alta calidad, anti-moho para baños y cocinas, y pinturas especiales para techos. Todas de marcas reconocidas como Bruguer, Titán y Montó."
-      }
+      question: "¿Qué tipos de pintura utilizáis?",
+      answer: "Utilizamos pinturas premium de marcas como Bruguer, Montó y Titan. Según el espacio, aplicamos pintura plástica, esmalte acrílico o pintura especial para cocinas y baños."
     },
     {
-      "@type": "Question",
-      "name": "¿Cuánto tiempo se tarda en pintar un piso completo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un piso estándar de 80m² tarda entre 4-6 días laborables. Incluye preparación de paredes, imprimación y dos capas de acabado."
-      }
+      question: "¿Cuántos días se tarda en pintar un piso?",
+      answer: "Un piso de 80m² se suele completar en 3-4 días laborables, dependiendo del estado de las paredes y si hay que quitar gotelé previamente."
     },
     {
-      "@type": "Question",
-      "name": "¿Movéis los muebles o lo tenemos que hacer nosotros?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nosotros movemos y protegemos todos los muebles. Solo pedimos que retiréis objetos frágiles y personales de valor."
-      }
+      question: "¿Qué garantía ofrecéis?",
+      answer: "Ofrecemos 3 años de garantía en el trabajo de pintura. Si aparecen defectos por mala aplicación, lo reparamos sin coste."
     },
     {
-      "@type": "Question",
-      "name": "¿Qué garantía tiene el trabajo de pintura?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ofrecemos 3 años de garantía en el trabajo de pintura. Si aparecen defectos por mala aplicación, lo reparamos sin coste."
-      }
+      question: "¿Ayudáis a elegir los colores?",
+      answer: "Sí, nuestros profesionales te asesoran sobre las mejores combinaciones de colores según tu estilo, luz natural y uso de cada espacio."
     }
-  ]
-}
-</script>
+  ]}
+  seoTitle="Pintura interior - Pintores en Valencia"
+  seoDescription="Renovamos el interior de tu hogar con pinturas de primera calidad y acabados profesionales. Presupuesto gratis en Valencia."
+  canonical="https://pintores-valencia.com/servicios/pintura-interior/"
+  keywords="pintura interior valencia, pintar piso valencia, pintores interior valencia"
+/>

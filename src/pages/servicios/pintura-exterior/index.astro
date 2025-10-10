@@ -1,31 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ServicePage from '../../../components/ServicePage.astro';
 ---
 
-<SiteLayout 
-  title="Pintura exterior y fachadas - Pintores en Valencia"
-  description="Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas. Presupuesto gratis en Valencia."
+<ServicePage
+  title="Pintura exterior y fachadas"
+  subtitle="Protegemos y embellecemos fachadas con pinturas resistentes a la intemperie"
+  price="Desde 18€/m²"
+  priceNote="Incluye material, andamios, mano de obra y limpieza"
+  badges={["Resistente intemperie", "Garantía 3 años", "Andamios incluidos", "Material premium"]}
+  features={["Pinturas premium", "Andamios seguros", "Protección total", "Acabado duradero"]}
+  heroImg="/src/assets/fachada-exterior-valencia.jpg"
+  heroAlt="Pintura de fachada exterior en Valencia"
+  problem={[
+    "Fachadas desconchadas y feas",
+    "Filtraciones por grietas en paredes", 
+    "Pintura que se deteriora rápidamente",
+    "Costes elevados de andamios"
+  ]}
+  solution={[
+    "Rehabilitación completa de fachadas",
+    "Sellado de grietas y fisuras",
+    "Pinturas de máxima resistencia", 
+    "Andamios incluidos en el precio"
+  ]}
+  process={[
+    { title: "Evaluación", desc: "Inspeccionamos estado de fachada" },
+    { title: "Preparación", desc: "Limpieza y reparación de grietas" },
+    { title: "Pintura", desc: "Aplicación con técnicas especializadas" },
+    { title: "Acabado", desc: "Protección y limpieza final" }
+  ]}
+  proseTitle="Rehabilitación y pintura de fachadas en Valencia"
+  proseP1="Especializados en rehabilitación de fachadas con más de 15 años de experiencia. Utilizamos pinturas acrílicas de máxima resistencia, elastómeros y revestimientos específicos según las necesidades de cada edificio."
+  proseP2="El servicio incluye montaje de andamios, limpieza de fachada, reparación de grietas, imprimación y aplicación de pintura resistente. Trabajamos con las mejores marcas para garantizar durabilidad máxima."
+  proseList={[
+    "Pinturas acrílicas de máxima resistencia",
+    "Reparación de grietas y fisuras", 
+    "Andamios homologados incluidos",
+    "Garantía de 3 años en el trabajo",
+    "Limpieza completa post-trabajo"
+  ]}
+  faqs={[
+    {
+      question: "¿Qué pinturas utilizáis para exterior?",
+      answer: "Utilizamos pinturas acrílicas de alta resistencia, elastómeros para cubrir microfisuras y revestimientos específicos. Marcas como Montó, Jotun y Sikkens según necesidades."
+    },
+    {
+      question: "¿Incluís los andamios?",
+      answer: "Sí, el montaje y desmontaje de andamios está incluido en el precio. Utilizamos andamios homologados y seguros para trabajos en altura."
+    },
+    {
+      question: "¿Reparáis grietas en la fachada?",
+      answer: "Sí, incluimos la reparación de grietas y fisuras menores. Para problemas estructurales importantes, recomendamos consulta con un técnico especialista."
+    },
+    {
+      question: "¿Cuánto dura la pintura exterior?",
+      answer: "Con nuestras pinturas de calidad, la fachada mantiene buen aspecto 8-12 años en condiciones normales. Ofrecemos garantía de 3 años en el trabajo."
+    }
+  ]}
+  seoTitle="Pintura exterior y fachadas - Pintores en Valencia"
+  seoDescription="Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas. Presupuesto gratis en Valencia."
   canonical="https://pintores-valencia.com/servicios/pintura-exterior/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Pintura exterior y fachadas</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Protegemos y embellecemos fachadas con pinturas resistentes y técnicas especializadas.
-        </p>
-        <p>
-          Especializados en pintura exterior y rehabilitación de fachadas. Si detectamos problemas 
-          de filtraciones, también realizamos <a href="/servicios/impermeabilizacion/" class="text-blue-600 hover:underline">impermeabilización</a> 
-          antes de pintar. Utilizamos pinturas de alta resistencia a la intemperie y técnicas 
-          profesionales para asegurar la máxima durabilidad y protección de tu edificio.
-        </p>
-        <p class="mt-4">
-          Ve ejemplos de fachadas renovadas en nuestros 
-          <a href="/trabajos/" class="text-blue-600 hover:underline">trabajos realizados</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-</SiteLayout>
+  keywords="pintura exterior valencia, pintar fachada valencia, rehabilitacion fachadas valencia"
+/>

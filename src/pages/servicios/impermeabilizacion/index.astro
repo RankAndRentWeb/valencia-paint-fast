@@ -1,31 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ServicePage from '../../../components/ServicePage.astro';
 ---
 
-<SiteLayout 
-  title="Impermeabilización de terrazas - Pintores en Valencia"
-  description="Protegemos tu terraza contra filtraciones con sistemas profesionales. Presupuesto gratis en Valencia."
+<ServicePage
+  title="Impermeabilización de terrazas"
+  subtitle="Protegemos tu terraza contra filtraciones con sistemas profesionales de última generación"
+  price="Desde 25€/m²"
+  priceNote="Incluye material, mano de obra y garantía hasta 10 años"
+  badges={["Garantía 10 años", "Sin obras", "Secado rápido", "Material premium"]}
+  features={["Sistemas avanzados", "Garantía extendida", "Sin filtraciones", "Protección total"]}
+  heroImg="/src/assets/impermeabilizacion-terraza-valencia.jpg"
+  heroAlt="Impermeabilización profesional de terraza en Valencia"
+  problem={[
+    "Filtraciones que dañan el interior",
+    "Humedades en techos y paredes", 
+    "Sistemas que fallan en pocos años",
+    "Reparaciones constantes y costosas"
+  ]}
+  solution={[
+    "Impermeabilización completa y duradera",
+    "Eliminación total de filtraciones",
+    "Sistemas con garantía de hasta 10 años", 
+    "Solución definitiva sin más problemas"
+  ]}
+  process={[
+    { title: "Diagnóstico", desc: "Evaluamos el estado actual" },
+    { title: "Preparación", desc: "Limpiamos y preparamos superficie" },
+    { title: "Aplicación", desc: "Sistema impermeabilizante profesional" },
+    { title: "Verificación", desc: "Pruebas de estanqueidad" }
+  ]}
+  proseTitle="Impermeabilización profesional de terrazas en Valencia"
+  proseP1="Aplicamos los sistemas de impermeabilización más avanzados del mercado: caucho líquido, poliuretano y poliurea. Cada sistema está diseñado para diferentes necesidades y presupuestos, todos con garantía extendida."
+  proseP2="Nuestro equipo especializado evalúa cada terraza individualmente para recomendar el mejor sistema. Trabajamos con materiales certificados y técnicas que garantizan una protección duradera contra filtraciones."
+  proseList={[
+    "Caucho líquido: Garantía 5 años",
+    "Poliuretano: Garantía 7 años", 
+    "Poliurea: Garantía 10 años",
+    "Pruebas de estanqueidad incluidas",
+    "Mantenimiento post-instalación"
+  ]}
+  faqs={[
+    {
+      question: "¿Qué tipo de impermeabilización es mejor?",
+      answer: "Depende del uso y presupuesto. Caucho líquido para terrazas normales, poliuretano para mayor tránsito, y poliurea para máxima durabilidad y terrazas transitables intensivas."
+    },
+    {
+      question: "¿Cuánto dura el proceso?",
+      answer: "Una terraza estándar de 20m² se impermeabiliza en 2-3 días, incluyendo tiempo de secado entre capas. Depende del sistema elegido."
+    },
+    {
+      question: "¿Qué garantía ofrecéis?",
+      answer: "Garantía de 5 años en caucho líquido, 7 años en poliuretano y 10 años en poliurea. Incluye reparación gratuita si aparecen filtraciones."
+    },
+    {
+      question: "¿Se puede caminar sobre la terraza?",
+      answer: "Sí, todos nuestros sistemas permiten el tránsito normal. Para uso intensivo recomendamos poliuretano o poliurea que son más resistentes al desgaste."
+    }
+  ]}
+  seoTitle="Impermeabilización de terrazas - Pintores en Valencia"
+  seoDescription="Protegemos tu terraza contra filtraciones con sistemas profesionales. Presupuesto gratis en Valencia."
   canonical="https://pintores-valencia.com/servicios/impermeabilizacion/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Impermeabilización de terrazas</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Protegemos tu terraza contra filtraciones con sistemas profesionales.
-        </p>
-        <p>
-          Aplicamos sistemas de impermeabilización de última generación para prevenir 
-          filtraciones y humedades. Si tienes problemas de pintura exterior por humedad, 
-          también ofrecemos <a href="/servicios/pintura-exterior/" class="text-blue-600 hover:underline">pintura de fachadas</a>. 
-          Trabajamos con materiales certificados y técnicas especializadas para garantizar la máxima protección.
-        </p>
-        <p class="mt-4">
-          Consulta ejemplos de impermeabilizaciones en nuestros 
-          <a href="/trabajos/" class="text-blue-600 hover:underline">trabajos realizados</a>.
-        </p>
-      </div>
-    </section>
-  </main>
-</SiteLayout>
+  keywords="impermeabilizacion terrazas valencia, impermeabilizar terraza valencia, filtraciones terraza"
+/>

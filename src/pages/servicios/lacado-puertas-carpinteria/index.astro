@@ -1,26 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ServicePage from '../../../components/ServicePage.astro';
 ---
 
-<SiteLayout 
-  title="Lacado de puertas y carpintería - Pintores en Valencia"
-  description="Lacado en blanco u otros colores con acabado liso y duradero. Presupuesto gratis en Valencia."
+<ServicePage
+  title="Lacado de puertas y carpintería"
+  subtitle="Lacado en blanco u otros colores con acabado liso, duradero y profesional"
+  price="Desde 45€ puerta"
+  priceNote="Incluye desmontaje, lijado, imprimación y lacado completo"
+  badges={["Acabado perfecto", "Sin goteos", "Secado controlado", "Colores a medida"]}
+  features={["Lacado profesional", "Múltiples colores", "Acabado duradero", "Servicio completo"]}
+  heroImg="/src/assets/lacado-puertas-valencia.jpg"
+  heroAlt="Lacado profesional de puertas en Valencia"
+  problem={[
+    "Puertas viejas y desconchadas",
+    "Madera vista y sin protección", 
+    "Acabados caseros con goteos",
+    "Colores que no combinan"
+  ]}
+  solution={[
+    "Lacado perfecto sin imperfecciones",
+    "Protección total de la madera",
+    "Técnica profesional sin goteos", 
+    "Colores personalizados RAL"
+  ]}
+  process={[
+    { title: "Desmontaje", desc: "Retiramos puertas con cuidado" },
+    { title: "Preparación", desc: "Lijado y imprimación completa" },
+    { title: "Lacado", desc: "Aplicación técnica profesional" },
+    { title: "Montaje", desc: "Instalación perfecta final" }
+  ]}
+  proseTitle="Lacado profesional de puertas y carpintería en Valencia"
+  proseP1="Nuestro servicio de lacado transforma completamente puertas y carpintería con acabados de calidad superior. Trabajamos tanto lacado en blanco como en cualquier color RAL personalizado."
+  proseP2="El proceso incluye desmontaje cuidadoso, lijado completo, imprimación especializada y aplicación de laca con pistola en cabina. Garantizamos acabados perfectos sin goteos ni marcas."
+  proseList={[
+    "Lacado en blanco satinado o brillo",
+    "Colores personalizados carta RAL", 
+    "Cabina de lacado profesional",
+    "Desmontaje e instalación incluidos",
+    "Garantía de acabado perfecto"
+  ]}
+  faqs={[
+    {
+      question: "¿Desmontáis las puertas?",
+      answer: "Sí, incluimos el desmontaje cuidadoso y posterior montaje. Trabajamos en taller con cabina de lacado para garantizar acabados perfectos."
+    },
+    {
+      question: "¿Qué colores están disponibles?",
+      answer: "Lacamos en blanco satinado, blanco brillo, y cualquier color de la carta RAL. También podemos igualar colores específicos mediante muestras."
+    },
+    {
+      question: "¿Cuánto tiempo sin puertas?",
+      answer: "Normalmente 3-4 días laborables desde recogida hasta instalación. Coordinamos para minimizar las molestias y trabajar por fases si es necesario."
+    },
+    {
+      question: "¿Lacáis también marcos?",
+      answer: "Sí, podemos lacar tanto puertas como marcos de madera. Para marcos ya instalados trabajamos in situ con técnicas especiales."
+    }
+  ]}
+  seoTitle="Lacado de puertas y carpintería - Pintores en Valencia"
+  seoDescription="Lacado en blanco u otros colores con acabado liso y duradero. Presupuesto gratis en Valencia."
   canonical="https://pintores-valencia.com/servicios/lacado-puertas-carpinteria/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Lacado de puertas y carpintería</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Lacado en blanco u otros colores con acabado liso y duradero.
-        </p>
-        <p>
-          Nuestro servicio de lacado profesional transforma puertas y carpintería 
-          con acabados perfectos, sin goteos y con secado controlado para 
-          garantizar la máxima calidad y durabilidad.
-        </p>
-      </div>
-    </section>
-  </main>
-</SiteLayout>
+  keywords="lacado puertas valencia, lacar puertas blanco valencia, lacado carpinteria valencia"
+/>

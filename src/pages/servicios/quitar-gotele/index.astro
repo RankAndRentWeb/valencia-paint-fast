@@ -1,99 +1,64 @@
 ---
-import SiteLayout from '../../../layouts/SiteLayout.astro';
+import ServicePage from '../../../components/ServicePage.astro';
 ---
 
-<SiteLayout 
-  title="Quitar gotelé en Valencia - Pintores en Valencia"
-  description="Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar. Presupuesto gratis en Valencia."
-  canonical="https://pintores-valencia.com/servicios/quitar-gotele/"
-  ogImage="https://pintores-valencia.com/og-home.webp"
->
-  <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Quitar gotelé y alisar paredes</h1>
-      <div class="prose max-w-4xl">
-        <p class="text-lg text-gray-700 mb-6">
-          Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.
-        </p>
-        <p>
-          Nuestro servicio profesional de eliminación de gotelé incluye preparación completa, 
-          alisado de superficies y limpieza posterior. Una vez terminado, puedes contratar nuestra 
-          <a href="/servicios/pintura-interior/" class="text-blue-600 hover:underline">pintura interior</a> 
-          para un acabado completo. Utilizamos técnicas especializadas para garantizar un acabado perfecto.
-        </p>
-        <p class="mt-4">
-          Mira ejemplos de transformaciones en nuestros 
-          <a href="/trabajos/" class="text-blue-600 hover:underline">trabajos realizados</a>.
-        </p>
-      </div>
-
-      <!-- FAQ Section -->
-      <div class="mt-16">
-        <h2 class="text-2xl font-bold mb-8">Preguntas frecuentes</h2>
-        <div class="space-y-6 max-w-4xl">
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿El proceso genera mucho polvo?</summary>
-            <p class="mt-3 text-gray-700">No, utilizamos técnicas especializadas que minimizan el polvo. Protegemos todo el mobiliario y mantenemos el espacio limpio durante todo el trabajo.</p>
-          </details>
-          
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Cuánto tiempo se tarda?</summary>
-            <p class="mt-3 text-gray-700">Depende del tamaño, pero una habitación estándar de 15m² se completa en 1-2 días. Un piso completo puede tardar 4-6 días laborables.</p>
-          </details>
-          
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Qué garantía ofrecéis?</summary>
-            <p class="mt-3 text-gray-700">Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional.</p>
-          </details>
-          
-          <details class="bg-gray-50 rounded-lg p-6">
-            <summary class="font-semibold cursor-pointer">¿Qué materiales utilizáis?</summary>
-            <p class="mt-3 text-gray-700">Utilizamos masilla de alta calidad y pinturas de preparación premium. Todos nuestros materiales están incluidos en el precio del servicio.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
-</SiteLayout>
-
-<!-- JSON-LD FAQPage Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage", 
-  "mainEntity": [
+<ServicePage
+  title="Quitar gotelé y alisar paredes"
+  subtitle="Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar"
+  price="Desde 8€/m²"
+  priceNote="Incluye material, mano de obra y limpieza posterior"
+  badges={["Sin polvo", "Garantía 3 años", "Limpieza incluida", "Material incluido"]}
+  features={["Preparación completa", "Alisado profesional", "Limpieza posterior", "Sin obras"]}
+  heroImg="/src/assets/quitar-gotele-valencia.jpg"
+  heroAlt="Profesional quitando gotelé en Valencia"
+  problem={[
+    "Paredes con gotelé anticuado y feo",
+    "Polvo y suciedad por toda la casa", 
+    "Trabajo mal hecho que se agrieta",
+    "Precios abusivos sin garantía"
+  ]}
+  solution={[
+    "Eliminación completa del gotelé",
+    "Técnica sin polvo y limpia",
+    "Acabado liso perfecto y duradero", 
+    "Precio justo con garantía escrita"
+  ]}
+  process={[
+    { title: "Protección", desc: "Cubrimos muebles y suelos" },
+    { title: "Eliminación", desc: "Quitamos el gotelé sin polvo" },
+    { title: "Alisado", desc: "Dejamos la pared perfecta" },
+    { title: "Limpieza", desc: "Recogemos y limpiamos todo" }
+  ]}
+  proseTitle="Servicio profesional de eliminación de gotelé en Valencia"
+  proseP1="Nuestro equipo de profesionales cuenta con más de 15 años de experiencia eliminando gotelé en Valencia. Utilizamos las técnicas más avanzadas para quitar el gotelé sin generar polvo ni suciedad en tu hogar."
+  proseP2="Trabajamos con materiales de primera calidad y ofrecemos garantía de 3 años en todos nuestros trabajos. El proceso incluye preparación completa, eliminación del gotelé, alisado perfecto y limpieza posterior."
+  proseList={[
+    "Técnica sin polvo patentada",
+    "Materiales de primera calidad", 
+    "Equipo profesional especializado",
+    "Garantía escrita de 3 años",
+    "Limpieza completa incluida"
+  ]}
+  faqs={[
     {
-      "@type": "Question",
-      "name": "¿El proceso de quitar gotelé genera mucho polvo?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No, utilizamos técnicas especializadas que minimizan el polvo. Protegemos todo el mobiliario y mantenemos el espacio limpio durante todo el trabajo."
-      }
+      question: "¿El proceso genera mucho polvo?",
+      answer: "No, utilizamos una técnica especial que elimina el gotelé prácticamente sin generar polvo. Protegemos todos los muebles y espacios."
     },
     {
-      "@type": "Question", 
-      "name": "¿Cuánto tiempo se tarda en quitar el gotelé?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Depende del tamaño, pero una habitación estándar de 15m² se completa en 1-2 días. Un piso completo puede tardar 4-6 días laborables."
-      }
+      question: "¿Cuánto tiempo tarda el proceso?",
+      answer: "Depende del tamaño, pero normalmente tardamos 1-2 días para una vivienda estándar de 80-100m²."
     },
     {
-      "@type": "Question",
-      "name": "¿Qué garantía ofrecéis en el alisado?", 
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional."
-      }
+      question: "¿Qué garantía ofrecéis?",
+      answer: "Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional."
     },
     {
-      "@type": "Question",
-      "name": "¿Qué materiales utilizáis para el alisado?",
-      "acceptedAnswer": {
-        "@type": "Answer", 
-        "text": "Utilizamos masilla de alta calidad y pinturas de preparación premium. Todos nuestros materiales están incluidos en el precio del servicio."
-      }
+      question: "¿Incluye la pintura posterior?",
+      answer: "El servicio incluye el alisado. La pintura es opcional y podemos hacerla con un descuento especial si contratas ambos servicios."
     }
-  ]
-}
-</script>
+  ]}
+  seoTitle="Quitar gotelé en Valencia - Pintores en Valencia"
+  seoDescription="Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar. Presupuesto gratis en Valencia."
+  canonical="https://pintores-valencia.com/servicios/quitar-gotele/"
+  keywords="quitar gotele valencia, alisar paredes valencia, eliminar gotele sin polvo"
+/>
