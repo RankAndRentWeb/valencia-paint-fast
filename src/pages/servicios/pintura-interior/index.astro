@@ -50,15 +50,66 @@ const blocks = {
   `,
   faq: [
     {
-      q: "¿Qué marcas de pintura utilizan?",
-      a: "Trabajamos con marcas premium como Bruguer, Titán y Montó para garantizar calidad."
+      q: "¿Qué tipos de pintura utilizáis para interiores?",
+      a: "Utilizamos pinturas plásticas lavables de alta calidad, anti-moho para baños y cocinas, y pinturas especiales para techos. Todas de marcas reconocidas como Bruguer, Titán y Montó."
     },
     {
-      q: "¿Incluye la limpieza posterior?",
-      a: "Sí, incluimos limpieza completa y recogida de material al finalizar."
+      q: "¿Cuántos días tarda pintar un piso completo?",
+      a: "Un piso estándar de 80m² tarda entre 4-6 días laborables. Incluye preparación de paredes, imprimación y dos capas de acabado."
+    },
+    {
+      q: "¿Movéis los muebles o lo tenemos que hacer nosotros?",
+      a: "Nosotros movemos y protegemos todos los muebles. Solo pedimos que retiréis objetos frágiles y personales de valor."
+    },
+    {
+      q: "¿Qué garantía tiene el trabajo de pintura?",
+      a: "Ofrecemos 3 años de garantía en el trabajo de pintura. Si aparecen defectos por mala aplicación, lo reparamos sin coste."
+    }
+  ]
+};
+
+// JSON-LD para FAQ de Pintura Interior
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué tipos de pintura utilizáis para interiores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilizamos pinturas plásticas lavables de alta calidad, anti-moho para baños y cocinas, y pinturas especiales para techos. Todas de marcas reconocidas como Bruguer, Titán y Montó."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuántos días tarda pintar un piso completo?",
+      "acceptedAnswer": {
+        "@type": "Answer", 
+        "text": "Un piso estándar de 80m² tarda entre 4-6 días laborables. Incluye preparación de paredes, imprimación y dos capas de acabado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Movéis los muebles o lo tenemos que hacer nosotros?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nosotros movemos y protegemos todos los muebles. Solo pedimos que retiréis objetos frágiles y personales de valor."
+      }
+    },
+    {
+      "@type": "Question", 
+      "name": "¿Qué garantía tiene el trabajo de pintura?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos 3 años de garantía en el trabajo de pintura. Si aparecen defectos por mala aplicación, lo reparamos sin coste."
+      }
     }
   ]
 };
 ---
 
 <ServiceTemplate {meta} {hero} {blocks} />
+
+<!-- JSON-LD FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
