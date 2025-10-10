@@ -30,7 +30,7 @@ const QuienesSomos = () => {
       "addressCountry": "ES"
     },
     "telephone": "+34722208131",
-    "email": "edgarberriojimenez@gmail.com",
+    "email": "info@pintores-valencia.com",
     "openingHours": [
       "Mo-Sa 08:00-20:00"
     ],

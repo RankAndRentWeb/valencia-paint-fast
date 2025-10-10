@@ -28,7 +28,7 @@ const AvisoLegal = () => {
                 <ul className="space-y-1">
                   <li><strong>Denominación social:</strong> Pintores en Valencia</li>
                   <li><strong>Teléfono:</strong> +34 722 208 131</li>
-                  <li><strong>Email:</strong> edgarberriojimenez@gmail.com</li>
+                  <li><strong>Email:</strong> info@pintores-valencia.com</li>
                   <li><strong>Domicilio:</strong> Valencia, España</li>
                 </ul>
               </div>

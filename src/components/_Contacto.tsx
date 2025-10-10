@@ -112,10 +112,10 @@ const Contacto = () => {
                           Para consultas detalladas y presupuestos
                         </p>
                         <a 
-                          href="mailto:edgarberriojimenez@gmail.com"
+                          href="mailto:info@pintores-valencia.com"
                           className="text-accent hover:underline break-all"
                         >
-                          edgarberriojimenez@gmail.com
+                          info@pintores-valencia.com
                         </a>
                       </div>
                     </div>

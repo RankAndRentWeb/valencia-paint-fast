@@ -41,7 +41,7 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
     url: "https://pintores-valencia.com",
     image: "https://pintores-valencia.com/og-home.jpg",
     telephone: "+34722208131",
-    email: "edgarberriojimenez@gmail.com",
+    email: "info@pintores-valencia.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Valencia",
