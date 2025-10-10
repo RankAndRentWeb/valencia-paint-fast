@@ -388,11 +388,11 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
               <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 h-[300px] sm:h-[400px] md:h-[450px] flex flex-col justify-center">
                 <div className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4 md:space-y-6">
                   <p>
-                    Si buscas <strong>pintores de confianza en Valencia capital y provincia</strong>, somos tu mejor opción. Realizamos trabajos de <strong>pintura en viviendas, fachadas, locales comerciales y comunidades</strong>, además de ofrecer impermeabilización de terrazas y superficies exteriores para protegerlas del desgaste.
+                    Si buscas <strong>pintores de confianza en Valencia capital y provincia</strong>, somos tu mejor opción. Realizamos trabajos de <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline"><strong>pintura en viviendas</strong></a>, <a href="/servicios/pintura-exterior/" className="text-blue-600 hover:underline"><strong>fachadas</strong></a>, <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline"><strong>locales comerciales</strong></a> y comunidades, además de ofrecer <a href="/servicios/impermeabilizacion/" className="text-blue-600 hover:underline"><strong>impermeabilización</strong></a> de terrazas y superficies exteriores para protegerlas del desgaste.
                   </p>
                   
                   <p>
-                    Usamos <strong>materiales de alta calidad</strong> y ofrecemos <strong>garantía escrita</strong> en cada proyecto. <strong>Pide tu presupuesto gratuito en menos de 24 horas</strong> y descubre un servicio profesional, cercano y con la mejor relación calidad-precio.
+                    Usamos <strong>materiales de alta calidad</strong> y ofrecemos <strong>garantía escrita</strong> en cada proyecto. <strong>Pide tu presupuesto gratuito en menos de 24 horas</strong> y descubre un servicio profesional, cercano y con la mejor relación calidad-precio. Mira ejemplos de nuestro trabajo en <a href="/trabajos/" className="text-blue-600 hover:underline"><strong>proyectos realizados</strong></a>.
                   </p>
                 </div>
               </div>
