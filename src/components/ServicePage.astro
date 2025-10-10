@@ -1,86 +1,358 @@
----
-const { entry } = Astro.props;
-const { Content } = await entry.render();
-const data = entry.data;
-const hasImg = !!data?.heroImage;
----
+------
 
-<section class="container mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10">
-  <div>
-    {data.badges?.length && (
-      <div class="flex flex-wrap items-center gap-2 mb-4">
-        {data.badges.map((b) => <span class="text-sm px-3 py-1 rounded-full bg-orange-50 text-orange-700 border border-orange-200">{b}</span>)}
-      </div>
-    )}
-    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">{data.title}</h1>
-    {data.subtitle && <p class="text-lg text-gray-600 mb-4">{data.subtitle}</p>}
-    {(data.priceFrom && data.priceUnit) && (
-      <p class="text-2xl font-bold text-blue-700 mb-6">
-        desde {data.priceFrom}{data.priceUnit} <span class="text-sm text-gray-500 font-normal">Material incluido</span>
-      </p>
-    )}
-    <div class="flex flex-wrap gap-3 mb-8">
-      <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center">Pedir presupuesto gratis</a>
+export interface Props {const { entry } = Astro.props;
+
+  title: string;const { Content } = await entry.render();
+
+  subtitle: string;const data = entry.data;
+
+  price: string;const hasImg = !!data?.heroImage;
+
+  priceNote: string;---
+
+  badges: string[];
+
+  features: string[];<section class="container mx-auto px-4 py-10 grid lg:grid-cols-2 gap-10">
+
+  heroImg: string;  <div>
+
+  heroAlt: string;    {data.badges?.length && (
+
+  problem: string[];      <div class="flex flex-wrap items-center gap-2 mb-4">
+
+  solution: string[];        {data.badges.map((b) => <span class="text-sm px-3 py-1 rounded-full bg-orange-50 text-orange-700 border border-orange-200">{b}</span>)}
+
+  process: { title: string; desc: string }[];      </div>
+
+  proseTitle: string;    )}
+
+  proseP1: string;    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">{data.title}</h1>
+
+  proseP2: string;    {data.subtitle && <p class="text-lg text-gray-600 mb-4">{data.subtitle}</p>}
+
+  proseList: string[];    {(data.priceFrom && data.priceUnit) && (
+
+  faqs: { question: string; answer: string }[];      <p class="text-2xl font-bold text-blue-700 mb-6">
+
+  seoTitle: string;        desde {data.priceFrom}{data.priceUnit} <span class="text-sm text-gray-500 font-normal">Material incluido</span>
+
+  seoDescription: string;      </p>
+
+  canonical: string;    )}
+
+  keywords?: string;    <div class="flex flex-wrap gap-3 mb-8">
+
+}      <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center">Pedir presupuesto gratis</a>
+
       <a href="tel:+34722208131" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center gap-2">
-        722 208 131
-      </a>
-    </div>
-    {data.bullets?.length && (
-      <div class="grid grid-cols-3 gap-6 my-6">
-        {data.bullets.map(b => (
-          <div class="flex items-center gap-2 text-gray-700">
-            <svg class="w-6 h-6 text-orange-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.8 10a10 10 0 1 1-4.8-6.7"/><path d="m9 11 3 3L22 4"/></svg>
-            <span>{b.label}</span>
-          </div>
-        ))}
-      </div>
-    )}
-  </div>
 
-  <div>
-    {hasImg && (
-      <img src={data.heroImage} width={data.heroWidth ?? 900} height={data.heroHeight ?? 600}
-           alt={data.title} class="w-full rounded-2xl shadow-lg object-cover" loading="lazy" decoding="async" />
-    )}
-  </div>
-</section>
+const {        722 208 131
 
-<section class="container mx-auto px-4 grid md:grid-cols-2 gap-6 mb-10">
-  {data.problem && (
-    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
-      <h2 class="text-xl font-bold text-red-800 mb-3">{data.problem.title}</h2>
-      <ul class="list-disc ml-5 text-red-900">{data.problem.items.map(i => <li>{i}</li>)}</ul>
-    </div>
-  )}
-  {data.solution && (
+  title,      </a>
+
+  subtitle,    </div>
+
+  price,    {data.bullets?.length && (
+
+  priceNote,      <div class="grid grid-cols-3 gap-6 my-6">
+
+  badges,        {data.bullets.map(b => (
+
+  features,          <div class="flex items-center gap-2 text-gray-700">
+
+  heroImg,            <svg class="w-6 h-6 text-orange-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.8 10a10 10 0 1 1-4.8-6.7"/><path d="m9 11 3 3L22 4"/></svg>
+
+  heroAlt,            <span>{b.label}</span>
+
+  problem,          </div>
+
+  solution,        ))}
+
+  process,      </div>
+
+  proseTitle,    )}
+
+  proseP1,  </div>
+
+  proseP2,
+
+  proseList,  <div>
+
+  faqs,    {hasImg && (
+
+  seoTitle,      <img src={data.heroImage} width={data.heroWidth ?? 900} height={data.heroHeight ?? 600}
+
+  seoDescription,           alt={data.title} class="w-full rounded-2xl shadow-lg object-cover" loading="lazy" decoding="async" />
+
+  canonical,    )}
+
+  keywords  </div>
+
+} = Astro.props;</section>
+
+
+
+const localBusinessSchema = {<section class="container mx-auto px-4 grid md:grid-cols-2 gap-6 mb-10">
+
+  "@context": "https://schema.org",  {data.problem && (
+
+  "@type": "LocalBusiness",    <div class="rounded-2xl border border-red-200 bg-red-50 p-6">
+
+  "name": "Pintores en Valencia",      <h2 class="text-xl font-bold text-red-800 mb-3">{data.problem.title}</h2>
+
+  "url": "https://pintores-valencia.com",      <ul class="list-disc ml-5 text-red-900">{data.problem.items.map(i => <li>{i}</li>)}</ul>
+
+  "telephone": "+34722208131",    </div>
+
+  "email": "info@pintores-valencia.com"  )}
+
+};  {data.solution && (
+
     <div class="rounded-2xl border border-green-200 bg-green-50 p-6">
-      <h2 class="text-xl font-bold text-green-800 mb-3">{data.solution.title}</h2>
-      <ul class="list-disc ml-5 text-green-900">{data.solution.items.map(i => <li>{i}</li>)}</ul>
-    </div>
-  )}
-</section>
 
-{data.process?.length && (
-<section class="container mx-auto px-4 mb-12">
-  <h2 class="text-2xl font-bold mb-4">Nuestro proceso</h2>
-  <ol class="grid md:grid-cols-2 gap-3 list-decimal ml-6 text-gray-700">{data.process.map(p => <li>{p}</li>)}</ol>
-</section>
-)}
+const faqSchema = {      <h2 class="text-xl font-bold text-green-800 mb-3">{data.solution.title}</h2>
+
+  "@context": "https://schema.org",      <ul class="list-disc ml-5 text-green-900">{data.solution.items.map(i => <li>{i}</li>)}</ul>
+
+  "@type": "FAQPage",    </div>
+
+  "mainEntity": faqs.map(faq => ({  )}
+
+    "@type": "Question",</section>
+
+    "name": faq.question,
+
+    "acceptedAnswer": {{data.process?.length && (
+
+      "@type": "Answer",<section class="container mx-auto px-4 mb-12">
+
+      "text": faq.answer  <h2 class="text-2xl font-bold mb-4">Nuestro proceso</h2>
+
+    }  <ol class="grid md:grid-cols-2 gap-3 list-decimal ml-6 text-gray-700">{data.process.map(p => <li>{p}</li>)}</ol>
+
+  }))</section>
+
+};)}
+
+---
 
 <section class="container mx-auto px-4 prose lg:prose-lg max-w-none mb-12">
-  <Content />
-</section>
 
-{data.faq?.length && (
-<section class="container mx-auto px-4 mb-16">
-  <h2 class="text-2xl font-bold mb-4">Preguntas frecuentes</h2>
-  <div class="divide-y border rounded-xl">
-    {data.faq.map(f => (
-      <details class="p-4">
-        <summary class="cursor-pointer font-semibold">{f.q}</summary>
-        <p class="mt-2 text-gray-600">{f.a}</p>
-      </details>
-    ))}
-  </div>
-</section>
-)}
+<!DOCTYPE html>  <Content />
+
+<html lang="es"></section>
+
+<head>
+
+  <meta charset="UTF-8" />{data.faq?.length && (
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><section class="container mx-auto px-4 mb-16">
+
+  <title>{seoTitle}</title>  <h2 class="text-2xl font-bold mb-4">Preguntas frecuentes</h2>
+
+  <meta name="description" content={seoDescription} />  <div class="divide-y border rounded-xl">
+
+  <link rel="canonical" href={canonical} />    {data.faq.map(f => (
+
+  {keywords && <meta name="keywords" content={keywords} />}      <details class="p-4">
+
+  <meta property="og:type" content="website" />        <summary class="cursor-pointer font-semibold">{f.q}</summary>
+
+  <meta property="og:title" content={seoTitle} />        <p class="mt-2 text-gray-600">{f.a}</p>
+
+  <meta property="og:description" content={seoDescription} />      </details>
+
+  <meta property="og:url" content={canonical} />    ))}
+
+  <meta property="og:image" content="https://pintores-valencia.com/og-home.webp" />  </div>
+
+  <meta name="twitter:card" content="summary_large_image" /></section>
+
+  <meta name="twitter:title" content={seoTitle} />)}
+  <meta name="twitter:description" content={seoDescription} />
+  <meta name="twitter:image" content="https://pintores-valencia.com/og-home.webp" />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+  <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold text-blue-600">Pintores Valencia</a>
+        <a href="tel:+34722208131" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700">
+          📞 722 208 131
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">{title}</h1>
+            <p class="text-xl text-gray-600 mb-8">{subtitle}</p>
+            
+            <div class="flex flex-wrap gap-3 mb-8">
+              {badges.map(badge => (
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                  ✓ {badge}
+                </span>
+              ))}
+            </div>
+            
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
+              <div class="text-3xl font-bold text-blue-600 mb-2">{price}</div>
+              <p class="text-gray-600">{priceNote}</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/presupuesto/" class="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600 text-center">
+                Presupuesto Gratis
+              </a>
+              <a href="tel:+34722208131" class="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-blue-700 text-center">
+                📞 Llamar Ahora
+              </a>
+            </div>
+          </div>
+          
+          <div>
+            <img src={heroImg} alt={heroAlt} class="w-full h-auto rounded-lg shadow-lg" loading="eager" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">¿Por qué elegirnos?</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map(feature => (
+            <div class="text-center">
+              <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl">✓</span>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">{feature}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem/Solution -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">❌ Problemas comunes</h2>
+            <ul class="space-y-4">
+              {problem.map(item => (
+                <li class="flex items-start">
+                  <span class="text-red-500 mr-3 mt-1">✗</span>
+                  <span class="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">✅ Nuestra solución</h2>
+            <ul class="space-y-4">
+              {solution.map(item => (
+                <li class="flex items-start">
+                  <span class="text-green-500 mr-3 mt-1">✓</span>
+                  <span class="text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Nuestro proceso</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {process.map((step, index) => (
+            <div class="text-center">
+              <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                {index + 1}
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Prose Content -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="prose max-w-none">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">{proseTitle}</h2>
+          <p class="text-gray-700 mb-4 leading-relaxed">{proseP1}</p>
+          <p class="text-gray-700 mb-4 leading-relaxed">{proseP2}</p>
+          {proseList.length > 0 && (
+            <ul class="list-disc pl-6 space-y-2">
+              {proseList.map(item => (
+                <li class="text-gray-700">{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Preguntas frecuentes</h2>
+        <div class="space-y-6">
+          {faqs.map(faq => (
+            <details class="bg-white rounded-lg shadow-sm">
+              <summary class="p-6 font-semibold text-gray-900 cursor-pointer hover:bg-gray-50">
+                {faq.question}
+              </summary>
+              <div class="px-6 pb-6 text-gray-700">{faq.answer}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="bg-blue-600 py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white mb-6">¿Listo para empezar?</h2>
+        <p class="text-xl text-blue-100 mb-8">Solicita tu presupuesto gratuito sin compromiso</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/presupuesto/" class="bg-orange-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-orange-600">
+            Presupuesto Gratis
+          </a>
+          <a href="tel:+34722208131" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100">
+            📞 722 208 131
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 Pintores en Valencia. Todos los derechos reservados.</p>
+      <div class="flex justify-center gap-6 mt-4">
+        <a href="/aviso-legal/" class="text-gray-300 hover:text-white">Aviso Legal</a>
+        <a href="/politica-privacidad/" class="text-gray-300 hover:text-white">Política de Privacidad</a>
+        <a href="/politica-cookies/" class="text-gray-300 hover:text-white">Política de Cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
