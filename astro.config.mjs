@@ -13,7 +13,9 @@ export default defineConfig({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      filter: (page) => !page.includes('404')
+      filter: (page) => !page.includes('404'),
+      serialize: (item) => item,
+      entryLimit: 45000
     }), 
     react()
   ],

@@ -17,6 +17,6 @@
     { "source": "/blog", "destination": "/blogs/", "permanent": true },
     { "source": "/blog/:category", "destination": "/blogs/:category/", "permanent": true },
     { "source": "/blog/:category/:slug", "destination": "/blogs/:category/:slug/", "permanent": true },
-    { "source": "/sitemap-index.xml", "destination": "/sitemap.xml", "permanent": true }
+    { "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true }
   ]
 }

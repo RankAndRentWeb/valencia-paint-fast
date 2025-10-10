@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/copy-sitemap.mjs",
+    "build:astro": "astro build",
     "preview": "astro preview",
     "lint": "eslint .",
-  "postinstall": "echo skip"
+    "postinstall": "echo skip"
   },
   "reactSnap": {
     "source": "dist",
