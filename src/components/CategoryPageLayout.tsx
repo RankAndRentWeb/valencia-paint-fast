@@ -175,7 +175,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                   ¿Necesitas ayuda profesional?
                 </h3>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Más de 15 años de experiencia en Valencia. Presupuesto sin compromiso en 24h.
+                  Especialistas en pintura profesional en Valencia. Presupuesto sin compromiso en 24h.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a

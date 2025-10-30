@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.tsx';
 import { getCollection } from 'astro:content';
 
 const cats = (await getCollection('blogCategories')).sort((a,b)=>(a.data.order??99)-(b.data.order??99));
@@ -10,10 +11,22 @@ const cats = (await getCollection('blogCategories')).sort((a,b)=>(a.data.order??
   description="Consejos de pintura: gotelé, impermeabilización, colores, fachadas y barnices. Guías profesionales para tus proyectos de pintura."
   keywords="blog pintura valencia, consejos pintar casa, guia gotele"
 >
-  <section class="container mx-auto px-4 py-10">
-    <h1 class="text-3xl md:text-4xl font-bold text-center mb-2">Categorías de Contenido</h1>
-    <p class="text-center text-gray-600 mb-8">Encuentra artículos especializados sobre el tema que necesitas</p>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="container mx-auto px-4">
+    <Breadcrumbs items={[{ label: "Blog" }]} client:load />
+    
+    <div class="py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Blog de Pintura
+        </h1>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Encuentra artículos especializados, consejos profesionales y guías completas 
+          sobre pintura, gotelé, impermeabilización y mucho más.
+        </p>
+      </div>
+
+      <section class="py-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {cats.map(c => (
         <div class="rounded-2xl border bg-white p-6 hover:shadow transition">
           <h2 class="text-xl font-semibold mb-2">{c.data.name}</h2>
@@ -23,6 +36,8 @@ const cats = (await getCollection('blogCategories')).sort((a,b)=>(a.data.order??
           </a>
         </div>
       ))}
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 </SiteLayout>

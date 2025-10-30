@@ -1,34 +1,34 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.tsx';
 ---
 <SiteLayout 
   title="Precios de Pintura en Valencia - Tarifas 2025"
   description="Consulta nuestros precios de pintura en Valencia. Tarifas competitivas para pintura interior, exterior, lacado y más. Presupuesto gratis sin compromiso."
   keywords="precios pintura valencia, tarifas pintor valencia, coste pintar casa"
 >
-    <nav aria-label="Breadcrumb" class="py-4 text-sm text-muted-foreground">
-      <ol class="flex items-center space-x-2">
-        <li><a href="/" class="hover:text-primary">Inicio</a></li>
-        <li class="mx-2">›</li>
-        <li class="text-foreground font-medium">Precios</li>
-      </ol>
-    </nav>
-
-    <header class="text-center mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">Precios transparentes y competitivos</h1>
-      <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
-        Consulta nuestras tarifas orientativas para trabajos de pintura en Valencia. Todos los precios incluyen mano de obra y garantía.
-      </p>
-    </header>
-
-    <div class="bg-accent/10 border border-accent/20 rounded-lg p-4 mb-8">
-      <strong>Precios orientativos:</strong> Los precios finales pueden variar según el estado de las superficies, accesibilidad,
-      materiales elegidos y complejidad del trabajo. Solicita un presupuesto personalizado para conocer el precio exacto.
-    </div>
-
-    <!-- AQUI pega tus SECCIONES EXACTAS del HTML antiguo (cards, grids, CTA, garantías) -->
+  <div class="container mx-auto px-4">
+    <Breadcrumbs items={[{ label: "Precios" }]} client:load />
     
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Tarifas de Servicios de Pintura</h2>
+    <div class="py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Precios de Pintura en Valencia
+        </h1>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Consulta nuestras tarifas transparentes y competitivas para trabajos de pintura. 
+          Todos los precios incluyen mano de obra y garantía.
+        </p>
+      </div>
+
+      <div class="bg-accent/10 border border-accent/20 rounded-lg p-4 mb-8">
+        <strong>Precios orientativos:</strong> Los precios finales pueden variar según el estado de las superficies, accesibilidad,
+        materiales elegidos y complejidad del trabajo. Solicita un presupuesto personalizado para conocer el precio exacto.
+      </div>
+
+      <!-- AQUI pega tus SECCIONES EXACTAS del HTML antiguo (cards, grids, CTA, garantías) -->
+      
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Tarifas de Servicios de Pintura</h2>
     
     <!-- Pintura Interior -->
     <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
@@ -72,19 +72,20 @@ import SiteLayout from '../../layouts/SiteLayout.astro';
           </div>
         </div>
       </div>
-    </div>
+      </div>
 
-    <!-- CTA Final -->
-    <div class="bg-primary text-white rounded-lg p-8 text-center">
-      <h2 class="text-2xl font-bold mb-4">¿Necesitas un Presupuesto Personalizado?</h2>
-      <p class="text-white/90 mb-6">Contáctanos para un presupuesto detallado y sin compromiso</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/presupuesto/" class="bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-md transition-all">
-          Solicitar Presupuesto
-        </a>
-        <a href="tel:+34722208131" class="bg-white hover:bg-gray-50 text-primary font-semibold py-3 px-6 rounded-md transition-all">
-          Llamar: 722 208 131
-        </a>
+      <!-- CTA Final -->
+      <div class="bg-primary text-white rounded-lg p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">¿Necesitas un Presupuesto Personalizado?</h2>
+        <p class="text-white/90 mb-6">Contáctanos para un presupuesto detallado y sin compromiso</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/presupuesto/" class="bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-md transition-all">
+            Solicitar Presupuesto
+          </a>
+          <a href="tel:+34722208131" class="bg-white hover:bg-gray-50 text-primary font-semibold py-3 px-6 rounded-md transition-all">
+            Llamar: 722 208 131
+          </a>
+        </div>
       </div>
     </div>
   </div>

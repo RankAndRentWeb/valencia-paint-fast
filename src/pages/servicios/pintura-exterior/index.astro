@@ -1,30 +1,30 @@
-﻿---
+---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Valencia Paint Fast - Pintura Exterior",
-  "description": "Servicio profesional de pintura exterior y fachadas en Valencia. Materiales resistentes a la intemperie y garantía de 5 años.",
-  "url": "https://valenciapaintfast.com/servicios/pintura-exterior/",
-  "telephone": "+34628849851",
+  "@id": "https://pintores-valencia.com/#business",
+  "name": "Pintores en Valencia",
+  "url": "https://pintores-valencia.com",
+  "image": "https://pintores-valencia.com/og-home.webp",
+  "telephone": "+34722208131",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
-    "addressRegion": "Valencia", 
+    "addressRegion": "Comunitat Valenciana",
+    "postalCode": "46000",
     "addressCountry": "ES"
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 39.4699,
-      "longitude": -0.3763
-    },
-    "geoRadius": 30000
-  },
+  "openingHours": ["Mo-Sa 08:00-20:00"],
   "priceRange": "€€",
-  "openingHours": "Mo-Su 08:00-20:00"
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Valencia"
+    }
+  ]
 };
 
 const faqSchema = {
@@ -33,34 +33,26 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué tipos de pintura exterior utilizan?",
+      "name": "¿Qué pinturas utilizáis para exterior?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Utilizamos pinturas acrílicas de alta calidad específicamente formuladas para exteriores, como Sikkens, Jotun y Titan. Estas pinturas ofrecen máxima resistencia a los rayos UV, lluvia, viento y cambios de temperatura."
-      }
-    },
-    {
-      "@type": "Question", 
-      "name": "¿Cuánto dura la pintura exterior?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Con nuestras pinturas premium y correcta preparación de superficie, la pintura exterior puede durar entre 8-12 años. Ofrecemos garantía de 5 años en todos nuestros trabajos de fachadas."
+        "text": "Utilizamos pinturas específicas para exterior resistentes a la intemperie como Bruguer, Titan y Montó. Todas con protección UV y anti-moho."
       }
     },
     {
       "@type": "Question",
-      "name": "¿En qué épocas del año se puede pintar en exterior?",
+      "name": "¿Cuánto tiempo tarda pintar una fachada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "En Valencia podemos trabajar casi todo el año. Evitamos días de lluvia, viento fuerte o temperaturas extremas (por debajo de 5°C o por encima de 35°C). Primavera y otoño son las épocas ideales."
+        "text": "Una fachada media tarda entre 5-8 días laborables, dependiendo del estado de la superficie y las condiciones meteorológicas."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Incluyen la preparación de la superficie?",
+      "name": "¿Trabajáis en cualquier clima?",
       "acceptedAnswer": {
-        "@type": "Answer", 
-        "text": "Sí, incluimos lijado, limpieza a presión, reparación de grietas, masillado de imperfecciones y aplicación de imprimación. La preparación correcta es clave para un resultado duradero."
+        "@type": "Answer",
+        "text": "No trabajamos en días de lluvia o viento fuerte. Programamos el trabajo según las condiciones meteorológicas para garantizar calidad."
       }
     }
   ]
@@ -68,262 +60,258 @@ const faqSchema = {
 ---
 
 <SiteLayout 
-  title="Pintura Exterior Valencia - Fachadas | Garantía 5 años | Valencia Paint Fast"
-  description="Especialistas en pintura exterior y fachadas en Valencia. Materiales premium resistentes a la intemperie. Garantía 5 años. ☎️ 628 84 98 51"
-  canonical="https://valenciapaintfast.com/servicios/pintura-exterior/"
-  localBusinessSchema={localBusinessSchema}
-  faqSchema={faqSchema}
+  title="Pintura exterior Valencia - Fachadas y exteriores - Pintores en Valencia"
+  description="Pintamos fachadas y exteriores en Valencia con las mejores pinturas resistentes a la intemperie. Presupuesto gratis y garantía."
+  keywords="pintura exterior valencia, pintar fachada valencia, pintores exteriores valencia, pintura fachadas valencia"
+  canonical="https://pintores-valencia.com/servicios/pintura-exterior/"
+  schema={[localBusinessSchema, faqSchema]}
+  ogImage="/og-home.webp"
 >
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-20"></div>
-    <div class="relative container mx-auto px-4 py-16 lg:py-24">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Badges -->
-        <div class="flex flex-wrap justify-center gap-3 mb-8">
-          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-            🌦️ Resistente intemperie
-          </span>
-          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-            🎨 Pinturas premium
-          </span>
-          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-            🛡️ Garantía 5 años
-          </span>
-        </div>
+  <main class="flex-1">
+    <!-- Breadcrumbs and Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+      <!-- Breadcrumbs -->
+      <div class="container mx-auto px-4 py-4">
+        <Breadcrumbs 
+          items={[
+            { label: "Servicios", href: "/servicios/" },
+            { label: "Pintura Exterior" }
+          ]} 
+          client:load 
+        />
+      </div>
 
-        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-          Pintura <span class="text-yellow-300">Exterior</span><br>
-          en Valencia
-        </h1>
-        
-        <p class="text-xl lg:text-2xl mb-8 text-green-100 max-w-3xl mx-auto leading-relaxed">
-          Fachadas, chalets y exteriores con materiales de máxima calidad. 
-          Resistentes a lluvia, sol y cambios de temperatura.
-        </p>
+      <!-- Hero Content -->
+      <div class="container mx-auto px-4 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <!-- Left side - Content -->
+          <div>
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pintura exterior en Valencia</h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl text-gray-700 mb-6">Pintamos fachadas y exteriores con pinturas resistentes a la intemperie y acabados duraderos</p>
+            
+            <!-- Price -->
+            <div class="mb-6">
+              <span class="text-2xl font-bold text-accent">desde 15€/m² <span class="text-sm text-gray-500 font-normal">Material incluido</span></span>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center">
+                Presupuesto Gratis
+              </a>
+              <a href="tel:+34722208131" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                722 208 131
+              </a>
+            </div>
+            
+            <!-- Features -->
+            <div class="space-y-2">
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Pinturas resistentes</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Protección UV</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Garantía 5 años</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- Precio -->
-        <div class="mb-8">
-          <div class="inline-flex items-center bg-yellow-400 text-black px-6 py-3 rounded-full font-bold text-xl">
-            <span class="mr-2">💰</span>
-            Desde 12€/m² fachadas
+          <!-- Right side - Image -->
+          <div class="lg:order-last">
+            <div class="relative">
+              <img src="/src/assets/fachada-exterior-valencia.jpg" alt="Pintura exterior profesional en Valencia - Fachadas resistentes a la intemperie" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- CTAs -->
+    <!-- Precio y condiciones -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Precio y condiciones
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Presupuesto transparente desde 15€/m² con materiales incluidos
+            </p>
+          </div>
+          
+          <div class="space-y-6 text-gray-700">
+            <p class="text-lg leading-relaxed">
+              El coste final depende del tipo de superficie, altura del edificio, estado de la fachada y metros a pintar. 
+              En todos los casos ofrecemos un presupuesto cerrado y transparente, sin sorpresas.
+            </p>
+            
+            <p class="text-lg leading-relaxed">
+              Utilizamos pinturas específicas para exterior de primeras marcas como Bruguer, Titan y Montó, con protección UV y resistencia a la intemperie. 
+              Incluimos imprimación, dos manos de pintura y limpieza completa posterior.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestro proceso paso a paso -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Nuestro proceso paso a paso
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Trabajamos con técnica profesional para garantizar los mejores resultados
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- Paso 1 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                1
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Inspección y protección</h3>
+                <p class="text-gray-700">Inspeccionamos la fachada y protegemos plantas, ventanas y elementos que no se van a pintar.</p>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                2
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Limpieza y preparación</h3>
+                <p class="text-gray-700">Limpiamos la superficie, reparamos grietas y desperfectos, y lijamos zonas deterioradas.</p>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                3
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Imprimación exterior</h3>
+                <p class="text-gray-700">Aplicamos imprimación específica para exterior que garantiza adherencia y protección contra la humedad.</p>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                4
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Primera mano de pintura</h3>
+                <p class="text-gray-700">Aplicamos la primera capa de pintura exterior con técnicas profesionales y equipos adecuados.</p>
+              </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                5
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Segunda mano y acabado</h3>
+                <p class="text-gray-700">Aplicamos la segunda mano para conseguir cobertura perfecta y máxima protección.</p>
+              </div>
+            </div>
+
+            <!-- Paso 6 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                6
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Limpieza y retirada</h3>
+                <p class="text-gray-700">Retiramos todas las protecciones, limpiamos la zona de trabajo y realizamos inspección final.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Contact Section -->
+    <section class="py-12 bg-blue-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas pintar tu fachada?</h2>
+        <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
+        
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/presupuesto" 
-             class="bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-            📋 Presupuesto Gratis
+          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+            Pedir presupuesto gratis
           </a>
-          <a href="tel:628849851" 
-             class="border-2 border-white text-white hover:bg-white hover:text-green-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg">
-            📞 628 84 98 51
+          <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            722 208 131
           </a>
-        </div>
-
-        <!-- Features -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-            <div class="text-yellow-300 text-2xl mb-3">🎨</div>
-            <h3 class="font-bold text-lg mb-2">Materiales Premium</h3>
-            <p class="text-green-100 text-sm">Sikkens, Jotun, Titan - pinturas de máxima calidad para exteriores</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-            <div class="text-yellow-300 text-2xl mb-3">🌦️</div>
-            <h3 class="font-bold text-lg mb-2">Resistencia Total</h3>
-            <p class="text-green-100 text-sm">Anti-UV, impermeables y resistentes a cambios de temperatura</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-            <div class="text-yellow-300 text-2xl mb-3">⚡</div>
-            <h3 class="font-bold text-lg mb-2">Preparación Total</h3>
-            <p class="text-green-100 text-sm">Limpieza a presión, reparaciones y imprimación incluidas</p>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Problema vs Solución -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">¿Por qué elegir Valencia Paint Fast?</h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Problemas -->
-          <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-xl">
-            <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
-              ❌ Problemas habituales
+    <!-- FAQ -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Preguntas frecuentes
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Qué pinturas utilizáis para exterior?
             </h3>
-            <ul class="space-y-3 text-red-700">
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Pintura que se descascara al año o dos
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Materiales baratos que no resisten el clima
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Mala preparación de la superficie
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Sin garantías o garantías muy cortas
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Trabajos solo en tiempo perfecto
-              </li>
-            </ul>
+            <p class="text-gray-600">
+              Utilizamos pinturas específicas para exterior resistentes a la intemperie como Bruguer, Titan y Montó. Todas con protección UV y anti-moho.
+            </p>
           </div>
 
-          <!-- Soluciones -->
-          <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-xl">
-            <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
-              ✅ Nuestra solución
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">¿Cuánto tiempo tarda pintar una fachada?</h3>
+            <p class="text-gray-600">
+              Una fachada media tarda entre 5-8 días laborables, dependiendo del estado de la superficie y las condiciones meteorológicas.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Trabajáis en cualquier clima?
             </h3>
-            <ul class="space-y-3 text-green-700">
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Durabilidad de 8-12 años con materiales premium
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Sikkens, Jotun, Titan - marcas líderes en exteriores
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Preparación completa: limpieza, reparación, imprimación
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Garantía de 5 años en todos los trabajos
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Trabajamos todo el año (salvo condiciones extremas)
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="text-center mt-8">
-          <a href="/presupuesto" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-bold transition-colors">
-            Solicitar Presupuesto Detallado
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios Detallados -->
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Servicios de Pintura Exterior</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-green-600 text-3xl mb-4">🏠</div>
-            <h3 class="text-xl font-bold mb-3">Fachadas Completas</h3>
-            <p class="text-gray-600 mb-4">Pintado completo de fachadas de casas, chalets y edificios con preparación de superficie y materiales premium.</p>
-            <div class="text-sm text-green-600 font-medium">Desde 12€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-green-600 text-3xl mb-4">🌿</div>
-            <h3 class="text-xl font-bold mb-3">Muros y Vallas</h3>
-            <p class="text-gray-600 mb-4">Pintura de muros perimetrales, vallas y cerramientos exteriores con pinturas anti-grafiti y lavables.</p>
-            <div class="text-sm text-green-600 font-medium">Desde 8€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-green-600 text-3xl mb-4">🏗️</div>
-            <h3 class="text-xl font-bold mb-3">Estructuras Metálicas</h3>
-            <p class="text-gray-600 mb-4">Tratamiento y pintura de barandillas, rejas, puertas metálicas y estructuras con imprimaciones antioxidantes.</p>
-            <div class="text-sm text-green-600 font-medium">Desde 15€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-green-600 text-3xl mb-4">🏺</div>
-            <h3 class="text-xl font-bold mb-3">Terrazas y Pérgolas</h3>
-            <p class="text-gray-600 mb-4">Pintura y tratamiento de terrazas, pérgolas de madera y estructuras de ocio exterior.</p>
-            <div class="text-sm text-green-600 font-medium">Desde 20€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-green-600 text-3xl mb-4">🌊</div>
-            <h3 class="text-xl font-bold mb-3">Piscinas</h3>
-            <p class="text-gray-600 mb-4">Pintura de piscinas con pinturas específicas resistentes al cloro y productos químicos del agua.</p>
-            <div class="text-sm text-green-600 font-medium">Desde 25€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-green-600 text-3xl mb-4">🛠️</div>
-            <h3 class="text-xl font-bold mb-3">Reparaciones</h3>
-            <p class="text-gray-600 mb-4">Reparación de grietas, humedades, desconchones y problemas de adherencia antes del pintado.</p>
-            <div class="text-sm text-green-600 font-medium">Presupuesto personalizado</div>
+            <p class="text-gray-600">
+              No trabajamos en días de lluvia o viento fuerte. Programamos el trabajo según las condiciones meteorológicas para garantizar calidad.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-        
-        <div class="space-y-6">
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Qué tipos de pintura exterior utilizan?</h3>
-            <p class="text-gray-600">Utilizamos pinturas acrílicas de alta calidad específicamente formuladas para exteriores, como Sikkens, Jotun y Titan. Estas pinturas ofrecen máxima resistencia a los rayos UV, lluvia, viento y cambios de temperatura.</p>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuánto dura la pintura exterior?</h3>
-            <p class="text-gray-600">Con nuestras pinturas premium y correcta preparación de superficie, la pintura exterior puede durar entre 8-12 años. Ofrecemos garantía de 5 años en todos nuestros trabajos de fachadas.</p>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿En qué épocas del año se puede pintar en exterior?</h3>
-            <p class="text-gray-600">En Valencia podemos trabajar casi todo el año. Evitamos días de lluvia, viento fuerte o temperaturas extremas (por debajo de 5°C o por encima de 35°C). Primavera y otoño son las épocas ideales.</p>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Incluyen la preparación de la superficie?</h3>
-            <p class="text-gray-600">Sí, incluimos lijado, limpieza a presión, reparación de grietas, masillado de imperfecciones y aplicación de imprimación. La preparación correcta es clave para un resultado duradero.</p>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <a href="/contacto" class="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-xl font-bold transition-colors">
-            Más Información
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-16 bg-green-600 text-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl lg:text-4xl font-bold mb-6">¿Necesitas pintar tu fachada o exterior?</h2>
-      <p class="text-xl mb-8 max-w-3xl mx-auto">
-        Utilizamos solo materiales premium con garantía de 5 años. Tu fachada lucirá como nueva durante muchos años.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/presupuesto" class="bg-white text-green-600 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
-          Solicitar Presupuesto
-        </a>
-        <a href="tel:628849851" class="border-2 border-white text-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-green-600 transition-colors">
-          Llamar Ahora
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 </SiteLayout>

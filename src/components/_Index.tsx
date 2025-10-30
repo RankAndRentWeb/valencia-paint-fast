@@ -2,6 +2,7 @@
 import SEOHead from "@/components/SEOHead";
 
 import { Button } from "@/components/ui/button";
+import { CustomButton } from "@/components/ui/custom-button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -330,9 +331,14 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
           </div>
 
           <div className="text-center">
-            <Button asChild size="lg" className="bg-gradient-cta shadow-cta">
-              <a href="/servicios/">Ver todos los servicios</a>
-            </Button>
+            <CustomButton 
+              variant="orange" 
+              size="lg" 
+              asChild 
+              href="/servicios/"
+            >
+              Ver todos los servicios
+            </CustomButton>
           </div>
         </div>
       </section>
@@ -365,19 +371,11 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
                     height={featureImage.height}
                     className="w-full h-auto object-cover"
                   />
-                  <figcaption className="absolute top-3 left-3 bg-white/90 rounded-full px-3 py-1 text-sm shadow">
-                    +15 años de experiencia
-                  </figcaption>
+
                 </figure>
               ) : (
                 <div className="relative overflow-hidden rounded-2xl shadow-xl">
-                  {/* Badge encima de la imagen */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <div className="bg-white/95 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg border border-gray-100 flex items-center space-x-2">
-                      <Shield className="w-4 h-4 text-blue-600" />
-                      <span>+15 años de experiencia</span>
-                    </div>
-                  </div>
+
                   <div className="w-full h-[300px] sm:h-[400px] md:h-[450px] bg-gradient-to-r from-orange-400 to-orange-600"></div>
                 </div>
               )}
@@ -462,25 +460,24 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             Te respondemos en menos de 24 horas
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              asChild
+            <CustomButton
+              variant="orange"
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-white shadow-cta font-semibold"
-            >
-              <a href="/presupuesto" aria-label="Solicitar presupuesto">
-                Pedir presupuesto gratis
-              </a>
-            </Button>
-            <Button
               asChild
-              size="lg"
-              className="bg-white text-primary border-2 border-white hover:bg-primary hover:text-white transition-colors font-semibold"
+              href="/presupuesto"
             >
-              <a href="tel:+34722208131" aria-label="Llamar al +34 722 208 131" className="flex items-center space-x-2">
-                <Phone className="w-5 h-5" aria-hidden="true" />
-                <span>+34 722 208 131</span>
-              </a>
-            </Button>
+              Pedir presupuesto gratis
+            </CustomButton>
+            <CustomButton
+              variant="blue"
+              size="lg"
+              asChild
+              href="tel:+34722208131"
+              className="flex items-center space-x-2"
+            >
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              <span>+34 722 208 131</span>
+            </CustomButton>
           </div>
         </div>
       </section>

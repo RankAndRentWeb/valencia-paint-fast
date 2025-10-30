@@ -1,5 +1,6 @@
 ﻿---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -74,256 +75,261 @@ const faqSchema = {
   localBusinessSchema={localBusinessSchema}
   faqSchema={faqSchema}
 >
-  <!-- Hero Section -->
-  <section class="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-black opacity-20"></div>
-    <div class="relative container mx-auto px-4 py-16 lg:py-24">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Badges -->
-        <div class="flex flex-wrap justify-center gap-3 mb-8">
-          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-            🌙 Trabajo nocturno
-          </span>
-          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-            🏪 Sin cerrar negocio
-          </span>
-          <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium border border-white/30">
-            ⚡ Secado rápido
-          </span>
-        </div>
+  <main class="flex-1">
+    <!-- Breadcrumbs and Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+      <!-- Breadcrumbs -->
+      <div class="container mx-auto px-4 py-4">
+        <Breadcrumbs 
+          items={[
+            { label: "Servicios", href: "/servicios/" },
+            { label: "Pintura Locales Comerciales" }
+          ]} 
+          client:load 
+        />
+      </div>
 
-        <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-          Pintura <span class="text-yellow-300">Locales Comerciales</span><br>
-          en Valencia
-        </h1>
-        
-        <p class="text-xl lg:text-2xl mb-8 text-purple-100 max-w-3xl mx-auto leading-relaxed">
-          Pintamos tu negocio sin interrumpir la actividad comercial. 
-          Trabajamos noches, fines de semana y festivos.
-        </p>
+      <!-- Hero Content -->
+      <div class="container mx-auto px-4 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <!-- Left side - Content -->
+          <div>
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pintura locales comerciales en Valencia</h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl text-gray-700 mb-6">Pintamos tu negocio sin interrumpir la actividad comercial. Trabajamos noches y fines de semana</p>
+            
+            <!-- Price -->
+            <div class="mb-6">
+              <span class="text-2xl font-bold text-accent">desde 10€/m² <span class="text-sm text-gray-500 font-normal">Material incluido</span></span>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center">
+                Presupuesto Gratis
+              </a>
+              <a href="tel:+34722208131" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                722 208 131
+              </a>
+            </div>
+            
+            <!-- Features -->
+            <div class="space-y-2">
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Trabajo nocturno</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Sin interrupciones</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Secado rápido</span>
+              </div>
+            </div>
+          </div>
 
-        <!-- Precio -->
-        <div class="mb-8">
-          <div class="inline-flex items-center bg-yellow-400 text-black px-6 py-3 rounded-full font-bold text-xl">
-            <span class="mr-2">💰</span>
-            Desde 10€/m² locales
+          <!-- Right side - Image -->
+          <div class="lg:order-last">
+            <div class="relative">
+              <img src="/src/assets/hero-pintores-valencia.jpg" alt="Pintura locales comerciales Valencia - Trabajo nocturno y fines de semana" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- CTAs -->
+    <!-- Precio y condiciones -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Precio y condiciones
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Presupuesto transparente desde 10€/m² sin recargos por trabajo nocturno
+            </p>
+          </div>
+          
+          <div class="space-y-6 text-gray-700">
+            <p class="text-lg leading-relaxed">
+              El coste final depende del tipo de negocio, superficie a pintar, tipo de pintura requerida y complejidad del trabajo. 
+              En todos los casos ofrecemos un presupuesto cerrado y transparente, sin sorpresas ni recargos por trabajo nocturno.
+            </p>
+            
+            <p class="text-lg leading-relaxed">
+              Utilizamos pinturas específicas para cada tipo de negocio: lavables y antibacterianas para clínicas, resistentes a grasas para restaurantes, 
+              y de secado rápido para minimizar interrupciones. Incluimos preparación de superficie, imprimación y acabado profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestro proceso paso a paso -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Nuestro proceso paso a paso
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Trabajamos de forma organizada para no interrumpir tu actividad comercial
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- Paso 1 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                1
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Visita y planificación</h3>
+                <p class="text-gray-700">Visitamos tu local para evaluar el trabajo y planificar el cronograma que mejor se adapte a tu negocio.</p>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                2
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Protección del mobiliario</h3>
+                <p class="text-gray-700">Protegemos todo el mobiliario, equipos y productos del local para evitar cualquier daño durante el trabajo.</p>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                3
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Preparación de superficies</h3>
+                <p class="text-gray-700">Limpiamos, lijamos y reparamos las superficies para garantizar un acabado perfecto y duradero.</p>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                4
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Aplicación de pintura específica</h3>
+                <p class="text-gray-700">Utilizamos pinturas específicas para tu tipo de negocio: antibacterianas, lavables o resistentes según necesidades.</p>
+              </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                5
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Acabado y retoques</h3>
+                <p class="text-gray-700">Aplicamos acabados finales y realizamos todos los retoques necesarios para un resultado impecable.</p>
+              </div>
+            </div>
+
+            <!-- Paso 6 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                6
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Limpieza y entrega</h3>
+                <p class="text-gray-700">Limpiamos completamente el local y retiramos protecciones. Tu negocio estará listo para abrir al día siguiente.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Contact Section -->
+    <section class="py-12 bg-blue-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas pintar tu local?</h2>
+        <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
+        
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/presupuesto" 
-             class="bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-            📋 Presupuesto Gratis
+          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+            Pedir presupuesto gratis
           </a>
-          <a href="tel:628849851" 
-             class="border-2 border-white text-white hover:bg-white hover:text-purple-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-lg">
-            📞 628 84 98 51
+          <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            722 208 131
           </a>
-        </div>
-
-        <!-- Features -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-            <div class="text-yellow-300 text-2xl mb-3">🌙</div>
-            <h3 class="font-bold text-lg mb-2">Horarios flexibles</h3>
-            <p class="text-purple-100 text-sm">Trabajamos noches, madrugadas y fines de semana sin recargo</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-            <div class="text-yellow-300 text-2xl mb-3">⚡</div>
-            <h3 class="font-bold text-lg mb-2">Secado ultra-rápido</h3>
-            <p class="text-purple-100 text-sm">Pinturas de secado rápido para abrir al día siguiente</p>
-          </div>
-          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-            <div class="text-yellow-300 text-2xl mb-3">🏪</div>
-            <h3 class="font-bold text-lg mb-2">Sin interrupciones</h3>
-            <p class="text-purple-100 text-sm">Tu negocio sigue funcionando normalmente durante el día</p>
-          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Problema vs Solución -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">¿Por qué elegir Valencia Paint Fast?</h2>
-        
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Problemas -->
-          <div class="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-xl">
-            <h3 class="text-xl font-bold text-red-800 mb-4 flex items-center">
-              ❌ Problemas habituales
+    <!-- FAQ -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Preguntas frecuentes
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Pueden trabajar por las noches o fines de semana?
             </h3>
-            <ul class="space-y-3 text-red-700">
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Tener que cerrar el negocio varios días
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Pintores que solo trabajan en horario comercial
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Olores fuertes que molestan a clientes
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Tiempos de secado muy lentos
-              </li>
-              <li class="flex items-start">
-                <span class="text-red-500 mr-2 mt-1">•</span>
-                Recargos por trabajar fuera de horario
-              </li>
-            </ul>
+            <p class="text-gray-600">
+              Sí, nos especializamos en trabajos fuera del horario comercial para no interrumpir la actividad del negocio. Trabajamos noches, madrugadas, fines de semana y festivos sin recargo adicional.
+            </p>
           </div>
 
-          <!-- Soluciones -->
-          <div class="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-xl">
-            <h3 class="text-xl font-bold text-green-800 mb-4 flex items-center">
-              ✅ Nuestra solución
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">¿Qué tipos de negocios atienden?</h3>
+            <p class="text-gray-600">
+              Atendemos todo tipo de locales: restaurantes, oficinas, tiendas, clínicas, peluquerías, talleres, naves industriales, centros de estética, consultas médicas y cualquier espacio comercial.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Cuánto tiempo tarda un local comercial?
             </h3>
-            <ul class="space-y-3 text-green-700">
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Tu negocio no para ni un solo día
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Especialistas en trabajo nocturno y fines de semana
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Pinturas sin olor y de bajo VOC
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Secado ultra-rápido - listo para abrir al día siguiente
-              </li>
-              <li class="flex items-start">
-                <span class="text-green-500 mr-2 mt-1">•</span>
-                Sin recargos por trabajo nocturno o festivos
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="text-center mt-8">
-          <a href="/presupuesto" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-xl font-bold transition-colors">
-            Solicitar Presupuesto Detallado
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Servicios Detallados -->
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Servicios para Negocios</h2>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-purple-600 text-3xl mb-4">🍽️</div>
-            <h3 class="text-xl font-bold mb-3">Restaurantes y Bares</h3>
-            <p class="text-gray-600 mb-4">Pinturas específicas resistentes a grasas, vapores y lavables. Sin olores que afecten al servicio de comida.</p>
-            <div class="text-sm text-purple-600 font-medium">Desde 12€/m²</div>
+            <p class="text-gray-600">
+              Depende del tamaño y estado del local. Un local pequeño (50m²) puede estar listo en 1-2 noches. Locales grandes pueden requerir 3-5 noches. Siempre planificamos para minimizar el cierre del negocio.
+            </p>
           </div>
 
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-purple-600 text-3xl mb-4">🏢</div>
-            <h3 class="text-xl font-bold mb-3">Oficinas</h3>
-            <p class="text-gray-600 mb-4">Ambientes profesionales con colores corporativos. Pinturas que mejoran la productividad y el bienestar.</p>
-            <div class="text-sm text-purple-600 font-medium">Desde 8€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-purple-600 text-3xl mb-4">🛒</div>
-            <h3 class="text-xl font-bold mb-3">Tiendas y Comercios</h3>
-            <p class="text-gray-600 mb-4">Diseños que potencian las ventas con colores que atraen clientes y destacan productos.</p>
-            <div class="text-sm text-purple-600 font-medium">Desde 10€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-purple-600 text-3xl mb-4">🏥</div>
-            <h3 class="text-xl font-bold mb-3">Clínicas y Consultas</h3>
-            <p class="text-gray-600 mb-4">Pinturas antibacterianas y desinfectables. Colores que transmiten tranquilidad y confianza.</p>
-            <div class="text-sm text-purple-600 font-medium">Desde 14€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-purple-600 text-3xl mb-4">💈</div>
-            <h3 class="text-xl font-bold mb-3">Peluquerías y Estética</h3>
-            <p class="text-gray-600 mb-4">Acabados elegantes resistentes a humedad y productos químicos específicos del sector.</p>
-            <div class="text-sm text-purple-600 font-medium">Desde 12€/m²</div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="text-purple-600 text-3xl mb-4">🏭</div>
-            <h3 class="text-xl font-bold mb-3">Naves y Talleres</h3>
-            <p class="text-gray-600 mb-4">Pinturas industriales resistentes a aceites, disolventes y ambientes agresivos.</p>
-            <div class="text-sm text-purple-600 font-medium">Desde 6€/m²</div>
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Utilizan pinturas especiales para locales comerciales?
+            </h3>
+            <p class="text-gray-600">
+              Sí, utilizamos pinturas lavables, antibacterianas y de secado rápido específicas para cada tipo de negocio. Para restaurantes usamos pinturas resistentes a grasas, para clínicas pinturas desinfectables.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl lg:text-4xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-        
-        <div class="space-y-6">
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Pueden trabajar por las noches o fines de semana?</h3>
-            <p class="text-gray-600">Sí, nos especializamos en trabajos fuera del horario comercial para no interrumpir la actividad del negocio. Trabajamos noches, madrugadas, fines de semana y festivos sin recargo adicional.</p>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Qué tipos de negocios atienden?</h3>
-            <p class="text-gray-600">Atendemos todo tipo de locales: restaurantes, oficinas, tiendas, clínicas, peluquerías, talleres, naves industriales, centros de estética, consultas médicas y cualquier espacio comercial.</p>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Cuánto tiempo tarda un local comercial?</h3>
-            <p class="text-gray-600">Depende del tamaño y estado del local. Un local pequeño (50m²) puede estar listo en 1-2 noches. Locales grandes pueden requerir 3-5 noches. Siempre planificamos para minimizar el cierre del negocio.</p>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900">¿Utilizan pinturas especiales para locales comerciales?</h3>
-            <p class="text-gray-600">Sí, utilizamos pinturas lavables, antibacterianas y de secado rápido específicas para cada tipo de negocio. Para restaurantes usamos pinturas resistentes a grasas, para clínicas pinturas desinfectables.</p>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <a href="/contacto" class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-xl font-bold transition-colors">
-            Más Información
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-16 bg-purple-600 text-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl lg:text-4xl font-bold mb-6">¿Tienes un negocio que necesita pintura?</h2>
-      <p class="text-xl mb-8 max-w-3xl mx-auto">
-        No interrumpas tu actividad comercial. Pintamos por las noches y fines de semana para que tu negocio nunca pare.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/presupuesto" class="bg-white text-purple-600 px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-colors">
-          Solicitar Presupuesto
-        </a>
-        <a href="tel:628849851" class="border-2 border-white text-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-purple-600 transition-colors">
-          Llamar Ahora
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
+</SiteLayout>
 </SiteLayout>

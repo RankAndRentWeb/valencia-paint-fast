@@ -1,5 +1,6 @@
 ﻿---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -75,27 +76,29 @@ const faqSchema = {
   ogImage="/og-home.webp"
 >
   <main class="flex-1">
-    <!-- Hero Section -->
-    <section class="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div class="container mx-auto px-4">
+    <!-- Breadcrumbs and Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+      <!-- Breadcrumbs -->
+      <div class="container mx-auto px-4 py-4">
+        <Breadcrumbs 
+          items={[
+            { label: "Servicios", href: "/servicios/" },
+            { label: "Papel Pintado y Vinilos" }
+          ]} 
+          client:load 
+        />
+      </div>
+
+      <!-- Hero Content -->
+      <div class="container mx-auto px-4 pb-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <!-- Left side - Content -->
           <div>
-            <!-- Badges -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
-                Instalación perfecta
-              </span>
-              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
-                Preparación incluida
-              </span>
-            </div>
-            
             <!-- Title -->
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Papel pintado y vinilos decorativos</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Papel pintado y vinilos decorativos en Valencia</h1>
             
             <!-- Subtitle -->
-            <p class="text-xl text-gray-700 mb-6">Transformamos tus espacios con papel pintado y vinilos de diseño</p>
+            <p class="text-xl text-gray-700 mb-6">Transformamos tus espacios con papel pintado y vinilos de diseño con instalación profesional</p>
             
             <!-- Price -->
             <div class="mb-6">
@@ -121,6 +124,12 @@ const faqSchema = {
                 <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
+                <span class="text-gray-700">Instalación perfecta</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
                 <span class="text-gray-700">Todas las marcas</span>
               </div>
               <div class="flex items-center space-x-3">
@@ -131,58 +140,195 @@ const faqSchema = {
               </div>
             </div>
           </div>
-          
+
           <!-- Right side - Image -->
-          <div class="order-first lg:order-last">
-            <div class="relative rounded-2xl overflow-hidden shadow-xl">
-              <img src="/src/assets/madre-hijo-salon-pequeno.jpg" alt="Papel pintado Valencia" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+          <div class="lg:order-last">
+            <div class="relative">
+              <img src="/src/assets/pintura-interior-valencia.jpg" alt="Papel pintado y vinilos decorativos Valencia - Instalación profesional" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-12">
+    <!-- Precio y condiciones -->
+    <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
-          <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
-          <div class="bg-white border rounded-lg overflow-hidden">
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Qué tipos de papel pintado instaláis?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Instalamos papel pintado, vinilo, fibra de vidrio y papel de bambú. Trabajamos con todas las marcas y diseños.
-              </div>
-            </details>
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Preparáis la pared antes?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Sí, preparamos completamente la superficie: lijado, imprimación y nivelado para un acabado perfecto.
-              </div>
-            </details>
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Traéis vuestro propio material?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Podemos suministrar el papel pintado o instalar el tuyo. Te asesoramos en la elección del mejor tipo para cada espacio.
-              </div>
-            </details>
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Quitáis el papel pintado viejo?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Sí, retiramos el papel antiguo y preparamos la pared desde cero para la nueva instalación.
-              </div>
-            </details>
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Precio y condiciones
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Presupuesto transparente desde 25€/m² con instalación profesional incluida
+            </p>
+          </div>
+          
+          <div class="space-y-6 text-gray-700">
+            <p class="text-lg leading-relaxed">
+              El coste final depende del tipo de papel pintado o vinilo elegido, el estado de la pared, la complejidad del patrón y los metros cuadrados a instalar. 
+              Trabajamos con tu material o te asesoramos en la elección del mejor producto para cada espacio.
+            </p>
+            
+            <p class="text-lg leading-relaxed">
+              Instalamos papel pintado tradicional, vinilos decorativos, fibra de vidrio y papeles especiales de todas las marcas. 
+              Incluimos preparación completa de la superficie, retirada del papel anterior si es necesario, y instalación con acabado perfecto.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Nuestro proceso paso a paso -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Nuestro proceso paso a paso
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Trabajamos con precisión para conseguir un acabado perfecto sin burbujas ni imperfecciones
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- Paso 1 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                1
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Asesoramiento y medición</h3>
+                <p class="text-gray-700">Te asesoramos en la elección del papel más adecuado y tomamos medidas precisas para calcular el material necesario.</p>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                2
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Retirada del papel anterior</h3>
+                <p class="text-gray-700">Si hay papel pintado anterior, lo retiramos completamente con técnicas profesionales para no dañar la pared.</p>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                3
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Preparación de la superficie</h3>
+                <p class="text-gray-700">Lijamos, reparamos imperfecciones y aplicamos imprimación específica para papel pintado.</p>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                4
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Corte y preparación del papel</h3>
+                <p class="text-gray-700">Cortamos las tiras con las medidas exactas, respetando el patrón y dejando margen para ajustes.</p>
+              </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                5
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Instalación profesional</h3>
+                <p class="text-gray-700">Instalamos cada tira con precisión, eliminando burbujas y asegurando la perfecta alineación del patrón.</p>
+              </div>
+            </div>
+
+            <!-- Paso 6 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                6
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Acabados y limpieza</h3>
+                <p class="text-gray-700">Realizamos los acabados finales en esquinas y bordes, y limpiamos completamente la zona de trabajo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Contact Section -->
+    <section class="py-12 bg-blue-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres renovar tus paredes?</h2>
+        <p class="text-xl mb-8">Te asesoramos sin compromiso sobre el mejor papel pintado para tu espacio</p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+            Pedir presupuesto gratis
+          </a>
+          <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            722 208 131
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Preguntas frecuentes
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Qué tipos de papel pintado instaláis?
+            </h3>
+            <p class="text-gray-600">
+              Instalamos papel pintado, vinilo, fibra de vidrio y papel de bambú. Trabajamos con todas las marcas y diseños.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">¿Preparáis la pared antes?</h3>
+            <p class="text-gray-600">
+              Sí, preparamos completamente la superficie: lijado, imprimación y nivelado para un acabado perfecto.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Traéis vuestro propio material?
+            </h3>
+            <p class="text-gray-600">
+              Podemos suministrar el papel pintado o instalar el tuyo. Te asesoramos en la elección del mejor tipo para cada espacio.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Quitáis el papel pintado viejo?
+            </h3>
+            <p class="text-gray-600">
+              Sí, retiramos el papel antiguo y preparamos la pared desde cero para la nueva instalación.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 </SiteLayout>

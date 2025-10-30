@@ -1,6 +1,7 @@
 // src/pages/Precios.tsx
 
 import { Button } from "@/components/ui/button";
+import { CustomButton } from "@/components/ui/custom-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import SEOHead from "@/components/SEOHead";
@@ -408,15 +409,24 @@ const Precios = () => {
               Cada proyecto es único. Te ofrecemos un presupuesto detallado y sin compromiso
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <a href="/presupuesto">Solicitar presupuesto gratis</a>
-              </Button>
-              <Button asChild size="lg" className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
-                <a href="tel:722208131" className="flex items-center space-x-2">
-                  <Phone className="w-5 h-5" />
-                  <span>Llamar para consultar</span>
-                </a>
-              </Button>
+              <CustomButton 
+                variant="orange" 
+                size="lg" 
+                asChild 
+                href="/presupuesto"
+              >
+                Solicitar presupuesto gratis
+              </CustomButton>
+              <CustomButton 
+                variant="blue" 
+                size="lg" 
+                asChild 
+                href="tel:722208131"
+                className="flex items-center space-x-2"
+              >
+                <Phone className="w-5 h-5" />
+                <span>Llamar para consultar</span>
+              </CustomButton>
             </div>
           </div>
 

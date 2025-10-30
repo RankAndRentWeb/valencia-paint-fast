@@ -57,4 +57,4 @@ Aplicamos pinturas especiales resistentes a la humedad y fáciles de limpiar.
 
 ## ¿Por qué elegirnos?
 
-Con más de 15 años de experiencia en Valencia, garantizamos un trabajo impecable con los mejores materiales del mercado.
+Con nuestra especialización en Valencia, garantizamos un trabajo impecable con los mejores materiales del mercado.

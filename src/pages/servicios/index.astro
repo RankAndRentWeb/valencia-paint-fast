@@ -1,5 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.tsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -102,9 +103,22 @@ const offerCatalogSchema = {
   schema={[localBusinessSchema, offerCatalogSchema]}
 >
   <main class="flex-1">
-    <section class="container mx-auto px-4 py-10">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">Servicios</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="container mx-auto px-4">
+      <Breadcrumbs items={[{ label: "Servicios" }]} client:load />
+      
+      <div class="py-12">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+            Nuestros Servicios
+          </h1>
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Ofrecemos una amplia gama de servicios de pintura profesional en Valencia. 
+            Calidad garantizada y materiales de primera en todos nuestros trabajos.
+          </p>
+        </div>
+
+        <section class="py-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- 1. Quitar gotelé y alisar paredes -->
         <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/quitar-gotele/">
@@ -291,38 +305,65 @@ const offerCatalogSchema = {
         </a>
 
       </div>
+      </section>
+    </div>
+  </div>
 
-      <!-- Callout azul centrado -->
-      <div class="mt-10 rounded-xl bg-blue-50 border border-blue-100 p-6 text-center">
-        <h3 class="text-xl font-semibold mb-4">¿No encuentras lo que buscas?</h3>
-        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/presupuesto/" class="h-10 px-4 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Pide presupuesto gratis
-          </a>
-          <a href="/contacto/" class="h-10 px-4 rounded-md border font-semibold inline-flex items-center justify-center hover:bg-gray-50">
-            Contactar
-          </a>
+  <!-- CTA Section -->
+  <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+            ¿Necesitas un presupuesto?
+          </h2>
+          <p class="text-xl mb-8 text-white">
+            Te respondemos en menos de 24 horas
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+              Pedir presupuesto gratis
+            </a>
+            <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+              +34 722 208 131
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- FAQ Section -->
-      <div class="mt-10 grid gap-4">
-        <div class="rounded-lg border bg-white shadow-sm p-5">
-          <h4 class="font-semibold mb-2">¿Qué incluyen los presupuestos?</h4>
-          <p class="text-gray-600">Mano de obra, materiales, mano de obra fina, limpieza posterior y garantía escrita.</p>
-        </div>
-        
-        <div class="rounded-lg border bg-white shadow-sm p-5">
-          <h4 class="font-semibold mb-2">¿Cómo se protege la zona de trabajo?</h4>
-          <p class="text-gray-600">Protección de suelos/muebles y limpieza final.</p>
-        </div>
-        
-        <div class="rounded-lg border bg-white shadow-sm p-5">
-          <h4 class="font-semibold mb-2">¿Ofrecen garantía?</h4>
-          <p class="text-gray-600">Sí, garantía escrita por escrito (según servicio).</p>
-        </div>
-      </div>
+  <!-- FAQ Section -->
+  <section class="py-16 bg-background">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Preguntas frecuentes
+            </h2>
+          </div>
 
-    </section>
+          <div class="max-w-3xl mx-auto space-y-6">
+            <div class="rounded-lg border bg-white shadow-sm">
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">¿Qué incluyen los presupuestos?</h3>
+                <p class="text-gray-600">Mano de obra, materiales, mano de obra fina, limpieza posterior y garantía escrita.</p>
+              </div>
+            </div>
+            
+            <div class="rounded-lg border bg-white shadow-sm">
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">¿Cómo se protege la zona de trabajo?</h3>
+                <p class="text-gray-600">Protección de suelos/muebles y limpieza final.</p>
+              </div>
+            </div>
+            
+            <div class="rounded-lg border bg-white shadow-sm">
+              <div class="p-6">
+                <h3 class="font-semibold mb-2">¿Ofrecen garantía?</h3>
+                <p class="text-gray-600">Sí, garantía escrita por escrito (según servicio).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
   </main>
 </SiteLayout>

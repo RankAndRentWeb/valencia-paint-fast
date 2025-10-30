@@ -1,5 +1,6 @@
-﻿---
+---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -53,14 +54,6 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Sí, ofrecemos asesoramiento gratuito en colores. Llevamos muestrarios y te ayudamos a elegir la mejor opción."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Protegéis los muebles?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Por supuesto. Cubrimos y protegemos todos los muebles, suelos y elementos que no se vayan a pintar."
-      }
     }
   ]
 };
@@ -75,27 +68,29 @@ const faqSchema = {
   ogImage="/og-home.webp"
 >
   <main class="flex-1">
-    <!-- Hero Section -->
-    <section class="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div class="container mx-auto px-4">
+    <!-- Breadcrumbs and Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+      <!-- Breadcrumbs -->
+      <div class="container mx-auto px-4 py-4">
+        <Breadcrumbs 
+          items={[
+            { label: "Servicios", href: "/servicios/" },
+            { label: "Pintura Interior" }
+          ]} 
+          client:load 
+        />
+      </div>
+
+      <!-- Hero Content -->
+      <div class="container mx-auto px-4 pb-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <!-- Left side - Content -->
           <div>
-            <!-- Badges -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
-                Materiales premium
-              </span>
-              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
-                Garantía 3 años
-              </span>
-            </div>
-            
             <!-- Title -->
             <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pintura interior de viviendas</h1>
             
             <!-- Subtitle -->
-            <p class="text-xl text-gray-700 mb-6">Pintamos tu hogar con los mejores materiales y acabados profesionales</p>
+            <p class="text-xl text-gray-700 mb-6">Pintamos tu hogar con los mejores materiales y acabados profesionales en Valencia</p>
             
             <!-- Price -->
             <div class="mb-6">
@@ -137,147 +132,189 @@ const faqSchema = {
               </div>
             </div>
           </div>
-          
+
           <!-- Right side - Image -->
-          <div class="order-first lg:order-last">
-            <div class="relative rounded-2xl overflow-hidden shadow-xl">
-              <img src="/src/assets/pintura-interior-valencia.jpg" alt="Pintura interior Valencia" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+          <div class="lg:order-last">
+            <div class="relative">
+              <img src="/src/assets/pintura-interior-valencia.jpg" alt="Pintura interior profesional en Valencia - Acabados perfectos con materiales premium" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Problem/Solution Boxes -->
-    <section class="py-12">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Problem Box -->
-          <div class="bg-red-50 border border-red-200 rounded-lg p-6">
-            <h2 class="text-xl font-bold text-red-900 mb-4">Problemas comunes</h2>
-            <ul class="space-y-2">
-              <li class="flex items-start space-x-2">
-                <span class="text-red-500 mt-1">•</span>
-                <span class="text-red-800">Paredes desconchadas</span>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="text-red-500 mt-1">•</span>
-                <span class="text-red-800">Colores anticuados</span>
-              </li>
-              <li class="flex items-start space-x-2">
-                <span class="text-red-500 mt-1">•</span>
-                <span class="text-red-800">Trabajos mal hechos</span>
-              </li>
-            </ul>
-          </div>
-          
-          <!-- Solution Box -->
-          <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-            <h2 class="text-xl font-bold text-green-900 mb-4">Nuestra solución</h2>
-            <ul class="space-y-2">
-              <li class="flex items-start space-x-2">
-                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-green-800">Preparación completa</span>
-              </li>
-              <li class="flex items-start space-x-2">
-                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-green-800">Colores modernos</span>
-              </li>
-              <li class="flex items-start space-x-2">
-                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="text-green-800">Acabado profesional</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="py-12 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Proceso</h2>
-        <ol class="grid md:grid-cols-2 gap-3 list-decimal ml-6 text-gray-700 max-w-4xl mx-auto">
-          <li class="mb-2">Preparación de superficies</li>
-          <li class="mb-2">Imprimación de calidad</li>
-          <li class="mb-2">Aplicación de pintura</li>
-          <li class="mb-2">Acabados y limpieza</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Prose Section -->
-    <section class="container mx-auto px-4 prose lg:prose-lg max-w-none mb-12">
-      <div class="py-12">
-        <div class="container mx-auto px-4">
-          <h2 class="text-2xl font-bold mb-6">Pintura interior profesional en Valencia</h2>
-          <p class="mb-4">
-            Ofrecemos servicios completos de pintura interior en Valencia con más de 15 años de experiencia. 
-            Trabajamos con las mejores marcas de pintura y ofrecemos asesoramiento personalizado en colores y acabados.
-          </p>
-          <p class="mb-6">
-            Nuestro proceso incluye preparación completa de superficies, imprimación de calidad y aplicación 
-            de 2-3 manos de pintura según las necesidades de cada proyecto. Garantizamos un acabado perfecto y duradero.
-          </p>
-          <h3 class="text-xl font-semibold mb-4">Qué incluye nuestro servicio</h3>
-          <ul class="list-disc pl-6 mb-6">
-            <li>Pinturas premium (Bruguer, Titan, Montó)</li>
-            <li>Asesoramiento en colores gratuito</li>
-            <li>Preparación completa incluida</li>
-            <li>Garantía de 3 años en el trabajo</li>
-            <li>Limpieza y protección de muebles</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-12">
+    <!-- Precio y condiciones -->
+    <section class="py-12 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
-          <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
-          <div class="bg-white border rounded-lg overflow-hidden">
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Qué marcas de pintura utilizáis?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Trabajamos con marcas premium como Bruguer, Titan y Montó. Todas con certificación de calidad y respeto medioambiental.
-              </div>
-            </details>
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Cuánto tiempo tarda el trabajo?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Una vivienda de 80-100m² normalmente tarda 3-5 días, dependiendo del estado de las paredes y el número de colores.
-              </div>
-            </details>
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Me ayudáis a elegir colores?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Sí, ofrecemos asesoramiento gratuito en colores. Llevamos muestrarios y te ayudamos a elegir la mejor opción.
-              </div>
-            </details>
-            <details class="border-b border-gray-200 last:border-b-0">
-              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
-                ¿Protegéis los muebles?
-              </summary>
-              <div class="px-4 pb-4 text-gray-700">
-                Por supuesto. Cubrimos y protegemos todos los muebles, suelos y elementos que no se vayan a pintar.
-              </div>
-            </details>
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Precio y condiciones
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Presupuesto transparente desde 12€/m² con materiales incluidos
+            </p>
+          </div>
+          
+          <div class="space-y-6 text-gray-700">
+            <p class="text-lg leading-relaxed">
+              El coste final depende del tipo de pintura, el estado de las paredes y los metros de la vivienda. 
+              En todos los casos ofrecemos un presupuesto cerrado y transparente, sin sorpresas.
+            </p>
+            
+            <p class="text-lg leading-relaxed">
+              Utilizamos pinturas de primeras marcas como Bruguer, Titan y Montó, garantizando un acabado perfecto y duradero. 
+              Incluimos imprimación, dos manos de pintura y limpieza completa posterior.
+            </p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Nuestro proceso paso a paso -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Nuestro proceso paso a paso
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Trabajamos con técnica profesional para garantizar los mejores resultados
+          </p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto">
+          <div class="space-y-6">
+            <!-- Paso 1 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                1
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Protección inicial</h3>
+                <p class="text-gray-700">Protegemos suelos y muebles con papel y plásticos profesionales para evitar cualquier salpicadura.</p>
+              </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                2
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Preparación de superficie</h3>
+                <p class="text-gray-700">Lijamos y reparamos imperfecciones, aplicamos masilla donde sea necesario para conseguir una superficie perfecta.</p>
+              </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                3
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Imprimación</h3>
+                <p class="text-gray-700">Aplicamos imprimación de calidad para garantizar una adherencia perfecta y uniformidad del color final.</p>
+              </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                4
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Primera mano de pintura</h3>
+                <p class="text-gray-700">Aplicamos la primera capa de pintura con técnica profesional, asegurando cobertura uniforme.</p>
+              </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                5
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Segunda mano y acabado</h3>
+                <p class="text-gray-700">Aplicamos la segunda mano para conseguir el acabado perfecto y realizamos retoques finales si es necesario.</p>
+              </div>
+            </div>
+
+            <!-- Paso 6 -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                6
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2">Limpieza final</h3>
+                <p class="text-gray-700">Retiramos todas las protecciones y realizamos una limpieza completa, dejando tu hogar impecable.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Contact Section -->
+    <section class="py-12 bg-blue-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas pintar tu casa?</h2>
+        <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+            Pedir presupuesto gratis
+          </a>
+          <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            722 208 131
+          </a>
+        </div>
+      </div>
+    </section>
+            <span>+34 722 208 131</span>
+          </a>
+        </div>
+      </div>
+    </section>    <!-- FAQ -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Preguntas frecuentes
+          </h2>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Qué marcas de pintura utilizáis?
+            </h3>
+            <p class="text-gray-600">
+              Trabajamos con marcas premium como Bruguer, Titan y Montó. Todas con certificación de calidad y respeto medioambiental.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">¿Cuánto tiempo tarda el trabajo?</h3>
+            <p class="text-gray-600">
+              Una vivienda de 80-100m² normalmente tarda 3-5 días, dependiendo del estado de las paredes y el número de colores.
+            </p>
+          </div>
+
+          <div class="bg-white border rounded-lg p-6 shadow-sm">
+            <h3 class="font-semibold mb-2 text-gray-900">
+              ¿Me ayudáis a elegir colores?
+            </h3>
+            <p class="text-gray-600">
+              Sí, ofrecemos asesoramiento gratuito en colores. Llevamos muestrarios y te ayudamos a elegir la mejor opción.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 </SiteLayout>
