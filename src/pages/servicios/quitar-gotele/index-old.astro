@@ -1,0 +1,310 @@
+﻿---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://pintores-valencia.com/#business",
+  "name": "Pintores en Valencia",
+  "url": "https://pintores-valencia.com",
+  "image": "https://pintores-valencia.com/og-home.webp",
+  "telephone": "+34722208131",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressRegion": "Comunitat Valenciana",
+    "postalCode": "46000",
+    "addressCountry": "ES"
+  },
+  "openingHours": ["Mo-Sa 08:00-20:00"],
+  "priceRange": "€€",
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Valencia"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿El proceso de quitar gotelé genera mucho polvo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, utilizamos técnicas especializadas con herramientas que minimizan el polvo. Protegemos todo el mobiliario y mantenemos el espacio limpio durante todo el trabajo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda en eliminarse el gotelé?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del tamaño, pero una habitación estándar de 15m² se completa en 1-2 días. Un piso completo puede tardar 4-6 días laborables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué garantía ofrecéis en el alisado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede pintar directamente después del alisado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, dejamos la superficie perfectamente preparada para pintar. Recomendamos esperar 24h antes de aplicar la primera capa de pintura."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué materiales utilizáis para el alisado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilizamos masilla de alta calidad y pinturas de preparación premium. Todos nuestros materiales están incluidos en el precio del servicio."
+      }
+    }
+  ]
+};
+---
+
+<SiteLayout 
+  title="Quitar gotelé en Valencia | Paredes lisas, sin polvo y listas para pintar"
+  description="Retiramos el gotelé en Valencia con métodos profesionales. Precios por m², plazos reales, control de polvo, limpieza y garantía. Presupuesto gratis en 24 h."
+  keywords="quitar gotele valencia, alisar paredes valencia, eliminar gotele"
+  canonical="https://pintores-valencia.com/servicios/quitar-gotele/"
+  schema={[localBusinessSchema, faqSchema]}
+  ogImage="/og-home.webp"
+>
+  <main class="flex-1">
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-4 py-4">
+      <Breadcrumbs 
+        items={[
+          { label: "Servicios", href: "/servicios/" },
+          { label: "Quitar Gotelé" }
+        ]} 
+        client:load 
+      />
+    </div>
+
+    <!-- Hero Section -->
+    <section class="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <!-- Left side - Content -->
+          <div>
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
+                Servicio especializado
+              </span>
+              <span class="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-medium shadow-sm border border-gray-100">
+                Sin polvo
+              </span>
+            </div>
+            
+            <!-- Title -->
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Quitar gotelé en Valencia</h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl text-gray-700 mb-6">Eliminamos el gotelé y dejamos tus paredes lisas, sin polvo y listas para pintar.</p>
+            
+            <!-- Price -->
+            <div class="mb-6">
+              <span class="text-2xl font-bold text-accent">desde 18€/m² <span class="text-sm text-gray-500 font-normal">Material incluido</span></span>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center">
+                Presupuesto Gratis
+              </a>
+              <a href="tel:+34722208131" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center gap-2">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                722 208 131
+              </a>
+            </div>
+            
+            <!-- Features -->
+            <div class="space-y-2">
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Sin polvo</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Rápido</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Garantía 3 años</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Right side - Image -->
+          <div class="order-first lg:order-last">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl">
+              <img src="/src/assets/errores-pintar-paredes-mujer.jpg" alt="Quitar gotelé en Valencia" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem/Solution Boxes -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Problem Box -->
+          <div class="bg-red-50 border border-red-200 rounded-lg p-6">
+            <h2 class="text-xl font-bold text-red-900 mb-4">El problema del gotelé</h2>
+            <ul class="space-y-2">
+              <li class="flex items-start space-x-2">
+                <span class="text-red-500 mt-1">•</span>
+                <span class="text-red-800">Aspecto anticuado</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-500 mt-1">•</span>
+                <span class="text-red-800">Acumula polvo</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <span class="text-red-500 mt-1">•</span>
+                <span class="text-red-800">Dificulta la limpieza</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Solution Box -->
+          <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+            <h2 class="text-xl font-bold text-green-900 mb-4">Nuestra solución</h2>
+            <ul class="space-y-2">
+              <li class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-green-800">Eliminación completa sin polvo</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-green-800">Alisado perfecto</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-green-800">Acabado listo para pintar</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Proceso</h2>
+        <ol class="grid md:grid-cols-2 gap-3 list-decimal ml-6 text-gray-700 max-w-4xl mx-auto">
+          <li class="mb-2">Protección de mobiliario</li>
+          <li class="mb-2">Eliminación del gotelé</li>
+          <li class="mb-2">Alisado de superficies</li>
+          <li class="mb-2">Limpieza final</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Prose Section -->
+    <section class="container mx-auto px-4 prose lg:prose-lg max-w-none mb-12">
+      <div class="py-12">
+        <div class="container mx-auto px-4">
+          <h2 class="text-2xl font-bold mb-6">¿Por qué eliminar el gotelé?</h2>
+          <p class="mb-4">
+            El gotelé fue muy popular en décadas pasadas, pero hoy en día se considera anticuado 
+            y presenta varios inconvenientes para el mantenimiento del hogar.
+          </p>
+          <p class="mb-6">
+            Nuestro servicio especializado de eliminación de gotelé utiliza técnicas avanzadas 
+            que no generan polvo, manteniendo su hogar limpio durante todo el proceso.
+          </p>
+          <h3 class="text-xl font-semibold mb-4">Ventajas de eliminar el gotelé</h3>
+          <ul class="list-disc pl-6 mb-6">
+            <li>Aspecto moderno y actualizado</li>
+            <li>Facilita la limpieza y mantenimiento</li>
+            <li>Permite aplicar cualquier tipo de pintura</li>
+            <li>Aumenta el valor de la propiedad</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
+          <div class="bg-white border rounded-lg overflow-hidden">
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿El proceso de quitar gotelé genera mucho polvo?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                No, utilizamos técnicas especializadas con herramientas que minimizan el polvo. Protegemos todo el mobiliario y mantenemos el espacio limpio durante todo el trabajo.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Cuánto tiempo tarda en eliminarse el gotelé?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Depende del tamaño, pero una habitación estándar de 15m² se completa en 1-2 días. Un piso completo puede tardar 4-6 días laborables.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Qué garantía ofrecéis en el alisado?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Ofrecemos 3 años de garantía en el alisado. Si aparecen grietas o desperfectos por nuestro trabajo, los reparamos sin coste adicional.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Se puede pintar directamente después del alisado?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Sí, dejamos la superficie perfectamente preparada para pintar. Recomendamos esperar 24h antes de aplicar la primera capa de pintura.
+              </div>
+            </details>
+            <details class="border-b border-gray-200 last:border-b-0">
+              <summary class="p-4 cursor-pointer hover:bg-gray-50 font-semibold text-gray-900">
+                ¿Qué materiales utilizáis para el alisado?
+              </summary>
+              <div class="px-4 pb-4 text-gray-700">
+                Utilizamos masilla de alta calidad y pinturas de preparación premium. Todos nuestros materiales están incluidos en el precio del servicio.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</SiteLayout>
