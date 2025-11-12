@@ -53,16 +53,14 @@ const Blog = () => {
         title="Blog de Pintura - Consejos, Precios y Trucos | Pintores Valencia"
         description="Guías de precios, consejos profesionales y trucos para pintar. Información actualizada sobre pintura interior, exterior, gotelé e impermeabilización en Valencia."
         keywords="blog pintura valencia, precios pintura, consejos pintar casa, quitar gotele precio, impermeabilizar terraza"
-        canonicalUrl="https://pintores-valencia.com/blog"
+  canonicalUrl="https://pintores-valencia.com/blog"
       />
 
       <div className="min-h-screen bg-background">
         {/* Breadcrumbs */}
         <div className="container mx-auto px-4">
           <Breadcrumbs 
-            items={[
-              { label: "Blog" }
-            ]} 
+            items={[{ label: "Blog" }]} 
           />
         </div>
 
@@ -111,7 +109,7 @@ const Blog = () => {
                         size="sm"
                         className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
                       >
-                        <a href={`/blog/${category.slug}`}>Ver artículos</a>
+                        <a href={`/blog/${category.slug}/`}>Ver artículos</a>
                       </Button>
                     </CardContent>
                   </Card>
@@ -243,7 +241,7 @@ const Blog = () => {
                     </div>
 
                     <a
-                      href={`/blog/${post.slug}`}
+                        href={`/blog/${post.slug}`}
                       className="inline-flex items-center space-x-2 text-accent hover:text-accent/80 font-medium transition-colors text-sm"
                     >
                       <span>Leer más</span>

@@ -30,7 +30,7 @@ Sigue estos pasos para alisar las paredes de gotelé de manera efectiva:
 3. **Lijado**: Después de que la pasta se haya secado, lija la superficie para obtener un acabado suave.
 4. **Imprimación y pintura**: Una vez que la pared esté alisada, aplica una capa de imprimación y luego pinta con el color que desees.
 
-Si quieres conocer más sobre los materiales que necesitas, consulta nuestro artículo sobre [pasta para gotelé](/blogs/gotele/pasta-para-gotele/).
+Si quieres conocer más sobre los materiales que necesitas, consulta nuestro artículo sobre [pasta para gotelé](/blog/gotele/pasta-para-gotele/).
 
 ## Precios aproximados para alisar paredes de gotelé: ¿Vale la pena?
 
@@ -56,7 +56,7 @@ Para obtener un acabado de alta calidad, sigue estos consejos:
 2. **Aplica varias capas finas**: En lugar de aplicar una capa gruesa de pasta, aplica varias capas finas y lija entre capa y capa.
 3. **Limpieza de la superficie**: Asegúrate de que la superficie esté completamente limpia y libre de polvo antes de aplicar la pasta.
 
-Si estás considerando eliminar el gotelé en lugar de alisarlo, consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+Si estás considerando eliminar el gotelé en lugar de alisarlo, consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).
 
 ## ¿Listo para alisar tus paredes de gotelé? Pide tu presupuesto sin compromiso
 

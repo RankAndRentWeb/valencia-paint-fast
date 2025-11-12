@@ -14,9 +14,9 @@
     { "source": "/impermeabilizacion-terrazas-y-fachadas", "destination": "/servicios/impermeabilizacion/", "permanent": true },
     { "source": "/pintura-locales-comerciales", "destination": "/servicios/pintura-locales-comerciales/", "permanent": true },
     { "source": "/pintura-comunidades", "destination": "/servicios/pintura-comunidades/", "permanent": true },
-    { "source": "/blog", "destination": "/blogs/", "permanent": true },
-    { "source": "/blog/:category", "destination": "/blogs/:category/", "permanent": true },
-    { "source": "/blog/:category/:slug", "destination": "/blogs/:category/:slug/", "permanent": true },
+  { "source": "/blogs", "destination": "/blog/", "permanent": true },
+  { "source": "/blogs/:category", "destination": "/blog/:category/", "permanent": true },
+  { "source": "/blogs/:category/:slug", "destination": "/blog/:category/:slug/", "permanent": true },
     { "source": "/sitemap.xml", "destination": "/sitemap-index.xml", "permanent": true }
   ]
 }

@@ -48,7 +48,7 @@ El proceso de aplicar pasta para alisar paredes es bastante sencillo si sigues e
 
 El precio de las pastas para alisar paredes varía según la marca y la cantidad que necesites. En promedio, los precios rondan entre **15 €** y **30 €** por kilogramo. Ten en cuenta que el coste total también dependerá de la superficie que necesites cubrir. Si decides contratar a un profesional, los costos pueden variar dependiendo de la complejidad del trabajo.
 
-Si estás considerando eliminar el gotelé en lugar de alisarlo, consulta nuestra guía sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+Si estás considerando eliminar el gotelé en lugar de alisarlo, consulta nuestra guía sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).
 
 ## Pros y contras de usar pasta para alisar paredes
 

@@ -35,7 +35,7 @@ Existen varios métodos para quitar el gotelé, cada uno con sus ventajas y desv
 2. **Uso de productos químicos**: Los productos que disuelven el gotelé son rápidos y efectivos, pero pueden ser más caros y pueden requerir un mayor cuidado al aplicarlos.
 3. **Lijado**: Este método es rápido, pero puede generar mucho polvo y desorden. Además, es más costoso debido a la necesidad de equipos especializados.
 
-Si prefieres alisar tus paredes en lugar de quitar el gotelé, consulta nuestra guía sobre [cómo alisar paredes de gotelé](/blogs/gotele/como-alisar-paredes-gotele/).
+Si prefieres alisar tus paredes en lugar de quitar el gotelé, consulta nuestra guía sobre [cómo alisar paredes de gotelé](/blog/gotele/como-alisar-paredes-gotele/).
 
 ## ¿Vale la pena quitar el gotelé? Pros y contras
 

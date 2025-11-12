@@ -37,7 +37,7 @@ Las opiniones sobre Kitomasgota son variadas. Algunos usuarios afirman que el pr
 
 Si tienes gotelé en tus paredes y buscas una solución rápida y económica, **Kitomasgota** puede ser una buena opción. Sin embargo, es importante tener en cuenta que no es una solución perfecta para todos los casos. Si las paredes tienen gotelé grueso, puede que necesites realizar varias aplicaciones o buscar una opción más intensiva. En resumen, si buscas una opción sencilla y rápida, Kitomasgota puede funcionar bien, pero si necesitas resultados de alta calidad, puede que necesites considerar otras alternativas.
 
-Si prefieres eliminar el gotelé por completo, consulta nuestra guía sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+Si prefieres eliminar el gotelé por completo, consulta nuestra guía sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).
 
 ## Cómo aplicar Kitomasgota para obtener mejores resultados
 

@@ -45,7 +45,7 @@ Si estás considerando eliminar el gotelé, visita nuestra página sobre [cómo 
 - Es necesario contratar profesionales para obtener resultados óptimos.
 - Puede generar un desorden significativo durante el proceso de eliminación.
 
-¿No sabes si es el momento de quitar el gotelé? Consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+¿No sabes si es el momento de quitar el gotelé? Consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).
 
 ## ¿Listo para decir adiós al gotelé? Pide tu presupuesto sin compromiso
 

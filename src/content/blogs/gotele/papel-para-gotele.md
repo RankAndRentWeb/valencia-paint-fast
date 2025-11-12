@@ -47,7 +47,7 @@ Aunque el papel para gotelé es una solución práctica, también tiene algunas 
 
 El papel para gotelé es ideal para quienes buscan una solución rápida y económica para renovar sus paredes. Si no tienes tiempo ni presupuesto para eliminar el gotelé o alisar las paredes, el papel es una excelente opción. Sin embargo, si prefieres una solución más duradera y estética, podrías considerar otras opciones como el alisado de paredes.
 
-Si estás considerando eliminar el gotelé en lugar de cubrirlo, consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+Si estás considerando eliminar el gotelé en lugar de cubrirlo, consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).
 
 ## ¿Listo para aplicar papel para gotelé? Pide tu presupuesto sin compromiso
 

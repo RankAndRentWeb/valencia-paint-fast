@@ -12,18 +12,24 @@ export async function getStaticPaths() {
 }
 
 const { cat } = Astro.props;
-// Ajustar para que funcione igual mientras migramos a /blog/ (colección sigue siendo 'blogs')
 const posts = (await getCollection('blogs')).filter(p => p.slug.startsWith(cat.slug + "/"));
 ---
 
 <SiteLayout title={`${cat.name} - Blog de Pintura Valencia`} description={cat.description}>
-  <!-- Breadcrumbs (unificado con componente) -->
-  <section class="container mx-auto px-4 pt-6">
-  <Breadcrumbs items={[{ label: 'Blog', href: '/blog/' }, { label: cat.name }]} client:load />
-  </section>
+  <div class="container mx-auto px-4">
+    <Breadcrumbs items={[{ label: 'Blog', href: '/blog/' }, { label: cat.name }]} client:load />
 
-  <section class="container mx-auto px-4 pb-10">
-    <h1 class="text-3xl md:text-4xl font-bold mb-6">{cat.name}</h1>
+    <div class="py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">{cat.name}</h1>
+        {cat.description && (
+          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">{cat.description}</p>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <section class="container mx-auto px-4 pb-12">
     <div class="grid md:grid-cols-2 gap-6">
       {posts.map(p => {
         const [, slug] = p.slug.split("/");

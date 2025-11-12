@@ -36,7 +36,7 @@ Cuando solicites un presupuesto para alisar las paredes con gotelé, asegúrate 
 3. **Lijado final**: Después de que la pasta se seque, el lijado final es esencial para conseguir una superficie lisa.
 4. **Imprimación y pintura**: Algunos presupuestos incluyen la pintura, mientras que otros solo cubren el alisado de las paredes.
 
-Si decides quitar el gotelé en lugar de alisarlo, consulta nuestra guía sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+Si decides quitar el gotelé en lugar de alisarlo, consulta nuestra guía sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).
 
 ## ¿Vale la pena alisar las paredes con gotelé? Pros y contras
 

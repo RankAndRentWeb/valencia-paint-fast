@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, Calendar, ArrowRight } from "lucide-react";
+import { Clock, Calendar, ArrowRight, Hammer, Shield, Palette, Building, Brush } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { BlogPost, getPostsByCategory } from "@/lib/blogPosts";
@@ -31,13 +31,24 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
     });
   };
 
+  const categoryIcon = () => {
+    switch (category.slug) {
+      case 'gotele': return <Hammer className="w-8 h-8 text-primary" />;
+      case 'impermeabilizacion': return <Shield className="w-8 h-8 text-primary" />;
+      case 'colores-interior': return <Palette className="w-8 h-8 text-primary" />;
+      case 'fachadas-exterior': return <Building className="w-8 h-8 text-primary" />;
+      case 'barnices-madera': return <Brush className="w-8 h-8 text-primary" />;
+      default: return <Brush className="w-8 h-8 text-primary" />;
+    }
+  };
+
   return (
     <>
       <SEOHead
         title={`${category.name} - ${category.metaTitle || 'Artículos y Guías'} | Pintores Valencia`}
         description={category.metaDescription || category.description}
         keywords={`${category.name.toLowerCase()}, ${category.slug}, valencia, pintores`}
-        canonicalUrl={`https://pintores-valencia.com/blog/${category.slug}`}
+  canonicalUrl={`https://pintores-valencia.com/blog/${category.slug}`}
       />
 
       <div className="min-h-screen bg-background">
@@ -45,8 +56,8 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
         <div className="container mx-auto px-4">
           <Breadcrumbs 
             items={[
-              { label: "Blog", href: "/blog" },
-              { label: category.name, href: `/blog/${category.slug}` }
+                { label: "Blog", href: "/blog/" },
+                { label: category.name, href: `/blog/${category.slug}/` }
             ]} 
           />
         </div>
@@ -55,9 +66,12 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
         <section className="py-12 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                {category.name}
-              </h1>
+              <div className="flex items-center justify-center gap-3 mb-4">
+                {categoryIcon()}
+                <h1 className="text-4xl md:text-5xl font-bold">
+                  {category.name}
+                </h1>
+              </div>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
                 {category.description}
               </p>
@@ -132,7 +146,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                                 
                                 <div className="flex items-center gap-2">
                                   <a
-                                    to={`/blog/${post.slug}`}
+                                    href={`/blog/${post.slug}`}
                                     className="text-primary hover:text-primary/80 font-medium flex items-center gap-1"
                                   >
                                     Leer más <ArrowRight className="h-4 w-4" />
@@ -160,7 +174,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                       Próximamente habrá artículos sobre {category.name.toLowerCase()}.
                     </p>
                     <a
-                      to="/blog"
+                      href="/blog/"
                       className="text-primary hover:text-primary/80 font-medium"
                     >
                       Ver todos los artículos del blog
@@ -179,7 +193,7 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    to="/presupuesto"
+                    href="/presupuesto"
                     className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
                   >
                     Solicitar Presupuesto Gratis

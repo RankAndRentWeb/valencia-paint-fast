@@ -1,0 +1,23 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import { getCollection } from 'astro:content';
+import BlogPost from '@/components/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blogs');
+  return posts.map(entry => {
+    const [category, slug] = entry.slug.split('/');
+    return { params: { category, slug }, props: { entry } };
+  });
+}
+
+const { entry } = Astro.props;
+const catSlug = entry.slug.split('/')[0];
+const cat = (await getCollection('blogCategories')).find(c => c.data.slug === catSlug);
+const categoryName = cat?.data?.name ?? catSlug;
+const data = entry.data;
+---
+
+<SiteLayout title={`${data?.title || 'Blog'} - Pintores Valencia`} description={data?.description ?? data?.excerpt}>
+  <BlogPost {entry} {categoryName} />
+</SiteLayout>

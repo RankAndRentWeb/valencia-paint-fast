@@ -2,6 +2,7 @@
 import readingTime from "reading-time";
 import AdRail from "@/components/AdRail.astro";
 import AdInArticle from "@/components/AdInArticle.astro";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const { entry, categoryName } = Astro.props;
 const { Content } = await entry.render();
@@ -12,19 +13,23 @@ const rt = readingTime(entry.body ?? "");
 
 // Manejo seguro de la fecha
 const date = data.date ? new Date(data.date) : undefined;
+const catSlug: string = entry.slug.split("/")[0];
 ---
 
-<!-- Breadcrumbs -->
-<section class="container mx-auto px-4 pt-6">
-  <nav class="text-sm text-gray-500 mb-4">
-    <a href="/blogs/" class="hover:underline">Blog</a>
-    <span class="mx-1">›</span>
-    <a href={`/blogs/${entry.slug.split('/')[0]}/`} class="hover:underline">{categoryName}</a>
-  </nav>
-</section>
+<!-- Breadcrumbs (componente unificado, mismo diseño que Servicios) -->
+<div class="container mx-auto px-4">
+  <Breadcrumbs 
+    items={[
+      { label: "Blog", href: "/blog/" },
+      { label: categoryName, href: `/blog/${catSlug}/` },
+      { label: data.title }
+    ]}
+    client:load
+  />
+</div>
 
 <!-- GRID: rail izq | columna central | rail dcha -->
-<section class="container mx-auto px-4 pb-12 grid gap-6 xl:grid-cols-[300px_minmax(720px,760px)_300px] justify-center">
+<section class="container mx-auto px-4 py-12 grid gap-6 xl:grid-cols-[300px_minmax(720px,760px)_300px] justify-center">
   <AdRail slotId="1111111111" label="Publicidad" />
 
   <article class="mx-auto">
@@ -81,15 +86,15 @@ const date = data.date ? new Date(data.date) : undefined;
   "image": data.cover ? [data.cover] : undefined,
   "datePublished": date?.toISOString(),
   "author": {"@type":"Organization","name":"Pintores en Valencia"},
-  "mainEntityOfPage": `https://pintores-valencia.com/blogs/${entry.slug}/`
+  "mainEntityOfPage": `https://pintores-valencia.com/blog/${entry.slug}/`
 })} />
 
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context":"https://schema.org",
   "@type":"BreadcrumbList",
   "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Blog","item":"https://pintores-valencia.com/blogs/"},
-    {"@type":"ListItem","position":2,"name":categoryName,"item":`https://pintores-valencia.com/blogs/${entry.slug.split('/')[0]}/`},
+  {"@type":"ListItem","position":1,"name":"Blog","item":"https://pintores-valencia.com/blog/"},
+  {"@type":"ListItem","position":2,"name":categoryName,"item":`https://pintores-valencia.com/blog/${entry.slug.split('/')[0]}/`},
     {"@type":"ListItem","position":3,"name":data.title}
   ]
 })} />

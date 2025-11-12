@@ -59,4 +59,4 @@ Si crees que la pasta para gotelé es la solución ideal para tus paredes, ¡no 
 
 [Solicita tu presupuesto gratuito aquí](/presupuesto/) y descubre cómo podemos ayudarte a conseguir paredes lisas y perfectas.
 
-¿No sabes si es el momento de quitar el gotelé? Consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blogs/gotele/como-quitar-gotele-paredes/).
+¿No sabes si es el momento de quitar el gotelé? Consulta nuestro artículo sobre [cómo quitar gotelé fácilmente](/blog/gotele/como-quitar-gotele-paredes/).

@@ -35,7 +35,7 @@ A continuación te mostramos los pasos básicos para quitar el gotelé de tus pa
 4. **Reparaciones**: Si quedan huecos o imperfecciones, utiliza una pasta de reparación para nivelar la pared.
 5. **Imprimación y pintura**: Aplica una capa de imprimación antes de pintar la pared con el color deseado.
 
-Si estás buscando una opción más económica, consulta nuestra guía sobre [cómo alisar paredes de gotelé](/blogs/gotele/como-alisar-paredes-gotele/).
+Si estás buscando una opción más económica, consulta nuestra guía sobre [cómo alisar paredes de gotelé](/blog/gotele/como-alisar-paredes-gotele/).
 
 ## Herramientas necesarias para quitar el gotelé de manera eficiente
 

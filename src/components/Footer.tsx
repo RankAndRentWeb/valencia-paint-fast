@@ -27,7 +27,7 @@ export default function SiteFooter() {
             <ul className="space-y-2 text-sm">
               <li><a href="/" className="text-blue-100 hover:text-white transition-colors">Inicio</a></li>
               <li><a href="/servicios/" className="text-blue-100 hover:text-white transition-colors">Servicios</a></li>
-              <li><a href="/blogs/" className="text-blue-100 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="/blog/" className="text-blue-100 hover:text-white transition-colors">Blog</a></li>
               <li><a href="/precios/" className="text-blue-100 hover:text-white transition-colors">Precios</a></li>
               <li><a href="/contacto/" className="text-blue-100 hover:text-white transition-colors">Contacto</a></li>
             </ul>
