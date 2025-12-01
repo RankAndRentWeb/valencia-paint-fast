@@ -68,10 +68,16 @@ const faqSchema = {
   ogImage="/og-home.webp"
 >
   <main class="flex-1">
+    <!-- Fondo global uniforme -->
+    <style>
+      :global(body){background-color:#f1f5f9;} /* slate-50 */
+      :global(footer){background:transparent;}
+    </style>
+
     <!-- Breadcrumbs and Hero Section -->
-    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
-      <!-- Breadcrumbs -->
+    <section class="py-0"> <!-- eliminado bg-gradient -->
       <div class="container mx-auto px-4 py-4">
+        <!-- Breadcrumbs -->
         <Breadcrumbs 
           items={[
             { label: "Servicios", href: "/servicios/" },
@@ -80,8 +86,6 @@ const faqSchema = {
           client:load 
         />
       </div>
-
-      <!-- Hero Content -->
       <div class="container mx-auto px-4 pb-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <!-- Left side - Content -->
@@ -133,9 +137,9 @@ const faqSchema = {
             </div>
           </div>
 
-          <!-- Right side - Image -->
-          <div class="lg:order-last">
-            <div class="relative">
+
+          <div class="order-first lg:order-last">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl">
               <img src="/src/assets/pintura-interior-valencia.jpg" alt="Pintura interior profesional en Valencia - Acabados perfectos con materiales premium" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
@@ -144,7 +148,7 @@ const faqSchema = {
     </section>
 
     <!-- Precio y condiciones -->
-    <section class="py-12 bg-white">
+    <section class="py-12"> <!-- eliminado bg-white -->
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
           <div class="text-center mb-12">
@@ -172,7 +176,7 @@ const faqSchema = {
     </section>
 
     <!-- Nuestro proceso paso a paso -->
-    <section class="py-12 bg-gray-100">
+    <section class="py-12"> <!-- eliminado bg-gray-100 -->
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -255,31 +259,32 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- CTA Contact Section -->
-    <section class="py-12 bg-blue-600 text-white">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas pintar tu casa?</h2>
-        <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
-            Pedir presupuesto gratis
-          </a>
-          <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-            </svg>
-            722 208 131
-          </a>
+    <!-- CTA Contact Section (mismo diseño que 'Precio y condiciones') -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">¿Necesitas pintar tu casa?</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Te respondemos en menos de 24 horas</p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+              Pedir presupuesto gratis
+            </a>
+            <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-blue-600 hover:bg-blue-700 focus:ring-blue-300 text-white shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+              722 208 131
+            </a>
+          </div>
         </div>
       </div>
     </section>
-            <span>+34 722 208 131</span>
-          </a>
-        </div>
-      </div>
-    </section>    <!-- FAQ -->
-    <section class="py-12 bg-white">
+
+    <!-- FAQ -->
+    <section class="py-12"> <!-- eliminado bg-white -->
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
@@ -315,6 +320,5 @@ const faqSchema = {
         </div>
       </div>
     </section>
-
   </main>
 </SiteLayout>

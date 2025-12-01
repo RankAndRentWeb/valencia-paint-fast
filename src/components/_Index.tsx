@@ -1,4 +1,16 @@
-// src/pages/Index.tsx
+/* 
+---
+title: "Cómo quitar el gotelé paso a paso (Guía profesional en Valencia)"
+excerpt: "Aprende cómo quitar el gotelé y dejar las paredes lisas. Guía completa con métodos, herramientas y precios reales en Valencia."
+categorySlug: "gotele"
+postSlug: "como-quitar-gotele-paredes"
+cover: "/assets/blog/como-quitar-gotele.jpg"
+date: "2025-09-30"
+tags: ["quitar gotelé", "alisar paredes", "gotelé Valencia", "pintores Valencia"]
+description: "Guía profesional para quitar gotelé paso a paso. Descubre métodos, herramientas, precios reales en Valencia y cuándo es mejor contratar a un pintor especializado."
+---
+*/
+
 import SEOHead from "@/components/SEOHead";
 
 import { Button } from "@/components/ui/button";
@@ -194,7 +206,8 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
     },
   ];
 
-  const homeTitle = "Pintores en Valencia · Presupuesto 24h | Garantía";
+  // Meta Title actualizado según solicitud
+  const homeTitle = "Pintores en Valencia | Pintura de pisos, fachadas y gotelé (Presupuesto 24h)";
   const homeDesc =
     "Empresa de pintores profesionales en Valencia. Presupuesto en 24h, limpieza incluida, seguro RC y garantía escrita. ☎️ 722 208 131";
   const homeCanon = "https://pintores-valencia.com";
@@ -294,11 +307,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Nuestros servicios
+              Nuestros Servicios en Valencia
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ofrecemos una amplia gama de servicios de pintura profesional en
-              Valencia
+              Ofrecemos una amplia gama de servicios de pintura profesional en Valencia. Calidad garantizada y materiales de primera en todos nuestros trabajos.
             </p>
           </div>
 
@@ -399,7 +411,7 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
         </div>
       </section>
 
-      {/* Services Highlight Section */}
+      {/* Services Highlight Section (restaurado) */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
             {/* Título de la sección */}
@@ -476,7 +488,7 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
               className="flex items-center space-x-2"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
-              <span>+34 722 208 131</span>
+              <span>722 208 131</span>
             </CustomButton>
           </div>
         </div>

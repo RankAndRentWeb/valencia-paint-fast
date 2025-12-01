@@ -1,4 +1,9 @@
 ---
+// Los “blogs” están dentro de /src/content porque Astro usa Content Collections.
+// Esto permite: validación de frontmatter (schemas), carga tipada con getCollection(),
+// generación de rutas estáticas y filtrado fácil por slug.
+// getCollection('blogs') obtiene todos los documentos de la colección “blogs”,
+// y luego filtramos por slug que empieza con la categoría (cat.slug + "/").
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
 import { getCollection } from 'astro:content';

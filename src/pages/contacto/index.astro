@@ -1,6 +1,6 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
-import Contacto from '../../components/_Contacto.tsx';
+import Breadcrumbs from '../../components/Breadcrumbs.tsx';
 ---
 
 <SiteLayout 
@@ -8,5 +8,85 @@ import Contacto from '../../components/_Contacto.tsx';
   description="Contacta con nuestro equipo de pintores en Valencia. Solicita presupuesto gratis. Tel: 722 208 131. Atendemos toda Valencia y provincia."
   keywords="contacto pintores valencia, telefono pintor valencia, presupuesto pintura"
 >
-  <Contacto client:load />
+  <main>
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+      <div class="container mx-auto px-4">
+        <Breadcrumbs items={[{ label: "Contacto" }]} client:load />
+    
+
+        <div class="py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Llámanos o escríbenos ahora
+        </h1>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Presupuesto gratuito en menos de 24 horas. Servicio profesional en toda Valencia.
+        </p>
+      </div>
+        <!-- Contenido: acciones + formulario -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Bloque izquierdo -->
+          <div class="space-y-8">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="https://wa.me/34722208131" aria-label="Contactar por WhatsApp" class="h-11 px-6 rounded-md bg-green-500 hover:bg-green-600 text-white font-semibold shadow inline-flex items-center justify-center gap-2 transition">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M.057 11.95C.057 5.355 5.456 0 12.114 0c3.233 0 6.188 1.25 8.436 3.515 2.25 2.27 3.498 5.255 3.498 8.447 0 6.596-5.4 11.952-12.057 11.952-2.09 0-4.132-.522-5.94-1.515L0 24l1.627-5.313A11.86 11.86 0 0 1 .057 11.95Z"/>
+                </svg>
+                WhatsApp
+              </a>
+              <a href="tel:+34722208131" aria-label="Llamar ahora" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow inline-flex items-center justify-center gap-2 transition">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                Llamar ahora
+              </a>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center justify-center w-5 h-5 bg-green-500 text-white rounded-full text-xs font-bold">✓</span>
+                <span class="text-gray-700">Respuesta en menos de 24 horas</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center justify-center w-5 h-5 bg-green-500 text-white rounded-full text-xs font-bold">✓</span>
+                <span class="text-gray-700">Limpieza incluida</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center justify-center w-5 h-5 bg-green-500 text-white rounded-full text-xs font-bold">✓</span>
+                <span class="text-gray-700">Garantía escrita</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center justify-center w-5 h-5 bg-green-500 text-white rounded-full text-xs font-bold">✓</span>
+                <span class="text-gray-700">Materiales premium</span>
+              </div>
+            </div>
+
+            <p class="text-sm text-gray-500">Email: info@pintores-valencia.com</p>
+          </div>
+
+          <!-- Formulario -->
+          <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <form action="/presupuesto/" method="POST" class="space-y-5" id="form-contacto">
+              <div>
+                <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                <input id="nombre" name="nombre" type="text" required class="w-full rounded-md border border-gray-300 focus:border-blue-600 focus:ring-blue-600 px-3 py-2" placeholder="Tu nombre" />
+              </div>
+              <div>
+                <label for="telefono" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" required class="w-full rounded-md border border-gray-300 focus:border-blue-600 focus:ring-blue-600 px-3 py-2" placeholder="+34 6XX XXX XXX" />
+              </div>
+              <div>
+                <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Tu mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required class="w-full rounded-md border border-gray-300 focus:border-blue-600 focus:ring-blue-600 px-3 py-2 resize-none" placeholder="Cuéntanos qué necesitas pintar"></textarea>
+              </div>
+              <button type="submit" class="w-full inline-flex items-center justify-center rounded-md bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 text-lg shadow-md hover:shadow-lg transition">
+                Pedir presupuesto 24h
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
 </SiteLayout>

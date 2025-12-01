@@ -46,193 +46,91 @@ const Contacto = () => {
 
       <div className="container mx-auto px-4">
         <Breadcrumbs items={[{ label: "Contacto" }]} />
-        
-        <div className="py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Contacta con nosotros
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Estamos aquí para ayudarte. Contáctanos por teléfono, WhatsApp, email o 
-              rellena el formulario para un presupuesto personalizado.
-            </p>
+
+        <div className="py-8">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">Contacta con nosotros</h1>
+            <p className="text-base text-muted-foreground">Teléfono, WhatsApp o formulario — respuesta &lt; 24h.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <Card className="bg-gradient-hero text-primary-foreground">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold mb-6">Información de contacto</h2>
-                  
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-accent rounded-lg">
-                        <Phone className="w-6 h-6 text-accent-foreground" />
-                      </div>
+          <Card className="shadow-sm">
+            <CardContent className="p-6">
+              <div className="grid md:grid-cols-2 gap-6 items-start">
+                {/* Columna izquierda: canales compactos */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="p-2 rounded-md bg-blue-50 text-blue-600"><Phone className="w-5 h-5"/></span>
                       <div>
-                        <h3 className="font-semibold mb-1">Teléfono</h3>
-                        <p className="text-primary-foreground/90 mb-2">
-                          Llámanos directamente para consultas urgentes
-                        </p>
-                        <Button asChild className="bg-white hover:bg-blue-500 text-blue-500 hover:text-white border border-blue-500 transition-colors">
-                          <a href="tel:+34722208131" className="flex items-center space-x-2">
-                            <Phone className="w-4 h-4" />
-                            <span>722 208 131</span>
-                          </a>
-                        </Button>
+                        <div className="font-medium leading-tight">Teléfono</div>
+                        <div className="text-sm text-muted-foreground">Consultas urgentes y coordinación</div>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-green-500 rounded-lg">
-                        <MessageCircle className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">WhatsApp</h3>
-                        <p className="text-primary-foreground/90 mb-2">
-                          Envíanos fotos y recibe presupuesto rápido
-                        </p>
-                        <Button asChild className="bg-green-500 hover:bg-green-600 text-white">
-                          <a href="https://wa.me/34722208131" className="flex items-center space-x-2">
-                            <MessageCircle className="w-4 h-4" />
-                            <span>Abrir WhatsApp</span>
-                          </a>
-                        </Button>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-accent rounded-lg">
-                        <Mail className="w-6 h-6 text-accent-foreground" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">Email</h3>
-                        <p className="text-primary-foreground/90 mb-2">
-                          Para consultas detalladas y presupuestos
-                        </p>
-                        <a 
-                          href="mailto:info@pintores-valencia.com"
-                          className="text-accent hover:underline break-all"
-                        >
-                          info@pintores-valencia.com
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-accent rounded-lg">
-                        <MapPin className="w-6 h-6 text-accent-foreground" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">Zona de trabajo</h3>
-                        <p className="text-primary-foreground/90">
-                          Valencia capital y provincia
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-accent rounded-lg">
-                        <Clock className="w-6 h-6 text-accent-foreground" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-1">Horario</h3>
-                        <p className="text-primary-foreground/90">
-                          Lunes a Sábado: 8:00 - 20:00
-                        </p>
-                        <p className="text-sm text-primary-foreground/70">
-                          Emergencias: 24/7
-                        </p>
-                      </div>
-                    </div>
+                    <a href="tel:+34722208131" className="text-blue-600 font-medium hover:underline">722 208 131</a>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
 
-            {/* Contact Form */}
-            <div>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Solicita tu presupuesto gratuito</CardTitle>
-                  <p className="text-muted-foreground">
-                    Rellena el formulario y te contactaremos en menos de 24 horas
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="nombre">Nombre completo *</Label>
-                      <Input
-                        id="nombre"
-                        name="nombre"
-                        value={formData.nombre}
-                        onChange={handleChange}
-                        required
-                        placeholder="Tu nombre y apellidos"
-                      />
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="p-2 rounded-md bg-green-50 text-green-600"><MessageCircle className="w-5 h-5"/></span>
+                      <div>
+                        <div className="font-medium leading-tight">WhatsApp</div>
+                        <div className="text-sm text-muted-foreground">Envíanos fotos y medidas</div>
+                      </div>
                     </div>
+                    <a href="https://wa.me/34722208131" target="_blank" rel="noopener" className="text-green-600 font-medium hover:underline">Abrir chat</a>
+                  </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="telefono">Teléfono *</Label>
-                      <Input
-                        id="telefono"
-                        name="telefono"
-                        type="tel"
-                        value={formData.telefono}
-                        onChange={handleChange}
-                        required
-                        placeholder="Tu número de teléfono"
-                      />
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="p-2 rounded-md bg-orange-50 text-orange-600"><Mail className="w-5 h-5"/></span>
+                      <div>
+                        <div className="font-medium leading-tight">Email</div>
+                        <div className="text-sm text-muted-foreground">Consultas detalladas</div>
+                      </div>
                     </div>
+                    <a href="mailto:info@pintores-valencia.com" className="text-orange-600 font-medium hover:underline break-all">info@pintores-valencia.com</a>
+                  </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="tu@email.com"
-                      />
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <span className="p-2 rounded-md bg-violet-50 text-violet-600"><MapPin className="w-5 h-5"/></span>
+                      <div>
+                        <div className="font-medium leading-tight">Zona</div>
+                        <div className="text-sm text-muted-foreground">Valencia y provincia</div>
+                      </div>
                     </div>
+                    <span className="text-xs text-muted-foreground">Horarios: L-S 8:00-20:00</span>
+                  </div>
+                </div>
 
-                    <div className="space-y-2">
-                      <Label htmlFor="mensaje">Cuéntanos tu proyecto *</Label>
-                      <Textarea
-                        id="mensaje"
-                        name="mensaje"
-                        value={formData.mensaje}
-                        onChange={handleChange}
-                        required
-                        placeholder="Describe qué necesitas: tipo de trabajo, metros cuadrados, zona, etc."
-                        rows={5}
-                      />
+                {/* Columna derecha: formulario compacto */}
+                <div>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <Label htmlFor="nombre">Nombre *</Label>
+                        <Input id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required placeholder="Ej: Laura Martínez" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <Label htmlFor="telefono">Teléfono *</Label>
+                        <Input id="telefono" name="telefono" type="tel" value={formData.telefono} onChange={handleChange} required placeholder="Ej: 722 000 000" />
+                      </div>
+                      <div className="space-y-1.5 md:col-span-2">
+                        <Label htmlFor="email">Email (opcional)</Label>
+                        <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="tucorreo@email.com" />
+                      </div>
+                      <div className="space-y-1.5 md:col-span-2">
+                        <Label htmlFor="mensaje">Mensaje *</Label>
+                        <Textarea id="mensaje" name="mensaje" value={formData.mensaje} onChange={handleChange} required rows={5} placeholder="Cuéntanos brevemente qué necesitas" />
+                      </div>
                     </div>
-
-                    <div className="text-xs text-muted-foreground">
-                      Al enviar este formulario aceptas que te contactemos para ofrecerte 
-                      un presupuesto personalizado. Tus datos están protegidos según la LOPD.
-                    </div>
-
-                    <Button type="submit" className="w-full bg-gradient-cta shadow-cta">
-                      Enviar solicitud de presupuesto
-                    </Button>
+                    <div className="text-[11px] text-muted-foreground">Al enviar, aceptas el tratamiento de datos para responder a tu solicitud.</div>
+                    <Button type="submit" className="w-full h-11 text-sm font-semibold bg-accent hover:bg-accent/90">Enviar solicitud</Button>
                   </form>
-                </CardContent>
-              </Card>
-
-              <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                <h3 className="font-semibold mb-2">💡 Consejo profesional</h3>
-                <p className="text-sm text-muted-foreground">
-                  Para un presupuesto más preciso, envíanos fotos por WhatsApp del espacio 
-                  a pintar junto con las medidas aproximadas.
-                </p>
+                </div>
               </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </>

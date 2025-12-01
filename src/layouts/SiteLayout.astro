@@ -10,8 +10,8 @@ export interface Props {
   ogImage?: string;
   noindex?: boolean;
   schema?: object[];
-  keywords?: string;
   preloadImages?: string[];
+  noBrandSuffix?: boolean;
 }
 
 const { 
@@ -21,8 +21,8 @@ const {
   ogImage = 'https://pintores-valencia.com/og-home.webp',
   noindex = false,
   schema = [],
-  keywords = 'pintores valencia, pintura interior, pintura exterior, quitar gotele, presupuesto pintura',
-  preloadImages = []
+  preloadImages = [],
+  noBrandSuffix = false
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
@@ -74,6 +74,12 @@ const defaultSchema = {
 };
 
 const combinedSchema = [defaultSchema, ...schema];
+const siteBrand = 'Pintores Valencia';
+
+const rawTitle = (title || '').trim();
+// Eliminar sufijo siempre, no volver a añadir marca
+const fullTitle = rawTitle.replace(/\s*-\s*Pintores Valencia\s*$/i, '').trim();
+
 ---
 
 <!DOCTYPE html>
@@ -81,11 +87,8 @@ const combinedSchema = [defaultSchema, ...schema];
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>{title}</title>
+  <title>{fullTitle}</title>
   <meta name="description" content={description} />
-  <meta name="keywords" content={keywords} />
-  
   <link rel="canonical" href={canonicalURL} />
   
   <!-- Favicon -->
@@ -94,7 +97,7 @@ const combinedSchema = [defaultSchema, ...schema];
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={ogImage} />
   <meta property="og:site_name" content="Pintores en Valencia" />
@@ -103,7 +106,7 @@ const combinedSchema = [defaultSchema, ...schema];
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content={canonicalURL} />
-  <meta property="twitter:title" content={title} />
+  <meta property="twitter:title" content={fullTitle} />
   <meta property="twitter:description" content={description} />
   <meta property="twitter:image" content={ogImage} />
   
