@@ -95,76 +95,72 @@ export default function CategoryPageLayout({ category }: CategoryPageLayoutProps
                 </div>
 
                 {sortedPosts.length > 0 ? (
-                  <div className="grid gap-8">
+                  <div className="grid gap-4 max-w-4xl mx-auto">
                     {sortedPosts.map((post) => (
-                      <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
-                        <div className="md:flex">
-                          {/* Imagen */}
-                          <div className="md:w-1/3">
-                            <img
-                              src={post.cover}
-                              alt={post.coverAlt}
-                              className="w-full h-48 md:h-full object-cover"
-                            />
-                          </div>
-                          
-                          {/* Contenido */}
-                          <div className="md:w-2/3 p-6">
-                            <CardHeader className="p-0 mb-4">
-                              <div className="flex items-center gap-2 mb-3">
-                                {post.priority && post.priority <= 3 && (
-                                  <Badge variant="outline" className="border-orange-200 text-orange-700">
-                                    Destacado
-                                  </Badge>
-                                )}
+                      <Card key={post.slug} className="overflow-hidden hover:shadow-lg transition-all duration-200 border border-gray-200">
+                        <a href={`/blog/${post.slug}`} className="block">
+                          <div className="p-5 md:p-6">
+                            <div className="flex flex-col sm:flex-row gap-4 items-start">
+                              {/* Mini imagen - Lado izquierdo en desktop, arriba en móvil */}
+                              <div className="w-full sm:w-16 md:w-20 sm:h-16 md:h-20 h-40 flex-shrink-0">
+                                <div className="w-full h-full rounded-lg overflow-hidden bg-gray-100">
+                                  <img
+                                    src={post.cover || post.image || "/_blog/gotele-grueso-primer-plano-textura-pared.jpg"}
+                                    alt={post.coverAlt || post.title}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
                               </div>
                               
-                              <CardTitle className="text-xl hover:text-primary transition-colors">
-                                <a href={`/blog/${post.slug}`}>
-                                  {post.title}
-                                </a>
-                              </CardTitle>
-                            </CardHeader>
-                            
-                            <CardContent className="p-0">
-                              <p className="text-muted-foreground mb-4 leading-relaxed">
-                                {post.excerpt}
-                              </p>
-                              
-                              {/* Meta información */}
-                              <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                                  <div className="flex items-center gap-1">
-                                    <Calendar className="h-4 w-4" />
-                                    {formatDate(post.date)}
-                                  </div>
-                                  <div className="flex items-center gap-1">
-                                    <Clock className="h-4 w-4" />
-                                    {post.readTime} min
-                                  </div>
+                              {/* Contenido */}
+                              <div className="flex-1 min-w-0">
+                                {/* Badges */}
+                                <div className="flex items-center gap-2 mb-2">
+                                  {post.priority && post.priority <= 3 && (
+                                    <Badge variant="default" className="bg-orange-500 hover:bg-orange-600 text-white text-xs">
+                                      ⭐ Destacado
+                                    </Badge>
+                                  )}
                                 </div>
                                 
-                                <div className="flex items-center gap-2">
-                                  <a
-                                    href={`/blog/${post.slug}`}
-                                    className="text-primary hover:text-primary/80 font-medium flex items-center gap-1"
-                                  >
-                                    Leer más <ArrowRight className="h-4 w-4" />
-                                  </a>
+                                {/* Título */}
+                                <h3 className="text-lg md:text-xl font-bold hover:text-primary transition-colors leading-tight mb-2 line-clamp-2">
+                                  {post.title}
+                                </h3>
+                                
+                                {/* Descripción */}
+                                <p className="text-muted-foreground text-sm md:text-base mb-3 leading-relaxed line-clamp-2">
+                                  {post.excerpt}
+                                </p>
+                                
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-1.5 mb-3">
+                                  {post.tags.slice(0, 3).map((tag) => (
+                                    <Badge key={tag} variant="secondary" className="text-xs bg-blue-50 text-blue-700">
+                                      #{tag}
+                                    </Badge>
+                                  ))}
+                                </div>
+                                
+                                {/* Meta información */}
+                                <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                                  <div className="flex items-center gap-1">
+                                    <Calendar className="h-3.5 w-3.5" />
+                                    <span>{formatDate(post.date)}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1">
+                                    <Clock className="h-3.5 w-3.5" />
+                                    <span>{post.readTime} min</span>
+                                  </div>
+                                  <div className="flex items-center gap-1 text-primary font-medium ml-auto">
+                                    Leer más
+                                    <ArrowRight className="h-3.5 w-3.5" />
+                                  </div>
                                 </div>
                               </div>
-                              
-                              {/* Tags */}
-                              <div className="flex flex-wrap gap-2 mt-4">
-                                {post.tags.map((tag) => (
-                                  <Badge key={tag} variant="secondary" className="text-xs">
-                                    {tag}
-                                  </Badge>
-                                ))}
-                              </div>
-                            </CardContent>
+                            </div>
                           </div>
-                        </div>
+                        </a>
                       </Card>
                     ))}
                   </div>

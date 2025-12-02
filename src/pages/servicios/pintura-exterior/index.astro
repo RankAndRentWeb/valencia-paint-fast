@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
+import fachadaExteriorImg from '../../../assets/fachada-exterior-valencia.jpg';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -71,18 +72,21 @@ const faqSchema = {
     <!-- Breadcrumbs and Hero Section -->
     <section class="bg-gradient-to-br from-slate-50 to-blue-50">
       <!-- Breadcrumbs -->
-      <div class="container mx-auto px-4 py-4">
-        <Breadcrumbs 
-          items={[
-            { label: "Servicios", href: "/servicios/" },
-            { label: "Pintura Exterior" }
-          ]} 
-          client:load 
-        />
+      <div class="py-4">
+        <div class="container mx-auto px-4">
+          <Breadcrumbs 
+            items={[
+              { label: "Servicios", href: "/servicios/" },
+              { label: "Pintura Exterior" }
+            ]} 
+            client:load 
+          />
+        </div>
       </div>
 
       <!-- Hero Content -->
-      <div class="container mx-auto px-4 pb-12">
+      <div class="py-12">
+        <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <!-- Left side - Content -->
           <div>
@@ -134,12 +138,13 @@ const faqSchema = {
           </div>
 
           <!-- Right side - Image -->
-          <div class="lg:order-last">
-            <div class="relative">
-              <img src="/src/assets/fachada-exterior-valencia.jpg" alt="Pintura exterior profesional en Valencia - Fachadas resistentes a la intemperie" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+          <div class="order-first lg:order-last">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl">
+              <img src={fachadaExteriorImg.src} alt="Pintura exterior profesional en Valencia - Fachadas resistentes a la intemperie" width={fachadaExteriorImg.width} height={fachadaExteriorImg.height} class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 

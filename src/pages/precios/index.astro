@@ -1,92 +1,498 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.tsx';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://pintores-valencia.com/#business",
+  "name": "Pintores en Valencia",
+  "url": "https://pintores-valencia.com",
+  "telephone": "+34722208131",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Valencia",
+    "addressRegion": "Comunitat Valenciana",
+    "postalCode": "46000",
+    "addressCountry": "ES"
+  },
+  "priceRange": "€€"
+};
 ---
+
 <SiteLayout 
   title="Precios de Pintura en Valencia - Tarifas 2025"
   description="Consulta nuestros precios de pintura en Valencia. Tarifas competitivas para pintura interior, exterior, lacado y más. Presupuesto gratis sin compromiso."
   keywords="precios pintura valencia, tarifas pintor valencia, coste pintar casa"
+  canonical="https://pintores-valencia.com/precios/"
+  schema={[localBusinessSchema]}
+  ogImage="/og-home.webp"
 >
-  <div class="container mx-auto px-4">
-    <Breadcrumbs items={[{ label: "Precios" }]} client:load />
-    
-    <div class="py-12">
-      <div class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Precios de Pintura en Valencia
-        </h1>
-        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Consulta nuestras tarifas transparentes y competitivas para trabajos de pintura. 
-          Todos los precios incluyen mano de obra y garantía.
-        </p>
-      </div>
+  <main class="flex-1">
+    <!-- Breadcrumbs and Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+      <!-- Breadcrumbs -->
+        <div class="container mx-auto px-4">
+          <Breadcrumbs items={[{ label: "Precios" }]} client:load />
+        
 
-      <div class="bg-accent/10 border border-accent/20 rounded-lg p-4 mb-8">
-        <strong>Precios orientativos:</strong> Los precios finales pueden variar según el estado de las superficies, accesibilidad,
-        materiales elegidos y complejidad del trabajo. Solicita un presupuesto personalizado para conocer el precio exacto.
-      </div>
-
-      <!-- AQUI pega tus SECCIONES EXACTAS del HTML antiguo (cards, grids, CTA, garantías) -->
-      
-      <h2 class="text-3xl font-bold text-gray-900 mb-8">Tarifas de Servicios de Pintura</h2>
-    
-    <!-- Pintura Interior -->
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
-      <div class="bg-primary text-white px-6 py-4">
-        <h3 class="text-xl font-semibold">🏠 Pintura Interior</h3>
-      </div>
-      <div class="p-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <div class="text-2xl font-bold text-primary mb-2">12-15€</div>
-            <div class="text-sm text-gray-600 mb-3">por m²</div>
-            <h4 class="font-semibold mb-2">Calidad Estándar</h4>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li>• Una mano de imprimación</li>
-              <li>• Dos manos de pintura</li>
-              <li>• Pintura plástica calidad</li>
-              <li>• Protección de mobiliario</li>
-            </ul>
-          </div>
-          <div class="text-center p-4 bg-accent/10 rounded-lg border-2 border-accent">
-            <div class="text-2xl font-bold text-accent mb-2">15-18€</div>
-            <div class="text-sm text-gray-600 mb-3">por m²</div>
-            <h4 class="font-semibold mb-2">Calidad Premium</h4>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li>• Preparación de superficies</li>
-              <li>• Imprimación de calidad</li>
-              <li>• Dos manos pintura premium</li>
-              <li>• Acabado perfecto</li>
-            </ul>
-          </div>
-          <div class="text-center p-4 bg-gray-50 rounded-lg">
-            <div class="text-2xl font-bold text-primary mb-2">8-12€</div>
-            <div class="text-sm text-gray-600 mb-3">por m²</div>
-            <h4 class="font-semibold mb-2">Solo Mano de Obra</h4>
-            <ul class="text-sm text-gray-700 space-y-1">
-              <li>• Cliente aporta material</li>
-              <li>• Mano de obra profesional</li>
-              <li>• Protección incluida</li>
-              <li>• Limpieza final</li>
-            </ul>
+      <!-- Hero Content -->
+      <div class="py-12">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto text-center">
+            <!-- Title -->
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+              Precios de pintura en Valencia, sin sorpresas
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Calcula cuánto puede costar pintar tu piso, casa o local en Valencia con precios claros y materiales incluidos.
+            </p>
+            
+            <!-- Price highlight -->
+            <div class="mb-6">
+              <p class="text-lg font-semibold text-orange-600">
+                Desde 12–15 €/m² <span class="text-sm text-gray-500 font-normal">(materiales incluidos)</span>
+              </p>
+              <p class="text-sm text-gray-500">
+                Precio orientativo para viviendas en Valencia y alrededores. El presupuesto final se ajusta tras la visita.
+              </p>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <a
+                href="/presupuesto/"
+                class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center"
+              >
+                Solicitar presupuesto gratis
+              </a>
+              <a
+                href="tel:+34722208131"
+                class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center gap-2"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                </svg>
+                722 208 131
+              </a>
+            </div>
+            
+            <!-- Features -->
+            <div class="max-w-2xl mx-auto space-y-2">
+              <div class="flex items-center justify-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Presupuesto cerrado y sin compromiso</span>
+              </div>
+              <div class="flex items-center justify-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a1 1 0 01.894.553l7 14A1 1 0 0117 18H3a1 1 0 01-.894-1.447l7-14A1 1 0 0110 2zM9 8v4h2V8H9zm0 6v2h2v-2H9z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Respuesta en menos de 24 horas</span>
+              </div>
+              <div class="flex items-center justify-center space-x-3">
+                <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M9.674 3.143a1 1 0 01.652 0l7 2.5A1 1 0 0118 8.5V11a8 8 0 11-12-6.928V8.5a1 1 0 001.674.738L10 5.885l2.326 3.353A1 1 0 0014 8.5V4.572l-4.326-1.543z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">Materiales de primeras marcas y garantía</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
+    </section>
 
-      <!-- CTA Final -->
-      <div class="bg-primary text-white rounded-lg p-8 text-center">
-        <h2 class="text-2xl font-bold mb-4">¿Necesitas un Presupuesto Personalizado?</h2>
-        <p class="text-white/90 mb-6">Contáctanos para un presupuesto detallado y sin compromiso</p>
+    <!-- Tarifas por servicio -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Tarifas por servicio
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+              Precios orientativos con materiales incluidos y garantía de calidad
+            </p>
+          </div>
+          
+          <div class="space-y-6 text-gray-700">
+            <p class="text-lg leading-relaxed">
+              Nuestras tarifas incluyen materiales de primera calidad, mano de obra profesional y limpieza final del área de trabajo.
+              El precio definitivo puede variar según el estado de las superficies y la complejidad del proyecto.
+            </p>
+            
+            <p class="text-lg leading-relaxed">
+              Todos los presupuestos son cerrados y sin sorpresas. Te ofrecemos una valoración gratuita 
+              en menos de 24 horas para que puedas planificar tu proyecto con total transparencia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listado de precios -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Nuestros precios
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Tarifas orientativas para todos nuestros servicios de pintura
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-4">
+            <!-- Pintura Interior -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Pintura interior</h3>
+                  <p class="text-gray-600 text-sm">
+                    Viviendas, oficinas y espacios interiores. Incluye imprimación y dos manos de pintura plástica de calidad.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-accent">12–15 €/m²</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pintura Exterior -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Pintura exterior</h3>
+                  <p class="text-gray-600 text-sm">
+                    Fachadas y elementos exteriores. Incluye tratamiento y pintura específica con protección UV.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-accent">15–20 €/m²</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quitar Gotelé -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Quitar gotelé</h3>
+                  <p class="text-gray-600 text-sm">
+                    Lijado sin polvo, enlucido profesional e imprimación. Paredes lisas listas para pintar.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-accent">10–12 €/m²</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Impermeabilización -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Impermeabilización</h3>
+                  <p class="text-gray-600 text-sm">
+                    Terrazas y cubiertas. Sistemas impermeables profesionales con garantía de 5 años.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-accent">20 €/m²</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Lacado de Puertas -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Lacado de puertas</h3>
+                  <p class="text-gray-600 text-sm">
+                    Acabado profesional con lacas de alta calidad. Deja tus puertas como nuevas.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-2xl font-bold text-accent">80 €/ud</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comunidades -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Pintura de comunidades</h3>
+                  <p class="text-gray-600 text-sm">
+                    Fachadas completas y zonas comunes. Coordinación total con la comunidad de vecinos.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-lg font-semibold text-gray-700">Presupuesto<br/>a medida</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Locales Comerciales -->
+            <div class="bg-white border rounded-lg p-6 shadow-sm">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1">
+                  <h3 class="font-semibold text-gray-900 mb-2">Locales comerciales</h3>
+                  <p class="text-gray-600 text-sm">
+                    Trabajo nocturno y en fines de semana. Sin interrupciones en tu actividad comercial.
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="text-lg font-semibold text-gray-700">Presupuesto<br/>a medida</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Otros Servicios -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Otros Servicios
+            </h2>
+            <p class="text-lg text-gray-600">
+              Precios orientativos para trabajos especializados
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Quitar Gotelé -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                </svg>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-1">Quitar Gotelé</h3>
+                  <p class="text-2xl font-bold text-orange-600">desde 10 €/m²</p>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Lijado sin polvo</li>
+                <li>• Enlucido profesional</li>
+                <li>• Imprimación incluida</li>
+              </ul>
+              <a href="/servicios/quitar-gotele/" class="mt-4 inline-block text-orange-600 font-semibold hover:text-orange-700">
+                Ver más →
+              </a>
+            </div>
+
+            <!-- Pintura Exterior -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                </svg>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-1">Pintura Exterior</h3>
+                  <p class="text-2xl font-bold text-orange-600">desde 15 €/m²</p>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Fachadas y exteriores</li>
+                <li>• Pinturas resistentes</li>
+                <li>• Protección UV</li>
+              </ul>
+              <a href="/servicios/pintura-exterior/" class="mt-4 inline-block text-orange-600 font-semibold hover:text-orange-700">
+                Ver más →
+              </a>
+            </div>
+
+            <!-- Impermeabilización -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-1">Impermeabilización</h3>
+                  <p class="text-2xl font-bold text-orange-600">desde 20 €/m²</p>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Terrazas y cubiertas</li>
+                <li>• Productos profesionales</li>
+                <li>• Garantía 5 años</li>
+              </ul>
+              <a href="/servicios/impermeabilizacion/" class="mt-4 inline-block text-orange-600 font-semibold hover:text-orange-700">
+                Ver más →
+              </a>
+            </div>
+
+            <!-- Lacado de Puertas -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                </svg>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-1">Lacado de Puertas</h3>
+                  <p class="text-2xl font-bold text-orange-600">desde 80 €/ud</p>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Acabado profesional</li>
+                <li>• Lacas de alta calidad</li>
+                <li>• Como nuevas</li>
+              </ul>
+              <a href="/servicios/lacado-puertas-carpinteria/" class="mt-4 inline-block text-orange-600 font-semibold hover:text-orange-700">
+                Ver más →
+              </a>
+            </div>
+
+            <!-- Pintura Comunidades -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                </svg>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-1">Comunidades</h3>
+                  <p class="text-2xl font-bold text-orange-600">Presupuesto a medida</p>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Fachadas completas</li>
+                <li>• Zonas comunes</li>
+                <li>• Coordinación total</li>
+              </ul>
+              <a href="/servicios/pintura-comunidades/" class="mt-4 inline-block text-orange-600 font-semibold hover:text-orange-700">
+                Ver más →
+              </a>
+            </div>
+
+            <!-- Locales Comerciales -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div class="flex items-start gap-4 mb-4">
+                <svg class="w-6 h-6 text-orange-600 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+                </svg>
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900 mb-1">Locales Comerciales</h3>
+                  <p class="text-2xl font-bold text-orange-600">Presupuesto a medida</p>
+                </div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Trabajo nocturno</li>
+                <li>• Fines de semana</li>
+                <li>• Sin interrupciones</li>
+              </ul>
+              <a href="/servicios/pintura-locales-comerciales/" class="mt-4 inline-block text-orange-600 font-semibold hover:text-orange-700">
+                Ver más →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-12 bg-blue-600 text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas un Presupuesto Personalizado?</h2>
+        <p class="text-xl mb-8 text-white/90">Te respondemos en menos de 24 horas con un presupuesto detallado y sin compromiso</p>
+        
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/presupuesto/" class="bg-accent hover:bg-accent/90 text-white font-semibold py-3 px-6 rounded-md transition-all">
-            Solicitar Presupuesto
+          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+            Solicitar Presupuesto Gratis
           </a>
-          <a href="tel:+34722208131" class="bg-white hover:bg-gray-50 text-primary font-semibold py-3 px-6 rounded-md transition-all">
-            Llamar: 722 208 131
+          <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+            </svg>
+            722 208 131
           </a>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- Por qué elegirnos -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ¿Por qué nuestros precios?
+            </h2>
+            <p class="text-lg text-gray-600">
+              Precios justos y transparentes con la mejor relación calidad-precio
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Sin sorpresas</h3>
+                <p class="text-gray-600">Presupuestos cerrados y detallados. El precio final es el presupuestado.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Materiales incluidos</h3>
+                <p class="text-gray-600">Todos los precios incluyen materiales de primeras marcas salvo indicación contraria.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Garantía de calidad</h3>
+                <p class="text-gray-600">Todos nuestros trabajos tienen garantía de 2 años en mano de obra.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">Puntualidad</h3>
+                <p class="text-gray-600">Cumplimos los plazos acordados. Respeto por tu tiempo y tu hogar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
 </SiteLayout>

@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
+import quitarGoteleImg from '../../../assets/quitar-gotelé-valencia.png';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -147,7 +148,7 @@ const faqSchema = {
           <!-- Right side - Image -->
           <div class="order-first lg:order-last">
             <div class="relative rounded-2xl overflow-hidden shadow-xl">
-              <img src="/src/assets/quitar-gotelé-valencia.png" alt="Lijado sin polvo para quitar gotelé en Valencia - Técnica profesional de eliminación de gotelé" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+              <img src={quitarGoteleImg.src} alt="Lijado sin polvo para quitar gotelé en Valencia - Técnica profesional de eliminación de gotelé" width={quitarGoteleImg.width} height={quitarGoteleImg.height} class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
         </div>

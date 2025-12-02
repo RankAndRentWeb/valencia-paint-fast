@@ -18,6 +18,16 @@ export async function getStaticPaths() {
 
 const { cat } = Astro.props;
 const posts = (await getCollection('blogs')).filter(p => p.slug.startsWith(cat.slug + "/"));
+
+// Imagen genérica por categoría (fallback)
+const fallbackImages: Record<string, string> = {
+  'gotele': '/_blog/gotele-grueso-primer-plano-textura-pared.jpg',
+  'impermeabilizacion': '/_blog/quitar-gotele-en-casa-proceso.jpg',
+  'colores-interior': '/_blog/elegir-colores-hogar.jpg',
+  'fachadas-exterior': '/_blog/salon-antiguo-anos-70-con-gotele-en-paredes.jpg',
+  'barnices-madera': '/_blog/aplicacion-masilla-alisar-paredes.jpg'
+};
+const defaultImage = fallbackImages[cat.slug] || '/_blog/gotele-grueso-primer-plano-textura-pared.jpg';
 ---
 
 <SiteLayout title={`${cat.name} - Blog de Pintura Valencia`} description={cat.description}>
@@ -38,10 +48,26 @@ const posts = (await getCollection('blogs')).filter(p => p.slug.startsWith(cat.s
     <div class="grid md:grid-cols-2 gap-6">
       {posts.map(p => {
         const [, slug] = p.slug.split("/");
+        const postImage = p.data.cover || defaultImage;
         return (
-          <a href={`/blog/${cat.slug}/${slug}/`} class="rounded-xl border p-6 hover:shadow transition block">
-            <h2 class="text-lg font-semibold mb-2">{p.data.title}</h2>
-            <p class="text-gray-600">{p.data.excerpt}</p>
+          <a href={`/blog/${cat.slug}/${slug}/`} class="rounded-xl border hover:shadow transition block overflow-hidden group">
+            <div class="flex flex-col sm:flex-row gap-4 p-6">
+              {/* Imagen del post */}
+              <div class="flex-shrink-0 mx-auto sm:mx-0">
+                <img 
+                  src={postImage} 
+                  alt={p.data.title}
+                  loading="lazy"
+                  class="w-16 h-16 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
+                />
+              </div>
+              
+              {/* Contenido de texto */}
+              <div class="flex-1 text-center sm:text-left">
+                <h2 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">{p.data.title}</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">{p.data.excerpt}</p>
+              </div>
+            </div>
           </a>
         );
       })}

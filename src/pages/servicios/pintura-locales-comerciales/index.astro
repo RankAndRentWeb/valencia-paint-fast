@@ -1,6 +1,7 @@
 ﻿---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
+import heroImg from '../../../assets/hero-pintores-valencia.jpg';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -79,18 +80,21 @@ const faqSchema = {
     <!-- Breadcrumbs and Hero Section -->
     <section class="bg-gradient-to-br from-slate-50 to-blue-50">
       <!-- Breadcrumbs -->
-      <div class="container mx-auto px-4 py-4">
-        <Breadcrumbs 
-          items={[
-            { label: "Servicios", href: "/servicios/" },
-            { label: "Pintura Locales Comerciales" }
-          ]} 
-          client:load 
-        />
+      <div class="py-4">
+        <div class="container mx-auto px-4">
+          <Breadcrumbs 
+            items={[
+              { label: "Servicios", href: "/servicios/" },
+              { label: "Locales Comerciales" }
+            ]} 
+            client:load 
+          />
+        </div>
       </div>
 
       <!-- Hero Content -->
-      <div class="container mx-auto px-4 pb-12">
+      <div class="py-12">
+        <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <!-- Left side - Content -->
           <div>
@@ -142,12 +146,13 @@ const faqSchema = {
           </div>
 
           <!-- Right side - Image -->
-          <div class="lg:order-last">
-            <div class="relative">
-              <img src="/src/assets/hero-pintores-valencia.jpg" alt="Pintura locales comerciales Valencia - Trabajo nocturno y fines de semana" width="1920" height="1080" class="w-full h-auto object-cover" loading="lazy">
+          <div class="order-first lg:order-last">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl">
+              <img src={heroImg.src} alt="Pintura locales comerciales Valencia - Trabajo nocturno y fines de semana" width={heroImg.width} height={heroImg.height} class="w-full h-auto object-cover" loading="lazy">
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
