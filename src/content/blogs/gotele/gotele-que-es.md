@@ -165,7 +165,7 @@ Si buscas eliminarlo sin errores, revisa <a href="/blog/gotele/como-quitar-gotel
 - Polvo si no se usan sistemas con aspiración.  
 - Mayor coste si es plástico grueso.  
 
-Servicios recomendados: <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline">quitar gotelé</a> | <a href="/servicios/pintura-interior/" class="text-blue-600 hover:underline">pintura interior</a> | <a href="/servicios/pintura-exterior/" class="text-blue-600 hover:underline">fachadas</a>
+Servicios recomendados: <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline">quitar gotelé</a> | <a href="/servicios/pintura-interior/" class="text-blue-600 hover:underline">pintura interior</a> | <a href="/servicios/pintura-exterior-fachadas/" class="text-blue-600 hover:underline">fachadas</a>
 
 ## Conclusión
 

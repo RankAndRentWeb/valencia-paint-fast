@@ -103,13 +103,13 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
           "@type": "Offer",
           name: "Pintura Exterior y Fachadas",
           description: "Pintura exterior resistente al clima con andamiaje incluido",
-          url: "https://pintores-valencia.com/servicios/pintura-exterior/"
+          url: "https://pintores-valencia.com/servicios/pintura-exterior-fachadas/"
         },
         {
           "@type": "Offer",
           name: "Impermeabilización",
           description: "Impermeabilización de terrazas y fachadas",
-          url: "https://pintores-valencia.com/servicios/impermeabilizacion/"
+          url: "https://pintores-valencia.com/servicios/impermeabilizacion-terrazas/"
         }
       ]
     }
@@ -162,13 +162,13 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
     {
       title: "Fachadas",
       description: "Pintamos exteriores con garantía",
-      link: "/servicios/pintura-exterior/",
+      link: "/servicios/pintura-exterior-fachadas/",
       icon: <Building className="w-6 h-6" />,
     },
     {
       title: "Impermeabilización",
       description: "Protegemos terrazas y fachadas",
-      link: "/servicios/impermeabilizacion/",
+      link: "/servicios/impermeabilizacion-terrazas/",
       icon: <Shield className="w-6 h-6" />,
     },
     {
@@ -398,7 +398,7 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
               <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 h-[300px] sm:h-[400px] md:h-[450px] flex flex-col justify-center">
                 <div className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4 md:space-y-6">
                   <p>
-                    Si buscas <strong>pintores de confianza en Valencia capital y provincia</strong>, somos tu mejor opción. Realizamos trabajos de <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline"><strong>pintura en viviendas</strong></a>, <a href="/servicios/pintura-exterior/" className="text-blue-600 hover:underline"><strong>fachadas</strong></a>, <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline"><strong>locales comerciales</strong></a> y comunidades, además de ofrecer <a href="/servicios/impermeabilizacion/" className="text-blue-600 hover:underline"><strong>impermeabilización</strong></a> de terrazas y superficies exteriores para protegerlas del desgaste.
+                    Si buscas <strong>pintores de confianza en Valencia capital y provincia</strong>, somos tu mejor opción. Realizamos trabajos de <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline"><strong>pintura en viviendas</strong></a>, <a href="/servicios/pintura-exterior-fachadas/" className="text-blue-600 hover:underline"><strong>fachadas</strong></a>, <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline"><strong>locales comerciales</strong></a> y comunidades, además de ofrecer <a href="/servicios/impermeabilizacion-terrazas/" className="text-blue-600 hover:underline"><strong>impermeabilización</strong></a> de terrazas y superficies exteriores para protegerlas del desgaste.
                   </p>
                   
                   <p>

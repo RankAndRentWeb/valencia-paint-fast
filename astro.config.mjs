@@ -7,6 +7,10 @@ export default defineConfig({
   site: 'https://pintores-valencia.com',
   trailingSlash: 'always',
   output: 'static',
+  redirects: {
+    '/servicios/pintura-exterior/': '/servicios/pintura-exterior-fachadas/',
+    '/servicios/impermeabilizacion/': '/servicios/impermeabilizacion-terrazas/',
+  },
   integrations: [
     tailwind(), 
     sitemap({
