@@ -55,7 +55,7 @@ const offerCatalogSchema = {
       "@type": "Offer",
       "itemOffered": {
         "@type": "Service",
-        "name": "Impermeabilización",
+        "name": "Impermeabilización de terrazas",
         "description": "Soluciones de impermeabilización para terrazas, balcones y cubiertas contra filtraciones."
       }
     },
@@ -96,274 +96,570 @@ const offerCatalogSchema = {
 ---
 
 <SiteLayout 
-  title="Servicios de Pintura en Valencia | Pintores profesionales"
-  description="Servicios profesionales de pintura en Valencia: interior, exterior, quitar gotelé, lacado de puertas, impermeabilización. Calidad garantizada."
+  title="Servicios de Pintura en Valencia | Pintores Profesionales"
+  description="Empresa de pintura en Valencia. Servicios profesionales de pintura interior, exterior, quitar gotelé, lacado, impermeabilización. Presupuesto gratis 24h."
   canonical="https://pintores-valencia.com/servicios/"
   ogImage="https://pintores-valencia.com/og-home.webp"
   schema={[localBusinessSchema, offerCatalogSchema]}
 >
   <main class="flex-1">
-    <div class="container mx-auto px-4">
-      <Breadcrumbs items={[{ label: "Servicios" }]} client:load />
-      
-      <div class="py-12">
-        <div class="text-center mb-12">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">
-            Nuestros Servicios
-          </h1>
-          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios de pintura profesional en Valencia. 
-            Calidad garantizada y materiales de primera en todos nuestros trabajos.
-          </p>
-        </div>
-
-        <section class="py-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- 1. Quitar gotelé y alisar paredes -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/quitar-gotele/">
-          <h2 class="text-lg font-semibold mb-2">Quitar gotelé y alisar paredes</h2>
-          <p class="text-gray-600">Eliminamos el gotelé de forma profesional y dejamos las paredes completamente lisas y preparadas para pintar.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Sin polvo</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Acabado perfecto</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Rápido y limpio</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 2. Pintura interior de pisos y casas -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-interior/">
-          <h2 class="text-lg font-semibold mb-2">Pintura interior de pisos y casas</h2>
-          <p class="text-gray-600">Renovamos completamente el interior de tu hogar con pinturas de primera calidad y acabados profesionales.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Pinturas premium</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Limpieza incluida</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Garantía 3 años</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 3. Pintura exterior y fachadas -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-exterior-fachadas/">
-          <h2 class="text-lg font-semibold mb-2">Pintura exterior y fachadas</h2>
-          <p class="text-gray-600">Protegemos y embellecemos fachadas con pinturas resistentes a la intemperie y técnicas especializadas.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Resistente al clima</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Andamiaje incluido</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Seguro RC</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 4. Impermeabilización -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/impermeabilizacion-terrazas/">
-          <h2 class="text-lg font-semibold mb-2">Impermeabilización</h2>
-          <p class="text-gray-600">Soluciones de impermeabilización para terrazas, balcones y cubiertas contra filtraciones.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Sistemas profesionales</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Sellado de juntas</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Mantenimiento opcional</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 5. Pintura locales comerciales -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-locales-comerciales/">
-          <h2 class="text-lg font-semibold mb-2">Pintura locales comerciales</h2>
-          <p class="text-gray-600">Imagen profesional en tu negocio con mínima interrupción de actividad y acabados impecables.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Planificación por horarios</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Acabado uniforme</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Limpieza incluida</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 6. Pintura comunidades -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/pintura-comunidades/">
-          <h2 class="text-lg font-semibold mb-2">Pintura comunidades</h2>
-          <p class="text-gray-600">Pintura de escaleras y zonas comunes con seguridad y planificación.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Coordinación de vecinos</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Materiales resistentes</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Señalización</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 7. Lacado de puertas y carpintería -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/lacado-puertas-carpinteria/">
-          <h2 class="text-lg font-semibold mb-2">Lacado de puertas y carpintería</h2>
-          <p class="text-gray-600">Lacado en blanco u otros colores con acabado liso y duradero.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Acabado satinado/brillante</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Sin goteos</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Secado controlado</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
-        <!-- 8. Papel pintado y vinilos -->
-        <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block" href="/servicios/papel-pintado-vinilos/">
-          <h2 class="text-lg font-semibold mb-2">Papel pintado y vinilos</h2>
-          <p class="text-gray-600">Instalación profesional de papel pintado y vinilos decorativos para personalizar cualquier espacio.</p>
-          <ul class="mt-3 space-y-1 text-gray-700">
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Alineado perfecto</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Cortes limpios</span>
-            </li>
-            <li class="flex items-center space-x-2">
-              <span class="w-1.5 h-1.5 bg-orange-500 rounded-full"></span>
-              <span>Colas adecuadas</span>
-            </li>
-          </ul>
-          <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
-            Ver detalles y precios
-          </span>
-        </a>
-
+    <!-- Breadcrumbs con fondo azul suave -->
+    <div class="bg-blue-50/30">
+      <div class="container mx-auto px-4">
+        <Breadcrumbs items={[{ label: "Servicio" }]} client:load />
       </div>
-      </section>
     </div>
-  </div>
-
-  <!-- CTA Section -->
-  <section class="py-16 bg-primary text-white">
-        <div class="container mx-auto px-4 text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-            ¿Necesitas un presupuesto?
-          </h2>
-          <p class="text-xl mb-8 text-white">
-            Te respondemos en menos de 24 horas
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
-              Pedir presupuesto gratis
-            </a>
-            <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-              </svg>
-              722 208 131
-            </a>
+    
+    <!-- Hero / Introducción con fondo azul suave -->
+    <div class="bg-blue-50/30 py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center text-gray-900">
+            Servicios de Pintura en Valencia
+          </h1>
+          
+          <div class="space-y-5 text-gray-700 leading-relaxed">
+            <p class="text-lg">
+              Somos una <strong>empresa de pintura profesional en Valencia</strong> con más de 10 años de experiencia transformando hogares, negocios y comunidades. Nuestro equipo de <strong>pintores profesionales</strong> ofrece servicios completos de pintura interior y exterior, adaptados a las necesidades de cada cliente en Valencia capital y toda el área metropolitana.
+            </p>
+            
+            <p class="text-lg">
+              Trabajamos en pisos, casas, chalets, locales comerciales y comunidades de vecinos, siempre con el compromiso de ofrecer acabados impecables, materiales de primera calidad y limpieza total al finalizar. Como <strong>pintores en Valencia</strong> de confianza, entendemos la importancia de cumplir plazos, mantener presupuestos cerrados y ofrecer garantías reales por escrito en todos nuestros trabajos.
+            </p>
+            
+            <p class="text-lg">
+              Desde <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline font-semibold">quitar gotelé</a> hasta <a href="/servicios/impermeabilizacion-terrazas/" class="text-blue-600 hover:underline font-semibold">impermeabilizar terrazas</a>, pasando por <a href="/servicios/lacado-puertas-carpinteria/" class="text-blue-600 hover:underline font-semibold">lacado de puertas</a> o <a href="/servicios/papel-pintado-vinilos/" class="text-blue-600 hover:underline font-semibold">instalación de papel pintado</a>, nuestros servicios cubren todas las necesidades de pintura y revestimiento que puedas tener. Te ofrecemos presupuesto gratuito en menos de 24 horas y asesoramiento personalizado sin compromiso.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+    
+    <!-- Resto del contenido con fondo blanco -->
+    <div class="container mx-auto px-4">
+      <div class="py-8">
 
-  <!-- FAQ Section -->
-  <section class="py-16 bg-background">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              Preguntas frecuentes
-            </h2>
-          </div>
+              <!-- Grid de Servicios Principales -->
+              <section class="py-8">
+                <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios Principales</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              
+              <!-- 1. Pintura Interior -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/pintura-interior/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Pintura Interior</h3>
+                <p class="text-gray-600 mb-4">
+                  Renovamos el interior de pisos, casas y oficinas en Valencia con pinturas plásticas y esmaltes de máxima calidad. Incluimos preparación de superficies, reparación de pequeñas imperfecciones, imprimación y dos manos de acabado. Ideal para actualizar tu vivienda antes de vender o alquilar, o simplemente para darle un aire nuevo a tu hogar. Trabajamos con las mejores marcas y garantizamos resultados duraderos.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Pinturas premium lavables</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Protección de muebles y suelos</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Limpieza completa incluida</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
 
-          <div class="max-w-3xl mx-auto space-y-6">
-            <div class="rounded-lg border bg-white shadow-sm">
-              <div class="p-6">
-                <h3 class="font-semibold mb-2">¿Qué incluyen los presupuestos?</h3>
-                <p class="text-gray-600">Mano de obra, materiales, mano de obra fina, limpieza posterior y garantía escrita.</p>
-              </div>
+              <!-- 2. Pintura Exterior y Fachadas -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/pintura-exterior-fachadas/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Pintura Exterior y Fachadas</h3>
+                <p class="text-gray-600 mb-4">
+                  Protegemos y embellecemos fachadas de edificios, chalets y locales comerciales con pinturas especiales anti-moho y resistentes a los cambios climáticos de Valencia. Incluimos limpieza a presión, reparación de grietas, imprimación selladora y aplicación de revestimientos elásticos de larga duración. Montaje de andamios certificados y seguro de responsabilidad civil en todos los trabajos exteriores.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Pinturas impermeables y transpirables</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Andamiaje certificado incluido</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Seguro RC vigente</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
+              <!-- 3. Quitar Gotelé -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/quitar-gotele/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Quitar Gotelé y Alisar Paredes</h3>
+                <p class="text-gray-600 mb-4">
+                  Eliminamos el gotelé de techos y paredes mediante lijado sin polvo y técnicas de enlucido profesional para dejar superficies completamente lisas. Perfecto para modernizar pisos antiguos en Valencia, aumentar el valor de tu vivienda o simplemente disfrutar de paredes lisas y elegantes. Incluye imprimación y acabado listo para pintar o decorar según prefieras.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Sistema sin polvo con aspiración</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Enlucido y alisado perfecto</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Resultado liso duradero</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
+              <!-- 4. Impermeabilización de Terrazas -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/impermeabilizacion-terrazas/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Impermeabilización de Terrazas</h3>
+                <p class="text-gray-600 mb-4">
+                  Solucionamos problemas de filtraciones y humedades en terrazas, balcones y cubiertas planas con sistemas de impermeabilización profesionales. Aplicamos membranas líquidas o láminas asfálticas de alta calidad, sellado de juntas y desagües, y acabados transitables resistentes a rayos UV. Garantía de 5 años contra filtraciones en todos nuestros trabajos de impermeabilización.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Sistemas certificados y testados</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Sellado de juntas y desagües</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Garantía 5 años</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
+              <!-- 5. Lacado de Puertas -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/lacado-puertas-carpinteria/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Lacado de Puertas y Carpintería</h3>
+                <p class="text-gray-600 mb-4">
+                  Renovamos puertas de madera, armarios y carpintería interior con lacados en blanco satinado, mate o brillo, así como en cualquier color RAL que desees. Proceso completo de lijado, imprimación, aplicación a pistola y secado controlado para evitar motas y goteos. Perfecto para actualizar pisos antiguos sin cambiar las puertas, ahorrando tiempo y dinero con resultados como recién estrenadas.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Aplicación a pistola profesional</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Acabado liso sin marcas</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Secado rápido y controlado</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
+              <!-- 6. Papel Pintado y Vinilos -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/papel-pintado-vinilos/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Papel Pintado y Vinilos Decorativos</h3>
+                <p class="text-gray-600 mb-4">
+                  Instalación profesional de papel pintado, vinilos decorativos y murales personalizados para paredes de salones, dormitorios, oficinas y locales comerciales. Trabajamos con papeles importados de alta calidad, vinilos lavables y tejidos texturizados. Incluye preparación de paredes, corte preciso, encolado sin burbujas y alineado perfecto de dibujos. Ideal para crear ambientes únicos y modernos en tu hogar.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Alineado perfecto de estampados</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Aplicación sin burbujas</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Colas especializadas por tipo</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
+              <!-- 7. Pintura de Comunidades -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/pintura-comunidades/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Pintura de Comunidades de Vecinos</h3>
+                <p class="text-gray-600 mb-4">
+                  Pintura de escaleras, portales, garajes y fachadas de comunidades de vecinos en Valencia. Nos encargamos de toda la coordinación con presidentes y administradores de fincas, planificación de trabajos por fases para minimizar molestias, y aplicación de pinturas duraderas especiales para zonas de tránsito. Incluimos señalización, protección de accesos y limpieza diaria durante la obra.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Coordinación total con comunidad</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Pinturas extra-resistentes</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Señalización y seguridad</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
+              <!-- 8. Pintura de Locales Comerciales -->
+              <a class="rounded-lg border bg-white shadow-sm hover:shadow-md transition p-6 block group" href="/servicios/pintura-locales-comerciales/">
+                <h3 class="text-xl font-semibold mb-3 group-hover:text-accent transition">Pintura de Locales Comerciales</h3>
+                <p class="text-gray-600 mb-4">
+                  Pintura y renovación de locales comerciales, tiendas, oficinas, restaurantes y espacios de trabajo en Valencia. Trabajamos en horarios flexibles (noches, fines de semana) para no interrumpir tu actividad comercial. Ofrecemos acabados profesionales con pinturas lavables de alto tránsito, opciones de branding corporativo con colores Pantone/RAL exactos, y plazos de ejecución rápidos garantizados.
+                </p>
+                <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Horarios nocturnos y fin de semana</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Sin interrumpir tu negocio</span>
+                  </li>
+                  <li class="flex items-center space-x-2">
+                    <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    <span>Acabados corporativos precisos</span>
+                  </li>
+                </ul>
+                <span class="mt-4 w-full h-10 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold inline-flex items-center justify-center">
+                  Ver detalles y precios
+                </span>
+              </a>
+
             </div>
-            
-            <div class="rounded-lg border bg-white shadow-sm">
-              <div class="p-6">
-                <h3 class="font-semibold mb-2">¿Cómo se protege la zona de trabajo?</h3>
-                <p class="text-gray-600">Protección de suelos/muebles y limpieza final.</p>
+            </section>
+
+            <!-- Sección: ¿Qué servicio necesitas? -->
+            <section class="py-12 max-w-5xl mx-auto">
+              <h2 class="text-3xl font-bold mb-8 text-center">¿Qué servicio de pintura necesitas en Valencia?</h2>
+              
+              <div class="grid gap-6">
+                <!-- 1. Pintura Interior -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Renovar piso o casa interior</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Si acabas de comprar un <strong>piso en Ruzafa</strong> o en el centro de Valencia y quieres darle una renovación completa antes de mudarte, nuestro servicio de <a href="/servicios/pintura-interior/" class="text-blue-600 hover:underline font-semibold">pintura interior</a> es la solución perfecta. Incluye preparación de superficies, reparación de pequeñas grietas, imprimación y dos manos de pintura plástica lavable de alta calidad.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 2. Quitar Gotelé -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-slate-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Eliminar gotelé y alisar paredes</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Si tu piso tiene <strong>gotelé en las paredes o techos</strong> y prefieres un acabado liso y moderno, te recomendamos nuestro servicio especializado para <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline font-semibold">quitar gotelé</a>. Utilizamos sistemas de lijado sin polvo y técnicas de enlucido que dejan las superficies completamente alisadas, listas para pintar o decorar como desees. Es una inversión que aumenta significativamente el valor de tu vivienda.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 3. Fachadas Exterior -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-teal-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Pintar fachadas y exteriores</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Para fachadas de edificios, chalets o locales comerciales que han perdido color o presentan moho y desconchones, ofrecemos <a href="/servicios/pintura-exterior-fachadas/" class="text-blue-600 hover:underline font-semibold">pintura exterior y rehabilitación de fachadas</a>. Aplicamos pinturas especiales impermeables y transpirables que protegen de la lluvia, el sol y la contaminación, prolongando la vida útil del revestimiento. Montamos andamios certificados y contamos con seguro de responsabilidad civil para tu tranquilidad.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 4. Impermeabilización -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-sky-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-sky-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Solucionar filtraciones en terrazas</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      ¿Tienes problemas de <strong>filtraciones o humedades en tu terraza en Patraix, Campanar o cualquier barrio de Valencia</strong>? Nuestro servicio de <a href="/servicios/impermeabilizacion-terrazas/" class="text-blue-600 hover:underline font-semibold">impermeabilización de terrazas</a> soluciona definitivamente estos problemas aplicando membranas líquidas o láminas asfálticas de alta calidad, sellado de juntas y desagües, con garantía de 5 años contra filtraciones.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 5. Lacado de Puertas -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Renovar puertas sin cambiarlas</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Si quieres renovar las <strong>puertas de madera</strong> de tu piso sin tener que cambiarlas, el <a href="/servicios/lacado-puertas-carpinteria/" class="text-blue-600 hover:underline font-semibold">lacado de puertas</a> es la mejor opción. Lijamos, imprimamos y aplicamos laca a pistola en blanco u otro color RAL, con acabado satinado, mate o brillo según prefieras. Las puertas quedan como recién estrenadas por una fracción del coste de comprar nuevas.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 6. Papel Pintado -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-rose-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Decorar con papel pintado o vinilos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Para quienes buscan un toque decorativo especial, ofrecemos instalación de <a href="/servicios/papel-pintado-vinilos/" class="text-blue-600 hover:underline font-semibold">papel pintado y vinilos decorativos</a>. Ideal para crear ambientes únicos en salones, dormitorios o espacios comerciales en Valencia. Trabajamos con papeles importados de alta calidad y murales personalizados.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 7. Comunidades -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-violet-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Pintura de comunidades de vecinos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Si eres presidente o administrador de una comunidad de vecinos en Valencia, nuestro servicio de <a href="/servicios/pintura-comunidades/" class="text-blue-600 hover:underline font-semibold">pintura de comunidades</a> te facilita todo el proceso: coordinamos con los vecinos, planificamos por fases y aplicamos pinturas duraderas en escaleras, portales, garajes y fachadas.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- 8. Locales Comerciales -->
+                <div class="flex gap-4 p-5 rounded-xl bg-white border border-gray-200 hover:border-blue-300 hover:shadow-md transition">
+                  <div class="flex-shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center">
+                      <svg class="w-7 h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Pintura de locales sin interrumpir el negocio</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                      Si tienes un <strong>local comercial en el centro de Valencia</strong> o en cualquier zona comercial y necesitas renovarlo sin cerrar, te ofrecemos <a href="/servicios/pintura-locales-comerciales/" class="text-blue-600 hover:underline font-semibold">pintura de locales comerciales</a> con horarios flexibles (noches y fines de semana) y acabados corporativos profesionales.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            <div class="rounded-lg border bg-white shadow-sm">
-              <div class="p-6">
-                <h3 class="font-semibold mb-2">¿Ofrecen garantía?</h3>
-                <p class="text-gray-600">Sí, garantía escrita por escrito (según servicio).</p>
-              </div>
+            </section>
+
             </div>
           </div>
         </div>
-      </section>
+
+        <!-- Sección: Por qué elegirnos con fondo gris claro edge-to-edge -->
+        <section class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 bg-gray-50">
+          <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6 text-center">Por qué elegirnos como tus pintores en Valencia</h2>
+            
+            <div class="max-w-4xl mx-auto space-y-4 text-gray-700">
+                <p>
+                  Con más de <strong>10 años de experiencia</strong> trabajando como <strong>empresa de pintura en Valencia</strong>, hemos ayudado a cientos de familias, negocios y comunidades a transformar sus espacios con resultados impecables. Nuestro equipo de <strong>pintores profesionales</strong> está formado continuamente en las últimas técnicas y materiales del sector, lo que nos permite ofrecer soluciones modernas y duraderas adaptadas a cada proyecto.
+                </p>
+                
+                <p>
+                  Sabemos que contratar pintores es una decisión importante, por eso nos esforzamos en ser transparentes desde el primer contacto. Te ofrecemos <strong>presupuesto gratuito en menos de 24 horas</strong>, con todos los detalles incluidos: materiales, mano de obra, plazos y garantías. No trabajamos con precios cerrados por teléfono: preferimos visitar tu proyecto para evaluar el estado real de las superficies y darte un precio justo y realista.
+                </p>
+                
+                <p>
+                  Como <strong>pintores fiables en Valencia</strong>, nos comprometemos a cumplir los plazos acordados y a mantener tu espacio limpio durante toda la obra. Protegemos suelos y muebles, aspiramos el polvo diariamente y realizamos una limpieza final completa para que puedas disfrutar del resultado sin preocupaciones. Además, todos nuestros trabajos incluyen <strong>garantía por escrito</strong>: 2 años en pintura interior, 3 años en exteriores, y 5 años en impermeabilizaciones.
+                </p>
+                
+                <p>
+                  Trabajamos exclusivamente con <strong>materiales de primera calidad</strong> de marcas líderes del sector (Bruguer, Jotun, Sikkens, Titan) porque sabemos que una buena pintura no solo se ve mejor, sino que dura mucho más tiempo. Además, contamos con seguro de responsabilidad civil vigente y cumplimos toda la normativa de prevención de riesgos laborales, especialmente en trabajos en altura.
+                </p>
+                
+                <p>
+                  Atendemos en <strong>Valencia capital y toda el área metropolitana</strong>: Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella y todas las poblaciones de alrededor. Si necesitas un servicio de pintura fiable, con resultados profesionales y garantías reales, somos tu mejor opción en Valencia.
+                </p>
+              </div>
+              
+              <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  <div>
+                    <strong class="block text-gray-900">Más de 10 años de experiencia</strong>
+                    <span class="text-sm text-gray-600">Pintores profesionales en Valencia</span>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  <div>
+                    <strong class="block text-gray-900">Presupuesto en 24 horas</strong>
+                    <span class="text-sm text-gray-600">Gratuito y sin compromiso</span>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  <div>
+                    <strong class="block text-gray-900">Limpieza total incluida</strong>
+                    <span class="text-sm text-gray-600">Protección y aspirado diario</span>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  <div>
+                    <strong class="block text-gray-900">Garantía por escrito</strong>
+                    <span class="text-sm text-gray-600">Hasta 5 años según servicio</span>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  <div>
+                    <strong class="block text-gray-900">Materiales premium</strong>
+                    <span class="text-sm text-gray-600">Bruguer, Jotun, Titan</span>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                  <div>
+                    <strong class="block text-gray-900">Toda Valencia y área metropolitana</strong>
+                    <span class="text-sm text-gray-600">También poblaciones cercanas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="container mx-auto px-4">
+            <div class="py-8">
+              <!-- CTA Section -->
+              <section class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 bg-blue-600 text-white">
+              <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                  ¿Necesitas un presupuesto para tu proyecto en Valencia?
+                </h2>
+                <p class="text-xl mb-8 text-white/90">
+                  Te respondemos en menos de 24 horas con un presupuesto detallado y sin compromiso
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-8 py-4 text-lg rounded-lg">
+                    Pedir presupuesto gratis
+                  </a>
+                  <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-8 py-4 text-lg rounded-lg gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    722 208 131
+                  </a>
+                </div>
+              </div>
+            </section>
+              
+              <!-- Sección: FAQs -->
+              <section class="py-12">
+                <h2 class="text-3xl font-bold mb-8 text-center">Preguntas frecuentes sobre nuestros servicios de pintura en Valencia</h2>
+              
+              <div class="max-w-3xl mx-auto space-y-6">
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Cuánto tardáis en pintar un piso en Valencia?</h3>
+                  <p class="text-gray-600">
+                    El tiempo depende del tamaño y estado del piso. Un piso estándar de 70-80 m² suele llevarnos entre 4 y 6 días laborables, incluyendo preparación de superficies, dos manos de pintura y limpieza final. Si además hay que quitar gotelé, el plazo se alarga unos 2-3 días más. Te daremos un calendario exacto en el presupuesto.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Cómo calculáis el precio por metro cuadrado?</h3>
+                  <p class="text-gray-600">
+                    El precio se calcula según la superficie a pintar, el tipo de trabajo (interior, exterior, quitar gotelé, etc.), el estado de las paredes y la calidad de pintura elegida. Siempre hacemos una visita previa gratuita para evaluar el proyecto y darte un presupuesto cerrado sin sorpresas. No trabajamos con precios aproximados por teléfono.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Trabajáis también en fines de semana?</h3>
+                  <p class="text-gray-600">
+                    Sí, especialmente en proyectos de locales comerciales donde es necesario no interrumpir la actividad del negocio. En viviendas particulares solemos trabajar de lunes a viernes, pero podemos adaptar horarios si tienes necesidades especiales. Consúltanos tu situación y buscaremos la mejor solución.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Los materiales están incluidos en el precio?</h3>
+                  <p class="text-gray-600">
+                    Sí, todos nuestros presupuestos incluyen materiales de primera calidad salvo que se indique lo contrario. Trabajamos con pinturas de marcas líderes como Bruguer, Jotun, Sikkens y Titan. Si prefieres aportar tú la pintura o elegir una gama superior, te ajustamos el presupuesto deduciendo el coste del material.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Cómo se organiza la pintura de una comunidad de vecinos?</h3>
+                  <p class="text-gray-600">
+                    Nos coordinamos directamente con el presidente o administrador de la comunidad para planificar los trabajos por fases, minimizando molestias a los vecinos. Colocamos señalización, protegemos accesos y limpiamos diariamente. Enviamos informes de avance y fotos para mantener informada a la comunidad durante todo el proceso.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Dais factura y garantía por escrito?</h3>
+                  <p class="text-gray-600">
+                    Sí, siempre. Somos una empresa legal en Valencia con todos los permisos al día. Emitimos factura oficial con IVA y ofrecemos garantía por escrito en todos nuestros trabajos: 2 años en pintura interior, 3 años en exteriores y 5 años en impermeabilizaciones. Además, contamos con seguro de responsabilidad civil.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿En qué zonas de Valencia trabajáis?</h3>
+                  <p class="text-gray-600">
+                    Trabajamos en toda Valencia capital (Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Mestalla, etc.) y en toda el área metropolitana: Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet y poblaciones cercanas. Si estás fuera de esta zona, consúltanos y valoraremos tu caso.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            </div>
+          </div>
+        </div>
+
   </main>
+
+  
 </SiteLayout>
