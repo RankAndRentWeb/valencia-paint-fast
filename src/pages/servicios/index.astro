@@ -93,14 +93,61 @@ const offerCatalogSchema = {
     }
   ]
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta pintar un piso en Valencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El precio de pintar un piso en Valencia depende de metros cuadrados, estado de las paredes, tipo de pintura y si incluye quitar gotelé. Un piso de 80m² suele costar entre 1.500€ y 2.500€ con materiales incluidos. Ofrecemos presupuesto detallado gratuito en menos de 24 horas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tardáis en pintar un piso completo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un piso estándar de 70-80 m² tarda entre 4 y 6 días laborables, incluyendo preparación, imprimación, dos manos de pintura y limpieza. Si hay que quitar gotelé, se añaden 2-3 días más."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué marcas de pintura utilizáis en Valencia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabajamos con marcas premium reconocidas: Bruguer, Jotun, Sikkens, Titan y Montó. Todas ofrecen excelente cobertura, durabilidad y acabados profesionales. Para exteriores usamos pinturas con protección UV y anti-moho."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué zonas de Valencia trabajáis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabajamos en toda Valencia capital (Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Mestalla) y área metropolitana: Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet, Alaquàs y Picanya."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Dais factura y garantía por escrito?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, siempre. Somos una empresa legal con todos los permisos. Emitimos factura oficial con IVA y garantía por escrito: 2 años en pintura interior, 3 años en exteriores y 5 años en impermeabilizaciones. Contamos con seguro de responsabilidad civil."
+      }
+    }
+  ]
+};
 ---
 
 <SiteLayout 
-  title="Servicios de Pintura en Valencia | Pintores Profesionales"
-  description="Empresa de pintura en Valencia. Servicios profesionales de pintura interior, exterior, quitar gotelé, lacado, impermeabilización. Presupuesto gratis 24h."
+  title="Servicios de Pintura en Valencia | Pintores Profesionales Certificados"
+  description="Servicios profesionales de pintura en Valencia: interior, exterior, fachadas, quitar gotelé, impermeabilización. Empresa local con +10 años experiencia. Presupuesto gratis en 24h ☎️ 722 208 131"
   canonical="https://pintores-valencia.com/servicios/"
   ogImage="https://pintores-valencia.com/og-home.webp"
-  schema={[localBusinessSchema, offerCatalogSchema]}
+  schema={[localBusinessSchema, offerCatalogSchema, faqSchema]}
 >
   <main class="flex-1">
     <!-- Breadcrumbs con fondo azul suave -->
@@ -115,20 +162,20 @@ const offerCatalogSchema = {
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <h1 class="text-4xl md:text-5xl font-bold mb-8 text-center text-gray-900">
-            Servicios de Pintura en Valencia
+            Servicios Profesionales de Pintura en Valencia
           </h1>
           
           <div class="space-y-5 text-gray-700 leading-relaxed">
             <p class="text-lg">
-              Somos una <strong>empresa de pintura profesional en Valencia</strong> con más de 10 años de experiencia transformando hogares, negocios y comunidades. Nuestro equipo de <strong>pintores profesionales</strong> ofrece servicios completos de pintura interior y exterior, adaptados a las necesidades de cada cliente en Valencia capital y toda el área metropolitana.
+              Somos una <strong>empresa de pintura profesional en Valencia</strong> con más de 10 años de experiencia transformando espacios en hogares, negocios y comunidades de toda la ciudad. Nuestro equipo de <strong>pintores profesionales certificados</strong> ofrece servicios completos de <strong>pintura interior y exterior en Valencia</strong>, adaptados a las necesidades específicas de cada cliente en Valencia capital, Ruzafa, Patraix, Campanar, Benimaclet y toda el área metropolitana.
             </p>
             
             <p class="text-lg">
-              Trabajamos en pisos, casas, chalets, locales comerciales y comunidades de vecinos, siempre con el compromiso de ofrecer acabados impecables, materiales de primera calidad y limpieza total al finalizar. Como <strong>pintores en Valencia</strong> de confianza, entendemos la importancia de cumplir plazos, mantener presupuestos cerrados y ofrecer garantías reales por escrito en todos nuestros trabajos.
+              Trabajamos en pisos, casas, chalets, locales comerciales y comunidades de vecinos, siempre con el compromiso de ofrecer <strong>acabados impecables y duraderos</strong>, materiales de primera calidad y limpieza total al finalizar. Como <strong>pintores en Valencia</strong> de confianza, entendemos la importancia de cumplir plazos, mantener presupuestos cerrados sin sorpresas y ofrecer <strong>garantías por escrito</strong> en todos nuestros trabajos de pintura.
             </p>
             
             <p class="text-lg">
-              Desde <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline font-semibold">quitar gotelé</a> hasta <a href="/servicios/impermeabilizacion-terrazas/" class="text-blue-600 hover:underline font-semibold">impermeabilizar terrazas</a>, pasando por <a href="/servicios/lacado-puertas-carpinteria/" class="text-blue-600 hover:underline font-semibold">lacado de puertas</a> o <a href="/servicios/papel-pintado-vinilos/" class="text-blue-600 hover:underline font-semibold">instalación de papel pintado</a>, nuestros servicios cubren todas las necesidades de pintura y revestimiento que puedas tener. Te ofrecemos presupuesto gratuito en menos de 24 horas y asesoramiento personalizado sin compromiso.
+              Desde <a href="/servicios/quitar-gotele/" class="text-blue-600 hover:underline font-semibold" title="Quitar gotelé en Valencia">quitar gotelé y alisar paredes</a> hasta <a href="/servicios/impermeabilizacion-terrazas/" class="text-blue-600 hover:underline font-semibold" title="Impermeabilización de terrazas Valencia">impermeabilizar terrazas y cubiertas</a>, pasando por <a href="/servicios/lacado-puertas-carpinteria/" class="text-blue-600 hover:underline font-semibold" title="Lacado de puertas Valencia">lacado de puertas y carpintería</a> o <a href="/servicios/papel-pintado-vinilos/" class="text-blue-600 hover:underline font-semibold" title="Papel pintado Valencia">instalación de papel pintado y vinilos decorativos</a>, nuestros <strong>servicios de pintura en Valencia</strong> cubren todas las necesidades de renovación y revestimiento que puedas tener. Te ofrecemos <strong>presupuesto gratuito en menos de 24 horas</strong> y asesoramiento personalizado sin compromiso.
             </p>
           </div>
         </div>
@@ -141,7 +188,10 @@ const offerCatalogSchema = {
 
               <!-- Grid de Servicios Principales -->
               <section class="py-8">
-                <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios Principales</h2>
+                <h2 class="text-3xl font-bold text-center mb-4">Nuestros Servicios de Pintura en Valencia</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                  Ofrecemos servicios completos de pintura profesional para todo tipo de proyectos en Valencia. Trabajamos con materiales de primera calidad y técnicas especializadas para garantizar resultados duraderos.
+                </p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               
@@ -350,7 +400,10 @@ const offerCatalogSchema = {
 
             <!-- Sección: ¿Qué servicio necesitas? -->
             <section class="py-12 max-w-5xl mx-auto">
-              <h2 class="text-3xl font-bold mb-8 text-center">¿Qué servicio de pintura necesitas en Valencia?</h2>
+              <h2 class="text-3xl font-bold mb-4 text-center">¿Qué Servicio de Pintura Necesitas en Valencia?</h2>
+              <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                Como <strong>empresa de pintura en Valencia</strong>, te ayudamos a identificar el servicio perfecto para tu proyecto. Cada tipo de trabajo requiere técnicas y materiales específicos para garantizar resultados óptimos y duraderos.
+              </p>
               
               <div class="grid gap-6">
                 <!-- 1. Pintura Interior -->
@@ -498,27 +551,30 @@ const offerCatalogSchema = {
         <!-- Sección: Por qué elegirnos con fondo gris claro edge-to-edge -->
         <section class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-16 bg-gray-50">
           <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-6 text-center">Por qué elegirnos como tus pintores en Valencia</h2>
+            <h2 class="text-3xl font-bold mb-6 text-center">Por Qué Somos Tu Mejor Opción en Pintores Valencia</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+              Descubre por qué cientos de clientes en Valencia confían en nosotros para sus proyectos de pintura
+            </p>
             
             <div class="max-w-4xl mx-auto space-y-4 text-gray-700">
                 <p>
-                  Con más de <strong>10 años de experiencia</strong> trabajando como <strong>empresa de pintura en Valencia</strong>, hemos ayudado a cientos de familias, negocios y comunidades a transformar sus espacios con resultados impecables. Nuestro equipo de <strong>pintores profesionales</strong> está formado continuamente en las últimas técnicas y materiales del sector, lo que nos permite ofrecer soluciones modernas y duraderas adaptadas a cada proyecto.
+                  Con más de <strong>10 años de experiencia como empresa de pintura en Valencia</strong>, hemos completado cientos de proyectos ayudando a familias, empresas y comunidades a transformar sus espacios con resultados impecables. Nuestro equipo de <strong>pintores profesionales certificados</strong> está en formación continua sobre las últimas técnicas de aplicación, materiales innovadores y normativas del sector, lo que nos permite ofrecer soluciones modernas, eficientes y duraderas adaptadas a cada tipo de proyecto en Valencia.
                 </p>
                 
                 <p>
-                  Sabemos que contratar pintores es una decisión importante, por eso nos esforzamos en ser transparentes desde el primer contacto. Te ofrecemos <strong>presupuesto gratuito en menos de 24 horas</strong>, con todos los detalles incluidos: materiales, mano de obra, plazos y garantías. No trabajamos con precios cerrados por teléfono: preferimos visitar tu proyecto para evaluar el estado real de las superficies y darte un precio justo y realista.
+                  Entendemos que <strong>contratar pintores en Valencia</strong> es una decisión importante que requiere confianza. Por eso nos esforzamos en ser completamente transparentes desde el primer contacto. Te ofrecemos <strong>presupuesto gratuito y detallado en menos de 24 horas</strong>, con todos los conceptos desglosados: materiales específicos, mano de obra, plazos realistas y garantías por escrito. No trabajamos con presupuestos aproximados por teléfono: preferimos visitar personalmente tu proyecto para evaluar el estado real de las superficies, medir con precisión y darte un precio justo, realista y sin sorpresas posteriores.
                 </p>
                 
                 <p>
-                  Como <strong>pintores fiables en Valencia</strong>, nos comprometemos a cumplir los plazos acordados y a mantener tu espacio limpio durante toda la obra. Protegemos suelos y muebles, aspiramos el polvo diariamente y realizamos una limpieza final completa para que puedas disfrutar del resultado sin preocupaciones. Además, todos nuestros trabajos incluyen <strong>garantía por escrito</strong>: 2 años en pintura interior, 3 años en exteriores, y 5 años en impermeabilizaciones.
+                  Como <strong>pintores fiables en Valencia</strong>, nos comprometemos firmemente a cumplir los plazos acordados y a mantener tu espacio limpio y ordenado durante toda la obra. Antes de empezar, protegemos cuidadosamente suelos, muebles y elementos que no se van a pintar. Durante el trabajo, aspiramos el polvo diariamente, ventilamos adecuadamente y mantenemos la zona organizada. Al finalizar, realizamos una limpieza final completa para que puedas disfrutar del resultado inmediatamente, sin molestias adicionales. Además, todos nuestros <strong>trabajos de pintura en Valencia</strong> incluyen <strong>garantía por escrito</strong>: 2 años en pintura interior, 3 años en trabajos exteriores, y 5 años en impermeabilizaciones.
                 </p>
                 
                 <p>
-                  Trabajamos exclusivamente con <strong>materiales de primera calidad</strong> de marcas líderes del sector (Bruguer, Jotun, Sikkens, Titan) porque sabemos que una buena pintura no solo se ve mejor, sino que dura mucho más tiempo. Además, contamos con seguro de responsabilidad civil vigente y cumplimos toda la normativa de prevención de riesgos laborales, especialmente en trabajos en altura.
+                  Trabajamos exclusivamente con <strong>materiales de primera calidad</strong> de marcas líderes y reconocidas del sector como Bruguer, Jotun, Sikkens, Titan y Montó. Sabemos que una buena pintura no solo proporciona un mejor acabado visual, sino que también dura significativamente más tiempo, resiste mejor el paso de los años y requiere menos mantenimiento. Además, contamos con <strong>seguro de responsabilidad civil vigente</strong> que cubre cualquier imprevisto durante la obra y cumplimos rigurosamente toda la normativa de prevención de riesgos laborales, especialmente en trabajos en altura con andamios certificados.
                 </p>
                 
                 <p>
-                  Atendemos en <strong>Valencia capital y toda el área metropolitana</strong>: Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella y todas las poblaciones de alrededor. Si necesitas un servicio de pintura fiable, con resultados profesionales y garantías reales, somos tu mejor opción en Valencia.
+                  Atendemos en <strong>Valencia capital y toda el área metropolitana</strong>: barrios como Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Mestalla, Jesús, Nazaret, además de poblaciones cercanas como Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet, Alaquàs y Picanya. Si necesitas un <strong>servicio de pintura profesional en Valencia</strong> con resultados garantizados, plazos cumplidos y garantías reales, somos tu mejor opción. Llámanos al <a href="tel:+34722208131" class="text-blue-600 hover:underline font-semibold">722 208 131</a> o <a href="/presupuesto/" class="text-blue-600 hover:underline font-semibold">solicita tu presupuesto gratuito</a> y descubre la diferencia de trabajar con verdaderos profesionales.
                 </p>
               </div>
               
@@ -601,61 +657,83 @@ const offerCatalogSchema = {
               
               <!-- Sección: FAQs -->
               <section class="py-12">
-                <h2 class="text-3xl font-bold mb-8 text-center">Preguntas frecuentes sobre nuestros servicios de pintura en Valencia</h2>
+                <h2 class="text-3xl font-bold mb-4 text-center">Preguntas Frecuentes sobre Servicios de Pintura en Valencia</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                  Resolvemos las dudas más comunes sobre nuestros servicios de pintura profesional en Valencia
+                </p>
               
               <div class="max-w-3xl mx-auto space-y-6">
                 <div class="rounded-lg border bg-white shadow-sm p-6">
-                  <h3 class="font-semibold text-lg mb-2">¿Cuánto tardáis en pintar un piso en Valencia?</h3>
+                  <h3 class="font-semibold text-lg mb-2">¿Cuánto cuesta pintar un piso en Valencia?</h3>
                   <p class="text-gray-600">
-                    El tiempo depende del tamaño y estado del piso. Un piso estándar de 70-80 m² suele llevarnos entre 4 y 6 días laborables, incluyendo preparación de superficies, dos manos de pintura y limpieza final. Si además hay que quitar gotelé, el plazo se alarga unos 2-3 días más. Te daremos un calendario exacto en el presupuesto.
+                    El precio de <strong>pintar un piso en Valencia</strong> depende de varios factores: metros cuadrados, estado de las paredes, tipo de pintura elegida y si incluye quitar gotelé. Como referencia, un piso de 80m² suele costar entre 1.500€ y 2.500€ con materiales incluidos. Te damos un presupuesto detallado gratuito en menos de 24 horas tras visitar tu vivienda. No trabajamos con precios aproximados sin ver el proyecto.
                   </p>
                 </div>
                 
                 <div class="rounded-lg border bg-white shadow-sm p-6">
-                  <h3 class="font-semibold text-lg mb-2">¿Cómo calculáis el precio por metro cuadrado?</h3>
+                  <h3 class="font-semibold text-lg mb-2">¿Cuánto tiempo tardáis en pintar un piso completo?</h3>
                   <p class="text-gray-600">
-                    El precio se calcula según la superficie a pintar, el tipo de trabajo (interior, exterior, quitar gotelé, etc.), el estado de las paredes y la calidad de pintura elegida. Siempre hacemos una visita previa gratuita para evaluar el proyecto y darte un presupuesto cerrado sin sorpresas. No trabajamos con precios aproximados por teléfono.
+                    El tiempo depende del tamaño y estado del piso. Un <strong>piso estándar de 70-80 m²</strong> suele llevarnos entre 4 y 6 días laborables, incluyendo preparación de superficies, imprimación, dos manos de pintura y limpieza final. Si además hay que <strong>quitar gotelé en Valencia</strong>, el plazo se alarga unos 2-3 días más. Te daremos un calendario exacto y realista en el presupuesto, y nos comprometemos a cumplirlo.
                   </p>
                 </div>
                 
                 <div class="rounded-lg border bg-white shadow-sm p-6">
-                  <h3 class="font-semibold text-lg mb-2">¿Trabajáis también en fines de semana?</h3>
+                  <h3 class="font-semibold text-lg mb-2">¿Qué marcas de pintura utilizáis en Valencia?</h3>
                   <p class="text-gray-600">
-                    Sí, especialmente en proyectos de locales comerciales donde es necesario no interrumpir la actividad del negocio. En viviendas particulares solemos trabajar de lunes a viernes, pero podemos adaptar horarios si tienes necesidades especiales. Consúltanos tu situación y buscaremos la mejor solución.
+                    Trabajamos exclusivamente con <strong>marcas premium</strong> reconocidas en el sector: <strong>Bruguer, Jotun, Sikkens, Titan y Montó</strong>. Todas ofrecen excelente cobertura, durabilidad superior y acabados profesionales. Para exteriores usamos pinturas con protección UV y anti-moho. Para interiores, pinturas lavables de alta calidad. Podemos asesorarte sobre la mejor opción para tu proyecto específico según el uso del espacio y tus necesidades.
                   </p>
                 </div>
                 
                 <div class="rounded-lg border bg-white shadow-sm p-6">
-                  <h3 class="font-semibold text-lg mb-2">¿Los materiales están incluidos en el precio?</h3>
+                  <h3 class="font-semibold text-lg mb-2">¿Cómo calculáis el precio por metro cuadrado de pintura?</h3>
                   <p class="text-gray-600">
-                    Sí, todos nuestros presupuestos incluyen materiales de primera calidad salvo que se indique lo contrario. Trabajamos con pinturas de marcas líderes como Bruguer, Jotun, Sikkens y Titan. Si prefieres aportar tú la pintura o elegir una gama superior, te ajustamos el presupuesto deduciendo el coste del material.
+                    El precio por m² se calcula según varios factores: superficie a pintar, tipo de trabajo (interior, exterior, quitar gotelé, etc.), estado actual de las paredes, altura de los techos y calidad de pintura elegida. Por eso siempre hacemos una <strong>visita previa gratuita en Valencia</strong> para evaluar el proyecto personalmente y darte un presupuesto cerrado, detallado y sin sorpresas. No trabajamos con precios aproximados por teléfono porque cada proyecto es único.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Trabajáis en fines de semana o fuera de horario laboral?</h3>
+                  <p class="text-gray-600">
+                    Sí, especialmente para <strong>pintura de locales comerciales en Valencia</strong> donde es necesario no interrumpir la actividad del negocio. Podemos trabajar en horarios nocturnos, fines de semana o festivos según tus necesidades. En viviendas particulares solemos trabajar de lunes a viernes en horario diurno, pero podemos adaptar horarios si tienes necesidades especiales. Consúltanos tu situación y buscaremos la mejor solución para ti.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Los materiales están incluidos en el presupuesto?</h3>
+                  <p class="text-gray-600">
+                    Sí, todos nuestros presupuestos de <strong>pintura en Valencia incluyen materiales de primera calidad</strong> salvo que se indique expresamente lo contrario. Incluimos: pinturas profesionales (Bruguer, Jotun, Titan), imprimaciones, masillas, cintas de pintor, protecciones y todo el material necesario. Si prefieres aportar tú la pintura o elegir una gama superior específica, te ajustamos el presupuesto deduciendo el coste del material. Siempre con total transparencia.
                   </p>
                 </div>
                 
                 <div class="rounded-lg border bg-white shadow-sm p-6">
                   <h3 class="font-semibold text-lg mb-2">¿Cómo se organiza la pintura de una comunidad de vecinos?</h3>
                   <p class="text-gray-600">
-                    Nos coordinamos directamente con el presidente o administrador de la comunidad para planificar los trabajos por fases, minimizando molestias a los vecinos. Colocamos señalización, protegemos accesos y limpiamos diariamente. Enviamos informes de avance y fotos para mantener informada a la comunidad durante todo el proceso.
+                    Para <strong>pintar comunidades de vecinos en Valencia</strong>, nos coordinamos directamente con el presidente o administrador de fincas. Planificamos los trabajos por fases para minimizar molestias, colocamos señalización adecuada, protegemos accesos y zonas comunes, y limpiamos diariamente. Enviamos informes de avance con fotos para mantener informada a la comunidad durante todo el proceso. Tenemos amplia experiencia en escaleras, portales, garajes y fachadas de comunidades.
                   </p>
                 </div>
                 
                 <div class="rounded-lg border bg-white shadow-sm p-6">
                   <h3 class="font-semibold text-lg mb-2">¿Dais factura y garantía por escrito?</h3>
                   <p class="text-gray-600">
-                    Sí, siempre. Somos una empresa legal en Valencia con todos los permisos al día. Emitimos factura oficial con IVA y ofrecemos garantía por escrito en todos nuestros trabajos: 2 años en pintura interior, 3 años en exteriores y 5 años en impermeabilizaciones. Además, contamos con seguro de responsabilidad civil.
+                    Sí, siempre. Somos una <strong>empresa legal de pintura en Valencia</strong> con todos los permisos y licencias al día. Emitimos <strong>factura oficial con IVA</strong> y ofrecemos <strong>garantía por escrito</strong> en todos nuestros trabajos: 2 años en pintura interior, 3 años en trabajos exteriores y fachadas, y 5 años en impermeabilizaciones. Además, contamos con seguro de responsabilidad civil que cubre cualquier imprevisto durante la obra.
                   </p>
                 </div>
                 
                 <div class="rounded-lg border bg-white shadow-sm p-6">
                   <h3 class="font-semibold text-lg mb-2">¿En qué zonas de Valencia trabajáis?</h3>
                   <p class="text-gray-600">
-                    Trabajamos en toda Valencia capital (Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Mestalla, etc.) y en toda el área metropolitana: Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet y poblaciones cercanas. Si estás fuera de esta zona, consúltanos y valoraremos tu caso.
+                    Trabajamos en toda <strong>Valencia capital</strong> (Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Mestalla, Jesús, Nazaret, Malvarrosa, Poblats Marítims, Quatre Carreres) y en toda el <strong>área metropolitana de Valencia</strong>: Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet, Alaquàs, Picanya, Paiporta, Sedaví y poblaciones cercanas. Si estás fuera de esta zona, consúltanos y valoraremos tu caso.
+                  </p>
+                </div>
+                
+                <div class="rounded-lg border bg-white shadow-sm p-6">
+                  <h3 class="font-semibold text-lg mb-2">¿Qué diferencia hay entre pintura interior y exterior?</h3>
+                  <p class="text-gray-600">
+                    La <strong>pintura interior</strong> usa productos específicos para espacios cerrados, lavables y sin olor fuerte, ideales para paredes y techos de viviendas. La <strong>pintura exterior en Valencia</strong> requiere productos especiales resistentes a la intemperie, con protección UV contra el sol mediterráneo, impermeables y anti-moho para soportar lluvia, humedad y cambios de temperatura. Usamos diferentes técnicas y preparaciones según cada tipo de superficie para garantizar durabilidad máxima.
                   </p>
                 </div>
               </div>
-            </section>
-
-            </div>
+          </section>            </div>
           </div>
         </div>
 
