@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
+import vercel from "@astrojs/vercel/serverless";
+export default { output: "server", adapter: vercel() };
 
 export default defineConfig({
   site: 'https://pintores-valencia.com',
