@@ -3,12 +3,12 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import vercel from "@astrojs/vercel/serverless";
-export default { output: "server", adapter: vercel() };
 
 export default defineConfig({
   site: 'https://pintores-valencia.com',
   trailingSlash: 'always',
-  output: 'static',
+  output: 'server',
+  adapter: vercel(),
   redirects: {
     '/servicios/pintura-exterior/': '/servicios/pintura-exterior-fachadas/',
     '/servicios/impermeabilizacion/': '/servicios/impermeabilizacion-terrazas/',
