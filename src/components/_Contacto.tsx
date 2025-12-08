@@ -14,14 +14,33 @@ const Contacto = () => {
     email: "",
     mensaje: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
 
-    console.log("Formulario enviado", formData);
-    alert("Formulario enviado. Te contactaremos en menos de 24 horas.");
+    setIsSubmitting(true);
 
-    setFormData({ nombre: "", telefono: "", email: "", mensaje: "" });
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Error enviando el formulario");
+      }
+
+      alert("Formulario enviado. Te contactaremos en menos de 24 horas.");
+      setFormData({ nombre: "", telefono: "", email: "", mensaje: "" });
+    } catch (err) {
+      console.error(err);
+      alert("Ha habido un error al enviar el formulario. Prueba de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -189,9 +208,10 @@ const Contacto = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full h-11 text-sm font-semibold bg-accent hover:bg-accent/90"
+                    disabled={isSubmitting}
+                    className="w-full h-11 text-sm font-semibold bg-accent hover:bg-accent/90 disabled:opacity-60"
                   >
-                    Enviar solicitud
+                    {isSubmitting ? "Enviando..." : "Enviar solicitud"}
                   </Button>
                 </form>
               </div>
