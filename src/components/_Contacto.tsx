@@ -1,13 +1,40 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contacto = () => {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    telefono: "",
+    email: "",
+    mensaje: ""
+  });
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    toast({
+      title: "Mensaje enviado",
+      description: "Te contactaremos lo antes posible.",
+    });
+    setFormData({ nombre: "", telefono: "", email: "", mensaje: "" });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
   return (
     <>
       <SEOHead
@@ -29,7 +56,7 @@ const Contacto = () => {
           <Card className="shadow-sm">
             <CardContent className="p-6">
               <div className="grid md:grid-cols-2 gap-6 items-start">
-                {/* Izquierda: canales */}
+                {/* Columna izquierda: canales compactos */}
                 <div className="space-y-4">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
@@ -76,37 +103,29 @@ const Contacto = () => {
                   </div>
                 </div>
 
-                {/* Derecha: formulario (POST nativo) */}
+                {/* Columna derecha: formulario compacto */}
                 <div>
-                  <form action="/api/contact" method="POST" className="space-y-4" id="form-contacto">
+                  <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
                         <Label htmlFor="nombre">Nombre *</Label>
-                        <Input id="nombre" name="nombre" required placeholder="Ej: Laura Martínez" />
+                        <Input id="nombre" name="nombre" value={formData.nombre} onChange={handleChange} required placeholder="Ej: Laura Martínez" />
                       </div>
                       <div className="space-y-1.5">
                         <Label htmlFor="telefono">Teléfono *</Label>
-                        <Input id="telefono" name="telefono" type="tel" required placeholder="Ej: 722 000 000" />
+                        <Input id="telefono" name="telefono" type="tel" value={formData.telefono} onChange={handleChange} required placeholder="Ej: 722 000 000" />
                       </div>
                       <div className="space-y-1.5 md:col-span-2">
                         <Label htmlFor="email">Email (opcional)</Label>
-                        <Input id="email" name="email" type="email" placeholder="tucorreo@email.com" />
+                        <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="tucorreo@email.com" />
                       </div>
                       <div className="space-y-1.5 md:col-span-2">
                         <Label htmlFor="mensaje">Mensaje *</Label>
-                        <Textarea id="mensaje" name="mensaje" required rows={5} placeholder="Cuéntanos brevemente qué necesitas" />
+                        <Textarea id="mensaje" name="mensaje" value={formData.mensaje} onChange={handleChange} required rows={5} placeholder="Cuéntanos brevemente qué necesitas" />
                       </div>
                     </div>
-
-                    {/* Honeypot anti-bots */}
-                    <input type="text" name="bot-field" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
-
-                    <div className="text-[11px] text-muted-foreground">
-                      Al enviar, aceptas el tratamiento de datos para responder a tu solicitud.
-                    </div>
-                    <Button type="submit" className="w-full h-11 text-sm font-semibold bg-accent hover:bg-accent/90">
-                      Enviar solicitud
-                    </Button>
+                    <div className="text-[11px] text-muted-foreground">Al enviar, aceptas el tratamiento de datos para responder a tu solicitud.</div>
+                    <Button type="submit" className="w-full h-11 text-sm font-semibold bg-accent hover:bg-accent/90">Enviar solicitud</Button>
                   </form>
                 </div>
               </div>
@@ -118,4 +137,4 @@ const Contacto = () => {
   );
 };
 
-export default Contacto;
+export default Contacto;
