@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
 type Status = "idle" | "success" | "error";
 
@@ -20,7 +17,7 @@ const Contacto = () => {
   const [status, setStatus] = useState<Status>("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
-  // Ocultar mensaje después de unos segundos
+  // Ocultar mensaje a los pocos segundos
   useEffect(() => {
     if (status === "idle") return;
     const t = setTimeout(() => setStatus("idle"), 4000);
@@ -67,186 +64,89 @@ const Contacto = () => {
   };
 
   return (
-    <div className="container mx-auto px-4">
-      <Breadcrumbs items={[{ label: "Contacto" }]} />
-
-      <div className="py-8">
-        <div className="text-center mb-6">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">
-            Contacta con nosotros
-          </h1>
-          <p className="text-base text-muted-foreground">
-            Teléfono, WhatsApp o formulario — respuesta &lt; 24h.
-          </p>
+    <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8">
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div>
+          <Label htmlFor="nombre" className="block text-sm font-medium mb-1">
+            Nombre *
+          </Label>
+          <Input
+            id="nombre"
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            required
+            placeholder="Tu nombre"
+          />
         </div>
 
-        <Card className="shadow-sm">
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-2 gap-6 items-start">
-              {/* Columna izquierda */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span className="p-2 rounded-md bg-blue-50 text-blue-600">
-                      <Phone className="w-5 h-5" />
-                    </span>
-                    <div>
-                      <div className="font-medium leading-tight">Teléfono</div>
-                      <div className="text-sm text-muted-foreground">
-                        Consultas urgentes y coordinación
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    href="tel:+34722208131"
-                    className="text-blue-600 font-medium hover:underline"
-                  >
-                    722 208 131
-                  </a>
-                </div>
+        <div>
+          <Label htmlFor="telefono" className="block text-sm font-medium mb-1">
+            Teléfono *
+          </Label>
+          <Input
+            id="telefono"
+            name="telefono"
+            type="tel"
+            value={formData.telefono}
+            onChange={handleChange}
+            required
+            placeholder="+34 6XX XXX XXX"
+          />
+        </div>
 
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span className="p-2 rounded-md bg-green-50 text-green-600">
-                      <MessageCircle className="w-5 h-5" />
-                    </span>
-                    <div>
-                      <div className="font-medium leading-tight">WhatsApp</div>
-                      <div className="text-sm text-muted-foreground">
-                        Envíanos fotos y medidas
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    href="https://wa.me/34722208131"
-                    target="_blank"
-                    rel="noopener"
-                    className="text-green-600 font-medium hover:underline"
-                  >
-                    Abrir chat
-                  </a>
-                </div>
+        <div>
+          <Label htmlFor="email" className="block text-sm font-medium mb-1">
+            Email (opcional)
+          </Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="tucorreo@email.com"
+          />
+        </div>
 
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span className="p-2 rounded-md bg-orange-50 text-orange-600">
-                      <Mail className="w-5 h-5" />
-                    </span>
-                    <div>
-                      <div className="font-medium leading-tight">Email</div>
-                      <div className="text-sm text-muted-foreground">
-                        Consultas detalladas
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    href="mailto:info@pintores-valencia.com"
-                    className="text-orange-600 font-medium hover:underline break-all"
-                  >
-                    info@pintores-valencia.com
-                  </a>
-                </div>
+        <div>
+          <Label htmlFor="mensaje" className="block text-sm font-medium mb-1">
+            Tu mensaje *
+          </Label>
+          <Textarea
+            id="mensaje"
+            name="mensaje"
+            rows={5}
+            required
+            value={formData.mensaje}
+            onChange={handleChange}
+            placeholder="Cuéntanos qué necesitas pintar"
+          />
+        </div>
 
-                <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <span className="p-2 rounded-md bg-violet-50 text-violet-600">
-                      <MapPin className="w-5 h-5" />
-                    </span>
-                    <div>
-                      <div className="font-medium leading-tight">Zona</div>
-                      <div className="text-sm text-muted-foreground">
-                        Valencia y provincia
-                      </div>
-                    </div>
-                  </div>
-                  <span className="text-xs text-muted-foreground">
-                    Horarios: L-S 8:00-20:00
-                  </span>
-                </div>
-              </div>
+        <div className="text-[11px] text-muted-foreground">
+          Al enviar, aceptas el tratamiento de datos para responder a tu
+          solicitud.
+        </div>
 
-              {/* Columna derecha: formulario */}
-              <div>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
-                      <Label htmlFor="nombre">Nombre *</Label>
-                      <Input
-                        id="nombre"
-                        name="nombre"
-                        value={formData.nombre}
-                        onChange={handleChange}
-                        required
-                        placeholder="Ej: Laura Martínez"
-                      />
-                    </div>
-                    <div className="space-y-1.5">
-                      <Label htmlFor="telefono">Teléfono *</Label>
-                      <Input
-                        id="telefono"
-                        name="telefono"
-                        type="tel"
-                        value={formData.telefono}
-                        onChange={handleChange}
-                        required
-                        placeholder="Ej: 722 000 000"
-                      />
-                    </div>
-                    <div className="space-y-1.5 md:col-span-2">
-                      <Label htmlFor="email">Email (opcional)</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="tucorreo@email.com"
-                      />
-                    </div>
-                    <div className="space-y-1.5 md:col-span-2">
-                      <Label htmlFor="mensaje">Mensaje *</Label>
-                      <Textarea
-                        id="mensaje"
-                        name="mensaje"
-                        value={formData.mensaje}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        placeholder="Cuéntanos brevemente qué necesitas"
-                      />
-                    </div>
-                  </div>
-                  <div className="text-[11px] text-muted-foreground">
-                    Al enviar, aceptas el tratamiento de datos para responder a
-                    tu solicitud.
-                  </div>
+        {status !== "idle" && (
+          <div
+            className={`text-sm ${
+              status === "success" ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {statusMessage}
+          </div>
+        )}
 
-                  {/* Mensaje de estado */}
-                  {status !== "idle" && (
-                    <div
-                      className={`text-sm ${
-                        status === "success"
-                          ? "text-green-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {statusMessage}
-                    </div>
-                  )}
-
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full h-11 text-sm font-semibold bg-accent hover:bg-accent/90 disabled:opacity-60"
-                  >
-                    {isSubmitting ? "Enviando..." : "Enviar solicitud"}
-                  </Button>
-                </form>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="w-full inline-flex items-center justify-center rounded-md bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 text-lg shadow-md hover:shadow-lg disabled:opacity-60"
+        >
+          {isSubmitting ? "Enviando..." : "Pedir presupuesto 24h"}
+        </Button>
+      </form>
     </div>
   );
 };
