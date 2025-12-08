@@ -144,7 +144,7 @@ const Contacto = () => {
           disabled={isSubmitting}
           className="w-full inline-flex items-center justify-center rounded-md bg-accent hover:bg-accent/90 text-white font-semibold px-6 py-3 text-lg shadow-md hover:shadow-lg disabled:opacity-60"
         >
-          {isSubmitting ? "Enviando..." : "Pedir presupuesto 24h"}
+          {isSubmitting ? "Enviando..." : "Enviar"}
         </Button>
       </form>
     </div>
