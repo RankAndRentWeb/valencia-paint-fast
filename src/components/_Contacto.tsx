@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ const Contacto = () => {
     mensaje: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -33,11 +35,21 @@ const Contacto = () => {
         throw new Error("Error enviando el formulario");
       }
 
-      alert("Formulario enviado. Te contactaremos en menos de 24 horas.");
+      toast({
+        title: "Solicitud enviada",
+        description: "Te contactaremos en menos de 24 horas.",
+        duration: 4000,
+      });
+
       setFormData({ nombre: "", telefono: "", email: "", mensaje: "" });
     } catch (err) {
       console.error(err);
-      alert("Ha habido un error al enviar el formulario. Prueba de nuevo.");
+      toast({
+        title: "Error al enviar",
+        description: "Prueba de nuevo en unos minutos.",
+        variant: "destructive",
+        duration: 4000,
+      });
     } finally {
       setIsSubmitting(false);
     }
