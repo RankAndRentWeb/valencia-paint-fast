@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,7 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+
+type Status = "idle" | "success" | "error";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -16,13 +17,22 @@ const Contacto = () => {
     mensaje: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
+  const [status, setStatus] = useState<Status>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+
+  // Ocultar mensaje después de unos segundos
+  useEffect(() => {
+    if (status === "idle") return;
+    const t = setTimeout(() => setStatus("idle"), 4000);
+    return () => clearTimeout(t);
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
 
     setIsSubmitting(true);
+    setStatus("idle");
 
     try {
       const res = await fetch("/api/contact", {
@@ -35,21 +45,13 @@ const Contacto = () => {
         throw new Error("Error enviando el formulario");
       }
 
-      toast({
-        title: "Solicitud enviada",
-        description: "Te contactaremos en menos de 24 horas.",
-        duration: 4000,
-      });
-
+      setStatus("success");
+      setStatusMessage("Solicitud enviada. Te contactaremos en menos de 24 horas.");
       setFormData({ nombre: "", telefono: "", email: "", mensaje: "" });
     } catch (err) {
       console.error(err);
-      toast({
-        title: "Error al enviar",
-        description: "Prueba de nuevo en unos minutos.",
-        variant: "destructive",
-        duration: 4000,
-      });
+      setStatus("error");
+      setStatusMessage("Ha habido un error al enviar. Prueba de nuevo en unos minutos.");
     } finally {
       setIsSubmitting(false);
     }
@@ -218,6 +220,20 @@ const Contacto = () => {
                     Al enviar, aceptas el tratamiento de datos para responder a
                     tu solicitud.
                   </div>
+
+                  {/* Mensaje de estado */}
+                  {status !== "idle" && (
+                    <div
+                      className={`text-sm ${
+                        status === "success"
+                          ? "text-green-600"
+                          : "text-red-600"
+                      }`}
+                    >
+                      {statusMessage}
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
