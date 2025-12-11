@@ -245,10 +245,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
               Pintores Profesionales en Valencia
             </h1>
             <p className="text-2xl md:text-3xl mb-8 font-medium">
-              Presupuesto gratuito en menos de 24 horas
+              Presupuesto en menos de 24h
             </p>
             <p className="text-xl mb-12 text-white/90">
-              Empresa de pintura con +10 años de experiencia | Garantía escrita | Limpieza incluida
+              Envíanos unas fotos y te damos precio | +10 años de experiencia | Garantía escrita
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -302,256 +302,280 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Servicios Profesionales de Pintura en Valencia
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-              Como <strong>empresa de pintura profesional en Valencia</strong>, ofrecemos servicios completos de pintura interior, exterior, quitar gotelé, impermeabilización y mucho más. Trabajamos en <strong>pisos, casas, chalets, locales comerciales y comunidades de vecinos</strong> en Valencia capital y toda el área metropolitana.
-            </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Nuestro equipo de <strong>pintores profesionales certificados</strong> utiliza materiales de primera calidad de marcas líderes como Bruguer, Jotun y Titan. Ofrecemos <strong>presupuestos rápidos en 24 horas</strong>, limpieza total incluida y <strong>garantía por escrito</strong> en todos nuestros trabajos.
-            </p>
+   {/* Services Section */}
+<section className="py-16 bg-background">
+  <div className="container mx-auto px-4">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        Nuestros Servicios de Pintura en Valencia
+      </h2>
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
+        Pintamos pisos, casas, locales y comunidades en Valencia con <strong>materiales de calidad</strong> y sin complicarte la vida. Envíanos unas fotos de lo que necesitas y te mandamos un presupuesto sin que tengas que esperarnos en casa.
+      </p>
+      <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+        Como <strong>pintores profesionales en Valencia</strong>, trabajamos con pinturas de marcas reconocidas (Bruguer, Jotun, Titan) y nos encargamos de todo: desde preparar las superficies hasta dejarte el espacio limpio. Factura oficial y <strong>garantía por escrito</strong> en cada proyecto.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+      
+      {/* Quitar Gotelé */}
+      <Card className="hover:shadow-card transition-shadow duration-300">
+        <CardContent className="p-6">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+              <Brush className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-semibold">Quitar Gotelé</h3>
           </div>
+          <p className="text-muted-foreground mb-4">
+            Quitamos el gotelé de techos y paredes en Valencia sin llenar tu casa de polvo. Usamos lijadoras con aspiración continua, enlucimos, alisamos y dejamos todo listo para pintar. Perfecto para darle un aire nuevo a pisos antiguos. Protegemos muebles y limpiamos al terminar cada día.
+          </p>
+          <ul className="text-sm text-muted-foreground space-y-2 mb-4">
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Sistema sin polvo</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Alisado perfecto</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Listo para pintar</span>
+            </li>
+          </ul>
+          <Button
+            asChild
+            size="sm"
+            className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+          >
+            <a href="/servicios/quitar-gotele/">Ver detalles</a>
+          </Button>
+        </CardContent>
+      </Card>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            
-            {/* Quitar Gotelé */}
-            <Card className="hover:shadow-card transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Brush className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Quitar Gotelé</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Eliminamos el gotelé de techos y paredes con sistema sin polvo mediante lijado y aspiración. Incluye enlucido profesional, alisado perfecto y acabado listo para pintar. Ideal para modernizar pisos antiguos en Valencia y aumentar el valor de tu vivienda. Trabajamos con plásticos protectores y limpieza diaria.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Sistema sin polvo</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Alisado perfecto</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Listo para pintar</span>
-                  </li>
-                </ul>
-                <Button asChild size="sm" className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors">
-                  <a href="/servicios/quitar-gotele/">Ver detalles</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Pintura Interior */}
-            <Card className="hover:shadow-card transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Home className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Pintura Interior</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Renovamos el interior completo de pisos, casas y oficinas con pinturas plásticas lavables de máxima calidad. Incluye preparación de superficies, reparación de pequeñas imperfecciones, imprimación y dos manos de acabado. Perfecto para propietarios que quieren actualizar su vivienda antes de vender o alquilar.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Pinturas premium lavables</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Protección de muebles</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Limpieza total incluida</span>
-                  </li>
-                </ul>
-                <Button asChild size="sm" className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors">
-                  <a href="/servicios/pintura-interior/">Ver detalles</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Fachadas */}
-            <Card className="hover:shadow-card transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Building className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Pintura Exterior y Fachadas</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Protegemos y embellecemos fachadas de edificios con pinturas impermeables anti-moho resistentes al clima de Valencia. Incluye limpieza a presión, reparación de grietas, imprimación y aplicación de revestimientos elásticos. Montamos andamios certificados y contamos con seguro de responsabilidad civil.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Pinturas impermeables</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Andamios certificados</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Seguro RC incluido</span>
-                  </li>
-                </ul>
-                <Button asChild size="sm" className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors">
-                  <a href="/servicios/pintura-exterior-fachadas/">Ver detalles</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Impermeabilización */}
-            <Card className="hover:shadow-card transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Shield className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Impermeabilización</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Solucionamos problemas de filtraciones en terrazas, balcones y cubiertas con membranas líquidas o láminas asfálticas. Incluye sellado de juntas y desagües, acabados transitables y garantía de 5 años contra filtraciones. Ideal para proteger tu vivienda de humedades y goteras permanentemente.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Sistemas certificados</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Garantía 5 años</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Acabados transitables</span>
-                  </li>
-                </ul>
-                <Button asChild size="sm" className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors">
-                  <a href="/servicios/impermeabilizacion-terrazas/">Ver detalles</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Locales Comerciales */}
-            <Card className="hover:shadow-card transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Building className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Locales Comerciales</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Pintamos locales, tiendas, oficinas y restaurantes con horarios flexibles (noches y fines de semana) para no interrumpir tu negocio. Acabados profesionales con pinturas de alto tránsito, branding corporativo con colores Pantone/RAL exactos y plazos de ejecución rápidos garantizados.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Horarios flexibles</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Sin interrumpir negocio</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Colores corporativos</span>
-                  </li>
-                </ul>
-                <Button asChild size="sm" className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors">
-                  <a href="/servicios/pintura-locales-comerciales/">Ver detalles</a>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Comunidades */}
-            <Card className="hover:shadow-card transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-3 mb-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <Building className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg font-semibold">Comunidades de Vecinos</h3>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Pintamos escaleras, portales, garajes y fachadas de comunidades. Nos coordinamos con presidentes y administradores, planificamos por fases para minimizar molestias y aplicamos pinturas duraderas especiales para zonas de tránsito. Incluye señalización, protección de accesos y limpieza diaria.
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-2 mb-4">
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Coordinación total</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Pinturas extra-resistentes</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-primary" />
-                    <span>Trabajo por fases</span>
-                  </li>
-                </ul>
-                <Button asChild size="sm" className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors">
-                  <a href="/servicios/pintura-comunidades/">Ver detalles</a>
-                </Button>
-              </CardContent>
-            </Card>
+      {/* Pintura Interior */}
+      <Card className="hover:shadow-card transition-shadow duration-300">
+        <CardContent className="p-6">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+              <Home className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-semibold">Pintura Interior</h3>
           </div>
+          <p className="text-muted-foreground mb-4">
+            Pintamos pisos, casas y oficinas en Valencia con pinturas lavables de calidad. Preparamos las paredes, tapamos grietas pequeñas, imprimamos y damos dos manos de acabado. Ideal si quieres renovar tu casa antes de venderla, alquilarla o simplemente disfrutarla como nueva.
+          </p>
+          <ul className="text-sm text-muted-foreground space-y-2 mb-4">
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Pinturas premium lavables</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Protección de muebles</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Limpieza total incluida</span>
+            </li>
+          </ul>
+          <Button
+            asChild
+            size="sm"
+            className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+          >
+            <a href="/servicios/pintura-interior/">Ver detalles</a>
+          </Button>
+        </CardContent>
+      </Card>
 
-          <div className="text-center">
-            <CustomButton 
-              variant="orange" 
-              size="lg" 
-              asChild 
-              href="/servicios/"
-            >
-              Ver todos los servicios
-            </CustomButton>
+      {/* Fachadas */}
+      <Card className="hover:shadow-card transition-shadow duration-300">
+        <CardContent className="p-6">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+              <Building className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-semibold">Pintura Exterior y Fachadas</h3>
           </div>
-        </div>
-      </section>
+          <p className="text-muted-foreground mb-4">
+            Pintamos fachadas en Valencia con productos impermeables y anti-moho que aguantan bien el clima mediterráneo. Limpiamos a presión, arreglamos grietas, imprimamos y aplicamos revestimientos elásticos. Montamos andamios certificados y tenemos seguro de responsabilidad civil.
+          </p>
+          <ul className="text-sm text-muted-foreground space-y-2 mb-4">
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Pinturas impermeables</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Andamios certificados</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Seguro RC incluido</span>
+            </li>
+          </ul>
+          <Button
+            asChild
+            size="sm"
+            className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+          >
+            <a href="/servicios/pintura-exterior-fachadas/">Ver detalles</a>
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* Impermeabilización */}
+      <Card className="hover:shadow-card transition-shadow duration-300">
+        <CardContent className="p-6">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+              <Shield className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-semibold">Impermeabilización</h3>
+          </div>
+          <p className="text-muted-foreground mb-4">
+            Arreglamos filtraciones en terrazas, balcones y cubiertas en Valencia aplicando membranas líquidas o láminas asfálticas de calidad. Sellamos juntas y desagües, y dejamos acabados por los que puedes andar sin problema. Protegemos tu casa de humedades y goteras con <strong>garantía por escrito</strong>.
+          </p>
+          <ul className="text-sm text-muted-foreground space-y-2 mb-4">
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Sistemas certificados</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Garantía por escrito</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Acabados transitables</span>
+            </li>
+          </ul>
+          <Button
+            asChild
+            size="sm"
+            className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+          >
+            <a href="/servicios/impermeabilizacion-terrazas/">Ver detalles</a>
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* Locales Comerciales */}
+      <Card className="hover:shadow-card transition-shadow duration-300">
+        <CardContent className="p-6">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+              <Building className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-semibold">Locales Comerciales</h3>
+          </div>
+          <p className="text-muted-foreground mb-4">
+            Pintamos tu local, tienda, oficina o restaurante en Valencia en horarios que no te compliquen (noches o fines de semana). Usamos pinturas resistentes al tránsito, igualamos colores corporativos exactos (Pantone/RAL) y cumplimos los plazos que acordemos.
+          </p>
+          <ul className="text-sm text-muted-foreground space-y-2 mb-4">
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Horarios flexibles</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Sin interrumpir negocio</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Colores corporativos</span>
+            </li>
+          </ul>
+          <Button
+            asChild
+            size="sm"
+            className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+          >
+            <a href="/servicios/pintura-locales-comerciales/">Ver detalles</a>
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* Comunidades */}
+      <Card className="hover:shadow-card transition-shadow duration-300">
+        <CardContent className="p-6">
+          <div className="flex items-center space-x-3 mb-3">
+            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+              <Building className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-semibold">Comunidades de Vecinos</h3>
+          </div>
+          <p className="text-muted-foreground mb-4">
+            Pintamos escaleras, portales, garajes y fachadas de comunidades de vecinos en Valencia. Hablamos con presidentes y administradores, trabajamos por fases para molestar lo menos posible y usamos pinturas resistentes para zonas de mucho paso. Señalizamos, protegemos accesos y limpiamos cada día.
+          </p>
+          <ul className="text-sm text-muted-foreground space-y-2 mb-4">
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Coordinación total</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Pinturas extra-resistentes</span>
+            </li>
+            <li className="flex items-center space-x-2">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>Trabajo por fases</span>
+            </li>
+          </ul>
+          <Button
+            asChild
+            size="sm"
+            className="bg-white text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white transition-colors"
+          >
+            <a href="/servicios/pintura-comunidades/">Ver detalles</a>
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+
+    <div className="text-center">
+      <CustomButton 
+        variant="orange" 
+        size="lg" 
+        asChild 
+        href="/servicios/"
+      >
+        Ver todos los servicios
+      </CustomButton>
+    </div>
+  </div>
+</section>
 
       {/* Nueva sección: ¿Qué servicio necesitas? */}
       <section className="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-              ¿Qué Servicio de Pintura Necesitas en Valencia?
+              ¿Qué Necesitas Pintar?
             </h2>
             
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Si acabas de comprar un <strong>piso en Ruzafa, el centro de Valencia o Benimaclet</strong> y necesitas renovarlo completamente antes de mudarte, nuestro servicio de <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline font-semibold">pintura interior</a> es tu mejor opción. Incluye preparación de superficies, reparación de pequeñas imperfecciones, imprimación y dos manos de pintura plástica lavable de alta calidad. Trabajamos con las mejores marcas del mercado y dejamos tu hogar impecable.
+                <strong>Acabas de comprar un piso en Ruzafa o Benimaclet</strong> y quieres darle una mano de pintura antes de mudarte? Con nuestro servicio de <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline font-semibold">pintura interior</a> renovamos tu casa completa: preparamos paredes, tapamos imperfecciones, imprimamos y damos dos manos de acabado con pinturas lavables de calidad. Envíanos fotos y te decimos cuánto cuesta sin que tengas que estar en casa esperándonos.
               </p>
               
               <p>
-                Para pisos antiguos con <strong>gotelé en paredes y techos</strong>, ofrecemos un servicio especializado para <a href="/servicios/quitar-gotele/" className="text-blue-600 hover:underline font-semibold">quitar gotelé y alisar paredes</a>. Utilizamos sistemas de lijado sin polvo con aspiración continua y técnicas profesionales de enlucido que dejan las superficies completamente lisas y listas para pintar. Este servicio es perfecto para modernizar tu vivienda y aumentar significativamente su valor en el mercado inmobiliario de Valencia.
+                <strong>¿Tienes un piso antiguo con gotelé?</strong> Si esas paredes con textura ya no te gustan, podemos <a href="/servicios/quitar-gotele/" className="text-blue-600 hover:underline font-semibold">quitarlo y dejarte todo liso</a>. Lijamos sin llenar de polvo (usamos aspiración), enlucimos y alisamos hasta que quede perfecto para pintar. Es una buena forma de modernizar tu casa y que valga más si decides venderla.
               </p>
               
               <p>
-                Si tienes una <strong>terraza en Patraix, Campanar o cualquier zona de Valencia</strong> con problemas de filtraciones o humedades, nuestro servicio de <a href="/servicios/impermeabilizacion-terrazas/" className="text-blue-600 hover:underline font-semibold">impermeabilización de terrazas</a> soluciona definitivamente estos problemas. Aplicamos membranas líquidas o láminas asfálticas de alta calidad, sellamos juntas y desagües, y ofrecemos garantía de 5 años contra filtraciones.
+                <strong>¿Se te cuela el agua por la terraza?</strong> Si tienes problemas de filtraciones en Patraix, Campanar o donde sea, nuestro servicio de <a href="/servicios/impermeabilizacion-terrazas/" className="text-blue-600 hover:underline font-semibold">impermeabilización</a> lo arregla de verdad. Aplicamos membranas o láminas de calidad, sellamos juntas y desagües, y te damos <strong>garantía por escrito</strong> para que estés tranquilo.
               </p>
               
               <p>
-                Para <strong>fachadas de edificios, chalets o locales comerciales</strong> que han perdido color o presentan moho y desconchones, realizamos <a href="/servicios/pintura-exterior-fachadas/" className="text-blue-600 hover:underline font-semibold">pintura exterior y rehabilitación de fachadas</a> con pinturas especiales impermeables y transpirables que protegen contra la lluvia, el sol y la contaminación de Valencia. Montamos andamios certificados y contamos con seguro de responsabilidad civil.
+                <strong>¿Tu fachada tiene moho o se está cayendo la pintura?</strong> Pintamos <a href="/servicios/pintura-exterior-fachadas/" className="text-blue-600 hover:underline font-semibold">fachadas de edificios, chalets y locales</a> con productos impermeables que aguantan bien la lluvia y el sol mediterráneo. Montamos andamios certificados y tenemos seguro de responsabilidad civil.
               </p>
               
               <p>
-                Si tienes un <strong>local comercial en el centro de Valencia</strong> o en zonas comerciales y necesitas renovarlo sin cerrar tu negocio, ofrecemos <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline font-semibold">pintura de locales comerciales</a> con horarios flexibles en noches y fines de semana, acabados corporativos profesionales y plazos de ejecución rápidos.
+                <strong>¿Tienes un local o negocio que renovar?</strong> Pintamos <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline font-semibold">locales comerciales</a> en horarios que no te compliquen (noches o fines de semana). Igualamos colores corporativos exactos y cumplimos los plazos que necesites.
               </p>
             </div>
           </div>
@@ -563,11 +587,11 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Los mejores pintores de Valencia
+              Pintores en Valencia que Trabajan Bien
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Transformamos tu hogar con la máxima calidad profesional. Garantía escrita, 
-              materiales premium y resultados que superan expectativas.
+              Usamos buenos materiales, dejamos todo limpio y damos <strong>garantía por escrito</strong>. 
+              Sin complicarte: envíanos fotos y te presupuestamos en menos de 24 horas.
             </p>
           </div>
 
@@ -601,11 +625,11 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
               <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 h-[300px] sm:h-[400px] md:h-[450px] flex flex-col justify-center">
                 <div className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed space-y-3 sm:space-y-4 md:space-y-6">
                   <p>
-                    Si buscas <strong>pintores de confianza en Valencia capital y provincia</strong>, somos tu mejor opción. Realizamos trabajos de <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline"><strong>pintura en viviendas</strong></a>, <a href="/servicios/pintura-exterior-fachadas/" className="text-blue-600 hover:underline"><strong>fachadas</strong></a>, <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline"><strong>locales comerciales</strong></a> y comunidades, además de ofrecer <a href="/servicios/impermeabilizacion-terrazas/" className="text-blue-600 hover:underline"><strong>impermeabilización</strong></a> de terrazas y superficies exteriores para protegerlas del desgaste.
+                    Llevamos años pintando <a href="/servicios/pintura-interior/" className="text-blue-600 hover:underline"><strong>pisos</strong></a>, <a href="/servicios/pintura-exterior-fachadas/" className="text-blue-600 hover:underline"><strong>fachadas</strong></a>, <a href="/servicios/pintura-locales-comerciales/" className="text-blue-600 hover:underline"><strong>locales</strong></a> y comunidades por toda la ciudad y alrededores. También hacemos <a href="/servicios/impermeabilizacion-terrazas/" className="text-blue-600 hover:underline"><strong>impermeabilizaciones</strong></a> para que no se te cuele el agua por la terraza.
                   </p>
                   
                   <p>
-                    Usamos <strong>materiales de alta calidad</strong> y ofrecemos <strong>garantía escrita</strong> en cada proyecto. <strong>Pide tu presupuesto gratuito en menos de 24 horas</strong> y descubre un servicio profesional, cercano y con la mejor relación calidad-precio. Mira ejemplos de nuestro trabajo en <a href="/trabajos/" className="text-blue-600 hover:underline"><strong>proyectos realizados</strong></a>.
+                    Trabajamos con materiales de calidad y te damos <strong>garantía por escrito</strong> en cada trabajo. <strong>Envíanos unas fotos de lo que necesitas</strong> y te mandamos presupuesto en menos de 24 horas, sin que tengas que perder tiempo con visitas. Mira ejemplos de trabajos hechos en <a href="/trabajos/" className="text-blue-600 hover:underline"><strong>proyectos realizados</strong></a>.
                   </p>
                 </div>
               </div>
@@ -619,24 +643,24 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Por Qué Elegirnos Como Tus Pintores en Valencia
+              Por Qué Contratarnos
             </h2>
             
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed mb-12">
               <p>
-                Con más de <strong>10 años de experiencia</strong> trabajando como <strong>empresa de pintura en Valencia</strong>, hemos ayudado a cientos de familias, negocios y comunidades a transformar sus espacios con resultados impecables. Nuestro equipo de <strong>pintores profesionales certificados</strong> está formado continuamente en las últimas técnicas y materiales del sector, lo que nos permite ofrecer soluciones modernas y duraderas adaptadas a cada proyecto.
+                Llevamos <strong>más de 10 años</strong> pintando por toda la ciudad y alrededores. Hemos ayudado a cientos de familias, negocios y comunidades a renovar sus espacios con buenos resultados. Nuestro equipo se forma continuamente para estar al día en técnicas y materiales, así que trabajamos bien y con seriedad.
               </p>
               
               <p>
-                Sabemos que contratar <strong>pintores fiables en Valencia</strong> es una decisión importante, por eso nos esforzamos en ser transparentes desde el primer contacto. Te ofrecemos <strong>presupuesto gratuito en menos de 24 horas</strong>, con todos los detalles incluidos: materiales, mano de obra, plazos y garantías. No trabajamos con precios cerrados por teléfono: preferimos visitar tu proyecto para evaluar el estado real de las superficies y darte un precio justo y realista.
+                Sabemos que buscar <strong>un pintor de confianza</strong> no es fácil, por eso somos transparentes desde el principio. <strong>Envíanos unas fotos de lo que necesitas pintar</strong> y te mandamos presupuesto en menos de 24 horas, con todos los detalles: materiales, mano de obra, cuánto tardamos y qué garantía te damos. Sin perder tiempo con visitas ni esperas.
               </p>
               
               <p>
-                Como <strong>empresa de pintura profesional</strong>, nos comprometemos a cumplir los plazos acordados y a mantener tu espacio limpio durante toda la obra. Protegemos suelos y muebles, aspiramos el polvo diariamente y realizamos una limpieza final completa. Además, todos nuestros trabajos incluyen <strong>garantía por escrito</strong>: 2 años en pintura interior, 3 años en exteriores, y 5 años en impermeabilizaciones.
+                Cumplimos los plazos que acordamos y dejamos tu casa limpia. Protegemos suelos y muebles, aspiramos el polvo cada día y al terminar lo limpiamos todo a fondo. Todos nuestros trabajos incluyen <strong>garantía por escrito</strong> para que estés tranquilo.
               </p>
               
               <p>
-                Trabajamos exclusivamente con <strong>materiales de alta calidad</strong> de marcas líderes como Bruguer, Jotun, Sikkens y Titan porque sabemos que una buena pintura no solo se ve mejor, sino que dura mucho más tiempo. Además, contamos con <strong>seguro de responsabilidad civil vigente</strong> y cumplimos toda la normativa de prevención de riesgos laborales.
+                Usamos <strong>materiales de calidad</strong> de marcas reconocidas (Bruguer, Jotun, Titan) porque una buena pintura se ve mejor y dura más. Además tenemos <strong>seguro de responsabilidad civil</strong> y cumplimos toda la normativa de prevención de riesgos.
               </p>
             </div>
             
@@ -653,8 +677,8 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
               <div className="flex items-start space-x-3 p-4 bg-blue-50 rounded-lg">
                 <Clock className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Presupuesto en 24 horas</h3>
-                  <p className="text-sm text-gray-600">Gratuito, detallado y sin compromiso</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Presupuesto por fotos en 24h</h3>
+                  <p className="text-sm text-gray-600">Sin desplazamientos, detallado y sin compromiso</p>
                 </div>
               </div>
               
@@ -670,15 +694,15 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
                 <Shield className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Garantía por escrito</h3>
-                  <p className="text-sm text-gray-600">Hasta 5 años según el servicio</p>
+                  <p className="text-sm text-gray-600">Factura oficial y seguro RC vigente</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-3 p-4 bg-blue-50 rounded-lg">
                 <Star className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Materiales premium</h3>
-                  <p className="text-sm text-gray-600">Bruguer, Jotun, Sikkens y Titan</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Materiales de calidad</h3>
+                  <p className="text-sm text-gray-600">Bruguer, Jotun y Titan</p>
                 </div>
               </div>
               
@@ -698,10 +722,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            ¿Necesitas un presupuesto?
+            ¿Quieres saber cuánto cuesta?
           </h2>
           <p className="text-xl mb-8 text-white">
-            Te respondemos en menos de 24 horas
+            Envíanos fotos y te presupuestamos en menos de 24h
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CustomButton
@@ -731,10 +755,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Preguntas Frecuentes sobre Nuestros Servicios de Pintura en Valencia
+              Preguntas Frecuentes
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Resolvemos las dudas más comunes de nuestros clientes sobre servicios, precios, materiales y garantías.
+              Las dudas más habituales sobre cómo trabajamos, precios y garantías.
             </p>
           </div>
 
@@ -742,10 +766,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿Cuánto tiempo tardáis en pintar un piso en Valencia?
+                  ¿Cuánto tardáis en pintar un piso?
                 </h3>
                 <p className="text-muted-foreground">
-                  El tiempo depende del tamaño y estado del piso. Un piso estándar de 70-80 m² suele llevarnos entre 4 y 6 días laborables, incluyendo preparación de superficies, dos manos de pintura y limpieza final. Si además hay que quitar gotelé, el plazo se alarga unos 2-3 días más. Te daremos un calendario exacto en el presupuesto.
+                  Depende del tamaño y del estado. Un piso normal de 70-80 m² nos lleva entre 4 y 6 días: preparamos, pintamos dos manos y limpiamos. Si hay que quitar gotelé, sumamos 2-3 días más. Te diremos el calendario exacto cuando te mandemos el presupuesto.
                 </p>
               </CardContent>
             </Card>
@@ -753,10 +777,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿Cuánto cuesta pintar un piso por metro cuadrado en Valencia?
+                  ¿Cómo calculais el precio?
                 </h3>
                 <p className="text-muted-foreground">
-                  El precio se calcula según la superficie a pintar, el tipo de trabajo (interior, exterior, quitar gotelé), el estado de las paredes y la calidad de pintura elegida. Como orientación, la pintura interior puede costar entre 8-15€/m² dependiendo del estado inicial. Siempre hacemos una visita previa gratuita para evaluar el proyecto y darte un presupuesto cerrado sin sorpresas.
+                  Depende de la superficie, el tipo de trabajo (interior, exterior, quitar gotelé), el estado de las paredes y la calidad de pintura. Como referencia, pintar el interior de un piso suele estar entre 8-15€/m². <strong>Envíanos unas fotos</strong> de lo que necesitas y te damos un presupuesto cerrado, sin sorpresas.
                 </p>
               </CardContent>
             </Card>
@@ -764,10 +788,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿Los materiales están incluidos en el precio?
+                  ¿Los materiales están incluidos?
                 </h3>
                 <p className="text-muted-foreground">
-                  Sí, todos nuestros presupuestos incluyen materiales de primera calidad salvo que se indique lo contrario. Trabajamos con pinturas de marcas líderes como Bruguer, Jotun, Sikkens y Titan. Si prefieres aportar tú la pintura o elegir una gama superior, te ajustamos el presupuesto deduciendo el coste del material.
+                  Sí, el presupuesto incluye todo: materiales de calidad, mano de obra y limpieza. Trabajamos con pinturas de marcas conocidas (Bruguer, Jotun, Titan). Si quieres aportar tú la pintura o elegir otra gama, te ajustamos el precio sin problema.
                 </p>
               </CardContent>
             </Card>
@@ -775,10 +799,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿Trabajáis también en fines de semana?
+                  ¿Trabajáis en fin de semana?
                 </h3>
                 <p className="text-muted-foreground">
-                  Sí, especialmente en proyectos de locales comerciales donde es necesario no interrumpir la actividad del negocio. En viviendas particulares solemos trabajar de lunes a viernes, pero podemos adaptar horarios si tienes necesidades especiales. Consúltanos tu situación y buscaremos la mejor solución.
+                  Sí, sobre todo en locales comerciales para no interrumpir el negocio. En casas particulares solemos ir de lunes a viernes, pero si necesitas otro horario (noches, sábados) nos adaptamos. Cuéntanos qué necesitas y buscamos la mejor forma.
                 </p>
               </CardContent>
             </Card>
@@ -786,10 +810,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿Cómo se organiza la pintura de una comunidad de vecinos?
+                  ¿Cómo trabajáis en comunidades de vecinos?
                 </h3>
                 <p className="text-muted-foreground">
-                  Nos coordinamos directamente con el presidente o administrador de la comunidad para planificar los trabajos por fases, minimizando molestias a los vecinos. Colocamos señalización, protegemos accesos y limpiamos diariamente. Enviamos informes de avance y fotos para mantener informada a la comunidad durante todo el proceso.
+                  Hablamos con el presidente o administrador, planificamos por fases para molestar lo mínimo y trabajamos de forma ordenada. Ponemos señales, protegemos accesos y limpiamos cada día. Os vamos mandando fotos y avisando de cómo va todo para que estéis informados.
                 </p>
               </CardContent>
             </Card>
@@ -797,10 +821,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿En qué zonas de Valencia trabajáis?
+                  ¿Dónde trabajáis?
                 </h3>
                 <p className="text-muted-foreground">
-                  Trabajamos en toda Valencia capital (Ruzafa, El Carmen, Benimaclet, Campanar, Patraix, Benicalap, Mestalla, etc.) y en toda el área metropolitana: Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet y poblaciones cercanas. Si estás fuera de esta zona, consúltanos y valoraremos tu caso.
+                  Por toda la ciudad: Ruzafa, El Carmen, Benimaclet, Campanar, Patraix y demás barrios. También vamos a los pueblos de alrededor (Torrent, Mislata, Paterna, Burjassot, Manises, Xirivella, Aldaia, Quart de Poblet...). Si estás más lejos, cuéntanos y vemos si podemos ir.
                 </p>
               </CardContent>
             </Card>
@@ -808,10 +832,10 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
             <Card>
               <CardContent className="p-6">
                 <h3 className="font-semibold text-lg mb-2">
-                  ¿Dais factura y garantía por escrito?
+                  ¿Dais factura y garantía?
                 </h3>
                 <p className="text-muted-foreground">
-                  Sí, siempre. Somos una empresa legal en Valencia con todos los permisos al día. Emitimos factura oficial con IVA y ofrecemos garantía por escrito en todos nuestros trabajos: 2 años en pintura interior, 3 años en exteriores y 5 años en impermeabilizaciones. Además, contamos con seguro de responsabilidad civil.
+                  Sí, siempre. Somos una empresa legal con todos los papeles al día. Te damos factura oficial con IVA y <strong>garantía por escrito</strong> en todos los trabajos. Además tenemos seguro de responsabilidad civil para que estés tranquilo.
                 </p>
               </CardContent>
             </Card>

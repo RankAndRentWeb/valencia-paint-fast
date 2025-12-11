@@ -1,7 +1,7 @@
 ﻿---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
-import fachadaExteriorImg from '../../../assets/fachada-exterior-valencia.jpg';
+import fachadaExteriorImg from '../../../assets/impermeabilizacion-terraza-cubierta-valencia-profesional.jpg';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -34,34 +34,26 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Qué tipo de impermeabilizante utilizáis?",
+      "name": "¿Cuánto cuesta impermeabilizar una terraza en Valencia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Utilizamos impermeabilizantes de alta calidad específicos para cada superficie: poliuretano para terrazas, acrílicos para fachadas y membranas líquidas para cubiertas."
+        "text": "El precio de impermeabilización en Valencia parte desde 18€/m² con materiales incluidos. El coste final depende del tipo de superficie (terraza, fachada, cubierta), el estado actual y los metros cuadrados. Incluimos reparación de grietas, imprimación, aplicación del impermeabilizante y limpieza completa. Ofrecemos presupuesto cerrado sin sorpresas y garantía de 10 años."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Cuánto dura la garantía?",
+      "name": "¿Qué tipo de impermeabilizante utilizáis en Valencia?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ofrecemos 10 años de garantía por escrito en todos nuestros trabajos de impermeabilización."
+        "text": "Utilizamos impermeabilizantes profesionales específicos para cada superficie: poliuretano de alta resistencia para terrazas transitables, acrílicos elásticos para fachadas expuestas, y membranas líquidas transpirables para cubiertas. Todos nuestros productos tienen certificación de calidad y máxima durabilidad contra filtraciones de agua."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Trabajáis con lluvia?",
+      "name": "¿Cuánto tiempo se tarda en impermeabilizar una terraza?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, necesitamos condiciones secas para aplicar correctamente los impermeabilizantes. Esperamos a que haga buen tiempo para garantizar la calidad."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Incluye la reparación de grietas?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sí, antes de impermeabilizar reparamos todas las grietas y fisuras para asegurar un sellado perfecto."
+        "text": "El tiempo para impermeabilizar una terraza en Valencia varía según el tamaño y estado. Una terraza de 20-30 m² tarda entre 2 y 4 días laborables. Incluye: inspección y diagnóstico (medio día), limpieza y reparación de grietas (1 día), imprimación (medio día), aplicación del impermeabilizante en capas (1-2 días). Siempre consideramos las condiciones meteorológicas para garantizar calidad óptima."
       }
     }
   ]
@@ -69,28 +61,26 @@ const faqSchema = {
 ---
 
 <SiteLayout 
-  title="Impermeabilización Valencia | Terrazas, cubiertas y fachadas"
-  description="Solucionamos filtraciones en terrazas, fachadas y cubiertas en Valencia. Impermeabilización profesional con garantía de 10 años. Presupuesto gratis en 24h."
-  keywords="impermeabilizacion valencia, impermeabilizar terraza valencia, filtraciones agua"
+  title="Impermeabilización en Valencia desde 18€/m² | Terrazas y Fachadas"
+  description="Expertos en impermeabilización de terrazas, fachadas y cubiertas en Valencia. Solución definitiva a filtraciones con garantía 10 años. Presupuesto gratis en 24h."
+  keywords="impermeabilizacion valencia, impermeabilizar terraza valencia, impermeabilizacion fachadas valencia, filtraciones agua valencia, impermeabilizacion cubiertas valencia, precio impermeabilizar terraza valencia"
   canonical="https://pintores-valencia.com/servicios/impermeabilizacion-terrazas/"
   schema={[localBusinessSchema, faqSchema]}
   ogImage="/og-home.webp"
 >
   <main class="flex-1">
     <!-- Breadcrumbs and Hero Section -->
-    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+
+      <section class="bg-gradient-to-br from-slate-50 to-blue-50">
       <!-- Breadcrumbs -->
-      <div class="py-4">
         <div class="container mx-auto px-4">
-          <Breadcrumbs 
-            items={[
+          <Breadcrumbs items={[
               { label: "Servicios", href: "/servicios/" },
               { label: "Impermeabilización" }
-            ]} 
-            client:load 
-          />
-        </div>
-      </div>
+            ]}  client:load />
+  
+
+      
 
       <!-- Hero Content -->
       <div class="py-12">
@@ -99,10 +89,10 @@ const faqSchema = {
           <!-- Left side - Content -->
           <div>
             <!-- Title -->
-            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Impermeabilización profesional en Valencia</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Impermeabilización Profesional en Valencia</h1>
             
             <!-- Subtitle -->
-            <p class="text-xl text-gray-700 mb-6">Protegemos tu hogar contra filtraciones con materiales de alta calidad y 10 años de garantía</p>
+            <p class="text-xl text-gray-700 mb-6">Solución definitiva a filtraciones en terrazas, fachadas y cubiertas con garantía 10 años</p>
             
             <!-- Price -->
             <div class="mb-6">
@@ -148,119 +138,318 @@ const faqSchema = {
           <!-- Right side - Image -->
           <div class="order-first lg:order-last">
             <div class="relative rounded-2xl overflow-hidden shadow-xl">
-              <img src={fachadaExteriorImg.src} alt="Impermeabilización profesional en Valencia - Terrazas y cubiertas" width={fachadaExteriorImg.width} height={fachadaExteriorImg.height} class="w-full h-auto object-cover" loading="lazy">
+              <img src={fachadaExteriorImg.src} alt="Impermeabilización profesional en Valencia - Terrazas, fachadas y cubiertas protegidas contra filtraciones" width={fachadaExteriorImg.width} height={fachadaExteriorImg.height} class="w-full h-auto object-cover" loading="eager" fetchpriority="high">
             </div>
           </div>
         </div>
       </div>
-      </div>
     </section>
 
-    <!-- Precio y condiciones -->
-    <section class="py-12 bg-white">
+    <!-- Precio impermeabilización Valencia -->
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              Precio y condiciones
+              Precio de Impermeabilización en Valencia
             </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
               Presupuesto transparente desde 18€/m² con materiales incluidos
             </p>
           </div>
           
-          <div class="space-y-6 text-gray-700">
+          <div class="space-y-6 text-gray-700 mb-10">
             <p class="text-lg leading-relaxed">
-              El coste final depende del tipo de superficie a impermeabilizar, el estado actual, la altura del edificio y los metros cuadrados a tratar. 
-              En todos los casos ofrecemos un presupuesto cerrado y transparente, sin sorpresas.
+              El <strong>precio de impermeabilización en Valencia</strong> depende del tipo de superficie a impermeabilizar (terraza, fachada, cubierta), el estado actual, la altura del edificio y los metros cuadrados a tratar. En todos los casos ofrecemos un presupuesto cerrado y transparente, sin sorpresas.
             </p>
             
             <p class="text-lg leading-relaxed">
-              Utilizamos impermeabilizantes específicos para cada superficie: poliuretano para terrazas, acrílicos para fachadas y membranas líquidas para cubiertas. 
-              Incluimos reparación de grietas, imprimación, aplicación del impermeabilizante y limpieza completa posterior.
+              Nuestros profesionales utilizan <strong>impermeabilizantes de alta calidad</strong>: poliuretano de alta resistencia para terrazas transitables, acrílicos elásticos para fachadas expuestas, y membranas líquidas transpirables para cubiertas. Incluimos reparación de grietas, imprimación, aplicación del impermeabilizante y limpieza completa posterior.
             </p>
+          </div>
+
+          <!-- Tabla de precios orientativos -->
+          <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 mb-8">
+            <h3 class="text-2xl font-bold mb-6 text-center">Precios Orientativos de Impermeabilización en Valencia</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Precio por superficie -->
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Por Tipo de Superficie</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Terraza 20 m²</span>
+                    <span class="font-bold text-accent">desde 360€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Terraza 30 m²</span>
+                    <span class="font-bold text-accent">desde 540€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Fachada 50 m²</span>
+                    <span class="font-bold text-accent">desde 900€</span>
+                  </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">*Incluye reparación, imprimación y aplicación</p>
+              </div>
+
+              <!-- Precio por zonas -->
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Por Zonas Específicas</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Balcón pequeño</span>
+                    <span class="font-bold text-accent">desde 180€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Baño completo</span>
+                    <span class="font-bold text-accent">desde 250€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Cubierta plana</span>
+                    <span class="font-bold text-accent">desde 18€/m²</span>
+                  </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">*Precios pueden variar según estado</p>
+              </div>
+            </div>
+
+            <!-- Qué incluye el precio -->
+            <div class="mt-8 bg-white rounded-xl p-6">
+              <h4 class="font-bold text-lg mb-4 text-gray-900">¿Qué Incluye el Precio de Impermeabilización?</h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Inspección y diagnóstico profesional</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Limpieza y preparación de superficie</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Reparación de grietas y fisuras</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Imprimación específica de calidad</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Impermeabilizante profesional aplicado</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Limpieza completa y garantía 10 años</span>
+                </div>
+              </div>
+            </div>
+
+          <div class="mt-8 bg-white rounded-xl p-6">
+            <p class="text-lg text-gray-700 mb-6">
+              <strong>¿Necesitas proteger tu hogar de filtraciones?</strong> Consulta nuestro <strong>precio de impermeabilización en Valencia</strong> y descubre cómo podemos solucionar definitivamente los problemas de humedad con nuestro servicio profesional.
+            </p>
+            <div class="flex justify-center text-center">
+              <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-accent text-white hover:bg-accent/90 focus:ring-accent shadow-md hover:shadow-lg px-8 py-3 text-lg rounded-lg">
+                Solicitar Presupuesto Gratuito
+              </a>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Nuestro proceso paso a paso -->
-    <section class="py-12 bg-gray-100">
+    <!-- Cómo Impermeabilizamos en Valencia: Proceso Profesional -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Nuestro proceso paso a paso
+            Cómo Impermeabilizamos en Valencia
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Trabajamos con técnica profesional para garantizar una impermeabilización duradera
+            Proceso paso a paso con técnica profesional para garantizar protección duradera
           </p>
         </div>
         
-        <div class="max-w-3xl mx-auto">
-          <div class="space-y-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
             <!-- Paso 1 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                1
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Inspección y diagnóstico</h3>
-                <p class="text-gray-700">Analizamos el estado de la superficie, identificamos puntos de filtración y determinamos el tipo de impermeabilizante más adecuado.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  1
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Inspección y Diagnóstico Profesional</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Analizamos el estado de la superficie, identificamos puntos de filtración y humedad, y determinamos el tipo de <strong>impermeabilizante en Valencia</strong> más adecuado para tu terraza, fachada o cubierta.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 2 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                2
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Limpieza y preparación</h3>
-                <p class="text-gray-700">Limpiamos a fondo la superficie, eliminamos restos de impermeabilizantes antiguos y protegemos las zonas adyacentes.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  2
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Limpieza y Preparación de la Superficie</h3>
+                  <p class="text-gray-700 leading-relaxed mb-3">
+                    Limpiamos a fondo la superficie eliminando suciedad, moho y restos de <strong>impermeabilizantes antiguos</strong>. Protegemos las zonas adyacentes para evitar daños durante el proceso.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    Esta fase es fundamental para garantizar la correcta adherencia del impermeabilizante y la máxima efectividad contra filtraciones.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 3 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                3
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Reparación de grietas</h3>
-                <p class="text-gray-700">Sellamos todas las grietas y fisuras con selladores específicos para garantizar una base sólida e impermeable.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  3
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Reparación de Grietas y Fisuras</h3>
+                  <p class="text-gray-700 leading-relaxed mb-3">
+                    Sellamos todas las grietas y fisuras con selladores específicos de alta calidad para garantizar una base sólida e impermeable. Esta reparación previa es esencial para evitar filtraciones futuras.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    Utilizamos masillas elásticas que se adaptan a los movimientos naturales de la estructura, garantizando un sellado perfecto y duradero.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 4 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                4
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Imprimación</h3>
-                <p class="text-gray-700">Aplicamos imprimación específica que mejora la adherencia del impermeabilizante y refuerza la protección.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  4
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Imprimación y Aplicación del Impermeabilizante</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Aplicamos imprimación específica que mejora la adherencia del impermeabilizante y refuerza la protección. Posteriormente, aplicamos el <strong>impermeabilizante profesional</strong> en capas uniformes utilizando técnicas especializadas y herramientas de alta precisión. El resultado es una protección completa contra el agua con garantía de 10 años.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 5 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                5
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  5
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Revisión Final y Garantía</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Realizamos una inspección final completa para verificar la calidad del trabajo y asegurarnos de que no existan puntos vulnerables. Te entregamos la garantía por escrito de <strong>10 años</strong> y limpiamos completamente el área de trabajo.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Aplicación del impermeabilizante</h3>
-                <p class="text-gray-700">Aplicamos el impermeabilizante en capas uniformes utilizando técnicas profesionales y herramientas especializadas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios Impermeabilización Profesional Valencia -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Beneficios de Impermeabilizar tu Hogar en Valencia
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Protección duradera y valor añadido para tu propiedad
+          </p>
+        </div>
+        
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Beneficio 1 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-8 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Protección Total contra Filtraciones</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    La <strong>impermeabilización profesional en Valencia</strong> crea una barrera impermeable que evita filtraciones de agua, humedad y goteras. Protección garantizada durante 10 años con materiales de última generación.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <!-- Paso 6 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                6
+            <!-- Beneficio 2 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-8 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Ahorro a Largo Plazo</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Evita costosas reparaciones futuras derivadas de filtraciones, humedades y daños estructurales. Una inversión en <strong>impermeabilización</strong> ahorra miles de euros en reparaciones posteriores.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Revisión y garantía</h3>
-                <p class="text-gray-700">Realizamos una inspección final completa y entregamos la garantía por escrito de 10 años del trabajo realizado.</p>
+            </div>
+
+            <!-- Beneficio 3 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-8 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Revaloriza tu Propiedad</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Una terraza o fachada correctamente impermeabilizada aumenta el valor de tu vivienda. Los compradores valoran la ausencia de problemas de humedad y la garantía de protección profesional.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 4 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-8 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Ambiente Saludable y Confortable</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Elimina humedades, moho y malos olores. Un hogar correctamente impermeabilizado es más saludable, mejora la calidad del aire interior y crea un ambiente más confortable para toda la familia.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -271,8 +460,8 @@ const faqSchema = {
     <!-- CTA Contact Section -->
     <section class="py-12 bg-blue-600 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas impermeabilizar?</h2>
-        <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Necesitas Impermeabilizar tu Terraza o Fachada?</h2>
+        <p class="text-xl mb-8">Presupuesto gratuito en menos de 24 horas</p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
@@ -288,47 +477,56 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-12 bg-white">
+   <!-- Preguntas Frecuentes Impermeabilización Valencia -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Preguntas frecuentes
+            Preguntas Frecuentes sobre Impermeabilización en Valencia
           </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Resolvemos tus dudas sobre impermeabilización profesional
+          </p>
         </div>
-
-        <div class="max-w-3xl mx-auto space-y-6">
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
-              ¿Qué tipo de impermeabilizante utilizáis?
+        
+        <div class="max-w-4xl mx-auto space-y-6">
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-xl p-6 border-2 border-gray-100">
+            <h3 class="font-bold text-lg text-gray-900 mb-3">
+              ¿Qué tipo de impermeabilizante utilizáis para terrazas en Valencia?
             </h3>
-            <p class="text-gray-600">
-              Utilizamos impermeabilizantes de alta calidad específicos para cada superficie: poliuretano para terrazas, acrílicos para fachadas y membranas líquidas para cubiertas.
+            <p class="text-gray-700 leading-relaxed">
+              Utilizamos productos de última generación de marcas líderes como <strong>Weber, Sika y Mapei</strong>. Dependiendo de la superficie y el uso, aplicamos polímeros modificados, poliuretano líquido o sistemas bicapa que ofrecen la máxima protección contra el agua y la humedad.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">¿Cuánto dura la garantía?</h3>
-            <p class="text-gray-600">
-              Ofrecemos 10 años de garantía por escrito en todos nuestros trabajos de impermeabilización.
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-xl p-6 border-2 border-gray-100">
+            <h3 class="font-bold text-lg text-gray-900 mb-3">
+              ¿Cuánto dura la garantía de impermeabilización?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Ofrecemos <strong>garantía por escrito de 10 años</strong> para todos nuestros trabajos de impermeabilización en Valencia. Esta garantía cubre tanto los materiales como la mano de obra, asegurando una protección completa contra filtraciones. Además, incluimos un seguimiento anual durante los primeros 3 años sin coste adicional.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
-              ¿Trabajáis con lluvia?
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-xl p-6 border-2 border-gray-100">
+            <h3 class="font-bold text-lg text-gray-900 mb-3">
+              ¿Trabajáis con lluvia o en cualquier clima?
             </h3>
-            <p class="text-gray-600">
-              No, necesitamos condiciones secas para aplicar correctamente los impermeabilizantes. Esperamos a que haga buen tiempo para garantizar la calidad.
+            <p class="text-gray-700 leading-relaxed">
+              No trabajamos con lluvia ni alta humedad ambiental, ya que estos factores afectan negativamente al curado del impermeabilizante. Necesitamos al menos <strong>24-48 horas sin lluvia</strong> tras la aplicación. Coordinamos el trabajo con la previsión meteorológica para garantizar condiciones óptimas y un resultado perfecto.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
-              ¿Incluye la reparación de grietas?
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-xl p-6 border-2 border-gray-100">
+            <h3 class="font-bold text-lg text-gray-900 mb-3">
+              ¿Incluye la reparación de grietas y fisuras?
             </h3>
-            <p class="text-gray-600">
-              Sí, antes de impermeabilizar reparamos todas las grietas y fisuras para asegurar un sellado perfecto.
+            <p class="text-gray-700 leading-relaxed">
+              Sí, el <strong>sellado profesional de grietas y fisuras</strong> está incluido en todos nuestros presupuestos de impermeabilización en Valencia. Utilizamos masillas elásticas de alta calidad que se adaptan a los movimientos estructurales. Si existen grietas estructurales graves, las tratamos de forma específica y te informamos antes de proceder. La reparación completa de la base es fundamental para garantizar una impermeabilización duradera.
             </p>
           </div>
         </div>

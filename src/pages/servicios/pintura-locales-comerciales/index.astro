@@ -78,19 +78,14 @@ const faqSchema = {
 >
   <main class="flex-1">
     <!-- Breadcrumbs and Hero Section -->
-    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+
+      <section class="bg-gradient-to-br from-slate-50 to-blue-50">
       <!-- Breadcrumbs -->
-      <div class="py-4">
         <div class="container mx-auto px-4">
-          <Breadcrumbs 
-            items={[
+          <Breadcrumbs items={[
               { label: "Servicios", href: "/servicios/" },
               { label: "Locales Comerciales" }
-            ]} 
-            client:load 
-          />
-        </div>
-      </div>
+            ]}  client:load />
 
       <!-- Hero Content -->
       <div class="py-12">
