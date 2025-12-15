@@ -12,9 +12,6 @@ export default defineConfig({
   redirects: {
     '/servicios/pintura-exterior/': '/servicios/pintura-exterior-fachadas/',
     '/servicios/impermeabilizacion/': '/servicios/impermeabilizacion-terrazas/',
-    '/blog/': '/blogs/',
-    '/blog/:category/': '/blogs/:category/',
-    '/blog/:category/:slug/': '/blogs/:category/:slug/',
   },
   integrations: [
     tailwind(), 
