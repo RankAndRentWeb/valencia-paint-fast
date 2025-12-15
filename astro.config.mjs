@@ -7,7 +7,7 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: 'https://pintores-valencia.com',
   trailingSlash: 'always',
-  output: 'server',
+  output: "hybrid",
   adapter: vercel(),
   redirects: {
     '/servicios/pintura-exterior/': '/servicios/pintura-exterior-fachadas/',
