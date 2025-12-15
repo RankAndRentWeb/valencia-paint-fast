@@ -1,16 +1,18 @@
-import fs from 'fs';
+import fs from 'fs/promises';
 import path from 'path';
 
-const distDir = 'dist';
+const clientDistDir = path.resolve(process.cwd(), 'dist', 'client');
+const sourceSitemap = path.join(clientDistDir, 'sitemap-index.xml');
+const destSitemap = path.join(clientDistDir, 'sitemap.xml');
 
-// Leer sitemap-index.xml
-const sitemapIndexPath = path.join(distDir, 'sitemap-index.xml');
-const sitemapPath = path.join(distDir, 'sitemap.xml');
-
-if (fs.existsSync(sitemapIndexPath)) {
-  // Copiar sitemap-index.xml a sitemap.xml
-  fs.copyFileSync(sitemapIndexPath, sitemapPath);
-  console.log('✅ Copiado sitemap-index.xml → sitemap.xml');
-} else {
-  console.log('❌ No se encontró sitemap-index.xml');
+try {
+  await fs.rename(sourceSitemap, destSitemap);
+  console.log('✅ Sitemap successfully renamed to sitemap.xml');
+} catch (error) {
+  if (error.code === 'ENOENT') {
+    console.error('❌ No se encontró sitemap-index.xml en dist/client/');
+  } else {
+    console.error('❌ Error renaming sitemap:', error);
+  }
+  process.exit(1);
 }
