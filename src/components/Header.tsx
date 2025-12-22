@@ -103,7 +103,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                to="/presupuesto"
+                to="/contacto"
                 className="inline-flex items-center rounded-md px-3 py-2 bg-accent text-accent-foreground hover:bg-accent/90 shadow-cta"
               >
                 Presupuesto
@@ -246,7 +246,7 @@ const Header = () => {
               </a>
               
               <a
-                to="/presupuesto"
+                to="/contacto"
                 onClick={closeMenu}
                 className={({ isActive }) =>
                   `block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${

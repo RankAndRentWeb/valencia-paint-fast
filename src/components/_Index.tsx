@@ -48,40 +48,81 @@ const RatingStars = ({ value = 5 }: { value?: number }) => (
 const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "HousePainter",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "HousePainter"],
     "@id": "https://pintores-valencia.com/#business",
     name: "Pintores en Valencia",
+    description: "Empresa de pintura profesional en Valencia. Nos desplazamos a toda la ciudad y alrededores para servicios de pintura de interiores, exteriores, fachadas, comunidades y más.",
     url: "https://pintores-valencia.com",
-    image: "https://pintores-valencia.com/og-home.jpg",
+    image: "https://pintores-valencia.com/og-home.webp",
     telephone: "+34722208131",
     email: "info@pintores-valencia.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Valencia",
       addressRegion: "Comunitat Valenciana",
-      postalCode: "46000",
       addressCountry: "ES",
     },
     openingHours: ["Mo-Sa 08:00-20:00"],
-    serviceArea: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 39.4699,
-        longitude: -0.3763,
-      },
-      geoRadius: { "@type": "Distance", value: 50, unitText: "km" },
-    },
     priceRange: "€€",
     areaServed: [
-      { "@type": "City", name: "Valencia" },
-      { "@type": "AdministrativeArea", name: "Comunitat Valenciana" }
+      {
+        "@type": "City",
+        name: "Valencia",
+        containedInPlace: {
+          "@type": "AdministrativeArea",
+          name: "Comunitat Valenciana"
+        }
+      },
+      // Centro histórico y Ciutat Vella
+      { "@type": "PostalCodeSpecification", postalCode: "46001", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46002", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46003", addressLocality: "Valencia", addressCountry: "ES" },
+      // Eixample
+      { "@type": "PostalCodeSpecification", postalCode: "46004", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46005", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46006", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46007", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46008", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46009", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46010", addressLocality: "Valencia", addressCountry: "ES" },
+      // Extramurs y otras zonas
+      { "@type": "PostalCodeSpecification", postalCode: "46011", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46012", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46013", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46014", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46015", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46016", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46017", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46018", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46019", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46020", addressLocality: "Valencia", addressCountry: "ES" },
+      // Campanar, Benimaclet, Poblados marítimos
+      { "@type": "PostalCodeSpecification", postalCode: "46021", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46022", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46023", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46024", addressLocality: "Valencia", addressCountry: "ES" },
+      { "@type": "PostalCodeSpecification", postalCode: "46025", addressLocality: "Valencia", addressCountry: "ES" }
+    ],
+    knowsAbout: [
+      "Pintura de interiores y exteriores en Valencia",
+      "Eliminación de gotelé y alisado de paredes",
+      "Impermeabilización de terrazas y cubiertas",
+      "Rehabilitación y pintura de fachadas",
+      "Pintura de comunidades de vecinos",
+      "Instalación de papel pintado y vinilos decorativos",
+      "Lacado de puertas y carpintería",
+      "Pintura de locales comerciales",
+      "Barnizado de madera",
+      "Tratamientos anti-humedad",
+      "Reparación de grietas y fisuras",
+      "Aplicación de revestimientos impermeables"
     ],
     contactPoint: [{
       "@type": "ContactPoint",
       "telephone": "+34722208131",
       "contactType": "customer service",
-      "areaServed": "Valencia"
+      "areaServed": "ES",
+      "availableLanguage": ["Spanish", "Valencian"]
     }],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -89,27 +130,83 @@ const Index = ({ heroImage, featureImage }: IndexProps = {}) => {
       itemListElement: [
         {
           "@type": "Offer",
-          name: "Pintura Interior",
-          description: "Pintura completa de interiores con materiales premium y garantía",
-          url: "https://pintores-valencia.com/servicios/pintura-interior/"
+          itemOffered: {
+            "@type": "Service",
+            name: "Pintura Interior",
+            description: "Pintura completa de interiores con materiales premium y garantía",
+            url: "https://pintores-valencia.com/servicios/pintura-interior/",
+            areaServed: {
+              "@type": "City",
+              name: "Valencia",
+              sameAs: "https://www.wikidata.org/wiki/Q8818"
+            },
+            serviceType: "Interior Painting",
+            provider: {
+              "@id": "https://pintores-valencia.com/#business"
+            }
+          },
+          price: "12.00",
+          priceCurrency: "EUR"
         },
         {
           "@type": "Offer", 
-          name: "Quitar Gotelé",
-          description: "Eliminación de gotelé y alisado de paredes sin polvo",
-          url: "https://pintores-valencia.com/servicios/quitar-gotele/"
+          itemOffered: {
+            "@type": "Service",
+            name: "Quitar Gotelé",
+            description: "Eliminación de gotelé y alisado de paredes sin polvo",
+            url: "https://pintores-valencia.com/servicios/quitar-gotele/",
+            areaServed: {
+              "@type": "City",
+              name: "Valencia",
+              sameAs: "https://www.wikidata.org/wiki/Q8818"
+            },
+            serviceType: "Wall Smoothing",
+            provider: {
+              "@id": "https://pintores-valencia.com/#business"
+            }
+          },
+          price: "10.00",
+          priceCurrency: "EUR"
         },
         {
           "@type": "Offer",
-          name: "Pintura Exterior y Fachadas",
-          description: "Pintura exterior resistente al clima con andamiaje incluido",
-          url: "https://pintores-valencia.com/servicios/pintura-exterior-fachadas/"
+          itemOffered: {
+            "@type": "Service",
+            name: "Pintura Exterior y Fachadas",
+            description: "Pintura exterior resistente al clima con andamiaje incluido",
+            url: "https://pintores-valencia.com/servicios/pintura-exterior-fachadas/",
+            areaServed: {
+              "@type": "City",
+              name: "Valencia",
+              sameAs: "https://www.wikidata.org/wiki/Q8818"
+            },
+            serviceType: "Exterior Painting",
+            provider: {
+              "@id": "https://pintores-valencia.com/#business"
+            }
+          },
+          price: "15.00",
+          priceCurrency: "EUR"
         },
         {
           "@type": "Offer",
-          name: "Impermeabilización",
-          description: "Impermeabilización de terrazas y fachadas",
-          url: "https://pintores-valencia.com/servicios/impermeabilizacion-terrazas/"
+          itemOffered: {
+            "@type": "Service",
+            name: "Impermeabilización",
+            description: "Impermeabilización de terrazas y fachadas con garantía",
+            url: "https://pintores-valencia.com/servicios/impermeabilizacion-terrazas/",
+            areaServed: {
+              "@type": "City",
+              name: "Valencia",
+              sameAs: "https://www.wikidata.org/wiki/Q8818"
+            },
+            serviceType: "Waterproofing",
+            provider: {
+              "@id": "https://pintores-valencia.com/#business"
+            }
+          },
+          price: "25.00",
+          priceCurrency: "EUR"
         }
       ]
     }

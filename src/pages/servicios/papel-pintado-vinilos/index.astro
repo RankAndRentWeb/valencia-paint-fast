@@ -1,13 +1,14 @@
 ﻿---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
-import pinturaInteriorImg from '../../../assets/pintura-interior-valencia.jpg';
+import pinturaInteriorImg from '../../../assets/instalacion-papel-pintado-vinilos-decorativos-valencia.jpg';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": "https://pintores-valencia.com/#business",
   "name": "Pintores en Valencia",
+  "description": "Empresa de pintura profesional en Valencia. Nos desplazamos a toda la ciudad y alrededores para servicios de pintura de interiores, exteriores, fachadas, comunidades y más.",
   "url": "https://pintores-valencia.com",
   "image": "https://pintores-valencia.com/og-home.webp",
   "telephone": "+34722208131",
@@ -15,7 +16,6 @@ const localBusinessSchema = {
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
     "addressRegion": "Comunitat Valenciana",
-    "postalCode": "46000",
     "addressCountry": "ES"
   },
   "openingHours": ["Mo-Sa 08:00-20:00"],
@@ -23,9 +23,119 @@ const localBusinessSchema = {
   "areaServed": [
     {
       "@type": "City",
-      "name": "Valencia"
-    }
-  ]
+      "name": "Valencia",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Comunitat Valenciana"
+      }
+    },
+    // Centro histórico y Ciutat Vella
+    { "@type": "PostalCodeSpecification", "postalCode": "46001", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46002", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46003", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Eixample
+    { "@type": "PostalCodeSpecification", "postalCode": "46004", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46005", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46006", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46007", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46008", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46009", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46010", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Extramurs y otras zonas
+    { "@type": "PostalCodeSpecification", "postalCode": "46011", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46012", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46013", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46014", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46015", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46016", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46017", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46018", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46019", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46020", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Campanar, Benimaclet, Poblados marítimos
+    { "@type": "PostalCodeSpecification", "postalCode": "46021", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46022", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46023", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46024", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46025", "addressLocality": "Valencia", "addressCountry": "ES" }
+  ],
+  "knowsAbout": [
+    "Pintura de interiores y exteriores en Valencia",
+    "Eliminación de gotelé y alisado de paredes",
+    "Impermeabilización de terrazas y cubiertas",
+    "Rehabilitación y pintura de fachadas",
+    "Pintura de comunidades de vecinos",
+    "Instalación de papel pintado y vinilos decorativos",
+    "Lacado de puertas y carpintería",
+    "Pintura de locales comerciales",
+    "Barnizado de madera",
+    "Tratamientos anti-humedad",
+    "Reparación de grietas y fisuras",
+    "Aplicación de revestimientos impermeables"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo de Papel Pintado y Vinilos en Valencia",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Instalación de Papel Pintado en Valencia",
+          "description": "Instalación profesional de papel pintado y vinilos decorativos con acabados perfectos",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Wallpaper Installation",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "12.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Empapelar Habitación Individual",
+          "description": "Servicio completo de instalación de papel pintado para una habitación",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Room Wallpaper Installation",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "280.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vinilos Decorativos Personalizados",
+          "description": "Diseño e instalación de vinilos decorativos personalizados",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Custom Vinyl Installation",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "150.00",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
 };
 
 const faqSchema = {
@@ -37,31 +147,39 @@ const faqSchema = {
       "name": "¿Qué tipos de papel pintado instaláis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Instalamos papel pintado, vinilo, fibra de vidrio y papel de bambú. Trabajamos con todas las marcas y diseños."
+        "text": "Instalamos todo tipo de papel pintado: papel tradicional, vinilos decorativos, fibra de vidrio y papeles especiales. Trabajamos con todas las marcas y diseños del mercado. Te asesoramos para elegir el material más adecuado según el espacio y tus necesidades."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Preparáis la pared antes?",
+      "name": "¿Incluís la preparación de las paredes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, preparamos completamente la superficie: lijado, imprimación y nivelado para un acabado perfecto."
+        "text": "Sí, la preparación está incluida en el precio. Lijamos, reparamos imperfecciones y aplicamos imprimación específica para papel pintado. Una correcta preparación es esencial para conseguir un acabado perfecto y duradero."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Traéis vuestro propio material?",
+      "name": "¿Retiráis el papel antiguo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Podemos suministrar el papel pintado o instalar el tuyo. Te asesoramos en la elección del mejor tipo para cada espacio."
+        "text": "Sí, retiramos el papel pintado antiguo con técnicas profesionales que no dañan la pared. Después preparamos la superficie completamente para la nueva instalación."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Quitáis el papel pintado viejo?",
+      "name": "¿Cuánto tiempo tarda la instalación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí, retiramos el papel antiguo y preparamos la pared desde cero para la nueva instalación."
+        "text": "La instalación de papel pintado en una habitación estándar suele tardar 1-2 días. Para viviendas completas, entre 3 y 5 días dependiendo de los metros cuadrados y la complejidad del patrón. Te daremos un plazo exacto con el presupuesto."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo aportar yo el papel o vinilo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Por supuesto. Podemos instalar el papel pintado que tú elijas o asesorarte en la compra. Si lo prefieres, nos encargamos de todo: elección, compra e instalación profesional del papel más adecuado para tu proyecto."
       }
     }
   ]
@@ -78,19 +196,17 @@ const faqSchema = {
 >
   <main class="flex-1">
     <!-- Breadcrumbs and Hero Section -->
-    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+
+      <section class="bg-gradient-to-br from-slate-50 to-blue-50">
       <!-- Breadcrumbs -->
-      <div class="py-4">
         <div class="container mx-auto px-4">
-          <Breadcrumbs 
-            items={[
+          <Breadcrumbs items={[
               { label: "Servicios", href: "/servicios/" },
               { label: "Papel Pintado" }
-            ]} 
-            client:load 
-          />
-        </div>
-      </div>
+            ]}  client:load />
+  
+
+      
 
       <!-- Hero Content -->
       <div class="py-12">
@@ -153,117 +269,334 @@ const faqSchema = {
           </div>
         </div>
       </div>
-      </div>
     </section>
 
-    <!-- Precio y condiciones -->
-    <section class="py-12 bg-white">
+    <!-- Precio Papel Pintado Valencia -->
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              Precio y condiciones
+              Precio de Instalar Papel Pintado en Valencia
             </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-              Presupuesto transparente desde 25€/m² con instalación profesional incluida
+              Presupuesto transparente desde 25€/m² con instalación incluida
             </p>
           </div>
           
-          <div class="space-y-6 text-gray-700">
+          <div class="space-y-6 text-gray-700 mb-10">
             <p class="text-lg leading-relaxed">
-              El coste final depende del tipo de papel pintado o vinilo elegido, el estado de la pared, la complejidad del patrón y los metros cuadrados a instalar. 
-              Trabajamos con tu material o te asesoramos en la elección del mejor producto para cada espacio.
+              El <strong>precio de instalar papel pintado en Valencia</strong> depende del tipo de papel o vinilo elegido, el estado de la pared, la complejidad del patrón y los metros cuadrados a instalar. En todos los casos ofrecemos un presupuesto cerrado y transparente, sin sorpresas.
             </p>
             
             <p class="text-lg leading-relaxed">
-              Instalamos papel pintado tradicional, vinilos decorativos, fibra de vidrio y papeles especiales de todas las marcas. 
-              Incluimos preparación completa de la superficie, retirada del papel anterior si es necesario, y instalación con acabado perfecto.
+              Nuestros profesionales trabajan con <strong>papel pintado tradicional, vinilos decorativos, fibra de vidrio y papeles especiales</strong> de todas las marcas. Podemos trabajar con material del cliente o asesorarte en la elección del mejor producto. Incluimos la preparación completa de la superficie y la retirada del papel anterior si existe.
             </p>
+          </div>
+
+          <!-- Tabla de precios orientativos -->
+          <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 mb-8">
+            <h3 class="text-2xl font-bold mb-6 text-center">Precios Orientativos de Instalación de Papel Pintado en Valencia</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Precio por tipo de papel -->
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Por Tipo de Material</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Papel pintado estándar</span>
+                    <span class="font-bold text-accent">desde 25€/m²</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Vinilo decorativo</span>
+                    <span class="font-bold text-accent">desde 30€/m²</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Fibra de vidrio</span>
+                    <span class="font-bold text-accent">desde 35€/m²</span>
+                  </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">*Incluye preparación e instalación</p>
+              </div>
+
+              <!-- Precio por zona -->
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Por Espacios</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Habitación individual</span>
+                    <span class="font-bold text-accent">desde 400€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Salón-comedor</span>
+                    <span class="font-bold text-accent">desde 800€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Pared decorativa</span>
+                    <span class="font-bold text-accent">desde 200€</span>
+                  </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">*Precios pueden variar según material</p>
+              </div>
+            </div>
+
+            <!-- Qué incluye el precio -->
+            <div class="mt-8 bg-white rounded-xl p-6">
+              <h4 class="font-bold text-lg mb-4 text-gray-900">¿Qué Incluye el Precio de Instalar Papel Pintado?</h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Retirada de papel anterior</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Preparación de superficie</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Instalación profesional</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Cola y materiales incluidos</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Protección de suelos y muebles</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Limpieza completa final</span>
+                </div>
+              </div>
+            </div>
+
+          <div class="mt-8 bg-white rounded-xl p-6">
+            <p class="text-lg text-gray-700 mb-6">
+              <strong>¿Quieres transformar tus espacios?</strong> Consulta nuestro <strong>precio de instalar papel pintado en Valencia</strong> y descubre cómo podemos renovar completamente tus paredes con diseños únicos y acabado profesional.
+            </p>
+            <div class="flex justify-center text-center">
+              <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-accent text-white hover:bg-accent/90 focus:ring-accent shadow-md hover:shadow-lg px-8 py-3 text-lg rounded-lg">
+                Solicitar Presupuesto Gratuito
+              </a>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Nuestro proceso paso a paso -->
-    <section class="py-12 bg-gray-100">
+    <!-- Proceso Instalación Papel Pintado Valencia -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Nuestro proceso paso a paso
+            Cómo Instalamos Papel Pintado y Vinilos en Valencia
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Trabajamos con precisión para conseguir un acabado perfecto sin burbujas ni imperfecciones
+            Proceso paso a paso con instalación profesional y acabado perfecto
           </p>
         </div>
         
-        <div class="max-w-3xl mx-auto">
-          <div class="space-y-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
             <!-- Paso 1 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                1
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Asesoramiento y medición</h3>
-                <p class="text-gray-700">Te asesoramos en la elección del papel más adecuado y tomamos medidas precisas para calcular el material necesario.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  1
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Asesoramiento y Medición</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Te <strong>asesoramos en la elección del papel pintado o vinilo</strong> más adecuado para tu espacio: tipo de material, diseño, color y acabado. Tomamos medidas precisas de las paredes para calcular exactamente el material necesario, incluyendo márgenes para el patrón.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 2 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                2
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Retirada del papel anterior</h3>
-                <p class="text-gray-700">Si hay papel pintado anterior, lo retiramos completamente con técnicas profesionales para no dañar la pared.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  2
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Retirada del Papel Anterior</h3>
+                  <p class="text-gray-700 leading-relaxed mb-3">
+                    Si existe papel pintado o vinilo antiguo, lo <strong>retiramos completamente</strong> utilizando técnicas profesionales que no dañan la pared. Aplicamos productos específicos para ablandar el adhesivo y retiramos el papel sin dejar residuos.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    Este paso es fundamental para conseguir una <strong>instalación perfecta del nuevo papel pintado en Valencia</strong>.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 3 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                3
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Preparación de la superficie</h3>
-                <p class="text-gray-700">Lijamos, reparamos imperfecciones y aplicamos imprimación específica para papel pintado.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  3
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Preparación de la Superficie</h3>
+                  <p class="text-gray-700 leading-relaxed mb-3">
+                    <strong>Lijamos y reparamos</strong> cualquier imperfección de la pared para conseguir una superficie completamente lisa. Las paredes deben estar perfectas para que el papel pintado quede sin arrugas ni burbujas.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    Aplicamos una <strong>imprimación específica para papel pintado</strong> que mejora la adherencia y facilita futuras retiradas.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 4 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                4
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Corte y preparación del papel</h3>
-                <p class="text-gray-700">Cortamos las tiras con las medidas exactas, respetando el patrón y dejando margen para ajustes.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  4
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Corte y Preparación del Papel</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Cortamos las tiras de papel pintado con las <strong>medidas exactas</strong>, respetando el patrón y dejando margen superior e inferior para ajustes. Si el papel tiene rapporto (patrón repetitivo), calculamos cuidadosamente cada corte para que coincida perfectamente.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 5 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                5
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Instalación profesional</h3>
-                <p class="text-gray-700">Instalamos cada tira con precisión, eliminando burbujas y asegurando la perfecta alineación del patrón.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  5
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Instalación Profesional</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    <strong>Instalamos cada tira con máxima precisión</strong>, aplicando la cola adecuada según el tipo de papel. Utilizamos espátulas y rodillos profesionales para eliminar burbujas de aire y asegurar la perfecta adherencia. La alineación del patrón es milimétrica para conseguir un resultado impecable.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 6 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                6
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Acabados y limpieza</h3>
-                <p class="text-gray-700">Realizamos los acabados finales en esquinas y bordes, y limpiamos completamente la zona de trabajo.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  6
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Acabados y Limpieza</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Realizamos los <strong>acabados finales</strong> en esquinas, rodapiés y marcos de puertas con cortes precisos. Retiramos cualquier exceso de cola de las superficies y limpiamos completamente la zona de trabajo. Tu espacio queda listo para disfrutar inmediatamente.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios del Papel Pintado en Valencia -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Beneficios del Papel Pintado y Vinilos Decorativos en Valencia
+            </h2>
+            <p class="text-xl text-gray-600">
+              Transforma tus espacios con diseño, calidad y durabilidad
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-10">
+            <!-- Beneficio 1 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Diseños Únicos e Impactantes</h3>
+                  <p class="text-gray-700">
+                    El <strong>papel pintado en Valencia</strong> permite crear espacios con personalidad única. Miles de diseños, texturas y colores para adaptarse a cualquier estilo decorativo y conseguir acabados imposibles con pintura tradicional.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 2 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Instalación Rápida y Limpia</h3>
+                  <p class="text-gray-700">
+                    A diferencia de la pintura, la <strong>instalación de papel pintado</strong> es rápida, sin olor y sin necesidad de múltiples capas. Puedes disfrutar de tus espacios renovados en mucho menos tiempo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 3 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Durabilidad y Resistencia</h3>
+                  <p class="text-gray-700">
+                    Los <strong>vinilos decorativos</strong> y papeles de calidad son lavables, resistentes a la humedad y muy duraderos. Perfectos para zonas de alto tránsito, cocinas y baños. Mantienen su aspecto impecable durante años.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 4 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Oculta Imperfecciones</h3>
+                  <p class="text-gray-700">
+                    El papel pintado es ideal para <strong>disimular imperfecciones de paredes</strong> sin necesidad de grandes obras. Muchos diseños con textura o relieve ocultan grietas pequeñas y desniveles de forma decorativa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </section>
@@ -271,8 +604,8 @@ const faqSchema = {
     <!-- CTA Contact Section -->
     <section class="py-12 bg-blue-600 text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres renovar tus paredes?</h2>
-        <p class="text-xl mb-8">Te asesoramos sin compromiso sobre el mejor papel pintado para tu espacio</p>
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres Instalar Papel Pintado o Vinilos en Valencia?</h2>
+        <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
@@ -287,51 +620,71 @@ const faqSchema = {
         </div>
       </div>
     </section>
-
-    <!-- FAQ -->
-    <section class="py-12 bg-white">
+    
+    <!-- FAQ Optimizadas para SEO Local Valencia -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Preguntas frecuentes
+            Preguntas Frecuentes sobre Instalar Papel Pintado en Valencia
           </h2>
+          <p class="text-lg text-gray-600">
+            Resolvemos todas tus dudas sobre nuestro servicio profesional
+          </p>
         </div>
 
-        <div class="max-w-3xl mx-auto space-y-6">
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
+        <div class="max-w-4xl mx-auto space-y-6">
+          <!-- FAQ 1 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
               ¿Qué tipos de papel pintado instaláis?
             </h3>
-            <p class="text-gray-600">
-              Instalamos papel pintado, vinilo, fibra de vidrio y papel de bambú. Trabajamos con todas las marcas y diseños.
+            <p class="text-gray-700 leading-relaxed">
+              Instalamos todo tipo de <strong>papel pintado en Valencia</strong>: papel tradicional, vinilos decorativos, fibra de vidrio y papeles especiales. Trabajamos con todas las marcas y diseños del mercado. Te asesoramos para elegir el <strong>material más adecuado</strong> según el espacio y tus necesidades.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">¿Preparáis la pared antes?</h3>
-            <p class="text-gray-600">
-              Sí, preparamos completamente la superficie: lijado, imprimación y nivelado para un acabado perfecto.
-            </p>
-          </div>
-
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
-              ¿Traéis vuestro propio material?
+          <!-- FAQ 2 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
+              ¿Incluís la preparación de las paredes?
             </h3>
-            <p class="text-gray-600">
-              Podemos suministrar el papel pintado o instalar el tuyo. Te asesoramos en la elección del mejor tipo para cada espacio.
+            <p class="text-gray-700 leading-relaxed">
+              Sí, la <strong>preparación está incluida</strong> en el precio. Lijamos, reparamos imperfecciones y aplicamos imprimación específica para papel pintado. Una correcta preparación es esencial para conseguir un <strong>acabado perfecto y duradero</strong>. Sin buena preparación, el papel puede tener burbujas o despegarse.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
-              ¿Quitáis el papel pintado viejo?
+          <!-- FAQ 3 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
+              ¿Retiráis el papel antiguo?
             </h3>
-            <p class="text-gray-600">
-              Sí, retiramos el papel antiguo y preparamos la pared desde cero para la nueva instalación.
+            <p class="text-gray-700 leading-relaxed">
+              Sí, <strong>retiramos el papel pintado antiguo</strong> con técnicas profesionales que no dañan la pared. Aplicamos productos específicos para ablandar el adhesivo y retiramos el papel sin dejar residuos. Después preparamos la superficie completamente para la <strong>nueva instalación</strong>.
+            </p>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
+              ¿Cuánto tiempo tarda la instalación?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              La <strong>instalación de papel pintado</strong> en una habitación estándar suele tardar <strong>1-2 días</strong>. Para viviendas completas, entre 3 y 5 días dependiendo de los metros cuadrados y la complejidad del patrón. Te daremos un plazo exacto con el presupuesto. La instalación es más rápida que pintar.
+            </p>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
+              ¿Puedo aportar yo el papel o vinilo?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Por supuesto. Podemos <strong>instalar el papel pintado que tú elijas</strong> o asesorarte en la compra. Si lo prefieres, nos encargamos de todo: elección, compra e instalación profesional del papel más adecuado para tu proyecto. Te ayudamos a calcular la cantidad exacta necesaria.
             </p>
           </div>
         </div>
+
       </div>
     </section>
 

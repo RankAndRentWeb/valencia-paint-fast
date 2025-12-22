@@ -1,31 +1,179 @@
-﻿---
+---
 import SiteLayout from '../../../layouts/SiteLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.tsx';
-import fachadaExteriorImg from '../../../assets/fachada-exterior-valencia.jpg';
+import fachadaExteriorImg from '../../../assets/pintura-comunidades-valencia-fachada-edificio.jpg';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Valencia Paint Fast - Pintura de Comunidades",
-  "description": "Servicio profesional de pintura de comunidades en Valencia. Presupuestos personalizados, calidad garantizada y precios competitivos.",
-  "url": "https://valenciapaintfast.com/servicios/pintura-comunidades/",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+  "@id": "https://pintores-valencia.com/#business",
+  "name": "Pintores en Valencia",
+  "description": "Empresa de pintura profesional en Valencia. Nos desplazamos a toda la ciudad y alrededores para servicios de pintura de interiores, exteriores, fachadas, comunidades y más.",
+  "url": "https://pintores-valencia.com",
+  "image": "https://pintores-valencia.com/og-home.webp",
+  "telephone": "+34722208131",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
-    "addressRegion": "Valencia", 
+    "addressRegion": "Comunitat Valenciana",
     "addressCountry": "ES"
   },
-  "areaServed": {
-    "@type": "GeoCircle",
-    "geoMidpoint": {
-      "@type": "GeoCoordinates",
-      "latitude": 39.4699,
-      "longitude": -0.3763
-    },
-    "geoRadius": 30000
-  },
+  "openingHours": ["Mo-Sa 08:00-20:00"],
   "priceRange": "€€",
-  "openingHours": "Mo-Su 08:00-20:00"
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Valencia",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Comunitat Valenciana"
+      }
+    },
+    // Centro histórico y Ciutat Vella
+    { "@type": "PostalCodeSpecification", "postalCode": "46001", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46002", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46003", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Eixample
+    { "@type": "PostalCodeSpecification", "postalCode": "46004", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46005", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46006", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46007", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46008", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46009", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46010", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Extramurs y otras zonas
+    { "@type": "PostalCodeSpecification", "postalCode": "46011", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46012", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46013", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46014", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46015", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46016", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46017", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46018", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46019", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46020", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Campanar, Benimaclet, Poblados marítimos
+    { "@type": "PostalCodeSpecification", "postalCode": "46021", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46022", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46023", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46024", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46025", "addressLocality": "Valencia", "addressCountry": "ES" }
+  ],
+  "knowsAbout": [
+    "Pintura de interiores y exteriores en Valencia",
+    "Eliminación de gotelé y alisado de paredes",
+    "Impermeabilización de terrazas y cubiertas",
+    "Rehabilitación y pintura de fachadas",
+    "Pintura de comunidades de vecinos",
+    "Instalación de papel pintado y vinilos decorativos",
+    "Lacado de puertas y carpintería",
+    "Pintura de locales comerciales",
+    "Barnizado de madera",
+    "Tratamientos anti-humedad",
+    "Reparación de grietas y fisuras",
+    "Aplicación de revestimientos impermeables"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo de Pintura de Comunidades en Valencia",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pintura de Fachadas en Valencia",
+          "description": "Rehabilitación y pintura técnica de fachadas con garantía de 3 años",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Exterior Painting",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "8.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pintura de Escaleras y Portales",
+          "description": "Pintura de zonas comunes interiores con pinturas lavables",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Interior Painting",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "12.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pintura de Garajes y Sótanos",
+          "description": "Pintura técnica para garajes con pinturas especiales anti-humedad",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Interior Painting",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "6.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Proyecto Completo Edificio 4 Plantas",
+          "description": "Pintura integral de edificio de comunidad incluyendo fachada y zonas comunes",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Building Painting",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "3500.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Proyecto Completo Edificio 6 Plantas",
+          "description": "Rehabilitación completa de edificio con fachada, escaleras y zonas comunes",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Building Painting",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "5500.00",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
 };
 
 const faqSchema = {
@@ -37,15 +185,15 @@ const faqSchema = {
       "name": "¿Qué incluye el servicio de pintura de comunidades?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Incluye rehabilitación de fachadas, pintura de escaleras, portales, sótanos, garajes y todas las zonas comunes. También realizamos trabajos de preparación de superficies, lijado, masillado y aplicación de imprimaciones."
+        "text": "Incluye rehabilitación de fachadas, pintura de escaleras, portales, sótanos, garajes y todas las zonas comunes, con preparación completa de superficies, reparaciones menores, imprimación y acabado profesional."
       }
     },
     {
-      "@type": "Question", 
+      "@type": "Question",
       "name": "¿Necesito licencia de obra para pintar la fachada?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Para trabajos de mantenimiento y pintura de fachadas normalmente no se necesita licencia de obra mayor. Sin embargo, te asesoramos sobre la documentación necesaria según el tipo de trabajo y las normativas del ayuntamiento."
+        "text": "Normalmente no se necesita licencia de obra mayor para trabajos de mantenimiento y pintura de fachadas. Te asesoramos sobre la documentación necesaria según la normativa municipal de Valencia."
       }
     },
     {
@@ -53,14 +201,14 @@ const faqSchema = {
       "name": "¿Cómo se organiza el trabajo en una comunidad?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Coordinamos con el administrador de fincas y la junta de propietarios. Planificamos los trabajos para minimizar molestias, establecemos horarios adecuados y mantenemos información constante sobre el progreso de la obra."
+        "text": "Coordinamos directamente con el administrador de fincas y la junta de propietarios. Planificamos los trabajos por fases para minimizar molestias y mantenemos comunicación constante sobre el progreso."
       }
     },
     {
       "@type": "Question",
       "name": "¿Qué garantía ofrecen en trabajos de comunidades?",
       "acceptedAnswer": {
-        "@type": "Answer", 
+        "@type": "Answer",
         "text": "Ofrecemos 3 años de garantía en fachadas y 2 años en zonas interiores. La garantía cubre defectos de aplicación y problemas relacionados con la calidad de los materiales utilizados."
       }
     }
@@ -69,27 +217,26 @@ const faqSchema = {
 ---
 
 <SiteLayout 
-  title="Pintura de comunidades en Valencia | Valencia Paint Fast"
-  description="Especialistas en pintura de comunidades en Valencia. Fachadas, escaleras y zonas comunes. Presupuesto gratis en 24h y garantía."
-  canonical="https://valenciapaintfast.com/servicios/pintura-comunidades/"
-  localBusinessSchema={localBusinessSchema}
-  faqSchema={faqSchema}
+  title="Pintura de comunidades en Valencia desde 8€/m² | Fachadas"
+  description="Especialistas en pintura de comunidades en Valencia. Fachadas, escaleras y zonas comunes. Trabajamos con administradores de fincas. Presupuesto en 24h."
+  keywords="pintura comunidades valencia, pintar fachada comunidad valencia, pintura edificios valencia, pintar zonas comunes valencia, precio pintar comunidad valencia"
+  canonical="https://pintores-valencia.com/servicios/pintura-comunidades/"
+  schema={[localBusinessSchema, faqSchema]}
+  ogImage="/og-home.webp"
 >
   <main class="flex-1">
     <!-- Breadcrumbs and Hero Section -->
-    <section class="bg-gradient-to-br from-slate-50 to-blue-50">
+
+      <section class="bg-gradient-to-br from-slate-50 to-blue-50">
       <!-- Breadcrumbs -->
-      <div class="py-4">
         <div class="container mx-auto px-4">
-          <Breadcrumbs 
-            items={[
+          <Breadcrumbs items={[
               { label: "Servicios", href: "/servicios/" },
               { label: "Pintura Comunidades" }
-            ]} 
-            client:load 
-          />
-        </div>
-      </div>
+            ]}  client:load />
+  
+
+      
 
       <!-- Hero Content -->
       <div class="py-12">
@@ -110,7 +257,7 @@ const faqSchema = {
             
             <!-- CTAs -->
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href="/presupuesto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center">
+              <a href="/contacto/" class="h-11 px-6 rounded-md bg-accent hover:bg-accent/90 text-white font-semibold shadow flex items-center justify-center">
                 Presupuesto Gratis
               </a>
               <a href="tel:+34722208131" class="h-11 px-6 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-semibold inline-flex items-center justify-center gap-2">
@@ -127,7 +274,7 @@ const faqSchema = {
                 <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                 </svg>
-                <span class="text-gray-700">Con administradores</span>
+                <span class="text-gray-700">Con administradores de fincas</span>
               </div>
               <div class="flex items-center space-x-3">
                 <svg class="w-5 h-5 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -143,126 +290,347 @@ const faqSchema = {
               </div>
             </div>
           </div>
-
+          
           <!-- Right side - Image -->
           <div class="order-first lg:order-last">
             <div class="relative rounded-2xl overflow-hidden shadow-xl">
-              <img src={fachadaExteriorImg.src} alt="Pintura de comunidades Valencia - Fachadas y zonas comunes" width={fachadaExteriorImg.width} height={fachadaExteriorImg.height} class="w-full h-auto object-cover" loading="lazy">
+              <img src={fachadaExteriorImg.src} alt="Pintores de comunidades trabajando en la rehabilitación de una fachada en el centro de Valencia - Servicio profesional con garantía" width={fachadaExteriorImg.width} height={fachadaExteriorImg.height} class="w-full h-auto object-cover" loading="eager" fetchpriority="high">
             </div>
           </div>
         </div>
       </div>
-      </div>
     </section>
 
-    <!-- Precio y condiciones -->
-    <section class="py-12 bg-white">
+    <!-- Precio Pintura Comunidades Valencia -->
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-              Precio y condiciones
+              Precio de Pintar Comunidades en Valencia
             </h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-              Presupuesto transparente desde 8€/m² para fachadas y zonas comunes
+              Presupuesto transparente desde 8€/m² con materiales incluidos
             </p>
           </div>
           
-          <div class="space-y-6 text-gray-700">
+          <div class="space-y-6 text-gray-700 mb-10">
             <p class="text-lg leading-relaxed">
-              El coste final depende del tipo de superficie, altura del edificio, estado de conservación y metros cuadrados a pintar. 
-              Trabajamos directamente con administradores de fincas para facilitar el proceso y ofrecemos presupuestos detallados sin sorpresas.
+              El <strong>precio de pintar comunidades en Valencia</strong> depende del tipo de superficie a pintar, la altura del edificio, el estado de conservación y los metros cuadrados totales. En todos los casos ofrecemos un presupuesto cerrado, detallado y transparente, sin sorpresas.
             </p>
             
             <p class="text-lg leading-relaxed">
-              Utilizamos pinturas específicas para cada zona: resistentes a la intemperie para fachadas, lavables para escaleras y especiales para garajes. 
-              Incluimos preparación de superficie, reparaciones menores, imprimación y acabado profesional con garantía de 3 años en fachadas.
+              Trabajamos directamente con <strong>administradores de fincas y juntas de propietarios</strong> para facilitar todo el proceso. Utilizamos pinturas específicas según la zona: <strong>resistentes a la intemperie para fachadas</strong>, lavables para escaleras, y pinturas técnicas especiales para garajes. Incluimos preparación de superficies, reparaciones menores, imprimación y acabado profesional con <strong>garantía de 3 años en fachadas</strong>.
             </p>
+            
+            <p class="text-lg leading-relaxed">
+              Damos <strong>servicio técnico en todos los distritos de Valencia</strong>, desde fincas señoriales en <strong>L'Eixample y Ciutat Vella</strong> hasta edificios modernos en <strong>Campanar o la Avenida de Francia</strong>. Nuestra logística nos permite ofrecer <strong>presupuestos rápidos en menos de 24h</strong> en toda el área metropolitana, incluyendo <strong>Torrent y Paterna</strong>.
+            </p>
+          </div>
+
+          <!-- Tabla de precios orientativos -->
+          <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-2xl p-8 mb-8">
+            <h3 class="text-2xl font-bold mb-6 text-center">Precios Orientativos de Pintura de Comunidades en Valencia</h3>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Precio por zona -->
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Por Tipo de Zona</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Fachada completa</span>
+                    <span class="font-bold text-accent">desde 8€/m²</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Escaleras y portales</span>
+                    <span class="font-bold text-accent">desde 12€/m²</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Garajes y sótanos</span>
+                    <span class="font-bold text-accent">desde 6€/m²</span>
+                  </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">*Incluye preparación y materiales</p>
+              </div>
+
+              <!-- Precio por edificio -->
+              <div class="bg-white rounded-xl p-6 shadow-sm">
+                <h4 class="font-bold text-lg mb-4 text-gray-900">Por Proyecto Completo</h4>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Edificio 4 plantas</span>
+                    <span class="font-bold text-accent">desde 3.500€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Edificio 6 plantas</span>
+                    <span class="font-bold text-accent">desde 5.500€</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-gray-700">Zonas comunes completas</span>
+                    <span class="font-bold text-accent">desde 1.800€</span>
+                  </li>
+                </ul>
+                <p class="text-sm text-gray-500 mt-4">*Precios pueden variar según altura</p>
+              </div>
+            </div>
+
+            <!-- Qué incluye el precio -->
+            <div class="mt-8 bg-white rounded-xl p-6">
+              <h4 class="font-bold text-lg mb-4 text-gray-900">¿Qué Incluye el Precio de Pintar Comunidades?</h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Coordinación con administrador</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Andamios y protecciones</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Reparación de grietas</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Imprimación profesional</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Pinturas de alta calidad</span>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <svg class="w-5 h-5 text-accent flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Limpieza completa final</span>
+                </div>
+              </div>
+            </div>
+
+          <div class="mt-8 bg-white rounded-xl p-6">
+            <p class="text-lg text-gray-700 mb-6">
+              <strong>¿Necesitas renovar tu comunidad?</strong> Consulta nuestro <strong>precio de pintar comunidades en Valencia</strong> y descubre cómo podemos mejorar tu edificio con nuestro servicio profesional especializado en trabajos comunitarios.
+            </p>
+            <div class="flex justify-center text-center">
+              <a href="/contacto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-accent text-white hover:bg-accent/90 focus:ring-accent shadow-md hover:shadow-lg px-8 py-3 text-lg rounded-lg">
+                Solicitar Presupuesto Gratuito
+              </a>
+            </div>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Nuestro proceso paso a paso -->
-    <section class="py-12 bg-gray-100">
+    <!-- Proceso Pintura Comunidades Valencia -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Nuestro proceso paso a paso
+            Cómo Pintamos Comunidades en Valencia
           </h2>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Coordinamos con administradores y juntas de propietarios para minimizar molestias
+            Proceso paso a paso coordinado con administradores de fincas
           </p>
         </div>
         
-        <div class="max-w-3xl mx-auto">
-          <div class="space-y-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
             <!-- Paso 1 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                1
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Reunión con administrador</h3>
-                <p class="text-gray-700">Coordinamos con el administrador de fincas y la junta de propietarios para planificar el trabajo y horarios.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  1
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Reunión con Administrador</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Coordinamos con el <strong>administrador de fincas y la junta de propietarios</strong> para definir el alcance del trabajo, establecer las fases de ejecución y acordar los horarios más convenientes para los vecinos. Planificamos todo el proyecto para minimizar molestias a la comunidad.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 2 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                2
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Preparación y protección</h3>
-                <p class="text-gray-700">Instalamos andamios seguros, protegemos vehículos y plantas, e informamos a los vecinos del cronograma.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  2
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Preparación y Protección</h3>
+                  <p class="text-gray-700 leading-relaxed mb-3">
+                    Instalamos <strong>andamios seguros</strong> y protegemos vehículos, plantas y accesos. Colocamos lonas y plásticos profesionales para evitar salpicaduras. Avisamos previamente a todos los vecinos del inicio de los trabajos y del calendario previsto.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    La seguridad y la protección de las propiedades de los vecinos son nuestra prioridad en la <strong>pintura de comunidades en Valencia</strong>.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 3 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                3
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Reparaciones previas</h3>
-                <p class="text-gray-700">Reparamos grietas, eliminamos humedad, lijamos y preparamos todas las superficies a pintar.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  3
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Reparaciones Previas</h3>
+                  <p class="text-gray-700 leading-relaxed mb-3">
+                    <strong>Reparamos grietas y fisuras</strong>, tratamos humedades, lijamos y preparamos todas las superficies. Este paso es fundamental para conseguir un acabado duradero y de calidad en fachadas y zonas comunes.
+                  </p>
+                  <p class="text-gray-700 leading-relaxed">
+                    Utilizamos materiales específicos para cada tipo de reparación, garantizando la máxima durabilidad.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 4 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                4
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Imprimación y pintura</h3>
-                <p class="text-gray-700">Aplicamos imprimación y dos capas de pintura específica para cada zona, siguiendo horarios acordados.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  4
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Imprimación y Pintura</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Aplicamos <strong>imprimación profesional</strong> y dos capas de pintura específica según la zona: pinturas resistentes a la intemperie para fachadas, pinturas lavables para escaleras, y pinturas técnicas especiales para garajes y sótanos. Respetamos estrictamente los horarios acordados con la comunidad.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 5 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                5
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Acabados y retoques</h3>
-                <p class="text-gray-700">Realizamos acabados finales, retoques necesarios y revisión completa de todo el trabajo realizado.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  5
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Acabados y Retoques</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Realizamos una <strong>revisión completa</strong> de todo el trabajo realizado. Hacemos los retoques finales necesarios y aplicamos nuestro estricto control de calidad. Nos aseguramos de que cada detalle quede perfecto antes de dar por finalizado el trabajo.
+                  </p>
+                </div>
               </div>
             </div>
 
             <!-- Paso 6 -->
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                6
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2">Entrega y garantía</h3>
-                <p class="text-gray-700">Limpieza completa, retirada de andamios y entrega del certificado de garantía por escrito.</p>
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-accent text-white rounded-full flex items-center justify-center text-base font-bold">
+                  6
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-bold text-xl text-gray-900 mb-3">Entrega y Garantía</h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Realizamos la <strong>limpieza final completa</strong>, retiramos los andamios y todos los materiales. Entregamos al administrador de fincas el <strong>certificado de garantía por escrito</strong>: 3 años en fachadas y 2 años en zonas interiores.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios de Pintar Comunidades en Valencia -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+              Beneficios de Pintar tu Comunidad en Valencia
+            </h2>
+            <p class="text-xl text-gray-600">
+              Mejora la imagen y el valor de tu edificio
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-10">
+            <!-- Beneficio 1 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Revalorización del Inmueble</h3>
+                  <p class="text-gray-700">
+                    La <strong>pintura de comunidades en Valencia</strong> mejora significativamente el aspecto del edificio, aumentando el valor de las viviendas y facilitando la venta o alquiler de los pisos.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 2 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Protección de la Fachada</h3>
+                  <p class="text-gray-700">
+                    Las pinturas profesionales protegen las fachadas de la lluvia, el sol y la contaminación, evitando humedades y grietas que pueden generar problemas estructurales graves y costosos.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 3 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Ahorro a Largo Plazo</h3>
+                  <p class="text-gray-700">
+                    El mantenimiento preventivo mediante <strong>pintura profesional</strong> evita reparaciones costosas futuras. Una fachada bien mantenida dura muchos más años sin necesitar obras mayores.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Beneficio 4 -->
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 rounded-xl p-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900 mb-2">Gestión sin Complicaciones</h3>
+                  <p class="text-gray-700">
+                    Trabajamos directamente con el <strong>administrador de fincas</strong>, coordinando toda la documentación, permisos y comunicación con los vecinos. Tu comunidad no tiene que preocuparse por nada.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </section>
@@ -274,7 +642,7 @@ const faqSchema = {
         <p class="text-xl mb-8">Te respondemos en menos de 24 horas</p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/presupuesto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
+          <a href="/contacto/" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-orange-500 text-white hover:bg-orange-600 focus:ring-orange-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg">
             Pedir presupuesto gratis
           </a>
           <a href="tel:+34722208131" class="inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 bg-white text-blue-600 hover:bg-gray-100 focus:ring-blue-500 shadow-md hover:shadow-lg px-6 py-3 text-lg rounded-lg gap-2">
@@ -286,53 +654,62 @@ const faqSchema = {
         </div>
       </div>
     </section>
-
-    <!-- FAQ -->
-    <section class="py-12 bg-white">
+    
+    <!-- FAQ Optimizadas para SEO Local Valencia -->
+    <section class="py-16 bg-gradient-to-br from-slate-50 to-blue-50">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            Preguntas frecuentes
+            Preguntas Frecuentes sobre Pintura de Comunidades en Valencia
           </h2>
+          <p class="text-lg text-gray-600">
+            Resolvemos todas tus dudas sobre nuestro servicio profesional
+          </p>
         </div>
 
-        <div class="max-w-3xl mx-auto space-y-6">
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
+        <div class="max-w-4xl mx-auto space-y-6">
+          <!-- FAQ 1 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
               ¿Qué incluye el servicio de pintura de comunidades?
             </h3>
-            <p class="text-gray-600">
-              Incluye rehabilitación de fachadas, pintura de escaleras, portales, sótanos, garajes y todas las zonas comunes. También realizamos trabajos de preparación de superficies, lijado, masillado y aplicación de imprimaciones.
+            <p class="text-gray-700 leading-relaxed">
+              El servicio incluye <strong>rehabilitación de fachadas, pintura de escaleras, portales, sótanos, garajes y todas las zonas comunes</strong>, con preparación completa de superficies, reparación de grietas, tratamiento de humedades, imprimación profesional y acabado de alta calidad. También incluye coordinación con el administrador y limpieza final completa.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">¿Necesito licencia de obra para pintar la fachada?</h3>
-            <p class="text-gray-600">
-              Para trabajos de mantenimiento y pintura de fachadas normalmente no se necesita licencia de obra mayor. Sin embargo, te asesoramos sobre la documentación necesaria según el tipo de trabajo y las normativas del ayuntamiento.
+          <!-- FAQ 2 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
+              ¿Necesito licencia de obra para pintar la fachada?
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              <strong>Normalmente no</strong> se necesita licencia de obra mayor para trabajos de <strong>mantenimiento y pintura de fachadas</strong>. Sin embargo, te asesoramos sobre la documentación necesaria según el tipo de trabajo y las normativas específicas del ayuntamiento de Valencia. Nos encargamos de toda la gestión documental.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
+          <!-- FAQ 3 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
               ¿Cómo se organiza el trabajo en una comunidad?
             </h3>
-            <p class="text-gray-600">
-              Coordinamos con el administrador de fincas y la junta de propietarios. Planificamos los trabajos para minimizar molestias, establecemos horarios adecuados y mantenemos información constante sobre el progreso de la obra.
+            <p class="text-gray-700 leading-relaxed">
+              Coordinamos directamente con el <strong>administrador de fincas y la junta de propietarios</strong>. Planificamos los trabajos por fases para minimizar molestias a los vecinos, establecemos horarios adecuados y mantenemos <strong>comunicación constante</strong> sobre el progreso de la obra. Avisamos previamente a todos los vecinos de los trabajos.
             </p>
           </div>
 
-          <div class="bg-white border rounded-lg p-6 shadow-sm">
-            <h3 class="font-semibold mb-2 text-gray-900">
+          <!-- FAQ 4 -->
+          <div class="bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+            <h3 class="font-bold text-xl mb-3 text-gray-900">
               ¿Qué garantía ofrecen en trabajos de comunidades?
             </h3>
-            <p class="text-gray-600">
-              Ofrecemos 3 años de garantía en fachadas y 2 años en zonas interiores. La garantía cubre defectos de aplicación y problemas relacionados con la calidad de los materiales utilizados.
+            <p class="text-gray-700 leading-relaxed">
+              Ofrecemos <strong>3 años de garantía en fachadas</strong> y <strong>2 años en zonas interiores</strong>. La garantía cubre defectos de aplicación y problemas relacionados con la calidad de los materiales utilizados. Entregamos el certificado de garantía por escrito al administrador de fincas al finalizar el trabajo.
             </p>
           </div>
         </div>
+
       </div>
     </section>
-
   </main>
 </SiteLayout>

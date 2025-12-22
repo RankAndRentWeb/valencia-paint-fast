@@ -5,9 +5,10 @@ import pinturaInteriorImg from '../../../assets/puerta-lacada-blanca-pintando-va
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "@id": "https://pintores-valencia.com/#business",
   "name": "Pintores en Valencia",
+  "description": "Empresa de pintura profesional en Valencia. Nos desplazamos a toda la ciudad y alrededores para servicios de pintura de interiores, exteriores, fachadas, comunidades y más.",
   "url": "https://pintores-valencia.com",
   "image": "https://pintores-valencia.com/og-home.webp",
   "telephone": "+34722208131",
@@ -15,7 +16,6 @@ const localBusinessSchema = {
     "@type": "PostalAddress",
     "addressLocality": "Valencia",
     "addressRegion": "Comunitat Valenciana",
-    "postalCode": "46000",
     "addressCountry": "ES"
   },
   "openingHours": ["Mo-Sa 08:00-20:00"],
@@ -23,9 +23,119 @@ const localBusinessSchema = {
   "areaServed": [
     {
       "@type": "City",
-      "name": "Valencia"
-    }
-  ]
+      "name": "Valencia",
+      "containedInPlace": {
+        "@type": "AdministrativeArea",
+        "name": "Comunitat Valenciana"
+      }
+    },
+    // Centro histórico y Ciutat Vella
+    { "@type": "PostalCodeSpecification", "postalCode": "46001", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46002", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46003", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Eixample
+    { "@type": "PostalCodeSpecification", "postalCode": "46004", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46005", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46006", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46007", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46008", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46009", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46010", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Extramurs y otras zonas
+    { "@type": "PostalCodeSpecification", "postalCode": "46011", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46012", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46013", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46014", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46015", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46016", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46017", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46018", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46019", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46020", "addressLocality": "Valencia", "addressCountry": "ES" },
+    // Campanar, Benimaclet, Poblados marítimos
+    { "@type": "PostalCodeSpecification", "postalCode": "46021", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46022", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46023", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46024", "addressLocality": "Valencia", "addressCountry": "ES" },
+    { "@type": "PostalCodeSpecification", "postalCode": "46025", "addressLocality": "Valencia", "addressCountry": "ES" }
+  ],
+  "knowsAbout": [
+    "Pintura de interiores y exteriores en Valencia",
+    "Eliminación de gotelé y alisado de paredes",
+    "Impermeabilización de terrazas y cubiertas",
+    "Rehabilitación y pintura de fachadas",
+    "Pintura de comunidades de vecinos",
+    "Instalación de papel pintado y vinilos decorativos",
+    "Lacado de puertas y carpintería",
+    "Pintura de locales comerciales",
+    "Barnizado de madera",
+    "Tratamientos anti-humedad",
+    "Reparación de grietas y fisuras",
+    "Aplicación de revestimientos impermeables"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Catálogo de Lacado de Puertas en Valencia",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lacado de Puertas en Valencia",
+          "description": "Lacado profesional de puertas con acabados de alta calidad y durabilidad",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Door Lacquering Service",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "120.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lacado Piso Completo (8 puertas)",
+          "description": "Servicio completo de lacado para todas las puertas de un piso estándar",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Apartment Door Lacquering",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "850.00",
+        "priceCurrency": "EUR"
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Lacado de Armarios Empotrados",
+          "description": "Lacado profesional de armarios empotrados y carpintería interior",
+          "areaServed": {
+            "@type": "City",
+            "name": "Valencia",
+            "sameAs": "https://www.wikidata.org/wiki/Q8818"
+          },
+          "serviceType": "Cabinet Lacquering",
+          "provider": {
+            "@id": "https://pintores-valencia.com/#business"
+          }
+        },
+        "price": "350.00",
+        "priceCurrency": "EUR"
+      }
+    ]
+  }
 };
 
 const faqSchema = {
